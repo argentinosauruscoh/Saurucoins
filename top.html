@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Top Saurucoins - Stream Overlay</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: transparent;
+      font-family: 'DM Mono', monospace;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 0 0 0 28px;
+      height: 100vh;
+      opacity: 0;
+      transition: opacity 0.6s ease;
+    }
+
+    body.visible { opacity: 1; }
+
+    #container {
+      width: 320px;
+      background: rgba(6, 8, 12, 0.88);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 4px;
+      overflow: hidden;
+      backdrop-filter: blur(16px);
+      transform: translateX(-20px);
+      opacity: 0;
+      transition: transform 0.7s cubic-bezier(0.22,1,0.36,1), opacity 0.7s ease;
+    }
+
+    body.visible #container {
+      transform: translateX(0);
+      opacity: 1;
+    }
+
+    #header {
+      padding: 14px 18px 12px;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+    }
+
+    #title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 22px;
+      letter-spacing: 3px;
+      color: #fff;
+      line-height: 1;
+    }
+
+    #title span { color: #C8FF00; }
+
+    #subtitle {
+      font-size: 9px;
+      letter-spacing: 2px;
+      color: rgba(255,255,255,0.3);
+      text-transform: uppercase;
+    }
+
+    #rows { padding: 6px 0 8px; }
+
+    .row {
+      display: flex;
+      align-items: center;
+      padding: 8px 18px;
+      gap: 12px;
+      opacity: 0;
+      transform: translateX(-12px);
+      transition: background 0.2s;
+    }
+
+    .row.in {
+      animation: rowIn 0.5s cubic-bezier(0.22,1,0.36,1) forwards;
+    }
+
+    @keyframes rowIn {
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    .row:hover { background: rgba(255,255,255,0.03); }
+
+    .row-rank {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 20px;
+      width: 28px;
+      text-align: center;
+      line-height: 1;
+      flex-shrink: 0;
+    }
+
+    .row:nth-child(1) .row-rank { color: #C8FF00; }
+    .row:nth-child(2) .row-rank { color: rgba(255,255,255,0.7); }
+    .row:nth-child(3) .row-rank { color: #FF8C42; }
+    .row:nth-child(n+4) .row-rank { color: rgba(255,255,255,0.25); }
+
+    .row-bar-wrap {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      min-width: 0;
+    }
+
+    .row-name {
+      font-size: 12px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.85);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      letter-spacing: 0.3px;
+    }
+
+    .row:nth-child(1) .row-name { color: #fff; }
+
+    .bar-track {
+      height: 3px;
+      background: rgba(255,255,255,0.07);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+
+    .bar-fill {
+      height: 100%;
+      border-radius: 2px;
+      width: 0%;
+      transition: width 1.2s cubic-bezier(0.22,1,0.36,1);
+    }
+
+    .row:nth-child(1) .bar-fill { background: #C8FF00; }
+    .row:nth-child(2) .bar-fill { background: rgba(255,255,255,0.5); }
+    .row:nth-child(3) .bar-fill { background: #FF8C42; }
+    .row:nth-child(n+4) .bar-fill { background: rgba(255,255,255,0.2); }
+
+    .row-pts {
+      font-size: 13px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.5);
+      flex-shrink: 0;
+      min-width: 44px;
+      text-align: right;
+      letter-spacing: -0.5px;
+    }
+
+    .row:nth-child(1) .row-pts { color: #C8FF00; }
+
+    #footer {
+      padding: 8px 18px 10px;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    #footer-coin {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: #C8FF00;
+      flex-shrink: 0;
+      animation: coinSpin 3s ease-in-out infinite;
+    }
+
+    @keyframes coinSpin {
+      0%,100% { transform: scaleX(1); }
+      45% { transform: scaleX(0.08); }
+      50% { transform: scaleX(0.08); }
+      95% { transform: scaleX(1); }
+    }
+
+    #footer-label {
+      font-size: 9px;
+      letter-spacing: 1.5px;
+      color: rgba(255,255,255,0.2);
+      text-transform: uppercase;
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <div id="header">
+      <div id="title">SAURU<span>COINS</span></div>
+      <div id="subtitle">Top 6</div>
+    </div>
+    <div id="rows"></div>
+    <div id="footer">
+      <div id="footer-coin"></div>
+      <div id="footer-label">Clasificación en vivo</div>
+    </div>
+  </div>
+
+  <script>
+    let lastVisible = false;
+    let lastListJson = "";
+    let serverReady = false;
+    const rowsEl = document.getElementById("rows");
+
+    async function checkServer() {
+      try {
+        const res = await fetch("http://localhost:3000/top-overlay-state", { cache: "no-store" });
+        if (!res.ok) throw new Error();
+        serverReady = true;
+        return true;
+      } catch {
+        serverReady = false;
+        return false;
+      }
+    }
+
+    function buildRows(list) {
+      rowsEl.innerHTML = "";
+      const maxPts = list.length > 0 ? list[0].points : 1;
+      list.forEach((p, i) => {
+        const row = document.createElement("div");
+        row.className = "row";
+        const pct = Math.round((p.points / maxPts) * 100);
+        row.innerHTML = `
+          <div class="row-rank">${p.rank}</div>
+          <div class="row-bar-wrap">
+            <div class="row-name">${p.user}</div>
+            <div class="bar-track"><div class="bar-fill" data-pct="${pct}"></div></div>
+          </div>
+          <div class="row-pts">${p.points.toLocaleString()}</div>
+        `;
+        row.style.animationDelay = `${i * 0.08}s`;
+        rowsEl.appendChild(row);
+        requestAnimationFrame(() => row.classList.add("in"));
+      });
+      // Animar barras después de que los rows aparezcan
+      setTimeout(() => {
+        document.querySelectorAll(".bar-fill").forEach(bar => {
+          bar.style.width = bar.dataset.pct + "%";
+        });
+      }, 200);
+    }
+
+    async function pollTop() {
+      if (!serverReady) {
+        const ok = await checkServer();
+        if (!ok) return;
+      }
+      try {
+        const res = await fetch("http://localhost:3000/top-overlay-state", { cache: "no-store" });
+        if (!res.ok) throw new Error();
+        const data = await res.json();
+        const listJson = JSON.stringify(data.list || []);
+        const changed = data.visible !== lastVisible || listJson !== lastListJson;
+
+        if (data.visible && (data.list || []).length > 0 && changed) {
+          buildRows(data.list);
+          document.body.classList.add("visible");
+        } else if (lastVisible && !data.visible) {
+          document.body.style.transition = "opacity 0.8s ease";
+          document.body.style.opacity = "0";
+          setTimeout(() => {
+            document.body.classList.remove("visible");
+            document.body.style.opacity = "";
+            rowsEl.innerHTML = "";
+          }, 800);
+        }
+
+        lastVisible = data.visible;
+        lastListJson = listJson;
+      } catch {
+        serverReady = false;
+      }
+    }
+
+    setInterval(pollTop, 1000);
+    (async () => { if (await checkServer()) pollTop(); })();
+  </script>
+</body>
+</html>

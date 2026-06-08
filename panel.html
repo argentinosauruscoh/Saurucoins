@@ -1,0 +1,1388 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>SAURUSTREAM — Panel de Control</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Barlow+Condensed:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:        #080c10;
+    --bg2:       #0d1318;
+    --bg3:       #111820;
+    --border:    rgba(255,255,255,0.07);
+    --accent:    #00e5ff;
+    --accent2:   #ff3d3d;
+    --accent3:   #ffd600;
+    --accent4:   #69ff47;
+    --text:      #c8d8e8;
+    --text-dim:  #4a6070;
+    --mono:      'Share Tech Mono', monospace;
+    --sans:      'Barlow Condensed', sans-serif;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+  }
+
+  /* Ruido de fondo sutil */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* === TOPBAR === */
+  #topbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+    padding: 0 28px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    backdrop-filter: blur(10px);
+  }
+
+  #topbar-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .logo-mark {
+    width: 32px;
+    height: 32px;
+    border: 2px solid var(--accent);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--mono);
+    font-size: 13px;
+    color: var(--accent);
+    letter-spacing: -1px;
+    box-shadow: 0 0 12px rgba(0,229,255,0.2);
+  }
+
+  .logo-text {
+    font-size: 18px;
+    font-weight: 900;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: white;
+  }
+
+  .logo-text span { color: var(--accent); }
+
+  #server-status {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--text-dim);
+  }
+
+  .status-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--accent2);
+    transition: background 0.3s;
+  }
+
+  .status-dot.online { background: var(--accent4); box-shadow: 0 0 6px var(--accent4); animation: pulse-dot 2s infinite; }
+
+  @keyframes pulse-dot {
+    0%,100% { opacity: 1; } 50% { opacity: 0.4; }
+  }
+
+  #clock {
+    font-family: var(--mono);
+    font-size: 13px;
+    color: var(--text-dim);
+    letter-spacing: 1px;
+  }
+
+  /* === NAV TABS === */
+  #nav {
+    display: flex;
+    gap: 2px;
+    padding: 0 28px;
+    background: var(--bg2);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 56px;
+    z-index: 99;
+  }
+
+  .nav-tab {
+    padding: 12px 22px;
+    font-family: var(--sans);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .nav-tab:hover { color: var(--text); }
+
+  .nav-tab.active {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+  }
+
+  .tab-badge {
+    background: var(--accent2);
+    color: white;
+    font-size: 10px;
+    padding: 1px 5px;
+    border-radius: 10px;
+    font-weight: 700;
+  }
+
+  .tab-badge.green { background: var(--accent4); color: #000; }
+
+  /* === MAIN LAYOUT === */
+  #main {
+    flex: 1;
+    padding: 24px 28px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .tab-panel { display: none; }
+  .tab-panel.active { display: grid; gap: 20px; }
+
+  /* === CARDS === */
+  .card {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  .card-header {
+    padding: 14px 18px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .card-title {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .card-title::before {
+    content: '';
+    width: 3px;
+    height: 14px;
+    background: var(--accent);
+    border-radius: 2px;
+  }
+
+  .card-body { padding: 18px; }
+
+  /* === BOTONES === */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 18px;
+    border-radius: 6px;
+    font-family: var(--sans);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    border: none;
+    transition: all 0.15s;
+    white-space: nowrap;
+  }
+
+  .btn:active { transform: scale(0.97); }
+
+  .btn-primary {
+    background: var(--accent);
+    color: #000;
+  }
+  .btn-primary:hover { background: #33eeff; box-shadow: 0 0 20px rgba(0,229,255,0.3); }
+
+  .btn-danger {
+    background: var(--accent2);
+    color: white;
+  }
+  .btn-danger:hover { background: #ff5555; box-shadow: 0 0 20px rgba(255,61,61,0.3); }
+
+  .btn-warning {
+    background: var(--accent3);
+    color: #000;
+  }
+  .btn-warning:hover { box-shadow: 0 0 20px rgba(255,214,0,0.3); }
+
+  .btn-success {
+    background: var(--accent4);
+    color: #000;
+  }
+  .btn-success:hover { box-shadow: 0 0 20px rgba(105,255,71,0.3); }
+
+  .btn-ghost {
+    background: transparent;
+    color: var(--text-dim);
+    border: 1px solid var(--border);
+  }
+  .btn-ghost:hover { color: var(--text); border-color: rgba(255,255,255,0.2); }
+
+  .btn-sm { padding: 6px 12px; font-size: 11px; }
+
+  /* === INPUTS === */
+  .input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .input-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--text-dim);
+  }
+
+  input[type="text"], input[type="number"], select, textarea {
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    color: var(--text);
+    font-family: var(--mono);
+    font-size: 13px;
+    padding: 9px 12px;
+    width: 100%;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+
+  input:focus, select:focus, textarea:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 2px rgba(0,229,255,0.1);
+  }
+
+  select option { background: var(--bg3); }
+
+  /* === STATUS PILL === */
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+
+  .pill-idle    { background: rgba(74,96,112,0.2); color: var(--text-dim); border: 1px solid var(--border); }
+  .pill-open    { background: rgba(105,255,71,0.1); color: var(--accent4); border: 1px solid rgba(105,255,71,0.3); }
+  .pill-closed  { background: rgba(255,61,61,0.1); color: var(--accent2); border: 1px solid rgba(255,61,61,0.3); }
+  .pill-waiting { background: rgba(255,214,0,0.1); color: var(--accent3); border: 1px solid rgba(255,214,0,0.3); }
+
+  /* === STAT BOXES === */
+  .stats-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 12px;
+  }
+
+  .stat-box {
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 14px;
+    text-align: center;
+  }
+
+  .stat-value {
+    font-family: var(--mono);
+    font-size: 26px;
+    font-weight: 400;
+    color: white;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+
+  .stat-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--text-dim);
+  }
+
+  /* === BARRAS === */
+  .bet-bar-row {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin: 12px 0;
+  }
+
+  .bet-bar-meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    font-weight: 600;
+  }
+
+  .bet-track {
+    height: 8px;
+    background: var(--bg3);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .bet-fill {
+    height: 100%;
+    border-radius: 8px;
+    transition: width 0.8s cubic-bezier(0.4,0,0.2,1);
+  }
+
+  .fill-a { background: linear-gradient(90deg, #1a66cc, #3399ff); }
+  .fill-e { background: linear-gradient(90deg, #991111, #ff4444); }
+
+  /* === TABLA TOP === */
+  .top-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: var(--mono);
+    font-size: 13px;
+  }
+
+  .top-table th {
+    text-align: left;
+    padding: 8px 12px;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    border-bottom: 1px solid var(--border);
+    font-family: var(--sans);
+  }
+
+  .top-table td {
+    padding: 10px 12px;
+    border-bottom: 1px solid rgba(255,255,255,0.03);
+    transition: background 0.15s;
+  }
+
+  .top-table tr:hover td { background: rgba(255,255,255,0.03); }
+
+  .rank-num { color: var(--text-dim); width: 36px; }
+  .rank-1 .rank-num { color: var(--accent3); }
+  .rank-2 .rank-num { color: #b0bec5; }
+  .rank-3 .rank-num { color: #ff9800; }
+
+  .pts-value { color: var(--accent4); text-align: right; }
+
+  /* === ENCUESTAS === */
+  #tab-encuestas { grid-template-columns: 1fr 340px; }
+  #tab-encuestas .col-left { display: flex; flex-direction: column; gap: 20px; }
+  #tab-encuestas .col-right { display: flex; flex-direction: column; gap: 20px; }
+
+  .template-btn {
+    flex: 1;
+    padding: 14px;
+    border-radius: 8px;
+    border: 2px solid var(--border);
+    background: var(--bg3);
+    color: var(--text-dim);
+    font-family: var(--sans);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.15s;
+    text-align: center;
+  }
+  .template-btn:hover { border-color: var(--accent); color: var(--accent); }
+  .template-btn.active {
+    border-color: var(--accent);
+    background: rgba(0,229,255,0.08);
+    color: var(--accent);
+    box-shadow: 0 0 12px rgba(0,229,255,0.15);
+  }
+
+  .poll-llave-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+  }
+  .poll-llave-row:last-child { border-bottom: none; }
+
+  .llave-badge {
+    width: 28px;
+    height: 28px;
+    border-radius: 6px;
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--text-dim);
+    flex-shrink: 0;
+  }
+
+  .poll-vote-bar {
+    height: 6px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 6px;
+    overflow: hidden;
+    margin-top: 3px;
+  }
+  .poll-vote-fill {
+    height: 100%;
+    border-radius: 6px;
+    background: linear-gradient(90deg, #00cc55, #00ff88);
+    transition: width 0.6s ease;
+  }
+  .poll-vote-fill.winner { background: linear-gradient(90deg, #cc8800, #ffd700); }
+
+  .poll-llave-label { flex: 1; font-size: 13px; }
+  .poll-llave-votes { font-family: var(--mono); font-size: 12px; color: var(--accent4); min-width: 50px; text-align: right; }
+
+  .chip-voto {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 3px 8px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+    background: rgba(0,255,102,0.08);
+    border: 1px solid rgba(0,255,102,0.2);
+    color: #00ff88;
+    margin: 2px;
+  }
+
+  .declare-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 6px;
+  }
+  .btn-declare {
+    padding: 8px 4px;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    background: var(--bg3);
+    color: var(--text-dim);
+    font-family: var(--mono);
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 0.15s;
+    text-align: center;
+  }
+  .btn-declare:hover {
+    border-color: var(--accent3);
+    color: var(--accent3);
+    background: rgba(255,214,0,0.08);
+  }
+  .bet-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 10px;
+    border-radius: 6px;
+    background: rgba(255,255,255,0.02);
+    margin-bottom: 4px;
+    font-size: 13px;
+    border-left: 2px solid transparent;
+    transition: background 0.15s;
+  }
+
+  .bet-item:hover { background: rgba(255,255,255,0.04); }
+  .bet-item.aliados { border-left-color: #3399ff; }
+  .bet-item.eje     { border-left-color: #ff4444; }
+  .bet-user { flex: 1; font-family: var(--mono); }
+  .bet-option { font-size: 11px; color: var(--text-dim); }
+  .bet-pts { font-family: var(--mono); color: var(--accent3); }
+
+  /* === CONTROL PANEL GRID === */
+  .control-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: flex-start;
+  }
+
+  /* === PLACEHOLDER === */
+  .placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 48px 24px;
+    color: var(--text-dim);
+    text-align: center;
+  }
+
+  .placeholder-icon {
+    font-size: 36px;
+    opacity: 0.4;
+  }
+
+  .placeholder-text {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  /* === AJUSTE MANUAL === */
+  .inline-row {
+    display: flex;
+    gap: 8px;
+    align-items: flex-end;
+  }
+
+  .inline-row .input-group { flex: 1; }
+
+  /* === SECCION APUESTAS === */
+  #tab-apuestas { grid-template-columns: 1fr 320px; }
+  #tab-apuestas .col-left { display: flex; flex-direction: column; gap: 20px; }
+  #tab-apuestas .col-right { display: flex; flex-direction: column; gap: 20px; }
+
+  /* === ENCUESTAS PLACEHOLDER === */
+  #tab-encuestas, #tab-trivias, #tab-sorteos {
+    grid-template-columns: 1fr;
+  }
+
+  /* === PUNTOS === */
+  #tab-puntos { grid-template-columns: 1fr 1fr; gap: 20px; }
+
+  /* === TOAST === */
+  #toast {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 12px 18px;
+    font-size: 13px;
+    font-family: var(--mono);
+    color: var(--text);
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3s;
+    z-index: 999;
+    pointer-events: none;
+    max-width: 300px;
+  }
+
+  #toast.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  #toast.ok   { border-left: 3px solid var(--accent4); }
+  #toast.warn { border-left: 3px solid var(--accent3); }
+  #toast.err  { border-left: 3px solid var(--accent2); }
+
+  /* === DIVIDER === */
+  .divider {
+    height: 1px;
+    background: var(--border);
+    margin: 16px 0;
+  }
+
+  @media (max-width: 900px) {
+    #tab-apuestas { grid-template-columns: 1fr; }
+    #tab-puntos { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div id="topbar">
+  <div id="topbar-left">
+    <div class="logo-mark">SS</div>
+    <div class="logo-text">Sauru<span>Stream</span></div>
+  </div>
+  <div id="server-status">
+    <div class="status-dot" id="status-dot"></div>
+    <span id="status-text">Conectando...</span>
+  </div>
+  <div id="clock">--:--:--</div>
+</div>
+
+<!-- NAV -->
+<div id="nav">
+  <div class="nav-tab active" data-tab="apuestas">⚔️ Apuestas</div>
+  <div class="nav-tab" data-tab="encuestas">🗳️ Encuestas</div>
+  <div class="nav-tab" data-tab="trivias">🧠 Trivias</div>
+  <div class="nav-tab" data-tab="sorteos">🎲 Sorteos</div>
+  <div class="nav-tab" data-tab="puntos">💰 Puntos</div>
+</div>
+
+<!-- MAIN -->
+<div id="main">
+
+  <!-- =================== APUESTAS =================== -->
+  <div class="tab-panel active" id="tab-apuestas">
+    <div class="col-left">
+
+      <!-- Estado actual -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">Estado actual</div>
+          <div id="bet-status-pill" class="pill pill-idle">💤 Inactivo</div>
+        </div>
+        <div class="card-body">
+          <div class="stats-row" style="margin-bottom:16px">
+            <div class="stat-box">
+              <div class="stat-value" id="stat-pozo">0</div>
+              <div class="stat-label">Pozo total</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-value" id="stat-apostadores">0</div>
+              <div class="stat-label">Apostadores</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-value" id="stat-timer">—</div>
+              <div class="stat-label">Tiempo restante</div>
+            </div>
+          </div>
+
+          <!-- Barras -->
+          <div class="bet-bar-row">
+            <div class="bet-bar-meta">
+              <span style="color:#3399ff">● ALIADOS</span>
+              <span><span id="bar-pts1">0</span> pts · <span id="bar-pct1">0</span>%</span>
+            </div>
+            <div class="bet-track"><div id="bar-fill1" class="bet-fill fill-a" style="width:0%"></div></div>
+          </div>
+
+          <div class="bet-bar-row">
+            <div class="bet-bar-meta">
+              <span style="color:#ff4444">● EJE</span>
+              <span><span id="bar-pts2">0</span> pts · <span id="bar-pct2">0</span>%</span>
+            </div>
+            <div class="bet-track"><div id="bar-fill2" class="bet-fill fill-e" style="width:0%"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Controles -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">Controles</div>
+        </div>
+        <div class="card-body">
+          <div class="control-grid">
+            <button class="btn btn-success" onclick="betAction('startBet')">▶ Abrir apuestas</button>
+            <button class="btn btn-ghost" onclick="betAction('closeBet')">⏸ Cerrar</button>
+            <button class="btn btn-danger" onclick="betAction('cancelBet')">✕ Cancelar</button>
+          </div>
+          <div class="divider"></div>
+          <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap">
+            <span style="font-size:12px;color:var(--text-dim);font-weight:700;letter-spacing:1px;text-transform:uppercase">Declarar ganador:</span>
+            <button class="btn btn-primary" onclick="betAction('declareWinner','1')">🏆 ALIADOS</button>
+            <button class="btn btn-danger"  onclick="betAction('declareWinner','2')">🔥 EJE</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Columna derecha: apuestas recientes -->
+    <div class="col-right">
+      <div class="card" style="flex:1">
+        <div class="card-header">
+          <div class="card-title">Últimas apuestas</div>
+          <span id="bet-count" style="font-family:var(--mono);font-size:12px;color:var(--text-dim)">0</span>
+        </div>
+        <div class="card-body" id="recent-bets-list" style="max-height:420px;overflow-y:auto">
+          <div class="placeholder">
+            <div class="placeholder-icon">📭</div>
+            <div class="placeholder-text">Sin apuestas aún</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =================== ENCUESTAS =================== -->
+  <div class="tab-panel" id="tab-encuestas">
+    <div class="col-left">
+
+      <!-- Configurar encuesta -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">Configurar encuesta</div>
+          <div id="poll-status-pill" class="pill pill-idle">💤 Inactivo</div>
+        </div>
+        <div class="card-body" style="display:flex;flex-direction:column;gap:14px">
+
+          <!-- Plantilla -->
+          <div>
+            <div class="input-label" style="margin-bottom:8px">Plantilla</div>
+            <div style="display:flex;gap:8px">
+              <button class="template-btn active" id="tmpl-6" onclick="setTemplate(6)">6 Llaves</button>
+              <button class="template-btn" id="tmpl-7" onclick="setTemplate(7)">7 Llaves</button>
+            </div>
+          </div>
+
+          <!-- Duración -->
+          <div class="input-group">
+            <div class="input-label">Duración</div>
+            <select id="poll-duracion">
+              <option value="60">1 minuto</option>
+              <option value="120" selected>2 minutos</option>
+              <option value="180">3 minutos</option>
+              <option value="300">5 minutos</option>
+              <option value="600">10 minutos</option>
+            </select>
+          </div>
+
+          <!-- Título -->
+          <div class="input-group">
+            <div class="input-label">Título</div>
+            <input type="text" id="poll-titulo" value="¿Qué llave casteamos?"/>
+          </div>
+
+          <!-- Preview llaves -->
+          <div>
+            <div class="input-label" style="margin-bottom:8px">Vista previa de opciones</div>
+            <div id="poll-preview" style="background:var(--bg3);border-radius:8px;padding:10px;border:1px solid var(--border)">
+            </div>
+          </div>
+
+          <!-- Controles principales -->
+          <div class="control-grid">
+            <button class="btn btn-success" onclick="pollAction('startPoll')">▶ Abrir encuesta</button>
+            <button class="btn btn-ghost"   onclick="pollAction('closePoll')">⏸ Cerrar</button>
+            <button class="btn btn-danger"  onclick="pollAction('cancelPoll')">✕ Cancelar</button>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Declarar ganador -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">Declarar ganador</div>
+        </div>
+        <div class="card-body">
+          <div class="declare-grid" id="declare-grid"></div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Columna derecha: monitor en tiempo real -->
+    <div class="col-right">
+
+      <!-- Votos en tiempo real -->
+      <div class="card" style="flex:1">
+        <div class="card-header">
+          <div class="card-title">Votos en tiempo real</div>
+          <div id="poll-total-votos" style="font-family:var(--mono);font-size:12px;color:var(--text-dim)">0 votos</div>
+          <div id="poll-timer-panel" style="font-family:var(--mono);font-size:12px;color:var(--accent4)">—</div>
+        </div>
+        <div class="card-body" id="poll-votes-list" style="display:flex;flex-direction:column;gap:6px;max-height:320px;overflow-y:auto">
+          <div class="placeholder">
+            <div class="placeholder-icon">🗳️</div>
+            <div class="placeholder-text">Sin encuesta activa</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Votos recientes -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">Últimos votos</div>
+        </div>
+        <div class="card-body" id="poll-recientes" style="min-height:60px">
+          <div style="color:var(--text-dim);font-size:12px">—</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- =================== TRIVIAS =================== -->
+  <div class="tab-panel" id="tab-trivias">
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">Trivias</div>
+        <div class="pill pill-idle">Próximamente</div>
+      </div>
+      <div class="card-body">
+        <div class="placeholder">
+          <div class="placeholder-icon">🧠</div>
+          <div class="placeholder-text">Sistema de trivias en desarrollo</div>
+          <p style="font-size:12px;color:var(--text-dim);max-width:300px;text-align:center;line-height:1.6">
+            Lanzá preguntas al chat, el primer viewer en responder correctamente gana Saurucoins. Temporizador configurable.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =================== SORTEOS =================== -->
+  <div class="tab-panel" id="tab-sorteos">
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">Sorteos</div>
+        <div class="pill pill-idle">Próximamente</div>
+      </div>
+      <div class="card-body">
+        <div class="placeholder">
+          <div class="placeholder-icon">🎲</div>
+          <div class="placeholder-text">Sistema de sorteos en desarrollo</div>
+          <p style="font-size:12px;color:var(--text-dim);max-width:300px;text-align:center;line-height:1.6">
+            Los viewers gastan Saurucoins para participar. El sistema elige un ganador al azar de forma proporcional o igualitaria.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =================== PUNTOS =================== -->
+  <div class="tab-panel" id="tab-puntos">
+
+    <!-- TOP -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">Top Saurucoins</div>
+        <button class="btn btn-ghost btn-sm" onclick="loadTop()">↺ Actualizar</button>
+      </div>
+      <div class="card-body" style="padding:0">
+        <table class="top-table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Usuario</th>
+              <th style="text-align:right">Saurucoins</th>
+            </tr>
+          </thead>
+          <tbody id="top-tbody">
+            <tr><td colspan="3"><div class="placeholder"><div class="placeholder-text">Cargando...</div></div></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Ajuste manual -->
+    <div style="display:flex;flex-direction:column;gap:20px">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">Consultar usuario</div>
+        </div>
+        <div class="card-body">
+          <div class="inline-row">
+            <div class="input-group">
+              <div class="input-label">Nombre</div>
+              <input type="text" id="lookup-user" placeholder="nombre del viewer"/>
+            </div>
+            <button class="btn btn-ghost" onclick="lookupUser()">Buscar</button>
+          </div>
+          <div id="lookup-result" style="margin-top:14px;display:none">
+            <div class="stat-box" style="text-align:left;display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
+              <div>
+                <div style="font-family:var(--mono);font-size:13px;color:var(--text-dim)" id="lookup-name">—</div>
+                <div style="font-size:11px;color:var(--text-dim);margin-top:2px">Total apuestas: <span id="lookup-apuestas">—</span> · Ganadas: <span id="lookup-ganadas">—</span></div>
+              </div>
+              <div style="font-family:var(--mono);font-size:28px;color:var(--accent4)" id="lookup-pts">—</div>
+            </div>
+            <!-- Historial -->
+            <div style="font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--text-dim);margin-bottom:6px">Últimos movimientos</div>
+            <div id="lookup-historial" style="max-height:200px;overflow-y:auto;display:flex;flex-direction:column;gap:3px"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">Ajuste manual</div>
+        </div>
+        <div class="card-body">
+          <div style="display:flex;flex-direction:column;gap:12px">
+            <div class="inline-row">
+              <div class="input-group">
+                <div class="input-label">Usuario</div>
+                <input type="text" id="adj-user" placeholder="nombre"/>
+              </div>
+              <div class="input-group" style="max-width:110px">
+                <div class="input-label">Delta (±)</div>
+                <input type="number" id="adj-delta" placeholder="ej: 500"/>
+              </div>
+            </div>
+            <div class="input-group">
+              <div class="input-label">Motivo</div>
+              <input type="text" id="adj-motivo" placeholder="ej: premio por victoria"/>
+            </div>
+            <div style="display:flex;gap:8px">
+              <button class="btn btn-success btn-sm" onclick="ajustar(1)">+ Agregar</button>
+              <button class="btn btn-danger btn-sm"  onclick="ajustar(-1)">− Quitar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- TOAST -->
+<div id="toast"></div>
+
+<script>
+  const SERVER = 'http://localhost:3000';
+  let pollInterval = null;
+  let lastBetsJson = '';
+
+  // === RELOJ ===
+  function updateClock() {
+    const now = new Date();
+    document.getElementById('clock').textContent =
+      now.toTimeString().slice(0,8);
+  }
+  setInterval(updateClock, 1000);
+  updateClock();
+
+  // === TABS ===
+  document.querySelectorAll('.nav-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+      tab.classList.add('active');
+      document.getElementById('tab-' + tab.dataset.tab).classList.add('active');
+      if (tab.dataset.tab === 'puntos') loadTop();
+    });
+  });
+
+  // === TOAST ===
+  let toastTimer = null;
+  function toast(msg, type = 'ok') {
+    const el = document.getElementById('toast');
+    el.textContent = msg;
+    el.className = `show ${type}`;
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => el.classList.remove('show'), 3000);
+  }
+
+  // === PING / STATUS ===
+  async function checkServer() {
+    try {
+      await fetch(`${SERVER}/ping`, { cache: 'no-store' });
+      document.getElementById('status-dot').className = 'status-dot online';
+      document.getElementById('status-text').textContent = 'Servidor online';
+      return true;
+    } catch {
+      document.getElementById('status-dot').className = 'status-dot';
+      document.getElementById('status-text').textContent = 'Sin conexión';
+      return false;
+    }
+  }
+
+  // === POLL APUESTAS ===
+  async function pollBets() {
+    try {
+      const res = await fetch(`${SERVER}/overlay-state`, { cache: 'no-store' });
+      const s = await res.json();
+
+      // Status pill
+      const pill = document.getElementById('bet-status-pill');
+      if (s.winner) {
+        pill.className = 'pill pill-waiting';
+        pill.textContent = `🏆 Ganador: opción ${s.winner}`;
+      } else if (s.closed) {
+        pill.className = 'pill pill-closed';
+        pill.textContent = '🔒 Cerradas';
+      } else if (s.active) {
+        pill.className = 'pill pill-open';
+        pill.textContent = '✅ Abiertas';
+      } else {
+        pill.className = 'pill pill-idle';
+        pill.textContent = '💤 Inactivo';
+      }
+
+      // Stats
+      const o1 = s.option1 || 0;
+      const o2 = s.option2 || 0;
+      const total = o1 + o2;
+      const p1 = total ? Math.round(o1/total*100) : 0;
+      const p2 = total ? Math.round(o2/total*100) : 0;
+
+      document.getElementById('stat-pozo').textContent = total;
+      document.getElementById('stat-apostadores').textContent = (s.recentBets||[]).length;
+      document.getElementById('stat-timer').textContent =
+        s.active && !s.closed && s.remaining > 0
+          ? `${Math.floor(s.remaining/60)}:${String(s.remaining%60).padStart(2,'0')}`
+          : '—';
+
+      document.getElementById('bar-pts1').textContent = o1;
+      document.getElementById('bar-pct1').textContent = p1;
+      document.getElementById('bar-fill1').style.width = p1 + '%';
+      document.getElementById('bar-pts2').textContent = o2;
+      document.getElementById('bar-pct2').textContent = p2;
+      document.getElementById('bar-fill2').style.width = p2 + '%';
+
+      // Lista apuestas (solo si cambió)
+      const betsJson = JSON.stringify(s.recentBets||[]);
+      if (betsJson !== lastBetsJson) {
+        lastBetsJson = betsJson;
+        const container = document.getElementById('recent-bets-list');
+        const bets = s.recentBets || [];
+        document.getElementById('bet-count').textContent = bets.length;
+        if (bets.length === 0) {
+          container.innerHTML = `<div class="placeholder"><div class="placeholder-icon">📭</div><div class="placeholder-text">Sin apuestas aún</div></div>`;
+        } else {
+          container.innerHTML = [...bets].reverse().map(b => `
+            <div class="bet-item ${b.option === 'ALIADOS' ? 'aliados' : 'eje'}">
+              <span class="bet-user">${b.user}</span>
+              <span class="bet-option">${b.option}</span>
+              <span class="bet-pts">${b.points} pts</span>
+            </div>
+          `).join('');
+        }
+      }
+    } catch { /* servidor caído */ }
+  }
+
+  // === ACCIONES APUESTAS ===
+  async function betAction(type, option) {
+    try {
+      const body = { type };
+      if (option !== undefined) body.option = option;
+      const res = await fetch(`${SERVER}/chat-event`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(body)
+      });
+      if (res.ok) {
+        const labels = {
+          startBet: '▶ Apuestas abiertas',
+          closeBet: '⏸ Apuestas cerradas',
+          cancelBet: '✕ Apuestas canceladas',
+          declareWinner: `🏆 Ganador declarado: opción ${option}`
+        };
+        toast(labels[type] || type, type === 'cancelBet' ? 'warn' : 'ok');
+      }
+    } catch {
+      toast('Error conectando al servidor', 'err');
+    }
+  }
+
+  // === TOP ===
+  async function loadTop() {
+    try {
+      const res = await fetch(`${SERVER}/top?n=20`, { cache: 'no-store' });
+      const data = await res.json();
+      const tbody = document.getElementById('top-tbody');
+      if (!data.length) {
+        tbody.innerHTML = `<tr><td colspan="3"><div class="placeholder"><div class="placeholder-text">Sin datos todavía</div></div></td></tr>`;
+        return;
+      }
+      tbody.innerHTML = data.map(u => `
+        <tr class="rank-${u.rank}">
+          <td class="rank-num">${u.rank}</td>
+          <td style="font-family:var(--mono)">${u.user}</td>
+          <td class="pts-value">${u.points.toLocaleString()}</td>
+        </tr>
+      `).join('');
+    } catch {
+      toast('Error cargando top', 'err');
+    }
+  }
+
+  // === LOOKUP ===
+  async function lookupUser() {
+    const nombre = document.getElementById('lookup-user').value.trim().toLowerCase();
+    if (!nombre) return;
+    try {
+      const [statsRes, histRes] = await Promise.all([
+        fetch(`${SERVER}/stats/${nombre}`),
+        fetch(`${SERVER}/historial/${nombre}?limite=20`)
+      ]);
+      if (!statsRes.ok) { toast('Usuario no encontrado', 'warn'); return; }
+      const d = await statsRes.json();
+      const historial = histRes.ok ? await histRes.json() : [];
+
+      document.getElementById('lookup-name').textContent = d.nombre;
+      document.getElementById('lookup-pts').textContent = (d.puntos||0).toLocaleString();
+      document.getElementById('lookup-apuestas').textContent = d.total_apuestas || 0;
+      document.getElementById('lookup-ganadas').textContent = d.total_ganadas || 0;
+      document.getElementById('lookup-result').style.display = 'block';
+
+      // Renderizar historial
+      const motivoLabel = {
+        'mensaje':          '💬 Mensaje',
+        'pasivo':           '⏱ Presencia',
+        'bonus_participar': '🎲 Apostó',
+        'bonus_votar':      '🗳️ Votó',
+        'apuesta_ganada':   '🏆 Ganó apuesta',
+        'apuesta_colocada': '📤 Apuesta colocada',
+        'apuesta_devuelta': '↩️ Apuesta devuelta',
+        'ajuste_manual':    '🔧 Ajuste manual',
+      };
+      const histEl = document.getElementById('lookup-historial');
+      if (!historial.length) {
+        histEl.innerHTML = `<div style="color:var(--text-dim);font-size:12px;padding:4px">Sin movimientos registrados</div>`;
+      } else {
+        histEl.innerHTML = historial.map(h => {
+          const signo = h.delta > 0 ? '+' : '';
+          const color = h.delta > 0 ? 'var(--accent4)' : 'var(--accent2)';
+          const label = motivoLabel[h.motivo] || h.motivo;
+          const fecha = new Date(h.ts).toLocaleString('es-AR', { dateStyle:'short', timeStyle:'short' });
+          return `<div style="display:flex;align-items:center;justify-content:space-between;padding:5px 8px;background:rgba(255,255,255,0.03);border-radius:5px;font-size:12px">
+            <span style="color:var(--text-dim)">${label}</span>
+            <span style="font-family:var(--mono);color:${color};min-width:50px;text-align:right">${signo}${h.delta}</span>
+            <span style="font-family:var(--mono);color:var(--accent4);min-width:50px;text-align:right">${h.puntos}</span>
+            <span style="color:var(--text-dim);font-size:10px;margin-left:8px">${fecha}</span>
+          </div>`;
+        }).join('');
+      }
+    } catch {
+      toast('Error consultando usuario', 'err');
+    }
+  }
+
+  // === AJUSTE MANUAL ===
+  async function ajustar(signo) {
+    const nombre = document.getElementById('adj-user').value.trim();
+    const delta  = parseInt(document.getElementById('adj-delta').value) * signo;
+    const motivo = document.getElementById('adj-motivo').value.trim() || 'ajuste_manual';
+    if (!nombre || isNaN(delta)) { toast('Completá nombre y cantidad', 'warn'); return; }
+    try {
+      const res = await fetch(`${SERVER}/ajustar`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ nombre, delta, motivo })
+      });
+      const d = await res.json();
+      toast(`${nombre}: ${delta > 0 ? '+' : ''}${delta} pts → ${d.puntos} total`, 'ok');
+      loadTop();
+    } catch {
+      toast('Error ajustando puntos', 'err');
+    }
+  }
+
+  // Enter en lookup
+  document.getElementById('lookup-user').addEventListener('keydown', e => {
+    if (e.key === 'Enter') lookupUser();
+  });
+
+  // === ENCUESTAS ===
+  let currentTemplate = 6;
+  let lastPollJson = '';
+
+  function setTemplate(n) {
+    currentTemplate = n;
+    document.getElementById('tmpl-6').classList.toggle('active', n === 6);
+    document.getElementById('tmpl-7').classList.toggle('active', n === 7);
+    renderPollPreview();
+    renderDeclareGrid();
+  }
+
+  function renderPollPreview() {
+    const preview = document.getElementById('poll-preview');
+    let html = '';
+    for (let i = 1; i <= currentTemplate; i++) {
+      html += `<div class="poll-llave-row">
+        <div class="llave-badge">#${i}</div>
+        <div class="poll-llave-label" style="color:var(--text-dim);font-size:12px">Llave ${i}</div>
+      </div>`;
+    }
+    preview.innerHTML = html;
+  }
+
+  function renderDeclareGrid() {
+    const grid = document.getElementById('declare-grid');
+    let html = '';
+    for (let i = 1; i <= currentTemplate; i++) {
+      html += `<button class="btn-declare" onclick="pollDeclareWinner('${i}')">🏆 #${i}</button>`;
+    }
+    grid.innerHTML = html;
+  }
+
+  async function pollAction(type) {
+    try {
+      const body = { type };
+      if (type === 'startPoll') {
+        body.title = document.getElementById('poll-titulo').value.trim() || '¿Qué llave casteamos?';
+        body.optionCount = currentTemplate;
+        body.duration = parseInt(document.getElementById('poll-duracion').value) || 120;
+      }
+      const res = await fetch(`${SERVER}/chat-event`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(body)
+      });
+      if (res.ok) {
+        const labels = {
+          startPoll:  '▶ Encuesta abierta',
+          closePoll:  '⏸ Encuesta cerrada',
+          cancelPoll: '✕ Encuesta cancelada',
+        };
+        toast(labels[type] || type, type === 'cancelPoll' ? 'warn' : 'ok');
+      }
+    } catch {
+      toast('Error conectando al servidor', 'err');
+    }
+  }
+
+  async function pollDeclareWinner(llave) {
+    try {
+      const res = await fetch(`${SERVER}/chat-event`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ type: 'pollResult', winner: llave })
+      });
+      if (res.ok) toast(`🏆 Ganadora: llave #${llave}`, 'ok');
+    } catch {
+      toast('Error declarando ganador', 'err');
+    }
+  }
+
+  async function pollPoll() {
+    try {
+      const res = await fetch(`${SERVER}/poll-state`, { cache: 'no-store' });
+      const s = await res.json();
+      const json = JSON.stringify({ votes: s.votes, active: s.active, closed: s.closed, winner: s.winner, tied: s.tied, recentVotes: s.recentVotes });
+      if (json === lastPollJson) return;
+      lastPollJson = json;
+
+      const timerEl = document.getElementById('poll-timer-panel');
+      if (s.active && !s.closed && s.remaining > 0) {
+        const m = Math.floor(s.remaining / 60);
+        const sec = s.remaining % 60;
+        timerEl.textContent = `⏱ ${m}:${String(sec).padStart(2,'0')}`;
+        timerEl.style.color = s.remaining <= 10 ? 'var(--accent2)' : s.remaining <= 30 ? 'var(--accent3)' : 'var(--accent4)';
+      } else {
+        timerEl.textContent = '—';
+      }
+
+      // Status pill encuesta
+      const pill = document.getElementById('poll-status-pill');
+      if (s.winner) {
+        pill.className = 'pill pill-waiting';
+        pill.textContent = `🏆 Llave #${s.winner} ganó`;
+      } else if (s.tied?.length) {
+        pill.className = 'pill pill-waiting';
+        pill.textContent = `🤝 Empate: #${s.tied.join(', #')}`;
+      } else if (s.closed) {
+        pill.className = 'pill pill-closed';
+        pill.textContent = '🔒 Cerrada';
+      } else if (s.active) {
+        pill.className = 'pill pill-open';
+        pill.textContent = '✅ Abierta';
+      } else {
+        pill.className = 'pill pill-idle';
+        pill.textContent = '💤 Inactivo';
+      }
+
+      // Votos en tiempo real
+      const votes = s.votes || {};
+      const total = Object.values(votes).reduce((a, b) => a + b, 0);
+      document.getElementById('poll-total-votos').textContent = `${total} voto${total !== 1 ? 's' : ''}`;
+      const maxV = Math.max(...Object.values(votes), 1);
+      const listEl = document.getElementById('poll-votes-list');
+      const count = s.optionCount || currentTemplate;
+
+      if (!s.active && !s.closed) {
+        listEl.innerHTML = `<div class="placeholder"><div class="placeholder-icon">🗳️</div><div class="placeholder-text">Sin encuesta activa</div></div>`;
+      } else {
+        let html = '';
+        for (let i = 1; i <= count; i++) {
+          const num = String(i);
+          const v = votes[num] || 0;
+          const pct = total > 0 ? Math.round(v / total * 100) : 0;
+          const barW = total > 0 ? Math.round(v / maxV * 100) : 0;
+          const isWinner = s.winner === num;
+          const isTied = (s.tied || []).includes(num);
+          const llave = s.llaves?.[num] || {};
+          const label = llave.local && llave.visitante ? `${llave.local} vs ${llave.visitante}` : `Llave ${i}`;
+          html += `
+            <div style="padding:6px 0;border-bottom:1px solid rgba(255,255,255,0.04)">
+              <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px">
+                <div class="llave-badge" style="${isWinner ? 'border-color:var(--accent3);color:var(--accent3)' : isTied ? 'border-color:#ff9900;color:#ff9900' : ''}">#${i}</div>
+                <div style="flex:1;font-size:13px">${label}</div>
+                <div class="poll-llave-votes">${v > 0 ? `${v} (${pct}%)` : '—'}</div>
+              </div>
+              <div class="poll-vote-bar">
+                <div class="poll-vote-fill ${isWinner ? 'winner' : ''}" style="width:${barW}%"></div>
+              </div>
+            </div>`;
+        }
+        listEl.innerHTML = html;
+      }
+
+      // Votos recientes
+      const recEl = document.getElementById('poll-recientes');
+      const recent = (s.recentVotes || []).slice(-12).reverse();
+      if (!recent.length) {
+        recEl.innerHTML = `<div style="color:var(--text-dim);font-size:12px">—</div>`;
+      } else {
+        recEl.innerHTML = recent.map(v =>
+          `<span class="chip-voto">${v.user} → #${v.option}</span>`
+        ).join('');
+      }
+    } catch { /* servidor caído */ }
+  }
+
+  // Inicializar preview y grid al cargar
+  renderPollPreview();
+  renderDeclareGrid();
+  setInterval(pollPoll, 1500);
+
+  // === ARRANQUE ===
+  checkServer();
+  setInterval(checkServer, 10000);
+  pollBets();
+  setInterval(pollBets, 1500);
+</script>
+</body>
+</html>

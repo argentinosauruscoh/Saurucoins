@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Overlay Apuestas</title>
+  <style>
+    body {
+      margin: 0;
+      background: transparent;
+      font-family: Arial, sans-serif;
+      color: #fff;
+      text-align: center;
+      opacity: 0;
+    }
+
+    h1 {
+      font-size: 26px;
+      font-weight: bold;
+      text-shadow: 2px 2px 4px #000;
+      margin-bottom: 10px;
+    }
+
+    #timer {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      font-size: 22px;
+      font-weight: bold;
+      color: white;
+      text-shadow: 2px 2px 4px #000;
+    }
+
+    #pozo {
+      position: absolute;
+      top: 50px;
+      right: 20px;
+      font-size: 18px;
+      font-weight: bold;
+      color: #00ff66; /* siempre verde */
+      text-shadow: 2px 2px 4px #000;
+    }
+
+    .bar-container {
+      width: 80%;
+      margin: 10px auto;
+      background: #333;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    }
+
+    .bar {
+      height: 32px;
+      line-height: 32px;
+      font-size: 15px;
+      font-weight: bold;
+      text-align: center;
+      text-shadow: 1px 1px 3px #000;
+      border-radius: 20px;
+      transition: width 1s ease-in-out;
+      width: 0%;
+      white-space: pre;
+    }
+
+    .filled {
+      background: #ffd700 !important;
+      color: #444 !important;
+    }
+
+    .value {
+      color: #444;
+    }
+
+    #status {
+      margin-top: 10px;
+      font-size: 18px;
+      font-weight: bold;
+      text-shadow: 2px 2px 4px #000;
+      color: #00ff66;
+    }
+
+    #recent-bets {
+      margin-top: 10px;
+      font-size: 16px;
+      font-weight: bold;
+      text-shadow: 2px 2px 5px #000;
+      max-height: 300px;
+      overflow: hidden;
+      position: absolute;
+      top: 120px;
+      right: 20px;
+      text-align: left;
+    }
+
+    #recent-bets div {
+      margin: 2px 0;
+    }
+
+    @keyframes blink-white {
+      0%, 100% { filter: brightness(1); }
+      50% { filter: brightness(3) saturate(0); }
+    }
+
+    .winner {
+      animation: blink-white 1s step-start infinite;
+    }
+
+    .fade-out { animation: fadeOut 1s forwards; }
+    @keyframes fadeOut { from { opacity: 1; } to { opacity: 0; } }
+
+    .fade-in { animation: fadeIn 0.6s forwards; }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+  </style>
+</head>
+<body>
+  <h1>¿Qué ejército gana? (<em>utiliza el comando !apostar</em>)</h1>
+  <div id="timer">02:00</div>
+  <div id="pozo">Pozo: 0 pts</div>
+
+  <div class="bar-container"><div id="bar1" class="bar"></div></div>
+  <div class="bar-container"><div id="bar2" class="bar"></div></div>
+
+  <div id="status">¡Apuestas abiertas!</div>
+  <div id="recent-bets"><strong>Apuestas recientes:</strong></div>
+
+  <script>
+    let lastState = {};
+    let localTimer = 120;
+
+    function startOverlay() {
+      document.body.classList.remove("fade-out");
+      document.body.classList.add("fade-in");
+    }
+
+    function formatTime(sec) {
+      const m = Math.floor(sec / 60),
+            s = sec % 60;
+      return `${m}:${String(s).padStart(2, '0')}`;
+    }
+
+    function updateTimer(sec) {
+      const timerEl = document.getElementById("timer");
+      timerEl.innerText = formatTime(sec);
+      timerEl.style.color = sec <= 10 ? "red" : sec <= 30 ? "yellow" : "white";
+    }
+
+    function updateBars(data) {
+      const option1 = data.option1 || 0;
+      const option2 = data.option2 || 0;
+      const total = option1 + option2;
+      const pct1 = total ? Math.round((option1 / total) * 100) : 0;
+      const pct2 = total ? Math.round((option2 / total) * 100) : 0;
+
+      const bar1 = document.getElementById("bar1");
+      const bar2 = document.getElementById("bar2");
+
+      const gap = "    ";
+
+      if (option1 > 0) {
+        bar1.classList.add("filled");
+        bar1.style.width = pct1 + "%";
+        bar1.innerHTML = `ALIADOS (Opción 1)${gap}<span class="value">${option1} pts (${pct1}%)</span>`;
+      } else {
+        bar1.classList.remove("filled");
+        bar1.style.width = "0%";
+        bar1.innerHTML = "";
+      }
+
+      if (option2 > 0) {
+        bar2.classList.add("filled");
+        bar2.style.width = pct2 + "%";
+        bar2.innerHTML = `EJE (Opción 2)${gap}<span class="value">${option2} pts (${pct2}%)</span>`;
+      } else {
+        bar2.classList.remove("filled");
+        bar2.style.width = "0%";
+        bar2.innerHTML = "";
+      }
+
+      document.getElementById("pozo").innerText = "Pozo: " + total + " pts";
+    }
+
+    function updateRecentBets(bets) {
+      const container = document.getElementById("recent-bets");
+      container.innerHTML = "<strong>Apuestas recientes:</strong>";
+      (bets || []).slice(-15).forEach(b => {
+        const div = document.createElement("div");
+        div.textContent = `${b.user}: ${b.option} (${b.points} pts)`;
+        container.appendChild(div);
+      });
+    }
+
+    function declareWinner(option) {
+      const bar = option === 1 ? document.getElementById("bar1") : document.getElementById("bar2");
+      bar.classList.add("winner");
+      setTimeout(() => {
+        bar.classList.remove("winner");
+        document.body.classList.add("fade-out");
+      }, 8000);
+    }
+
+    async function pollServer() {
+      try {
+        const res = await fetch("http://localhost:3000/overlay-state");
+        if (!res.ok) throw new Error(res.statusText);
+        const state = await res.json();
+
+        const statusEl = document.getElementById("status");
+        updateBars(state);
+        updateRecentBets(state.recentBets || []);
+
+        if (typeof state.remaining === "number") localTimer = state.remaining;
+        updateTimer(localTimer);
+
+        if (state.active && !state.closed) {
+          statusEl.style.color = "#00ff66";
+          statusEl.innerText = "¡Apuestas abiertas!";
+        } else if (state.closed) {
+          statusEl.style.color = "red";
+          statusEl.innerText = "¡Apuestas cerradas!";
+        }
+
+        if (state.active && !lastState.active) startOverlay();
+        if (state.winner && state.winner !== lastState.winner) declareWinner(state.winner);
+
+        lastState = state;
+      } catch (err) {
+        console.error("Error consultando overlay-state:", err);
+      }
+    }
+
+    setInterval(() => {
+      pollServer();
+      if (localTimer > 0) localTimer--;
+    }, 1000);
+
+    pollServer();
+  </script>
+</body>
+</html>

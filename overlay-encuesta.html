@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Overlay – Encuesta</title>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:        rgba(10, 18, 10, 0.92);
+    --border:    #3a5a3a;
+    --green:     #00ff66;
+    --cyan:      #00ffcc;
+    --gold:      #ffd700;
+    --red:       #cc3333;
+    --text:      #eaeaea;
+    --dim:       #777;
+    --bar-bg:    rgba(255,255,255,0.08);
+    --bar-fill:  linear-gradient(90deg, #00cc55, #00ff88);
+    --bar-win:   linear-gradient(90deg, #ffa500, #ffd700);
+    --platino:   #5bc8f5;
+    --oro:       #ffd700;
+    --plata:     #bbbbbb;
+    --bronce:    #cd7f32;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html, body {
+    height: 100%;
+    background: transparent;
+    font-family: 'Open Sans', sans-serif;
+    color: var(--text);
+  }
+
+  /* ── Contenedor principal ── */
+  #poll-wrap {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 560px;
+    background: var(--bg);
+    border: 2px solid var(--border);
+    border-radius: 16px;
+    box-shadow: 0 0 40px rgba(0,0,0,0.7), 0 0 80px rgba(0,255,102,0.05);
+    padding: 20px 24px 18px;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    text-shadow: 1px 1px 4px #000;
+  }
+
+  #poll-wrap.oculto {
+    opacity: 0;
+    transform: translate(-50%, -48%) scale(0.97);
+    pointer-events: none;
+  }
+
+  /* ── Timer circular ── */
+  #poll-timer-wrap {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-shrink: 0;
+  }
+
+  #poll-timer-text {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--green);
+    font-family: monospace;
+    transition: color 0.4s;
+    min-width: 36px;
+    text-align: right;
+    text-shadow: 0 0 8px currentColor;
+  }
+
+  #poll-timer-text.warning { color: #ffaa00; }
+  #poll-timer-text.danger  { color: #ff4444; animation: parpadeo 0.6s step-start infinite; }
+
+  @keyframes parpadeo { 50% { opacity: 0.3; } }
+
+  .ring-svg-poll { transform: rotate(-90deg); }
+  .ring-bg-poll  { fill: none; stroke: rgba(255,255,255,0.1); stroke-width: 3; }
+  .ring-fill-poll {
+    fill: none; stroke: var(--green); stroke-width: 3; stroke-linecap: round;
+    transition: stroke-dashoffset 1s linear, stroke 0.4s;
+    filter: drop-shadow(0 0 4px currentColor);
+  }
+  .ring-fill-poll.warning { stroke: #ffaa00; }
+  .ring-fill-poll.danger  { stroke: #ff4444; }
+
+  #poll-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+    gap: 12px;
+  }
+
+  #poll-title {
+    font-size: 17px;
+    font-weight: 800;
+    color: var(--cyan);
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+  }
+
+  #poll-status {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--green);
+    white-space: nowrap;
+  }
+
+  #poll-status.cerrado { color: var(--dim); }
+  #poll-status.ganador { color: var(--gold); }
+  #poll-status.empate  { color: #ff9900; }
+
+  /* ── Opciones ── */
+  #poll-options {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .poll-opcion {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: opacity 0.4s ease, box-shadow 0.4s ease;
+    cursor: default;
+  }
+
+  .poll-opcion-barra {
+    position: absolute;
+    top: 0; left: 0; height: 100%;
+    background: var(--bar-fill);
+    border-radius: 8px;
+    transition: width 0.6s cubic-bezier(.4,0,.2,1);
+    opacity: 0.25;
+    z-index: 0;
+  }
+
+  .poll-opcion-inner {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 32px 1fr auto;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 8px;
+  }
+
+  .llave-num {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--dim);
+    text-align: center;
+  }
+
+  @keyframes pulso-llave {
+    0%   { opacity: 0.3; text-shadow: 0 0 4px #fff, 0 0 8px var(--green); color: var(--green); }
+    50%  { opacity: 1;   text-shadow: 0 0 10px #fff, 0 0 22px var(--green), 0 0 40px var(--green); color: var(--green); }
+    100% { opacity: 0.3; text-shadow: 0 0 4px #fff, 0 0 8px var(--green); color: var(--green); }
+  }
+
+  .llave-num.pendiente { animation: pulso-llave 1.4s ease-in-out infinite; }
+  .llave-num.casteada  { color: #444; text-decoration: line-through; opacity: 0.5; }
+  .llave-num.anulada   { color: var(--red); opacity: 0.8; }
+  .llave-num.ganadora  { color: var(--gold); text-shadow: 0 0 12px var(--gold); animation: none; }
+  .llave-num.empatada  { color: #ff9900; animation: none; }
+
+  .opcion-label {
+    font-size: 14px;
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .opcion-votos {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--cyan);
+    white-space: nowrap;
+  }
+
+  .poll-opcion.casteada .poll-opcion-inner {
+    opacity: 0.4;
+    filter: grayscale(0.5);
+  }
+
+  .poll-opcion.anulada .poll-opcion-inner {
+    background: rgba(120, 20, 20, 0.3);
+    border-color: rgba(180, 40, 40, 0.4);
+    opacity: 0.5;
+    filter: grayscale(0.6);
+  }
+
+  .poll-opcion.ganadora .poll-opcion-barra {
+    background: var(--bar-win);
+    opacity: 0.4;
+  }
+
+  .poll-opcion.ganadora .poll-opcion-inner {
+    border-color: rgba(255, 215, 0, 0.5);
+    box-shadow: 0 0 12px rgba(255,215,0,0.2);
+  }
+
+  /* ── Footer: votos recientes ── */
+  #poll-recientes {
+    margin-top: 14px;
+    padding-top: 10px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    min-height: 22px;
+  }
+
+  #poll-recientes-titulo {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--dim);
+    letter-spacing: 0.5px;
+    margin-bottom: 6px;
+  }
+
+  #poll-recientes-lista {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+
+  .voto-chip {
+    font-size: 11px;
+    font-weight: 600;
+    padding: 2px 7px;
+    border-radius: 20px;
+    background: rgba(0,255,102,0.1);
+    border: 1px solid rgba(0,255,102,0.2);
+    color: var(--green);
+    white-space: nowrap;
+  }
+
+  .voto-chip.casteada { background: rgba(80,80,80,0.2); border-color: #444; color: #555; }
+  .voto-chip.anulada  { background: rgba(150,20,20,0.2); border-color: #833; color: #c55; }
+
+  #poll-total {
+    font-size: 12px;
+    color: var(--dim);
+    text-align: right;
+    margin-top: 8px;
+  }
+</style>
+</head>
+<body>
+
+<div id="poll-wrap" class="oculto">
+  <div id="poll-header">
+    <div id="poll-title">🗳️ ¿Qué llave casteamos?</div>
+    <div id="poll-timer-wrap">
+      <svg class="ring-svg-poll" width="22" height="22">
+        <circle class="ring-bg-poll" cx="11" cy="11" r="9"/>
+        <circle class="ring-fill-poll" id="poll-ring-fill" cx="11" cy="11" r="9"
+                stroke-dasharray="56.5" stroke-dashoffset="0"/>
+      </svg>
+      <span id="poll-timer-text">—</span>
+    </div>
+    <div id="poll-status">💤 Esperando...</div>
+  </div>
+
+  <div id="poll-options"></div>
+
+  <div id="poll-recientes">
+    <div id="poll-recientes-titulo">Votos recientes</div>
+    <div id="poll-recientes-lista"></div>
+  </div>
+
+  <div id="poll-total"></div>
+</div>
+
+<script>
+const SERVER = "http://localhost:3000";
+const POLL_INTERVAL = 1000; // ms
+
+// ── Rutas de los sonidos (relativas al HTML) ──────────────────────────────────
+const ABRIR_SRC    = "sounds/Abrir_encuesta.mp3";
+const DECLARAR_SRC = "sounds/Declarar_encuesta.mp3";
+const TIMER_SRC    = null;
+// ─────────────────────────────────────────────────────────────────────────────
+
+let prevState = null;
+
+let audioCtx    = null;
+let abrirBuf    = null;
+let timerBuf    = null;
+let declararBuf = null;
+let _audioReady = false;
+let _pendingAbrir = false;
+
+async function ensureAudio() {
+  if (!audioCtx) {
+    audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+  }
+  if (audioCtx.state === 'suspended') {
+    try { await audioCtx.resume(); } catch(e) {}
+  }
+  if (audioCtx.state === 'running' && !_audioReady) {
+    try {
+      const decode = async (src) => {
+        if (!src) return null;
+        const resp = await fetch(src);
+        const ab   = await resp.arrayBuffer();
+        return audioCtx.decodeAudioData(ab);
+      };
+      [abrirBuf, timerBuf, declararBuf] = await Promise.all([
+        decode(ABRIR_SRC), decode(TIMER_SRC), decode(DECLARAR_SRC)
+      ]);
+      _audioReady = true;
+      console.log('[audio] listo');
+      // Si la encuesta ya estaba abierta cuando cargaron los buffers, reproducir ahora
+      if (_pendingAbrir) { playBuf(abrirBuf); _pendingAbrir = false; }
+    } catch(e) { console.warn('[audio] error:', e); }
+  }
+}
+
+window.addEventListener('load', () => ensureAudio());
+
+function playBuf(buf, gain = 1.0) {
+  if (!audioCtx || !buf) return;
+  if (audioCtx.state === 'suspended') { audioCtx.resume(); return; }
+  const src = audioCtx.createBufferSource();
+  const g   = audioCtx.createGain();
+  src.buffer = buf;
+  src.connect(g);
+  g.connect(audioCtx.destination);
+  g.gain.setValueAtTime(gain, audioCtx.currentTime);
+  src.start();
+}
+
+let _sonoAbrir = false, _sonoTimer = false, _sonoDeclarar = false;
+
+function checkAndPlaySounds(state) {
+  // Si el estado anterior era idle/cerrado y ahora está activo → es una encuesta nueva, resetear flags
+  const anteriorIdle = !prevState || (!prevState.active && !prevState.closed);
+  const anteriorCerrado = prevState?.closed && !state.closed;
+  if ((anteriorIdle || anteriorCerrado) && state.active) {
+    _sonoAbrir = false; _sonoTimer = false; _sonoDeclarar = false; _pendingAbrir = false;
+  }
+
+  if (state.active && !state.closed && !_sonoAbrir) {
+    _sonoAbrir = true; _sonoTimer = false; _sonoDeclarar = false;
+    if (_audioReady) { playBuf(abrirBuf); }
+    else { _pendingAbrir = true; }
+  }
+  if (state.closed && !state.winner && !(state.tied?.length) && !_sonoTimer) {
+    _sonoTimer = true;
+    playBuf(timerBuf);
+  }
+  if ((state.winner || state.tied?.length) && !_sonoDeclarar) {
+    _sonoDeclarar = true;
+    playBuf(declararBuf);
+  }
+  if (!state.active && !state.closed) {
+    _sonoAbrir = false; _sonoTimer = false; _sonoDeclarar = false; _pendingAbrir = false;
+  }
+}
+
+function updatePollTimer(remaining, duration) {
+  const textEl = document.getElementById('poll-timer-text');
+  const ringEl = document.getElementById('poll-ring-fill');
+  if (!textEl || !ringEl) return;
+
+  if (remaining == null) {
+    textEl.textContent = '—';
+    ringEl.style.strokeDashoffset = '0';
+    return;
+  }
+
+  const m = Math.floor(remaining / 60);
+  const s = remaining % 60;
+  textEl.textContent = `${m}:${String(s).padStart(2,'0')}`;
+
+  const circumference = 56.5;
+  const pct = duration > 0 ? remaining / duration : 1;
+  ringEl.style.strokeDashoffset = circumference - pct * circumference;
+
+  textEl.classList.remove('warning','danger');
+  ringEl.classList.remove('warning','danger');
+  if (remaining <= 10) {
+    textEl.classList.add('danger');
+    ringEl.classList.add('danger');
+  } else if (remaining <= 30) {
+    textEl.classList.add('warning');
+    ringEl.classList.add('warning');
+  }
+}
+
+async function fetchPollState() {
+  await ensureAudio();   // desbloquea el AudioContext en cuanto OBS lo permita
+  try {
+    const resp = await fetch(`${SERVER}/poll-state`);
+    if (!resp.ok) return;
+    const state = await resp.json();
+    renderPoll(state);
+    prevState = state;
+  } catch (e) {
+    // servidor no disponible, no hacer nada
+  }
+}
+
+function renderPoll(state) {
+  const wrap = document.getElementById("poll-wrap");
+
+  if (!state.active && !state.closed) {
+    wrap.classList.add("oculto");
+    return;
+  }
+  wrap.classList.remove("oculto");
+
+  // Timer
+  if (state.active && !state.closed) {
+    updatePollTimer(state.remaining, state.duration);
+  } else {
+    updatePollTimer(null, null);
+  }
+
+  // Título
+  document.getElementById("poll-title").textContent = `🗳️ ${state.title || "¿Qué llave casteamos?"}`;
+
+  // Status
+  const statusEl = document.getElementById("poll-status");
+  statusEl.textContent = state.status || "";
+  statusEl.className = "";
+  if (state.winner)              statusEl.classList.add("ganador");
+  else if (state.tied?.length)   statusEl.classList.add("empate");
+  else if (state.closed)         statusEl.classList.add("cerrado");
+
+  // Total de votos
+  const votes = state.votes || {};
+  const totalVotos = Object.values(votes).reduce((a, b) => a + b, 0);
+  document.getElementById("poll-total").textContent =
+    totalVotos > 0 ? `Total: ${totalVotos} voto${totalVotos !== 1 ? "s" : ""}` : "";
+
+  // Opciones
+  const cont = document.getElementById("poll-options");
+  cont.innerHTML = "";
+
+  const maxVotos = Math.max(...Object.values(votes), 1);
+
+  for (let i = 1; i <= (state.optionCount || 7); i++) {
+    const num      = String(i);
+    const llave    = state.llaves?.[num] || {};
+    const votos    = votes[num] || 0;
+    const pct      = totalVotos > 0 ? Math.round((votos / totalVotos) * 100) : 0;
+    const anchoBarra = totalVotos > 0 ? (votos / maxVotos) * 100 : 0;
+
+    const casteada  = llave.casteada || false;
+    const anulada   = (state.anuladas || []).includes(num);
+    const esGanadora = state.winner === num;
+    const esEmpatada = (state.tied || []).includes(num);
+
+    let label = `Llave ${i}`;
+    if (llave.local && llave.visitante) {
+      label = `${llave.local} vs ${llave.visitante}`;
+    }
+
+    let llaveClase = "pendiente";
+    if (esGanadora)      llaveClase = "ganadora";
+    else if (esEmpatada) llaveClase = "empatada";
+    else if (anulada)    llaveClase = "anulada";
+    else if (casteada)   llaveClase = "casteada";
+
+    let filaClase = "";
+    if (esGanadora)    filaClase = "ganadora";
+    else if (anulada)  filaClase = "anulada";
+    else if (casteada) filaClase = "casteada";
+
+    const div = document.createElement("div");
+    div.className = `poll-opcion ${filaClase}`;
+    div.innerHTML = `
+      <div class="poll-opcion-barra" style="width:${anchoBarra}%"></div>
+      <div class="poll-opcion-inner">
+        <div class="llave-num ${llaveClase}">#${i}</div>
+        <div class="opcion-label">${label}</div>
+        <div class="opcion-votos">${votos > 0 ? `${votos} (${pct}%)` : "—"}</div>
+      </div>
+    `;
+    cont.appendChild(div);
+  }
+
+  // Sonidos
+  checkAndPlaySounds(state);
+
+  // Votos recientes
+  const lista = document.getElementById("poll-recientes-lista");
+  lista.innerHTML = "";
+  const recientes = (state.recentVotes || []).slice(-12).reverse();
+  recientes.forEach(v => {
+    const llave    = state.llaves?.[String(v.option)] || {};
+    const anulada  = (state.anuladas || []).includes(String(v.option));
+    const casteada = llave.casteada || false;
+    const chip = document.createElement("span");
+    chip.className = `voto-chip${anulada ? " anulada" : casteada ? " casteada" : ""}`;
+    chip.textContent = `${v.user} → #${v.option}`;
+    lista.appendChild(chip);
+  });
+}
+
+// Polling al servidor
+setInterval(fetchPollState, POLL_INTERVAL);
+fetchPollState();
+
+// Reactivar al volver al foco (OBS)
+document.addEventListener("visibilitychange", () => {
+  if (!document.hidden) fetchPollState();
+});
+</script>
+</body>
+</html>

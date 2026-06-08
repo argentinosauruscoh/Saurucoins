@@ -1,0 +1,25 @@
+{
+  "name": "overlay-nuevo-intento",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server2.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server2.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.12.2",
+    "body-parser": "^2.2.2",
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "form-data": "^4.0.5",
+    "googleapis": "^173.0.0",
+    "socket.io-client": "^4.8.1",
+    "sql.js": "^1.14.1",
+    "youtube-chat": "^2.2.0"
+  },
+  "type": "module"
+}

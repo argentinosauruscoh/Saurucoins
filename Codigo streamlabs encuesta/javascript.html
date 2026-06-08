@@ -1,0 +1,150 @@
+// ---------- Config ----------
+const UPDATE_INTERVAL_MS = 300;    // frecuencia de actualización
+// -----------------------------
+
+// === Porcentajes en barras ===
+function updatePollBarPercentages() {
+  document.querySelectorAll(".progress-bar-container").forEach(container => {
+    const bar = container.querySelector(".progress-bar span");
+    const text = container.querySelector(".progress-bar-text");
+
+    if (!bar || !text) return;
+
+    if (!bar.contains(text)) {
+      try {
+        bar.appendChild(text);
+        text.style.position = "absolute";
+        text.style.left = "50%";
+        text.style.top = "50%";
+        text.style.transform = "translate(-50%, -50%)";
+        text.style.fontWeight = "700";
+        text.style.color = "#000";
+      } catch (e) {}
+    }
+
+    const containerWidth = container.clientWidth || 1;
+    const barWidth = bar.offsetWidth || 0;
+
+    if (barWidth <= 0) {
+      text.style.display = "none";
+      return;
+    }
+
+    let percent = (barWidth / containerWidth) * 100;
+    percent = Math.max(0, Math.min(100, percent));
+
+    text.style.display = "block";
+    text.textContent = Math.round(percent) + "%";
+  });
+}
+
+setInterval(updatePollBarPercentages, UPDATE_INTERVAL_MS);
+window.addEventListener("load", updatePollBarPercentages);
+
+// ---------- Timer + explosión (solo ocultar texto) ----------
+const EXPLOSION_GIF = "https://i.imgur.com/P5X3Csc.gif";
+const EXPLOSION_DURATION_MS = 3000;
+
+let explosionActive = false;
+let explosionTriggered = false;
+let prevTotalSeconds = null;
+let postExplosionHidden = false;
+
+function parseTimeToSeconds(timeText) {
+  if (!timeText || typeof timeText !== "string") return NaN;
+  const parts = timeText.trim().split(":").map(p => parseInt(p, 10));
+  if (parts.some(isNaN)) return NaN;
+  if (parts.length === 2) return parts[0] * 60 + parts[1];
+  if (parts.length === 3) return parts[0] * 3600 + parts[1] * 60 + parts[2];
+  return NaN;
+}
+
+function triggerExplosion(timerEl) {
+  if (!timerEl) return;
+
+  if (timerEl.querySelector("img.explosion-overlay")) return;
+
+  explosionActive = true;
+
+  // ⬇️ Ocultar solo el texto (sin afectar al contenedor ni al GIF)
+  timerEl.classList.add("hide-text");
+  timerEl.classList.remove("warning", "danger");
+
+  const explosion = document.createElement("img");
+  explosion.src = EXPLOSION_GIF;
+  explosion.alt = "Explosion";
+  explosion.className = "explosion-overlay";
+  explosion.style.cssText = `
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 60px;
+    height: 60px;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 10;
+  `;
+
+  timerEl.style.position = timerEl.style.position || "relative";
+  timerEl.appendChild(explosion);
+
+  setTimeout(() => {
+    if (explosion && explosion.parentNode) {
+      explosion.parentNode.removeChild(explosion);
+    }
+    explosionActive = false;
+    postExplosionHidden = true; // seguimos oculto hasta nuevo ciclo
+  }, EXPLOSION_DURATION_MS);
+}
+
+function updateTimerAnimation() {
+  const timerEl = document.querySelector(".timer");
+  if (!timerEl) return;
+
+  if (explosionActive) return;
+
+  const timeText = timerEl.textContent ? timerEl.textContent.trim() : "";
+  const total = parseTimeToSeconds(timeText);
+  if (isNaN(total)) return;
+
+  if (prevTotalSeconds === null) prevTotalSeconds = total;
+
+  if (total > 0) {
+    if (postExplosionHidden) {
+      timerEl.classList.remove("hide-text"); // restaurar visibilidad del texto
+      postExplosionHidden = false;
+    }
+    explosionTriggered = false;
+  }
+
+  if (total === 0 && prevTotalSeconds > 0 && !explosionTriggered) {
+    explosionTriggered = true;
+    triggerExplosion(timerEl);
+  }
+
+  prevTotalSeconds = total;
+
+  if (postExplosionHidden) return;
+
+  timerEl.classList.remove("warning", "danger");
+  if (total <= 30 && total > 15) {
+    timerEl.classList.add("warning");
+  } else if (total <= 15 && total > 0) {
+    timerEl.classList.add("danger");
+  }
+}
+
+if (!window.__poll_timer_explosion_installed) {
+  setInterval(updateTimerAnimation, 1000);
+  window.addEventListener("load", updateTimerAnimation);
+  window.__poll_timer_explosion_installed = true;
+}
+
+// --- CSS extra para ocultar solo el texto ---
+const style = document.createElement("style");
+style.textContent = `
+  .timer.hide-text {
+    color: transparent !important;
+  }
+`;
+document.head.appendChild(style);

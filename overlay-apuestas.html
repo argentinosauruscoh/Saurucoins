@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<title>Overlay Apuestas</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: transparent;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    color: #fff;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+  }
+
+  #panel {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    width: 300px;
+    background: rgba(8, 12, 18, 0.82);
+    backdrop-filter: blur(12px);
+    border-radius: 14px;
+    border: 1px solid rgba(255,255,255,0.08);
+    box-shadow: 0 8px 40px rgba(0,0,0,0.7);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.34,1.56,0.64,1);
+    overflow: hidden;
+  }
+
+  #panel.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  #panel-header {
+    padding: 10px 14px 8px;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  #panel-title {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: rgba(255,255,255,0.55);
+  }
+
+  #timer-wrap {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  #timer-text {
+    font-size: 15px;
+    font-weight: 700;
+    color: #00ff88;
+    transition: color 0.4s;
+    min-width: 38px;
+    text-align: right;
+  }
+
+  #timer-text.warning { color: #ffaa00; }
+  #timer-text.danger  { color: #ff4444; animation: blink 0.6s step-start infinite; }
+
+  @keyframes blink { 50% { opacity: 0.3; } }
+
+  .ring-svg { transform: rotate(-90deg); }
+  .ring-bg   { fill: none; stroke: rgba(255,255,255,0.1); stroke-width: 3; }
+  .ring-fill { fill: none; stroke: #00ff88; stroke-width: 3; stroke-linecap: round;
+               transition: stroke-dashoffset 1s linear, stroke 0.4s; }
+  .ring-fill.warning { stroke: #ffaa00; }
+  .ring-fill.danger  { stroke: #ff4444; }
+
+  #panel-body {
+    padding: 12px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .team-row {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .team-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .team-name {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+  }
+
+  .team-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .dot-aliados { background: #3399ff; box-shadow: 0 0 6px #3399ff88; }
+  .dot-eje     { background: #ff4444; box-shadow: 0 0 6px #ff444488; }
+
+  .team-pts {
+    font-size: 12px;
+    color: rgba(255,255,255,0.5);
+    font-weight: 600;
+  }
+
+  .bar-track {
+    width: 100%;
+    height: 10px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  .bar-fill {
+    height: 100%;
+    border-radius: 10px;
+    width: 0%;
+    transition: width 0.9s cubic-bezier(0.4,0,0.2,1);
+    position: relative;
+  }
+
+  .bar-fill::after {
+    content: '';
+    position: absolute;
+    right: 0; top: 0;
+    width: 6px; height: 100%;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.5);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .bar-fill.leader::after { opacity: 1; }
+
+  .fill-aliados {
+    background: linear-gradient(90deg, #1a66cc, #3399ff);
+    box-shadow: 0 0 8px rgba(51,153,255,0.4);
+  }
+
+  .fill-eje {
+    background: linear-gradient(90deg, #991111, #ff4444);
+    box-shadow: 0 0 8px rgba(255,68,68,0.4);
+  }
+
+  .bar-pct {
+    font-size: 11px;
+    font-weight: 700;
+    color: rgba(255,255,255,0.45);
+    text-align: right;
+    margin-top: 2px;
+  }
+
+  .divider {
+    height: 1px;
+    background: rgba(255,255,255,0.07);
+  }
+
+  #pozo-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  #pozo-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: rgba(255,255,255,0.4);
+  }
+
+  #pozo-value {
+    font-size: 16px;
+    font-weight: 700;
+    color: #ffd700;
+    text-shadow: 0 0 12px rgba(255,215,0,0.5);
+    transition: transform 0.3s;
+  }
+
+  #pozo-value.pulse { animation: pulsePot 0.35s ease; }
+
+  @keyframes pulsePot {
+    0%,100% { transform: scale(1); }
+    50% { transform: scale(1.15); }
+  }
+
+  #status {
+    font-size: 12px;
+    font-weight: 600;
+    text-align: center;
+    padding: 6px 10px;
+    border-radius: 8px;
+    background: rgba(255,255,255,0.05);
+    color: rgba(255,255,255,0.5);
+    letter-spacing: 0.3px;
+    transition: color 0.3s, background 0.3s;
+  }
+
+  #status.open   { color: #00ff88; background: rgba(0,255,136,0.08); }
+  #status.closed { color: #ff4444; background: rgba(255,68,68,0.08); }
+
+  #bets-header {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: rgba(255,255,255,0.35);
+    margin-bottom: 6px;
+  }
+
+  #bets-list {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    max-height: 130px;
+    overflow: hidden;
+  }
+
+  .bet-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    padding: 4px 7px;
+    border-radius: 6px;
+    background: rgba(255,255,255,0.04);
+    animation: slideIn 0.35s ease;
+    border-left: 2px solid transparent;
+  }
+
+  .bet-item.aliados { border-left-color: #3399ff; }
+  .bet-item.eje     { border-left-color: #ff4444; }
+
+  .bet-user { color: rgba(255,255,255,0.8); font-weight: 600; flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .bet-pts  { color: rgba(255,255,255,0.4); font-size: 11px; white-space: nowrap; }
+
+  @keyframes slideIn {
+    from { opacity: 0; transform: translateX(-10px); }
+    to   { opacity: 1; transform: translateX(0); }
+  }
+
+  #particles-canvas {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    pointer-events: none;
+    z-index: 10;
+  }
+
+  #winner-banner {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    width: 300px;
+    padding: 16px 18px;
+    border-radius: 14px;
+    font-size: 15px;
+    font-weight: 700;
+    color: white;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.8);
+    box-shadow: 0 8px 40px rgba(0,0,0,0.8);
+    opacity: 0;
+    pointer-events: none;
+    z-index: 20;
+    border: 1px solid rgba(255,255,255,0.15);
+    backdrop-filter: blur(12px);
+    text-align: center;
+  }
+
+  #winner-banner.show {
+    animation: bannerIn 0.6s cubic-bezier(0.34,1.56,0.64,1) forwards;
+  }
+
+  @keyframes bannerIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to   { opacity: 1; transform: scale(1); }
+  }
+</style>
+</head>
+<body>
+
+<canvas id="particles-canvas"></canvas>
+
+<div id="panel">
+  <div id="panel-header">
+    <span id="panel-title">⚔️ Apuestas</span>
+    <div id="timer-wrap">
+      <svg class="ring-svg" width="22" height="22">
+        <circle class="ring-bg" cx="11" cy="11" r="9"/>
+        <circle class="ring-fill" id="ring-fill" cx="11" cy="11" r="9"
+                stroke-dasharray="56.5" stroke-dashoffset="0"/>
+      </svg>
+      <span id="timer-text">2:00</span>
+    </div>
+  </div>
+
+  <div id="panel-body">
+    <div class="team-row">
+      <div class="team-meta">
+        <div class="team-name"><span class="team-dot dot-aliados"></span>ALIADOS</div>
+        <span class="team-pts" id="pts1">0 pts</span>
+      </div>
+      <div class="bar-track"><div id="bar1" class="bar-fill fill-aliados"></div></div>
+      <div class="bar-pct" id="pct1">—</div>
+    </div>
+
+    <div class="team-row">
+      <div class="team-meta">
+        <div class="team-name"><span class="team-dot dot-eje"></span>EJE</div>
+        <span class="team-pts" id="pts2">0 pts</span>
+      </div>
+      <div class="bar-track"><div id="bar2" class="bar-fill fill-eje"></div></div>
+      <div class="bar-pct" id="pct2">—</div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div id="pozo-row">
+      <span id="pozo-label">💰 Pozo total</span>
+      <span id="pozo-value">0 pts</span>
+    </div>
+
+    <div class="divider"></div>
+    <div id="status">Esperando apuestas...</div>
+    <div class="divider"></div>
+
+    <div>
+      <div id="bets-header">Últimas apuestas</div>
+      <div id="bets-list"></div>
+    </div>
+  </div>
+</div>
+
+<div id="winner-banner"></div>
+
+<script>
+  // ── Rutas de sonidos (relativas al HTML) ──────────────────────────────────
+  const ABRIR_SRC   = "sounds/Abrir_apuesta.mp3";
+  const ALIADA_SRC  = "sounds/Victoria_aliados.mp3";
+  const ALEMANA_SRC = "sounds/Victoria_eje.mp3";
+  // ─────────────────────────────────────────────────────────────────────────
+
+  // === PARTÍCULAS ===
+  const canvas = document.getElementById('particles-canvas');
+  const ctx = canvas.getContext('2d');
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  const particles = [];
+
+  class Particle {
+    constructor(x, y, color) {
+      this.x = x; this.y = y;
+      this.vx = (Math.random() - 0.5) * 4;
+      this.vy = Math.random() * -4 - 1;
+      this.gravity = 0.12;
+      this.alpha = 1;
+      this.color = color;
+      this.size = Math.random() * 3 + 2;
+    }
+    update() { this.vy += this.gravity; this.x += this.vx; this.y += this.vy; this.alpha -= 0.02; }
+    draw() {
+      ctx.save(); ctx.globalAlpha = Math.max(0, this.alpha);
+      ctx.fillStyle = this.color; ctx.beginPath();
+      ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2); ctx.fill(); ctx.restore();
+    }
+    isDead() { return this.alpha <= 0; }
+  }
+
+  function burst(x, y, color, n = 18) {
+    for (let i = 0; i < n; i++) particles.push(new Particle(x, y, color));
+  }
+
+  (function loop() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    for (let i = particles.length - 1; i >= 0; i--) {
+      particles[i].update(); particles[i].draw();
+      if (particles[i].isDead()) particles.splice(i, 1);
+    }
+    requestAnimationFrame(loop);
+  })();
+
+  window.addEventListener('resize', () => { canvas.width = window.innerWidth; canvas.height = window.innerHeight; });
+
+  // === AUDIO ===
+  let audioCtx     = null;
+  let abrirBuf     = null;
+  let aliadaBuf    = null;
+  let alemanaBuf   = null;
+  let _audioReady  = false;
+
+  async function ensureAudio() {
+    if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    if (audioCtx.state === 'suspended') {
+      try { await audioCtx.resume(); } catch(e) {}
+    }
+    if (audioCtx.state === 'running' && !_audioReady) {
+      try {
+        const decode = async (src) => {
+          const resp = await fetch(src);
+          const ab   = await resp.arrayBuffer();
+          return audioCtx.decodeAudioData(ab);
+        };
+        [abrirBuf, aliadaBuf, alemanaBuf] = await Promise.all([
+          decode(ABRIR_SRC), decode(ALIADA_SRC), decode(ALEMANA_SRC)
+        ]);
+        _audioReady = true;
+        console.log('[audio apuestas] listo');
+      } catch(e) { console.warn('[audio apuestas] error:', e); }
+    }
+  }
+
+  window.addEventListener('load', () => ensureAudio());
+
+  // Volumen base 0.7 para evitar que revienten
+  function playBuf(buf, gain = 0.7) {
+    if (!audioCtx || !buf) return;
+    if (audioCtx.state === 'suspended') audioCtx.resume();
+    const src = audioCtx.createBufferSource();
+    const g   = audioCtx.createGain();
+    src.buffer = buf;
+    src.connect(g);
+    g.connect(audioCtx.destination);
+    g.gain.setValueAtTime(gain, audioCtx.currentTime);
+    src.start();
+  }
+
+  // Victoria con fade out al final (fade en segundo 8.0, silencio en 8.5)
+  function playVictory(buf) {
+    if (!audioCtx || !buf) return;
+    if (audioCtx.state === 'suspended') audioCtx.resume();
+    const src = audioCtx.createBufferSource();
+    const g   = audioCtx.createGain();
+    src.buffer = buf;
+    src.connect(g);
+    g.connect(audioCtx.destination);
+    g.gain.setValueAtTime(0.7, audioCtx.currentTime);
+    g.gain.setValueAtTime(0.7, audioCtx.currentTime + 8.0);
+    g.gain.linearRampToValueAtTime(0.0, audioCtx.currentTime + 8.5);
+    src.start();
+    src.stop(audioCtx.currentTime + 8.5);
+  }
+
+  function soundOpen()              { playBuf(abrirBuf); }
+  function soundVictory(isAllies)   { playVictory(isAllies ? aliadaBuf : alemanaBuf); }
+
+  // === ESTADO ===
+  let lastState = {};
+  let localTimer = 120;
+  let lastOpt1 = 0, lastOpt2 = 0;
+  let serverReady = false;
+
+  const panel      = document.getElementById('panel');
+  const timerText  = document.getElementById('timer-text');
+  const ringFill   = document.getElementById('ring-fill');
+  const bar1       = document.getElementById('bar1');
+  const bar2       = document.getElementById('bar2');
+  const pts1       = document.getElementById('pts1');
+  const pts2       = document.getElementById('pts2');
+  const pct1       = document.getElementById('pct1');
+  const pct2       = document.getElementById('pct2');
+  const pozoValue  = document.getElementById('pozo-value');
+  const statusEl   = document.getElementById('status');
+  const betsList   = document.getElementById('bets-list');
+  const banner     = document.getElementById('winner-banner');
+
+  function formatTime(sec) {
+    return `${Math.floor(sec/60)}:${String(sec%60).padStart(2,'0')}`;
+  }
+
+  function updateTimer(sec) {
+    timerText.innerText = formatTime(sec);
+    const circumference = 2 * Math.PI * 9;
+    const offset = circumference - (sec / 120) * circumference;
+    ringFill.style.strokeDashoffset = offset;
+    timerText.classList.remove('warning','danger');
+    ringFill.classList.remove('warning','danger');
+    if (sec <= 10) {
+      timerText.classList.add('danger'); ringFill.classList.add('danger');
+    } else if (sec <= 30) {
+      timerText.classList.add('warning'); ringFill.classList.add('warning');
+    }
+  }
+
+  function updateBars(data) {
+    const o1 = data.option1 || 0;
+    const o2 = data.option2 || 0;
+    const total = o1 + o2;
+    const p1 = total ? Math.round((o1 / total) * 100) : 0;
+    const p2 = total ? Math.round((o2 / total) * 100) : 0;
+
+    if (o1 > lastOpt1) {
+      const r = bar1.parentElement.getBoundingClientRect();
+      burst(r.left + r.width * 0.7, r.top + r.height / 2, '#3399ff');
+    }
+    if (o2 > lastOpt2) {
+      const r = bar2.parentElement.getBoundingClientRect();
+      burst(r.left + r.width * 0.7, r.top + r.height / 2, '#ff4444');
+    }
+    lastOpt1 = o1; lastOpt2 = o2;
+
+    bar1.style.width = (o1 > 0 ? p1 : 0) + '%';
+    bar2.style.width = (o2 > 0 ? p2 : 0) + '%';
+    bar1.classList.toggle('leader', o1 > o2 && total > 0);
+    bar2.classList.toggle('leader', o2 > o1 && total > 0);
+    pts1.textContent = o1 + ' pts';
+    pts2.textContent = o2 + ' pts';
+    pct1.textContent = total > 0 ? p1 + '%' : '—';
+    pct2.textContent = total > 0 ? p2 + '%' : '—';
+
+    const oldTotal = parseInt(pozoValue.textContent) || 0;
+    if (total > oldTotal) {
+      pozoValue.classList.add('pulse');
+      setTimeout(() => pozoValue.classList.remove('pulse'), 350);
+    }
+    pozoValue.textContent = total + ' pts';
+  }
+
+  let lastBetsJson = '';
+
+  function updateBets(bets) {
+    const slice = (bets || []).slice(-6);
+    const json = JSON.stringify(slice);
+    if (json === lastBetsJson) return;
+    lastBetsJson = json;
+    betsList.innerHTML = '';
+    slice.forEach(b => {
+      const div = document.createElement('div');
+      div.className = 'bet-item ' + (b.option === 'ALIADOS' ? 'aliados' : 'eje');
+      div.innerHTML = `<span class="bet-user">${b.user}</span><span class="bet-pts">${b.option} · ${b.points}pts</span>`;
+      betsList.appendChild(div);
+    });
+  }
+
+  // === MÁQUINA DE ESTADOS ===
+  let overlayPhase = 'idle';
+
+  function showPanel() {
+    panel.classList.add('visible');
+    banner.classList.remove('show');
+    banner.style.opacity = '0';
+  }
+
+  function fadePanelOut(callback) {
+    panel.style.transition = 'opacity 1.8s ease';
+    panel.style.opacity = '0';
+    setTimeout(() => {
+      panel.style.transition = '';
+      panel.style.opacity = '';
+      panel.classList.remove('visible');
+      if (callback) callback();
+    }, 1800);
+  }
+
+  function resetAll() {
+    bar1.style.width = '0%'; bar2.style.width = '0%';
+    pts1.textContent = '0 pts'; pts2.textContent = '0 pts';
+    pct1.textContent = '—'; pct2.textContent = '—';
+    pozoValue.textContent = '0 pts';
+    betsList.innerHTML = ''; lastBetsJson = '';
+    statusEl.className = ''; statusEl.textContent = 'Esperando apuestas...';
+    lastOpt1 = 0; lastOpt2 = 0;
+    localTimer = 120;
+    updateTimer(120);
+  }
+
+  function declareWinner(option) {
+    if (overlayPhase === 'victory') return;
+    overlayPhase = 'victory';
+
+    const isAllies = option === 1;
+    const color = isAllies ? '#3399ff' : '#ff4444';
+    const bg    = isAllies ? 'rgba(0,80,180,0.92)' : 'rgba(180,0,0,0.92)';
+    const text  = isAllies ? '🏆 ¡Victoria de los Aliados!' : '🔥 ¡El Eje domina el campo!';
+
+    soundVictory(isAllies);
+
+    panel.style.transition = 'opacity 0.8s ease';
+    panel.style.opacity = '1';
+    panel.classList.add('visible');
+
+    setTimeout(() => {
+      panel.style.transition = 'opacity 0.5s ease';
+      panel.style.opacity = '0';
+
+      setTimeout(() => {
+        panel.classList.remove('visible');
+        panel.style.transition = '';
+        panel.style.opacity = '';
+
+        for (let i = 0; i < 60; i++) {
+          setTimeout(() => {
+            burst(30 + Math.random() * 320, window.innerHeight - 30 - Math.random() * 300, color, 8);
+          }, i * 40);
+        }
+
+        banner.style.background = bg;
+        banner.innerText = text;
+        banner.style.opacity = '0';
+        banner.classList.add('show');
+
+        setTimeout(() => {
+          banner.style.transition = 'opacity 1.2s ease';
+          banner.style.opacity = '0';
+          setTimeout(() => {
+            banner.classList.remove('show');
+            banner.style.transition = '';
+            resetAll();
+            overlayPhase = 'idle';
+          }, 1200);
+        }, 5000);
+
+      }, 500);
+    }, 1200);
+  }
+
+  // Guardamos el último winner visto para no dispararlo dos veces
+  let lastWinner = null;
+
+  async function poll() {
+    await ensureAudio();
+    try {
+      const res = await fetch('http://localhost:3000/overlay-state', { cache: 'no-store' });
+      if (!res.ok) throw new Error();
+      const s = await res.json();
+      serverReady = true;
+
+      // Durante animación de victoria no hacer nada
+      if (overlayPhase === 'victory') { lastState = s; return; }
+
+      updateBars(s);
+      updateBets(s.recentBets || []);
+      if (typeof s.remaining === 'number') localTimer = s.remaining;
+      updateTimer(localTimer);
+
+      // ── Ganador declarado ──────────────────────────────────────
+      // Lo chequeamos ANTES que el cierre para no perderlo si el servidor
+      // ya reseteó en el mismo ciclo de polling.
+      if (s.winner && s.winner !== lastWinner) {
+        lastWinner = s.winner;
+        declareWinner(s.winner);
+        lastState = s;
+        return;
+      }
+
+      // ── Apuestas recién abiertas ───────────────────────────────
+      if (s.active && !lastState.active) {
+        overlayPhase = 'open';
+        lastWinner = null; // resetear para la próxima ronda
+        showPanel();
+        soundOpen();
+      }
+
+      // ── Apuestas cerradas ──────────────────────────────────────
+      // Detectar tanto por transición (!lastState.closed)
+      // como por si el overlay quedó congelado en 'open' con closed=true
+      if (s.closed && overlayPhase === 'open') {
+        overlayPhase = 'waitingResult';
+        statusEl.className = 'closed';
+        statusEl.textContent = '🔒 Apuestas cerradas';
+        // Si en 8 segundos no llega un ganador, cerrar el panel igual
+        setTimeout(() => {
+          if (overlayPhase === 'waitingResult') {
+            overlayPhase = 'idle';
+            fadePanelOut();
+          }
+        }, 8000);
+      }
+
+      // ── Servidor reseteó sin declarar ganador ─────────────────
+      // Cubre el caso: cancelBet, o reset sin winner
+      if (!s.active && !s.closed && overlayPhase === 'open') {
+        overlayPhase = 'idle';
+        fadePanelOut();
+      }
+
+      if (overlayPhase === 'open' && s.active && !s.closed) {
+        statusEl.className = 'open';
+        statusEl.textContent = '✅ Apuestas abiertas';
+      }
+
+      lastState = s;
+    } catch {
+      if (!serverReady) {
+        statusEl.textContent = 'Conectando...';
+        setTimeout(poll, 2000);
+      }
+    }
+  }
+
+  poll();
+  setInterval(() => {
+    poll();
+    if (localTimer > 0) localTimer--;
+  }, 1000);
+</script>
+</body>
+</html>

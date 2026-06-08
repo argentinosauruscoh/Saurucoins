@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Top Saurucoins - Stream Overlay</title>
+  <style>
+    body {
+      margin: 0;
+      background: transparent;
+      font-family: "Segoe UI", Arial, sans-serif;
+      color: #fff;
+      text-shadow: 2px 2px 4px #000;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      opacity: 0;
+      transition: opacity 0.8s ease-in-out;
+    }
+
+    body.visible {
+      opacity: 1;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+      font-size: 32px;
+      font-weight: bold;
+      color: #ffd700;
+      text-shadow: 0 0 10px #000, 0 0 20px #000;
+    }
+
+    table {
+      border-collapse: collapse;
+      background: rgba(0, 0, 0, 0.6);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+      min-width: 420px;
+      text-align: center;
+    }
+
+    th, td {
+      padding: 12px 20px;
+      text-align: center;
+    }
+
+    th {
+      background-color: rgba(20, 20, 20, 0.9);
+      color: #00ffcc;
+      font-size: 18px;
+    }
+
+    tr:nth-child(even) {
+      background-color: rgba(255, 255, 255, 0.05);
+    }
+
+    td {
+      font-size: 16px;
+    }
+
+    .rank {
+      font-weight: bold;
+      color: #ffd700;
+    }
+
+    .points {
+      color: #00ff66;
+      font-weight: bold;
+    }
+
+    .fade-out {
+      opacity: 0 !important;
+      transition: opacity 1s ease-in-out;
+    }
+
+    /* 🔄 Icono de moneda girando */
+    .coin-icon {
+      width: 22px;
+      height: 22px;
+      vertical-align: middle;
+      margin-right: 6px;
+      border-radius: 50%;
+      animation: spin 2s linear infinite;
+    }
+
+    @keyframes spin {
+      0% { transform: rotateY(0deg); }
+      100% { transform: rotateY(360deg); }
+    }
+  </style>
+</head>
+<body>
+  <h1>🏆 TOP 6 CON MÁS PUNTOS</h1>
+  <table id="topTable">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Participante</th>
+        <th><img src="coin.gif" alt="coin" class="coin-icon" /> Saurucoins</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <script>
+    let lastVisible = false;
+    const tableBody = document.querySelector("#topTable tbody");
+
+    async function pollTop() {
+      try {
+        const res = await fetch("http://localhost:3000/top-overlay-state");
+        if (!res.ok) throw new Error(res.statusText);
+        const data = await res.json();
+
+        if (data.visible && (data.list || []).length > 0) {
+          if (!lastVisible) {
+            document.body.classList.add("visible");
+          }
+          tableBody.innerHTML = "";
+          data.list.forEach((p) => {
+            const tr = document.createElement("tr");
+            tr.innerHTML = `
+              <td class="rank">${p.rank}</td>
+              <td>${p.user}</td>
+              <td class="points">${p.points}</td>
+            `;
+            tableBody.appendChild(tr);
+          });
+        } else if (lastVisible && !data.visible) {
+          document.body.classList.add("fade-out");
+          setTimeout(() => {
+            document.body.classList.remove("visible", "fade-out");
+            tableBody.innerHTML = "";
+          }, 1000);
+        }
+
+        lastVisible = data.visible;
+      } catch (err) {
+        console.error("Error consultando top-overlay-state:", err);
+      }
+    }
+
+    setInterval(pollTop, 1000);
+    pollTop();
+  </script>
+</body>
+</html>
