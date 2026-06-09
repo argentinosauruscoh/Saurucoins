@@ -719,19 +719,35 @@ async function initDB() {
     db = new SQL.Database();
     db.run(`
       CREATE TABLE usuarios (
-        nombre        TEXT PRIMARY KEY,
-        puntos        INTEGER DEFAULT 0,
-        profile_img   TEXT DEFAULT NULL,
-        faccion       TEXT DEFAULT NULL,
+        nombre         TEXT PRIMARY KEY,
+        puntos         INTEGER DEFAULT 0,
+        profile_img    TEXT DEFAULT NULL,
+        faccion        TEXT DEFAULT NULL,
         total_apuestas INTEGER DEFAULT 0,
         total_ganadas  INTEGER DEFAULT 0
       )
     `);
+    db.run(`
+      CREATE TABLE historial (
+        id         INTEGER PRIMARY KEY AUTOINCREMENT,
+        nombre     TEXT NOT NULL,
+        delta      INTEGER NOT NULL,
+        motivo     TEXT NOT NULL,
+        puntos_new INTEGER NOT NULL,
+        ts         INTEGER DEFAULT 0
+      )
+    `);
     for (const u of (data.usuarios || [])) {
       db.run(
-        "INSERT INTO usuarios (nombre, puntos, profile_img, faccion) VALUES (?, ?, ?, ?)",
-        [u.user, u.points, u.profile_img || null, u.faccion || null]
+        "INSERT INTO usuarios (nombre, puntos, profile_img, faccion, total_apuestas, total_ganadas) VALUES (?,?,?,?,?,?)",
+        [u.user, u.points, u.profile_img || null, u.faccion || null, u.total_apuestas || 0, u.total_ganadas || 0]
       );
+      for (const h of (u.historial || [])) {
+        db.run(
+          "INSERT INTO historial (nombre, delta, motivo, puntos_new, ts) VALUES (?,?,?,?,?)",
+          [u.user, h.delta, h.motivo, h.puntos, h.ts]
+        );
+      }
     }
     console.log('✅ DB cargada desde puntos.json —', data.actualizado);
   } catch(e) {

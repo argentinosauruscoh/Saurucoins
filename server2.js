@@ -32,13 +32,17 @@ setInterval(() => {
 async function exportarYPushear() {
   try {
     const usuariosRaw = getTop(9999);
-    // Enriquecer con faccion y profile_img desde getStats
+    // Enriquecer con todos los campos necesarios para saurucoins.html
     const usuarios = usuariosRaw.map(u => {
-      const stats = getStats(u.user);
+      const stats     = getStats(u.user);
+      const historial = getHistorial(u.user, 9999);
       return {
         ...u,
-        faccion:     stats?.faccion     || null,
-        profile_img: stats?.profile_img || null,
+        faccion:        stats?.faccion        || null,
+        profile_img:    stats?.profile_img    || null,
+        total_apuestas: stats?.total_apuestas || 0,
+        total_ganadas:  stats?.total_ganadas  || 0,
+        historial,
       };
     });
     const payload = {
