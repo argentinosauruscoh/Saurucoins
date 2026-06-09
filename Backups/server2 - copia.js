@@ -199,7 +199,7 @@ app.post("/poll-liga", (req, res) => {
 // === ENDPOINT PARA CHAT RELAY ===
 // =========================================================
 app.post("/chat-event", (req, res) => {
-  const { type, user, option, amount, top } = req.body;
+  const { type, user, option, amount, top, profileImg } = req.body;
   console.log(`💬 Chat relay → ${type}`, req.body);
 
   switch (type) {
@@ -213,6 +213,8 @@ app.post("/chat-event", (req, res) => {
       if (!cleanUser) break;
       const { sumado, puntos } = registrarMensaje(cleanUser);
       if (sumado) console.log(`💰 ${cleanUser} +${CONFIG.PUNTOS_POR_MENSAJE} pts por chatear → ${puntos} total`);
+      // Guardar foto de perfil solo si viene y el usuario aún no tiene
+      if (profileImg) guardarProfileImg(cleanUser, profileImg);
       break;
     }
 
