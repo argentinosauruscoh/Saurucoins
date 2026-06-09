@@ -683,7 +683,16 @@ function getNextRango(puntos) {
   return null;
 }
 
-// ── DB ──────────────────────────────────────────────────────────
+// ── FACCIÓN → prefijo de rango ───────────────────────────────────
+const FACCION_PREFIJO = {
+  us:   "us",
+  cw:   "brit",
+  pe:   "panzer",
+  wm:   "heer",
+};
+function rankPrefix(faccion) {
+  return FACCION_PREFIJO[faccion] || "us";
+}
 let db = null;
 
 function exec(sql, params = []) {
@@ -702,18 +711,36 @@ async function initDB() {
   });
 
   try {
-    const resp = await fetch('puntos.db');
-    if (!resp.ok) throw new Error('no se pudo cargar puntos.db');
-    const buf = await resp.arrayBuffer();
-    db = new SQL.Database(new Uint8Array(buf));
-    console.log('✅ DB cargada');
+    const resp = await fetch('puntos.json?t=' + Date.now()); // ?t= evita caché del browser
+    if (!resp.ok) throw new Error('no se pudo cargar puntos.json');
+    const data = await resp.json();
+
+    // Reconstruir una DB en memoria desde el JSON
+    db = new SQL.Database();
+    db.run(`
+      CREATE TABLE usuarios (
+        nombre        TEXT PRIMARY KEY,
+        puntos        INTEGER DEFAULT 0,
+        profile_img   TEXT DEFAULT NULL,
+        faccion       TEXT DEFAULT NULL,
+        total_apuestas INTEGER DEFAULT 0,
+        total_ganadas  INTEGER DEFAULT 0
+      )
+    `);
+    for (const u of (data.usuarios || [])) {
+      db.run(
+        "INSERT INTO usuarios (nombre, puntos, profile_img, faccion) VALUES (?, ?, ?, ?)",
+        [u.user, u.points, u.profile_img || null, u.faccion || null]
+      );
+    }
+    console.log('✅ DB cargada desde puntos.json —', data.actualizado);
   } catch(e) {
-    console.error('❌ Error cargando DB:', e);
+    console.error('❌ Error cargando puntos.json:', e);
     document.getElementById('loading-overlay').innerHTML =
       `<div style="text-align:center;font-family:'DM Mono',monospace;color:#e05252;padding:40px">
         <div style="font-size:48px;margin-bottom:16px">⚠️</div>
-        NO SE ENCONTRÓ puntos.db<br><br>
-        <span style="font-size:11px;color:#5a6a7a">Colocá <b>puntos.db</b> en la misma carpeta que este HTML.</span>
+        NO SE ENCONTRÓ puntos.json<br><br>
+        <span style="font-size:11px;color:#5a6a7a">El archivo se genera automáticamente cuando el servidor está corriendo.</span>
       </div>`;
     return;
   }
@@ -759,7 +786,7 @@ window.buscarUsuario = function() {
   const nombre = document.getElementById('search-input').value.trim();
   if (!nombre) return;
 
-  const rows = exec('SELECT *, "us" as faccion FROM usuarios WHERE LOWER(nombre) = LOWER(?)', [nombre]);
+  const rows = exec('SELECT * FROM usuarios WHERE LOWER(nombre) = LOWER(?)', [nombre]);
   const hint = document.getElementById('profile-hint');
   const empty = document.getElementById('profile-empty');
   const sec = document.getElementById('profile-section');
@@ -812,7 +839,7 @@ window.buscarUsuario = function() {
           ${factionFlagHtml(u.faccion, 'faction-flag')}
         </div>
         <div class="profile-rank-badge">
-          <img class="rank-insignia" src="ranks/us_${String(rango.num).padStart(2,'0')}.png" alt="${rango.nombre}">
+          <img class="rank-insignia" src="ranks/${rankPrefix(u.faccion)}_${String(rango.num).padStart(2,'0')}.png" alt="${rango.nombre}">
           <div class="rank-info">
             <span class="rank-number">Rango ${rango.num}</span>
             <span class="rank-name">${rango.nombre}</span>
@@ -1010,7 +1037,7 @@ function buildResumen(nombre) {
 
 // ── LEADERBOARD ─────────────────────────────────────────────────
 function renderLeaderboard() {
-  const top = exec('SELECT nombre, puntos, NULL as faccion FROM usuarios ORDER BY puntos DESC');
+  const top = exec('SELECT nombre, puntos, faccion FROM usuarios ORDER BY puntos DESC');
   const lastUser = document.getElementById('search-input').value.trim().toLowerCase();
 
   const html = top.map((u, i) => {
@@ -1021,7 +1048,7 @@ function renderLeaderboard() {
     return `
       <div class="lb-row ${cls} ${isYou ? 'lb-you' : ''}" onclick="loadUserFromLB('${u.nombre}')">
         <div class="lb-rank">${rank}</div>
-        <img class="lb-insignia" src="ranks/us_${String(rango.num).padStart(2,'0')}.png" alt="${rango.nombre}">
+        <img class="lb-insignia" src="ranks/${rankPrefix(u.faccion)}_${String(rango.num).padStart(2,'0')}.png" alt="${rango.nombre}">
         <div class="lb-name">
           <span>
             ${u.nombre}${isYou ? ' <span style="color:var(--gold);font-size:11px">◀ TÚ</span>' : ''}

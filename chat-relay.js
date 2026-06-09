@@ -318,6 +318,54 @@ async function handleMessage(chatItem) {
       return;
     }
 
+    // ── !faccion ──────────────────────────────────────────────
+    if (comando === "!faccion") {
+      try {
+        const res = await axios.get(
+          `${SERVER_URL}/faccion/${encodeURIComponent(authorClean.toLowerCase())}`,
+          { timeout: 2000 }
+        );
+        const faccionActual = res.data.faccion;
+        if (faccionActual) {
+          const nombres = { us: "Estados Unidos 🇺🇸", cw: "Commonwealth 🇬🇧", pe: "Panzer Elite ⚙️", wm: "Wehrmacht 🎖️" };
+          await sendMessage(`🎖️ ${author} ya pertenecés a ${nombres[faccionActual] || faccionActual}. ¡No podés cambiar de bando!`);
+        } else {
+          await sendMessage(`⚔️ ${author} ¡Elegí tu bando! Escribí: !unirme us | !unirme cw | !unirme pe | !unirme wm`);
+        }
+      } catch (e) {
+        log(`⚠️ Error consultando facción de ${author}`);
+      }
+      return;
+    }
+
+    // ── !unirme ───────────────────────────────────────────────
+    if (comando === "!unirme") {
+      const faccionElegida = (parts[1] || "").toLowerCase();
+      const FACCIONES_VALIDAS = ["us", "cw", "pe", "wm"];
+      if (!FACCIONES_VALIDAS.includes(faccionElegida)) {
+        await sendMessage(`⚠️ ${author} facción inválida. Opciones: !unirme us | !unirme cw | !unirme pe | !unirme wm`);
+        return;
+      }
+      try {
+        const res = await axios.post(
+          `${SERVER_URL}/faccion`,
+          { nombre: authorClean.toLowerCase(), faccion: faccionElegida },
+          { timeout: 2000 }
+        );
+        if (res.data.ok) {
+          const nombres = { us: "Estados Unidos 🇺🇸", cw: "Commonwealth 🇬🇧", pe: "Panzer Elite ⚙️", wm: "Wehrmacht 🎖️" };
+          await sendMessage(`✅ ${author} ¡Bienvenido a ${nombres[faccionElegida]}! Tu bando quedó registrado para siempre.`);
+          log(`🎖️ ${authorClean} se unió a facción: ${faccionElegida}`);
+        } else {
+          const nombres = { us: "Estados Unidos 🇺🇸", cw: "Commonwealth 🇬🇧", pe: "Panzer Elite ⚙️", wm: "Wehrmacht 🎖️" };
+          await sendMessage(`❌ ${author} ya pertenecés a ${nombres[res.data.faccion] || res.data.faccion}. ¡No podés cambiar de bando!`);
+        }
+      } catch (e) {
+        log(`⚠️ Error guardando facción de ${author}`);
+      }
+      return;
+    }
+
     log(`[IGNORADO] Comando desconocido de ${author}: ${comando}`);
 
   } catch (err) {

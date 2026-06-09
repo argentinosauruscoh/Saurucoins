@@ -88,6 +88,11 @@ function crearTablas() {
     db.run("ALTER TABLE usuarios ADD COLUMN profile_img TEXT DEFAULT NULL");
   } catch (_) { /* columna ya existe */ }
 
+  // Agregar columna faccion si no existe (migración segura)
+  try {
+    db.run("ALTER TABLE usuarios ADD COLUMN faccion TEXT DEFAULT NULL");
+  } catch (_) { /* columna ya existe */ }
+
   console.log("✅ Tablas listas");
 }
 
@@ -297,4 +302,30 @@ export function getStats(nombre) {
   if (!db) return null;
   upsertUsuario(nombre);
   return getUsuario(nombre);
+}
+
+/**
+ * Guardar facción de un usuario (solo si aún no tiene).
+ * No sobreescribe nunca.
+ * Devuelve { ok, faccion } — ok=false si ya tenía facción.
+ */
+export function guardarFaccion(nombre, faccion) {
+  if (!db) return { ok: false, faccion: null };
+  const FACCIONES_VALIDAS = ["us", "cw", "pe", "wm"];
+  if (!FACCIONES_VALIDAS.includes(faccion)) return { ok: false, faccion: null };
+  upsertUsuario(nombre);
+  const u = getUsuario(nombre);
+  if (u.faccion) return { ok: false, faccion: u.faccion }; // ya tiene, no cambiar
+  db.run("UPDATE usuarios SET faccion = ? WHERE nombre = ?", [faccion, nombre]);
+  guardarDB();
+  return { ok: true, faccion };
+}
+
+/**
+ * Obtener facción de un usuario.
+ */
+export function getFaccion(nombre) {
+  if (!db) return null;
+  const u = getUsuario(nombre);
+  return u ? u.faccion : null;
 }

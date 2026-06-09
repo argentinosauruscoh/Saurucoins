@@ -3,17 +3,21 @@
 import express from "express";
 import cors    from "cors";
 import path    from "path";
-import { fileURLToPath } from "url";
+import fs      from "fs";
+import { exec as execShell } from "child_process";
+import { promisify }         from "util";
+import { fileURLToPath }     from "url";
 import {
   initDB, pagarPasivos, getPuntos, ajustarPuntos,
   getTop, getHistorial, getStats, CONFIG,
   registrarMensaje, bonusParticipar, bonusVotar,
-  descontarApuesta
+  descontarApuesta, guardarProfileImg, guardarFaccion, getFaccion
 } from "./db.js";
 
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const app  = express();
-const port = 3000;
+const __dirname  = path.dirname(fileURLToPath(import.meta.url));
+const execAsync  = promisify(execShell);
+const app        = express();
+const port       = 3000;
 
 // ── Iniciar DB ──────────────────────────────────────────────────
 await initDB();
@@ -23,6 +27,45 @@ console.log("✅ Saurucoins DB lista");
 setInterval(() => {
   pagarPasivos();
 }, CONFIG.INTERVALO_PASIVO_MIN * 60 * 1000);
+
+// ── Exportar puntos.json y subir a GitHub cada 5 minutos ────────
+async function exportarYPushear() {
+  try {
+    const usuariosRaw = getTop(9999);
+    // Enriquecer con faccion y profile_img desde getStats
+    const usuarios = usuariosRaw.map(u => {
+      const stats = getStats(u.user);
+      return {
+        ...u,
+        faccion:     stats?.faccion     || null,
+        profile_img: stats?.profile_img || null,
+      };
+    });
+    const payload = {
+      actualizado: new Date().toISOString(),
+      usuarios,
+    };
+
+    const jsonPath = path.join(__dirname, "puntos.json");
+    fs.writeFileSync(jsonPath, JSON.stringify(payload, null, 2));
+    console.log("📄 puntos.json actualizado");
+
+    await execAsync("git add puntos.json",                              { cwd: __dirname });
+    await execAsync(`git commit -m "auto: puntos ${new Date().toLocaleTimeString("es-AR")}" --allow-empty`, { cwd: __dirname });
+    await execAsync("git push",                                         { cwd: __dirname });
+    console.log("🚀 puntos.json subido a GitHub");
+
+  } catch (err) {
+    if (err.message?.includes("nothing to commit")) {
+      console.log("ℹ️ Sin cambios en puntos.json, push omitido");
+    } else {
+      console.error("❌ Error exportando puntos.json:", err.message);
+    }
+  }
+}
+
+setInterval(exportarYPushear, 5 * 60 * 1000); // cada 5 minutos
+exportarYPushear();                             // también al arrancar
 
 app.use(cors());
 app.use(express.json());
@@ -445,6 +488,19 @@ app.post("/ajustar", (req, res) => {
 
 app.get("/config-puntos", (req, res) => {
   res.json(CONFIG);
+});
+
+app.get("/faccion/:usuario", (req, res) => {
+  const nombre = req.params.usuario.toLowerCase();
+  const faccion = getFaccion(nombre);
+  res.json({ nombre, faccion });
+});
+
+app.post("/faccion", (req, res) => {
+  const { nombre, faccion } = req.body;
+  if (!nombre || !faccion) return res.status(400).json({ error: "Faltan parámetros" });
+  const resultado = guardarFaccion(nombre.toLowerCase(), faccion.toLowerCase());
+  res.json(resultado);
 });
 
 app.listen(port, () => {
