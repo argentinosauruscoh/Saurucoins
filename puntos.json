@@ -1,5 +1,5 @@
 {
-  "actualizado": "2026-06-14T23:35:07.871Z",
+  "actualizado": "2026-06-14T23:40:07.884Z",
   "usuarios": [
     {
       "rank": 1,
@@ -9506,12 +9506,18 @@
     {
       "rank": 21,
       "user": "ivanolivares6328",
-      "points": 73,
+      "points": 74,
       "faccion": null,
       "profile_img": "https://yt4.ggpht.com/ytc/AIdro_mKcAJG25CxVTLPLz8ALUQ7IA9nO6hbr5bUDnUGN3Sf8Hg=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 4,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 74,
+          "ts": 1781480273000
+        },
         {
           "delta": 1,
           "motivo": "mensaje",
