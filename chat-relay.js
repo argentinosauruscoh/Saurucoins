@@ -25,6 +25,8 @@ const TOKEN_PATH         = path.join(__dirname, "token.json");
 const SCOPES             = ["https://www.googleapis.com/auth/youtube"];
 const COOLDOWN_SALDO_MS  = 30 * 60 * 1000;  // 30 minutos entre !saldo por usuario
 const STATE_INTERVAL_MS  = 4000;             // cada 4s chequea estado de eventos
+const TRIVIA_PTS_ACIERTO = 10;
+const TRIVIA_PTS_PARTICIPAR = 2;
 
 // ─── ESTADO ────────────────────────────────────────────────────
 let youtube       = null;   // cliente googleapis (null en offline)
@@ -36,6 +38,7 @@ const saldoCooldown = new Map(); // authorId → timestamp último !saldo
 // Estado de eventos para detectar cambios y notificar
 let lastBetState  = { active: false, closed: false, winner: null };
 let lastPollState = { active: false, closed: false, winner: null };
+let lastTriviaState = { active: false, closed: false, revealed: false };
 
 // ─── CUOTA ─────────────────────────────────────────────────────
 let cuotaUsada = 0;
@@ -191,8 +194,10 @@ async function getLiveVideoId() {
 // ─── ESTADO LOCAL ──────────────────────────────────────────────
 let usuariosYaApostaron = new Set();
 let usuariosYaVotaron   = new Set();
+let usuariosYaTrivia    = new Set();
 let betActivo           = false;
 let pollActivo          = false;
+let triviaActivo        = false;
 
 // ─── PROCESADOR DE MENSAJES ────────────────────────────────────
 async function handleMessage(chatItem) {
@@ -275,6 +280,23 @@ async function handleMessage(chatItem) {
       usuariosYaVotaron.add(authorClean.toLowerCase());
       log(`✅ VOTO: ${author} → llave ${option}`);
       await sendEvent({ type: "castVote", user: authorClean, option });
+      return;
+    }
+
+    // ── !trivia ───────────────────────────────────────────────
+    if (comando === "!trivia") {
+      if (!triviaActivo) { log(`⚠️ ${author} intentó responder trivia pero no hay trivia activa`); return; }
+      if (usuariosYaTrivia.has(authorClean.toLowerCase())) { log(`⚠️ ${author} ya respondió esta trivia`); return; }
+
+      const letra = (parts[1] || "").toUpperCase();
+      if (!["A","B","C","D"].includes(letra)) {
+        log(`⚠️ Opción de trivia inválida de ${author}: ${parts[1]}`);
+        return;
+      }
+
+      usuariosYaTrivia.add(authorClean.toLowerCase());
+      log(`✅ TRIVIA: ${author} → ${letra}`);
+      await sendEvent({ type: "castTriviaVote", user: authorClean, option: letra });
       return;
     }
 
@@ -376,23 +398,28 @@ async function handleMessage(chatItem) {
 // ─── MONITOR DE EVENTOS (notificaciones en el chat) ────────────
 async function checkEventState() {
   try {
-    const [betRes, pollRes] = await Promise.all([
+    const [betRes, pollRes, triviaRes] = await Promise.all([
       axios.get(`${SERVER_URL}/overlay-state`, { timeout: 2000 }),
       axios.get(`${SERVER_URL}/poll-state`,    { timeout: 2000 }),
+      axios.get(`${SERVER_URL}/trivia-state`,  { timeout: 2000 }),
     ]);
 
-    const bet  = betRes.data;
-    const poll = pollRes.data;
+    const bet    = betRes.data;
+    const poll   = pollRes.data;
+    const trivia = triviaRes.data;
 
-    const prevBet  = betActivo;
-    const prevPoll = pollActivo;
+    const prevBet    = betActivo;
+    const prevPoll   = pollActivo;
+    const prevTrivia = triviaActivo;
 
-    betActivo  = bet.active  && !bet.closed;
-    pollActivo = poll.active && !poll.closed;
+    betActivo    = bet.active  && !bet.closed;
+    pollActivo   = poll.active && !poll.closed;
+    triviaActivo = trivia.active && !trivia.closed;
 
     // Limpiar sets al terminar ronda
-    if (prevBet  && !betActivo)  { usuariosYaApostaron.clear(); log("🔁 Set de apostadores reiniciado"); }
-    if (prevPoll && !pollActivo) { usuariosYaVotaron.clear();   log("🔁 Set de votantes reiniciado"); }
+    if (prevBet    && !betActivo)    { usuariosYaApostaron.clear(); log("🔁 Set de apostadores reiniciado"); }
+    if (prevPoll   && !pollActivo)   { usuariosYaVotaron.clear();   log("🔁 Set de votantes reiniciado"); }
+    if (prevTrivia && !triviaActivo) { usuariosYaTrivia.clear();    log("🔁 Set de trivia reiniciado"); }
 
     // ── Notificaciones de apuestas ────────────────────────────
     if (bet.active && !bet.closed && !lastBetState.active) {
@@ -417,8 +444,20 @@ async function checkEventState() {
       await sendMessage(`🏆 ¡La llave ${poll.winner} ganó la encuesta!`);
     }
 
+    // ── Notificaciones de trivia ──────────────────────────────
+    if (trivia.active && !trivia.closed && !lastTriviaState.active) {
+      await sendMessage(`🧠 ¡Trivia! ${trivia.pregunta} — Respondé con !trivia A/B/C/D (tenés ${trivia.duration}s)`);
+    }
+    if (trivia.closed && !lastTriviaState.closed && lastTriviaState.active) {
+      await sendMessage("⏳ ¡Tiempo! Calculando respuesta correcta...");
+    }
+    if (trivia.revealed && !lastTriviaState.revealed) {
+      await sendMessage(`✅ ¡La correcta era ${trivia.correcta}! Los que acertaron ganan +${TRIVIA_PTS_ACIERTO} pts, el resto +${TRIVIA_PTS_PARTICIPAR} pts por participar.`);
+    }
+
     lastBetState  = { active: bet.active,  closed: bet.closed,  winner: bet.winner  };
     lastPollState = { active: poll.active, closed: poll.closed, winner: poll.winner };
+    lastTriviaState = { active: trivia.active, closed: trivia.closed, revealed: trivia.revealed };
 
   } catch { /* servidor no disponible aún */ }
 }

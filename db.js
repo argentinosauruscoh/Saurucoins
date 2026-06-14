@@ -20,6 +20,7 @@ export const CONFIG = {
   BONUS_PARTICIPAR:     2,    // por apostar o votar (solo participar)
   APUESTA_MIN:          10,   // mínimo de puntos para apostar
   APUESTA_MAX:          50,   // máximo de puntos para apostar
+  PUNTOS_TRIVIA_ACIERTO: 10,  // por acertar una trivia
 };
 
 let SQL = null;
@@ -247,6 +248,28 @@ export function bonusVotar(nombre) {
 }
 
 /**
+ * Pagar resultados de una trivia.
+ * votes: { nombre: letra }
+ * correcta: letra correcta ("A"|"B"|"C"|"D")
+ * Paga PUNTOS_TRIVIA_ACIERTO a quienes acertaron, BONUS_PARTICIPAR al resto.
+ * Devuelve { aciertos: [nombre,...], participantes: n }
+ */
+export function pagarTrivia(votes, correcta) {
+  if (!db) return { aciertos: [], participantes: 0 };
+  const aciertos = [];
+  for (const [nombre, letra] of Object.entries(votes || {})) {
+    if (letra === correcta) {
+      agregarPuntos(nombre, CONFIG.PUNTOS_TRIVIA_ACIERTO, "trivia_acierto");
+      aciertos.push(nombre);
+    } else {
+      agregarPuntos(nombre, CONFIG.BONUS_PARTICIPAR, "trivia_participar");
+    }
+  }
+  guardarDB();
+  return { aciertos, participantes: Object.keys(votes || {}).length };
+}
+
+/**
  * Top N usuarios por puntos.
  */
 export function getTop(n = 10) {
@@ -328,4 +351,26 @@ export function getFaccion(nombre) {
   if (!db) return null;
   const u = getUsuario(nombre);
   return u ? u.faccion : null;
+}
+
+/**
+ * Forzar cambio de facción (solo admin, sobreescribe).
+ */
+export function setFaccion(nombre, faccion) {
+  if (!db) return false;
+  upsertUsuario(nombre);
+  db.run("UPDATE usuarios SET faccion = ? WHERE nombre = ?", [faccion, nombre]);
+  guardarDB();
+  return true;
+}
+
+/**
+ * Borrar un usuario y todo su historial.
+ */
+export function borrarUsuario(nombre) {
+  if (!db) return false;
+  db.run("DELETE FROM historial WHERE nombre = ?", [nombre]);
+  db.run("DELETE FROM usuarios WHERE nombre = ?", [nombre]);
+  guardarDB();
+  return true;
 }

@@ -83,6 +83,16 @@ function crearTablas() {
     );
   `);
 
+  // Agregar columna profile_img si no existe (migración segura)
+  try {
+    db.run("ALTER TABLE usuarios ADD COLUMN profile_img TEXT DEFAULT NULL");
+  } catch (_) { /* columna ya existe */ }
+
+  // Agregar columna faccion si no existe (migración segura)
+  try {
+    db.run("ALTER TABLE usuarios ADD COLUMN faccion TEXT DEFAULT NULL");
+  } catch (_) { /* columna ya existe */ }
+
   console.log("✅ Tablas listas");
 }
 
@@ -274,10 +284,70 @@ export function getHistorial(nombre, limite = 20) {
 }
 
 /**
+ * Guardar foto de perfil de un usuario (solo si aún no tiene).
+ * Se llama una vez por usuario nuevo — nunca sobreescribe.
+ */
+export function guardarProfileImg(nombre, url) {
+  if (!db || !url) return;
+  const u = getUsuario(nombre);
+  if (!u || u.profile_img) return; // ya tiene, no sobreescribir
+  db.run("UPDATE usuarios SET profile_img = ? WHERE nombre = ?", [url, nombre]);
+  guardarDB();
+}
+
+/**
  * Stats de un usuario.
  */
 export function getStats(nombre) {
   if (!db) return null;
   upsertUsuario(nombre);
   return getUsuario(nombre);
+}
+
+/**
+ * Guardar facción de un usuario (solo si aún no tiene).
+ * No sobreescribe nunca.
+ * Devuelve { ok, faccion } — ok=false si ya tenía facción.
+ */
+export function guardarFaccion(nombre, faccion) {
+  if (!db) return { ok: false, faccion: null };
+  const FACCIONES_VALIDAS = ["us", "cw", "pe", "wm"];
+  if (!FACCIONES_VALIDAS.includes(faccion)) return { ok: false, faccion: null };
+  upsertUsuario(nombre);
+  const u = getUsuario(nombre);
+  if (u.faccion) return { ok: false, faccion: u.faccion }; // ya tiene, no cambiar
+  db.run("UPDATE usuarios SET faccion = ? WHERE nombre = ?", [faccion, nombre]);
+  guardarDB();
+  return { ok: true, faccion };
+}
+
+/**
+ * Obtener facción de un usuario.
+ */
+export function getFaccion(nombre) {
+  if (!db) return null;
+  const u = getUsuario(nombre);
+  return u ? u.faccion : null;
+}
+
+/**
+ * Forzar cambio de facción (solo admin, sobreescribe).
+ */
+export function setFaccion(nombre, faccion) {
+  if (!db) return false;
+  upsertUsuario(nombre);
+  db.run("UPDATE usuarios SET faccion = ? WHERE nombre = ?", [faccion, nombre]);
+  guardarDB();
+  return true;
+}
+
+/**
+ * Borrar un usuario y todo su historial.
+ */
+export function borrarUsuario(nombre) {
+  if (!db) return false;
+  db.run("DELETE FROM historial WHERE nombre = ?", [nombre]);
+  db.run("DELETE FROM usuarios WHERE nombre = ?", [nombre]);
+  guardarDB();
+  return true;
 }

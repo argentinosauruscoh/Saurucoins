@@ -11,7 +11,8 @@ import {
   initDB, pagarPasivos, getPuntos, ajustarPuntos,
   getTop, getHistorial, getStats, CONFIG,
   registrarMensaje, bonusParticipar, bonusVotar,
-  descontarApuesta, guardarProfileImg, guardarFaccion, getFaccion
+  descontarApuesta, guardarProfileImg, guardarFaccion, getFaccion,
+  setFaccion, borrarUsuario, pagarTrivia
 } from "./db.js";
 
 const __dirname  = path.dirname(fileURLToPath(import.meta.url));
@@ -32,17 +33,16 @@ setInterval(() => {
 async function exportarYPushear() {
   try {
     const usuariosRaw = getTop(9999);
-    // Enriquecer con todos los campos necesarios para saurucoins.html
+    // Enriquecer con faccion, profile_img e historial completo desde getStats
     const usuarios = usuariosRaw.map(u => {
-      const stats     = getStats(u.user);
-      const historial = getHistorial(u.user, 9999);
+      const stats = getStats(u.user);
       return {
         ...u,
-        faccion:        stats?.faccion        || null,
-        profile_img:    stats?.profile_img    || null,
+        faccion:     stats?.faccion     || null,
+        profile_img: stats?.profile_img || null,
         total_apuestas: stats?.total_apuestas || 0,
         total_ganadas:  stats?.total_ganadas  || 0,
-        historial,
+        historial:   getHistorial(u.user, 9999), // historial completo
       };
     });
     const payload = {
@@ -243,6 +243,58 @@ app.post("/poll-liga", (req, res) => {
 });
 
 // =========================================================
+// === ESTADO DE TRIVIA ===
+// =========================================================
+
+let triviaState = {
+  active:    false,
+  closed:    false,
+  revealed:  false,
+  pregunta:  "",
+  imagen:    "",
+  opciones:  {},   // { A: "texto", B: "texto", C: "texto", D: "texto" }
+  correcta:  null, // "A"|"B"|"C"|"D"
+  votes:     {},   // { A: n, B: n, C: n, D: n }
+  recentVotes: [], // [{ user, option }]
+  remaining: 0,
+  duration:  15,
+};
+
+// Registro interno de votos por usuario para pagar al revelar: { nombre: letra }
+let triviaVotos = {};
+let triviaTimerInterval = null;
+
+function startTriviaTimer(seconds = 15) {
+  triviaState.remaining = seconds;
+  triviaState.duration  = seconds;
+  if (triviaTimerInterval) clearInterval(triviaTimerInterval);
+  triviaTimerInterval = setInterval(() => {
+    if (!triviaState.active || triviaState.closed) {
+      clearInterval(triviaTimerInterval); triviaTimerInterval = null; return;
+    }
+    triviaState.remaining = Math.max(0, triviaState.remaining - 1);
+    if (triviaState.remaining === 0 && !triviaState.closed) {
+      triviaState.closed = true;
+      console.log("🔒 Tiempo agotado: trivia cerrada automáticamente");
+      clearInterval(triviaTimerInterval); triviaTimerInterval = null;
+    }
+  }, 1000);
+}
+
+function resetTrivia() {
+  if (triviaTimerInterval) { clearInterval(triviaTimerInterval); triviaTimerInterval = null; }
+  triviaState = {
+    active: false, closed: false, revealed: false,
+    pregunta: "", imagen: "", opciones: {}, correcta: null,
+    votes: {}, recentVotes: [], remaining: 0, duration: 15,
+  };
+  triviaVotos = {};
+  console.log("🔁 Trivia reiniciada");
+}
+
+app.get("/trivia-state", (req, res) => res.json(triviaState));
+
+// =========================================================
 // === ENDPOINT PARA CHAT RELAY ===
 // =========================================================
 app.post("/chat-event", (req, res) => {
@@ -377,7 +429,10 @@ app.post("/chat-event", (req, res) => {
     case "showTop":
       if (Array.isArray(top) && top.length > 0) {
         topState.visible = true;
-        topState.list = top.slice(0, 6);
+        topState.list = top.slice(0, 6).map(u => {
+          const stats = getStats(u.user);
+          return { ...u, faccion: stats?.faccion || null };
+        });
         setTimeout(() => { topState.visible = false; topState.list = []; }, 15000);
       }
       break;
@@ -447,6 +502,58 @@ app.post("/chat-event", (req, res) => {
       console.log("⛔ Encuesta cancelada");
       break;
 
+    // ── TRIVIA ────────────────────────────────────────────
+    case "startTrivia": {
+      resetTrivia();
+      triviaState.active   = true;
+      triviaState.pregunta = req.body.pregunta || "";
+      triviaState.imagen   = req.body.imagen   || "";
+      triviaState.opciones = req.body.opciones || {};
+      triviaState.correcta = req.body.correcta || null;
+      ["A","B","C","D"].forEach(l => { triviaState.votes[l] = 0; });
+      const duracion = parseInt(req.body.duration) || 15;
+      startTriviaTimer(duracion);
+      console.log(`🧠 Trivia abierta: "${triviaState.pregunta}" (correcta: ${triviaState.correcta}, ${duracion}s)`);
+      break;
+    }
+
+    case "castTriviaVote": {
+      if (!triviaState.active || triviaState.closed) break;
+      const letra = String(option || "").toUpperCase();
+      if (!["A","B","C","D"].includes(letra)) break;
+      const cleanVoter = (user || "").replace(/^[¡!@\s]+/, "").trim().toLowerCase();
+      if (!cleanVoter) break;
+      if (triviaVotos[cleanVoter]) break; // un solo voto por usuario
+      triviaVotos[cleanVoter] = letra;
+      triviaState.votes[letra] = (triviaState.votes[letra] || 0) + 1;
+      triviaState.recentVotes.push({ user: cleanVoter, option: letra });
+      if (triviaState.recentVotes.length > 20) triviaState.recentVotes.shift();
+      break;
+    }
+
+    case "closeTrivia":
+      if (!triviaState.active) break;
+      triviaState.closed = true;
+      if (triviaTimerInterval) { clearInterval(triviaTimerInterval); triviaTimerInterval = null; }
+      console.log("🔒 Trivia cerrada");
+      break;
+
+    case "revealTrivia": {
+      if (!triviaState.active || triviaState.revealed) break;
+      triviaState.closed   = true;
+      triviaState.revealed = true;
+      if (triviaTimerInterval) { clearInterval(triviaTimerInterval); triviaTimerInterval = null; }
+      const { aciertos, participantes } = pagarTrivia(triviaVotos, triviaState.correcta);
+      console.log(`🏆 Trivia revelada: correcta=${triviaState.correcta} | ${aciertos.length}/${participantes} acertaron (+${CONFIG.PUNTOS_TRIVIA_ACIERTO}pts) | resto +${CONFIG.BONUS_PARTICIPAR}pts`);
+      setTimeout(() => resetTrivia(), 8000);
+      break;
+    }
+
+    case "cancelTrivia":
+      resetTrivia();
+      console.log("⛔ Trivia cancelada");
+      break;
+
     default:
       console.log("⚠️ Tipo de evento desconocido:", type);
   }
@@ -505,6 +612,30 @@ app.post("/faccion", (req, res) => {
   if (!nombre || !faccion) return res.status(400).json({ error: "Faltan parámetros" });
   const resultado = guardarFaccion(nombre.toLowerCase(), faccion.toLowerCase());
   res.json(resultado);
+});
+
+// Forzar cambio de facción desde panel admin (sobreescribe)
+app.post("/admin/faccion", (req, res) => {
+  const { nombre, faccion } = req.body;
+  if (!nombre || !faccion) return res.status(400).json({ error: "Faltan parámetros" });
+  const FACCIONES_VALIDAS = ["us", "cw", "pe", "wm"];
+  const f = faccion.toLowerCase();
+  if (!FACCIONES_VALIDAS.includes(f)) return res.status(400).json({ error: "Facción inválida" });
+  const stats = getStats(nombre.toLowerCase());
+  if (!stats) return res.status(404).json({ error: "Usuario no encontrado" });
+  setFaccion(nombre.toLowerCase(), f);
+  console.log(`🎖️ Facción de ${nombre} cambiada a ${f} (admin)`);
+  res.json({ ok: true, nombre: nombre.toLowerCase(), faccion: f });
+});
+
+// Borrar usuario completo desde panel admin
+app.delete("/admin/usuario/:nombre", (req, res) => {
+  const nombre = req.params.nombre.toLowerCase();
+  const stats = getStats(nombre);
+  if (!stats) return res.status(404).json({ error: "Usuario no encontrado" });
+  borrarUsuario(nombre);
+  console.log(`🗑️ Usuario borrado: ${nombre}`);
+  res.json({ ok: true, nombre });
 });
 
 app.listen(port, () => {

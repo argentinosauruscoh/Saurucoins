@@ -21,629 +21,140 @@
     --mono:      'Share Tech Mono', monospace;
     --sans:      'Barlow Condensed', sans-serif;
   }
-
   * { box-sizing: border-box; margin: 0; padding: 0; }
-
-  body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: var(--sans);
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    overflow-x: hidden;
-  }
-
-  /* Ruido de fondo sutil */
-  body::before {
-    content: '';
-    position: fixed;
-    inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
-    pointer-events: none;
-    z-index: 0;
-  }
-
-  /* === TOPBAR === */
-  #topbar {
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    background: var(--bg);
-    border-bottom: 1px solid var(--border);
-    padding: 0 28px;
-    height: 56px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    backdrop-filter: blur(10px);
-  }
-
-  #topbar-left {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-  }
-
-  .logo-mark {
-    width: 32px;
-    height: 32px;
-    border: 2px solid var(--accent);
-    border-radius: 6px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: var(--mono);
-    font-size: 13px;
-    color: var(--accent);
-    letter-spacing: -1px;
-    box-shadow: 0 0 12px rgba(0,229,255,0.2);
-  }
-
-  .logo-text {
-    font-size: 18px;
-    font-weight: 900;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: white;
-  }
-
+  body { background: var(--bg); color: var(--text); font-family: var(--sans); min-height: 100vh; display: flex; flex-direction: column; overflow-x: hidden; }
+  body::before { content: ''; position: fixed; inset: 0; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E"); pointer-events: none; z-index: 0; }
+  #topbar { position: sticky; top: 0; z-index: 100; background: var(--bg); border-bottom: 1px solid var(--border); padding: 0 28px; height: 56px; display: flex; align-items: center; justify-content: space-between; backdrop-filter: blur(10px); }
+  #topbar-left { display: flex; align-items: center; gap: 16px; }
+  .logo-mark { width: 32px; height: 32px; border: 2px solid var(--accent); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-family: var(--mono); font-size: 13px; color: var(--accent); letter-spacing: -1px; box-shadow: 0 0 12px rgba(0,229,255,0.2); }
+  .logo-text { font-size: 18px; font-weight: 900; letter-spacing: 3px; text-transform: uppercase; color: white; }
   .logo-text span { color: var(--accent); }
-
-  #server-status {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    font-family: var(--mono);
-    font-size: 11px;
-    color: var(--text-dim);
-  }
-
-  .status-dot {
-    width: 7px;
-    height: 7px;
-    border-radius: 50%;
-    background: var(--accent2);
-    transition: background 0.3s;
-  }
-
+  #server-status { display: flex; align-items: center; gap: 6px; font-family: var(--mono); font-size: 11px; color: var(--text-dim); }
+  .status-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent2); transition: background 0.3s; }
   .status-dot.online { background: var(--accent4); box-shadow: 0 0 6px var(--accent4); animation: pulse-dot 2s infinite; }
-
-  @keyframes pulse-dot {
-    0%,100% { opacity: 1; } 50% { opacity: 0.4; }
-  }
-
-  #clock {
-    font-family: var(--mono);
-    font-size: 13px;
-    color: var(--text-dim);
-    letter-spacing: 1px;
-  }
-
-  /* === NAV TABS === */
-  #nav {
-    display: flex;
-    gap: 2px;
-    padding: 0 28px;
-    background: var(--bg2);
-    border-bottom: 1px solid var(--border);
-    position: sticky;
-    top: 56px;
-    z-index: 99;
-  }
-
-  .nav-tab {
-    padding: 12px 22px;
-    font-family: var(--sans);
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    color: var(--text-dim);
-    cursor: pointer;
-    border-bottom: 2px solid transparent;
-    transition: all 0.2s;
-    user-select: none;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-
+  @keyframes pulse-dot { 0%,100% { opacity: 1; } 50% { opacity: 0.4; } }
+  #clock { font-family: var(--mono); font-size: 13px; color: var(--text-dim); letter-spacing: 1px; }
+  #nav { display: flex; gap: 2px; padding: 0 28px; background: var(--bg2); border-bottom: 1px solid var(--border); position: sticky; top: 56px; z-index: 99; }
+  .nav-tab { padding: 12px 22px; font-family: var(--sans); font-size: 13px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text-dim); cursor: pointer; border-bottom: 2px solid transparent; transition: all 0.2s; user-select: none; display: flex; align-items: center; gap: 8px; }
   .nav-tab:hover { color: var(--text); }
-
-  .nav-tab.active {
-    color: var(--accent);
-    border-bottom-color: var(--accent);
-  }
-
-  .tab-badge {
-    background: var(--accent2);
-    color: white;
-    font-size: 10px;
-    padding: 1px 5px;
-    border-radius: 10px;
-    font-weight: 700;
-  }
-
-  .tab-badge.green { background: var(--accent4); color: #000; }
-
-  /* === MAIN LAYOUT === */
-  #main {
-    flex: 1;
-    padding: 24px 28px;
-    position: relative;
-    z-index: 1;
-  }
-
+  .nav-tab.active { color: var(--accent); border-bottom-color: var(--accent); }
+  #main { flex: 1; padding: 24px 28px; position: relative; z-index: 1; }
   .tab-panel { display: none; }
   .tab-panel.active { display: grid; gap: 20px; }
-
-  /* === CARDS === */
-  .card {
-    background: var(--bg2);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    overflow: hidden;
-  }
-
-  .card-header {
-    padding: 14px 18px;
-    border-bottom: 1px solid var(--border);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .card-title {
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: var(--text-dim);
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-
-  .card-title::before {
-    content: '';
-    width: 3px;
-    height: 14px;
-    background: var(--accent);
-    border-radius: 2px;
-  }
-
+  .card { background: var(--bg2); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
+  .card-header { padding: 14px 18px; border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; }
+  .card-title { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--text-dim); display: flex; align-items: center; gap: 8px; }
+  .card-title::before { content: ''; width: 3px; height: 14px; background: var(--accent); border-radius: 2px; }
   .card-body { padding: 18px; }
-
-  /* === BOTONES === */
-  .btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 9px 18px;
-    border-radius: 6px;
-    font-family: var(--sans);
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    cursor: pointer;
-    border: none;
-    transition: all 0.15s;
-    white-space: nowrap;
-  }
-
+  .btn { display: inline-flex; align-items: center; gap: 8px; padding: 9px 18px; border-radius: 6px; font-family: var(--sans); font-size: 13px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; cursor: pointer; border: none; transition: all 0.15s; white-space: nowrap; }
   .btn:active { transform: scale(0.97); }
-
-  .btn-primary {
-    background: var(--accent);
-    color: #000;
-  }
+  .btn-primary { background: var(--accent); color: #000; }
   .btn-primary:hover { background: #33eeff; box-shadow: 0 0 20px rgba(0,229,255,0.3); }
-
-  .btn-danger {
-    background: var(--accent2);
-    color: white;
-  }
+  .btn-danger { background: var(--accent2); color: white; }
   .btn-danger:hover { background: #ff5555; box-shadow: 0 0 20px rgba(255,61,61,0.3); }
-
-  .btn-warning {
-    background: var(--accent3);
-    color: #000;
-  }
+  .btn-warning { background: var(--accent3); color: #000; }
   .btn-warning:hover { box-shadow: 0 0 20px rgba(255,214,0,0.3); }
-
-  .btn-success {
-    background: var(--accent4);
-    color: #000;
-  }
+  .btn-success { background: var(--accent4); color: #000; }
   .btn-success:hover { box-shadow: 0 0 20px rgba(105,255,71,0.3); }
-
-  .btn-ghost {
-    background: transparent;
-    color: var(--text-dim);
-    border: 1px solid var(--border);
-  }
+  .btn-ghost { background: transparent; color: var(--text-dim); border: 1px solid var(--border); }
   .btn-ghost:hover { color: var(--text); border-color: rgba(255,255,255,0.2); }
-
   .btn-sm { padding: 6px 12px; font-size: 11px; }
-
-  /* === INPUTS === */
-  .input-group {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-  }
-
-  .input-label {
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    color: var(--text-dim);
-  }
-
-  input[type="text"], input[type="number"], select, textarea {
-    background: var(--bg3);
-    border: 1px solid var(--border);
-    border-radius: 6px;
-    color: var(--text);
-    font-family: var(--mono);
-    font-size: 13px;
-    padding: 9px 12px;
-    width: 100%;
-    outline: none;
-    transition: border-color 0.2s;
-  }
-
-  input:focus, select:focus, textarea:focus {
-    border-color: var(--accent);
-    box-shadow: 0 0 0 2px rgba(0,229,255,0.1);
-  }
-
+  .input-group { display: flex; flex-direction: column; gap: 6px; }
+  .input-label { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--text-dim); }
+  input[type="text"], input[type="number"], select, textarea { background: var(--bg3); border: 1px solid var(--border); border-radius: 6px; color: var(--text); font-family: var(--mono); font-size: 13px; padding: 9px 12px; width: 100%; outline: none; transition: border-color 0.2s; }
+  input:focus, select:focus, textarea:focus { border-color: var(--accent); box-shadow: 0 0 0 2px rgba(0,229,255,0.1); }
   select option { background: var(--bg3); }
-
-  /* === STATUS PILL === */
-  .pill {
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;
-    padding: 4px 10px;
-    border-radius: 20px;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-  }
-
+  .pill { display: inline-flex; align-items: center; gap: 5px; padding: 4px 10px; border-radius: 20px; font-size: 11px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; }
   .pill-idle    { background: rgba(74,96,112,0.2); color: var(--text-dim); border: 1px solid var(--border); }
   .pill-open    { background: rgba(105,255,71,0.1); color: var(--accent4); border: 1px solid rgba(105,255,71,0.3); }
   .pill-closed  { background: rgba(255,61,61,0.1); color: var(--accent2); border: 1px solid rgba(255,61,61,0.3); }
   .pill-waiting { background: rgba(255,214,0,0.1); color: var(--accent3); border: 1px solid rgba(255,214,0,0.3); }
-
-  /* === STAT BOXES === */
-  .stats-row {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    gap: 12px;
-  }
-
-  .stat-box {
-    background: var(--bg3);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 14px;
-    text-align: center;
-  }
-
-  .stat-value {
-    font-family: var(--mono);
-    font-size: 26px;
-    font-weight: 400;
-    color: white;
-    line-height: 1;
-    margin-bottom: 4px;
-  }
-
-  .stat-label {
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    color: var(--text-dim);
-  }
-
-  /* === BARRAS === */
-  .bet-bar-row {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    margin: 12px 0;
-  }
-
-  .bet-bar-meta {
-    display: flex;
-    justify-content: space-between;
-    font-size: 13px;
-    font-weight: 600;
-  }
-
-  .bet-track {
-    height: 8px;
-    background: var(--bg3);
-    border-radius: 8px;
-    overflow: hidden;
-  }
-
-  .bet-fill {
-    height: 100%;
-    border-radius: 8px;
-    transition: width 0.8s cubic-bezier(0.4,0,0.2,1);
-  }
-
+  .stats-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 12px; }
+  .stat-box { background: var(--bg3); border: 1px solid var(--border); border-radius: 8px; padding: 14px; text-align: center; }
+  .stat-value { font-family: var(--mono); font-size: 26px; font-weight: 400; color: white; line-height: 1; margin-bottom: 4px; }
+  .stat-label { font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text-dim); }
+  .bet-bar-row { display: flex; flex-direction: column; gap: 8px; margin: 12px 0; }
+  .bet-bar-meta { display: flex; justify-content: space-between; font-size: 13px; font-weight: 600; }
+  .bet-track { height: 8px; background: var(--bg3); border-radius: 8px; overflow: hidden; }
+  .bet-fill { height: 100%; border-radius: 8px; transition: width 0.8s cubic-bezier(0.4,0,0.2,1); }
   .fill-a { background: linear-gradient(90deg, #1a66cc, #3399ff); }
   .fill-e { background: linear-gradient(90deg, #991111, #ff4444); }
-
-  /* === TABLA TOP === */
-  .top-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-family: var(--mono);
-    font-size: 13px;
-  }
-
-  .top-table th {
-    text-align: left;
-    padding: 8px 12px;
-    font-size: 10px;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    color: var(--text-dim);
-    border-bottom: 1px solid var(--border);
-    font-family: var(--sans);
-  }
-
-  .top-table td {
-    padding: 10px 12px;
-    border-bottom: 1px solid rgba(255,255,255,0.03);
-    transition: background 0.15s;
-  }
-
+  .top-table { width: 100%; border-collapse: collapse; font-family: var(--mono); font-size: 13px; }
+  .top-table th { text-align: left; padding: 8px 12px; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text-dim); border-bottom: 1px solid var(--border); font-family: var(--sans); }
+  .top-table td { padding: 10px 12px; border-bottom: 1px solid rgba(255,255,255,0.03); transition: background 0.15s; }
   .top-table tr:hover td { background: rgba(255,255,255,0.03); }
-
   .rank-num { color: var(--text-dim); width: 36px; }
   .rank-1 .rank-num { color: var(--accent3); }
   .rank-2 .rank-num { color: #b0bec5; }
   .rank-3 .rank-num { color: #ff9800; }
-
   .pts-value { color: var(--accent4); text-align: right; }
-
-  /* === ENCUESTAS === */
   #tab-encuestas { grid-template-columns: 1fr 340px; }
   #tab-encuestas .col-left { display: flex; flex-direction: column; gap: 20px; }
   #tab-encuestas .col-right { display: flex; flex-direction: column; gap: 20px; }
-
-  .template-btn {
-    flex: 1;
-    padding: 14px;
-    border-radius: 8px;
-    border: 2px solid var(--border);
-    background: var(--bg3);
-    color: var(--text-dim);
-    font-family: var(--sans);
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: all 0.15s;
-    text-align: center;
-  }
+  .template-btn { flex: 1; padding: 14px; border-radius: 8px; border: 2px solid var(--border); background: var(--bg3); color: var(--text-dim); font-family: var(--sans); font-size: 13px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; cursor: pointer; transition: all 0.15s; text-align: center; }
   .template-btn:hover { border-color: var(--accent); color: var(--accent); }
-  .template-btn.active {
-    border-color: var(--accent);
-    background: rgba(0,229,255,0.08);
-    color: var(--accent);
-    box-shadow: 0 0 12px rgba(0,229,255,0.15);
-  }
-
-  .poll-llave-row {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 6px 0;
-    border-bottom: 1px solid rgba(255,255,255,0.04);
-  }
+  .template-btn.active { border-color: var(--accent); background: rgba(0,229,255,0.08); color: var(--accent); box-shadow: 0 0 12px rgba(0,229,255,0.15); }
+  .poll-llave-row { display: flex; align-items: center; gap: 8px; padding: 6px 0; border-bottom: 1px solid rgba(255,255,255,0.04); }
   .poll-llave-row:last-child { border-bottom: none; }
-
-  .llave-badge {
-    width: 28px;
-    height: 28px;
-    border-radius: 6px;
-    background: var(--bg3);
-    border: 1px solid var(--border);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: var(--mono);
-    font-size: 12px;
-    color: var(--text-dim);
-    flex-shrink: 0;
-  }
-
-  .poll-vote-bar {
-    height: 6px;
-    background: rgba(255,255,255,0.06);
-    border-radius: 6px;
-    overflow: hidden;
-    margin-top: 3px;
-  }
-  .poll-vote-fill {
-    height: 100%;
-    border-radius: 6px;
-    background: linear-gradient(90deg, #00cc55, #00ff88);
-    transition: width 0.6s ease;
-  }
+  .llave-badge { width: 28px; height: 28px; border-radius: 6px; background: var(--bg3); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-family: var(--mono); font-size: 12px; color: var(--text-dim); flex-shrink: 0; }
+  .poll-vote-bar { height: 6px; background: rgba(255,255,255,0.06); border-radius: 6px; overflow: hidden; margin-top: 3px; }
+  .poll-vote-fill { height: 100%; border-radius: 6px; background: linear-gradient(90deg, #00cc55, #00ff88); transition: width 0.6s ease; }
   .poll-vote-fill.winner { background: linear-gradient(90deg, #cc8800, #ffd700); }
-
   .poll-llave-label { flex: 1; font-size: 13px; }
   .poll-llave-votes { font-family: var(--mono); font-size: 12px; color: var(--accent4); min-width: 50px; text-align: right; }
-
-  .chip-voto {
-    display: inline-flex;
-    align-items: center;
-    gap: 4px;
-    padding: 3px 8px;
-    border-radius: 20px;
-    font-size: 11px;
-    font-weight: 600;
-    background: rgba(0,255,102,0.08);
-    border: 1px solid rgba(0,255,102,0.2);
-    color: #00ff88;
-    margin: 2px;
-  }
-
-  .declare-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 6px;
-  }
-  .btn-declare {
-    padding: 8px 4px;
-    border-radius: 6px;
-    border: 1px solid var(--border);
-    background: var(--bg3);
-    color: var(--text-dim);
-    font-family: var(--mono);
-    font-size: 12px;
-    cursor: pointer;
-    transition: all 0.15s;
-    text-align: center;
-  }
-  .btn-declare:hover {
-    border-color: var(--accent3);
-    color: var(--accent3);
-    background: rgba(255,214,0,0.08);
-  }
-  .bet-item {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 8px 10px;
-    border-radius: 6px;
-    background: rgba(255,255,255,0.02);
-    margin-bottom: 4px;
-    font-size: 13px;
-    border-left: 2px solid transparent;
-    transition: background 0.15s;
-  }
-
+  .chip-voto { display: inline-flex; align-items: center; gap: 4px; padding: 3px 8px; border-radius: 20px; font-size: 11px; font-weight: 600; background: rgba(0,255,102,0.08); border: 1px solid rgba(0,255,102,0.2); color: #00ff88; margin: 2px; }
+  .declare-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; }
+  .btn-declare { padding: 8px 4px; border-radius: 6px; border: 1px solid var(--border); background: var(--bg3); color: var(--text-dim); font-family: var(--mono); font-size: 12px; cursor: pointer; transition: all 0.15s; text-align: center; }
+  .btn-declare:hover { border-color: var(--accent3); color: var(--accent3); background: rgba(255,214,0,0.08); }
+  .bet-item { display: flex; align-items: center; gap: 10px; padding: 8px 10px; border-radius: 6px; background: rgba(255,255,255,0.02); margin-bottom: 4px; font-size: 13px; border-left: 2px solid transparent; transition: background 0.15s; }
   .bet-item:hover { background: rgba(255,255,255,0.04); }
   .bet-item.aliados { border-left-color: #3399ff; }
-  .bet-item.eje     { border-left-color: #ff4444; }
+  .bet-item.eje { border-left-color: #ff4444; }
   .bet-user { flex: 1; font-family: var(--mono); }
   .bet-option { font-size: 11px; color: var(--text-dim); }
   .bet-pts { font-family: var(--mono); color: var(--accent3); }
-
-  /* === CONTROL PANEL GRID === */
-  .control-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    align-items: flex-start;
-  }
-
-  /* === PLACEHOLDER === */
-  .placeholder {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    padding: 48px 24px;
-    color: var(--text-dim);
-    text-align: center;
-  }
-
-  .placeholder-icon {
-    font-size: 36px;
-    opacity: 0.4;
-  }
-
-  .placeholder-text {
-    font-size: 13px;
-    font-weight: 600;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-  }
-
-  /* === AJUSTE MANUAL === */
-  .inline-row {
-    display: flex;
-    gap: 8px;
-    align-items: flex-end;
-  }
-
+  .control-grid { display: flex; flex-wrap: wrap; gap: 10px; align-items: flex-start; }
+  .placeholder { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; padding: 48px 24px; color: var(--text-dim); text-align: center; }
+  .placeholder-icon { font-size: 36px; opacity: 0.4; }
+  .placeholder-text { font-size: 13px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; }
+  .inline-row { display: flex; gap: 8px; align-items: flex-end; }
   .inline-row .input-group { flex: 1; }
-
-  /* === SECCION APUESTAS === */
+  #tab-trivias { grid-template-columns: 1fr 360px; }
+  #tab-trivias .col-left { display: flex; flex-direction: column; gap: 20px; }
+  #tab-trivias .col-right { display: flex; flex-direction: column; gap: 20px; }
+  .trivia-bank-item { display: flex; align-items: center; gap: 10px; padding: 8px 10px; border-radius: 6px; background: rgba(255,255,255,0.02); margin-bottom: 4px; border: 1px solid var(--border); cursor: pointer; transition: all 0.15s; }
+  .trivia-bank-item:hover { border-color: var(--accent); background: rgba(0,229,255,0.05); }
+  .trivia-bank-item.selected { border-color: var(--accent); background: rgba(0,229,255,0.08); box-shadow: 0 0 10px rgba(0,229,255,0.1); }
+  .trivia-bank-thumb { width: 40px; height: 40px; border-radius: 6px; background: var(--bg3); border: 1px solid var(--border); object-fit: contain; flex-shrink: 0; }
+  .trivia-bank-text { flex: 1; font-size: 13px; }
+  .trivia-bank-correct { font-family: var(--mono); font-size: 11px; color: var(--accent4); }
+  .trivia-opt-row { display: grid; grid-template-columns: 32px 1fr 70px; gap: 8px; align-items: center; }
+  .trivia-opt-letter { width: 28px; height: 28px; border-radius: 50%; border: 2px solid var(--border); display: flex; align-items: center; justify-content: center; font-family: var(--mono); font-size: 12px; font-weight: 700; color: var(--text-dim); }
+  .trivia-opt-row.is-correct .trivia-opt-letter { border-color: var(--accent4); color: var(--accent4); }
+  .trivia-img-preview { width: 100%; max-height: 160px; object-fit: contain; background: var(--bg3); border: 1px solid var(--border); border-radius: 8px; padding: 8px; }
+  .trivia-img-preview.empty { display: flex; align-items: center; justify-content: center; min-height: 120px; color: var(--text-dim); font-size: 12px; }
+  .trivia-vote-row { display: flex; align-items: center; gap: 8px; padding: 6px 0; border-bottom: 1px solid rgba(255,255,255,0.04); }
+  .trivia-vote-row:last-child { border-bottom: none; }
+  .trivia-vote-bar { height: 6px; background: rgba(255,255,255,0.06); border-radius: 6px; overflow: hidden; margin-top: 3px; }
+  .trivia-vote-fill { height: 100%; border-radius: 6px; background: linear-gradient(90deg, #00cc55, #00ff88); transition: width 0.6s ease; }
+  .trivia-vote-fill.correct { background: linear-gradient(90deg, #cc8800, #ffd700); }
+  .trivia-vote-fill.incorrect { background: linear-gradient(90deg, #991111, #ff4444); }
   #tab-apuestas { grid-template-columns: 1fr 320px; }
   #tab-apuestas .col-left { display: flex; flex-direction: column; gap: 20px; }
   #tab-apuestas .col-right { display: flex; flex-direction: column; gap: 20px; }
-
-  /* === ENCUESTAS PLACEHOLDER === */
-  #tab-encuestas, #tab-trivias, #tab-sorteos {
-    grid-template-columns: 1fr;
-  }
-
-  /* === PUNTOS === */
+  #tab-encuestas, #tab-sorteos { grid-template-columns: 1fr; }
   #tab-puntos { grid-template-columns: 1fr 1fr; gap: 20px; }
-
-  /* === TOAST === */
-  #toast {
-    position: fixed;
-    bottom: 28px;
-    right: 28px;
-    background: var(--bg3);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 12px 18px;
-    font-size: 13px;
-    font-family: var(--mono);
-    color: var(--text);
-    opacity: 0;
-    transform: translateY(10px);
-    transition: all 0.3s;
-    z-index: 999;
-    pointer-events: none;
-    max-width: 300px;
-  }
-
-  #toast.show {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
+  #toast { position: fixed; bottom: 28px; right: 28px; background: var(--bg3); border: 1px solid var(--border); border-radius: 8px; padding: 12px 18px; font-size: 13px; font-family: var(--mono); color: var(--text); opacity: 0; transform: translateY(10px); transition: all 0.3s; z-index: 999; pointer-events: none; max-width: 300px; }
+  #toast.show { opacity: 1; transform: translateY(0); }
   #toast.ok   { border-left: 3px solid var(--accent4); }
   #toast.warn { border-left: 3px solid var(--accent3); }
   #toast.err  { border-left: 3px solid var(--accent2); }
-
-  /* === DIVIDER === */
-  .divider {
-    height: 1px;
-    background: var(--border);
-    margin: 16px 0;
-  }
-
-  @media (max-width: 900px) {
-    #tab-apuestas { grid-template-columns: 1fr; }
-    #tab-puntos { grid-template-columns: 1fr; }
-  }
+  .divider { height: 1px; background: var(--border); margin: 16px 0; }
+  @media (max-width: 900px) { #tab-apuestas, #tab-trivias { grid-template-columns: 1fr; } #tab-puntos { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
 
-<!-- TOPBAR -->
 <div id="topbar">
   <div id="topbar-left">
     <div class="logo-mark">SS</div>
@@ -656,7 +167,6 @@
   <div id="clock">--:--:--</div>
 </div>
 
-<!-- NAV -->
 <div id="nav">
   <div class="nav-tab active" data-tab="apuestas">⚔️ Apuestas</div>
   <div class="nav-tab" data-tab="encuestas">🗳️ Encuestas</div>
@@ -665,14 +175,11 @@
   <div class="nav-tab" data-tab="puntos">💰 Puntos</div>
 </div>
 
-<!-- MAIN -->
 <div id="main">
 
-  <!-- =================== APUESTAS =================== -->
+  <!-- APUESTAS -->
   <div class="tab-panel active" id="tab-apuestas">
     <div class="col-left">
-
-      <!-- Estado actual -->
       <div class="card">
         <div class="card-header">
           <div class="card-title">Estado actual</div>
@@ -680,44 +187,22 @@
         </div>
         <div class="card-body">
           <div class="stats-row" style="margin-bottom:16px">
-            <div class="stat-box">
-              <div class="stat-value" id="stat-pozo">0</div>
-              <div class="stat-label">Pozo total</div>
-            </div>
-            <div class="stat-box">
-              <div class="stat-value" id="stat-apostadores">0</div>
-              <div class="stat-label">Apostadores</div>
-            </div>
-            <div class="stat-box">
-              <div class="stat-value" id="stat-timer">—</div>
-              <div class="stat-label">Tiempo restante</div>
-            </div>
+            <div class="stat-box"><div class="stat-value" id="stat-pozo">0</div><div class="stat-label">Pozo total</div></div>
+            <div class="stat-box"><div class="stat-value" id="stat-apostadores">0</div><div class="stat-label">Apostadores</div></div>
+            <div class="stat-box"><div class="stat-value" id="stat-timer">—</div><div class="stat-label">Tiempo restante</div></div>
           </div>
-
-          <!-- Barras -->
           <div class="bet-bar-row">
-            <div class="bet-bar-meta">
-              <span style="color:#3399ff">● ALIADOS</span>
-              <span><span id="bar-pts1">0</span> pts · <span id="bar-pct1">0</span>%</span>
-            </div>
+            <div class="bet-bar-meta"><span style="color:#3399ff">● ALIADOS</span><span><span id="bar-pts1">0</span> pts · <span id="bar-pct1">0</span>%</span></div>
             <div class="bet-track"><div id="bar-fill1" class="bet-fill fill-a" style="width:0%"></div></div>
           </div>
-
           <div class="bet-bar-row">
-            <div class="bet-bar-meta">
-              <span style="color:#ff4444">● EJE</span>
-              <span><span id="bar-pts2">0</span> pts · <span id="bar-pct2">0</span>%</span>
-            </div>
+            <div class="bet-bar-meta"><span style="color:#ff4444">● EJE</span><span><span id="bar-pts2">0</span> pts · <span id="bar-pct2">0</span>%</span></div>
             <div class="bet-track"><div id="bar-fill2" class="bet-fill fill-e" style="width:0%"></div></div>
           </div>
         </div>
       </div>
-
-      <!-- Controles -->
       <div class="card">
-        <div class="card-header">
-          <div class="card-title">Controles</div>
-        </div>
+        <div class="card-header"><div class="card-title">Controles</div></div>
         <div class="card-body">
           <div class="control-grid">
             <button class="btn btn-success" onclick="betAction('startBet')">▶ Abrir apuestas</button>
@@ -732,10 +217,7 @@
           </div>
         </div>
       </div>
-
     </div>
-
-    <!-- Columna derecha: apuestas recientes -->
     <div class="col-right">
       <div class="card" style="flex:1">
         <div class="card-header">
@@ -743,28 +225,21 @@
           <span id="bet-count" style="font-family:var(--mono);font-size:12px;color:var(--text-dim)">0</span>
         </div>
         <div class="card-body" id="recent-bets-list" style="max-height:420px;overflow-y:auto">
-          <div class="placeholder">
-            <div class="placeholder-icon">📭</div>
-            <div class="placeholder-text">Sin apuestas aún</div>
-          </div>
+          <div class="placeholder"><div class="placeholder-icon">📭</div><div class="placeholder-text">Sin apuestas aún</div></div>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- =================== ENCUESTAS =================== -->
+  <!-- ENCUESTAS -->
   <div class="tab-panel" id="tab-encuestas">
     <div class="col-left">
-
-      <!-- Configurar encuesta -->
       <div class="card">
         <div class="card-header">
           <div class="card-title">Configurar encuesta</div>
           <div id="poll-status-pill" class="pill pill-idle">💤 Inactivo</div>
         </div>
         <div class="card-body" style="display:flex;flex-direction:column;gap:14px">
-
-          <!-- Plantilla -->
           <div>
             <div class="input-label" style="margin-bottom:8px">Plantilla</div>
             <div style="display:flex;gap:8px">
@@ -772,8 +247,6 @@
               <button class="template-btn" id="tmpl-7" onclick="setTemplate(7)">7 Llaves</button>
             </div>
           </div>
-
-          <!-- Duración -->
           <div class="input-group">
             <div class="input-label">Duración</div>
             <select id="poll-duracion">
@@ -784,46 +257,27 @@
               <option value="600">10 minutos</option>
             </select>
           </div>
-
-          <!-- Título -->
           <div class="input-group">
             <div class="input-label">Título</div>
             <input type="text" id="poll-titulo" value="¿Qué llave casteamos?"/>
           </div>
-
-          <!-- Preview llaves -->
           <div>
             <div class="input-label" style="margin-bottom:8px">Vista previa de opciones</div>
-            <div id="poll-preview" style="background:var(--bg3);border-radius:8px;padding:10px;border:1px solid var(--border)">
-            </div>
+            <div id="poll-preview" style="background:var(--bg3);border-radius:8px;padding:10px;border:1px solid var(--border)"></div>
           </div>
-
-          <!-- Controles principales -->
           <div class="control-grid">
             <button class="btn btn-success" onclick="pollAction('startPoll')">▶ Abrir encuesta</button>
             <button class="btn btn-ghost"   onclick="pollAction('closePoll')">⏸ Cerrar</button>
             <button class="btn btn-danger"  onclick="pollAction('cancelPoll')">✕ Cancelar</button>
           </div>
-
         </div>
       </div>
-
-      <!-- Declarar ganador -->
       <div class="card">
-        <div class="card-header">
-          <div class="card-title">Declarar ganador</div>
-        </div>
-        <div class="card-body">
-          <div class="declare-grid" id="declare-grid"></div>
-        </div>
+        <div class="card-header"><div class="card-title">Declarar ganador</div></div>
+        <div class="card-body"><div class="declare-grid" id="declare-grid"></div></div>
       </div>
-
     </div>
-
-    <!-- Columna derecha: monitor en tiempo real -->
     <div class="col-right">
-
-      <!-- Votos en tiempo real -->
       <div class="card" style="flex:1">
         <div class="card-header">
           <div class="card-title">Votos en tiempo real</div>
@@ -831,65 +285,151 @@
           <div id="poll-timer-panel" style="font-family:var(--mono);font-size:12px;color:var(--accent4)">—</div>
         </div>
         <div class="card-body" id="poll-votes-list" style="display:flex;flex-direction:column;gap:6px;max-height:320px;overflow-y:auto">
-          <div class="placeholder">
-            <div class="placeholder-icon">🗳️</div>
-            <div class="placeholder-text">Sin encuesta activa</div>
-          </div>
+          <div class="placeholder"><div class="placeholder-icon">🗳️</div><div class="placeholder-text">Sin encuesta activa</div></div>
         </div>
       </div>
-
-      <!-- Votos recientes -->
       <div class="card">
-        <div class="card-header">
-          <div class="card-title">Últimos votos</div>
-        </div>
+        <div class="card-header"><div class="card-title">Últimos votos</div></div>
         <div class="card-body" id="poll-recientes" style="min-height:60px">
           <div style="color:var(--text-dim);font-size:12px">—</div>
         </div>
       </div>
-
     </div>
   </div>
 
-  <!-- =================== TRIVIAS =================== -->
+  <!-- TRIVIAS -->
   <div class="tab-panel" id="tab-trivias">
-    <div class="card">
-      <div class="card-header">
-        <div class="card-title">Trivias</div>
-        <div class="pill pill-idle">Próximamente</div>
+    <div class="col-left">
+
+      <!-- Banco de preguntas -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">Banco de preguntas</div>
+          <span id="trivia-bank-count" style="font-family:var(--mono);font-size:12px;color:var(--text-dim)">0</span>
+        </div>
+        <div class="card-body" id="trivia-bank-list" style="max-height:320px;overflow-y:auto">
+          <div class="placeholder"><div class="placeholder-icon">📭</div><div class="placeholder-text">Banco vacío — agregá una pregunta abajo</div></div>
+        </div>
       </div>
-      <div class="card-body">
-        <div class="placeholder">
-          <div class="placeholder-icon">🧠</div>
-          <div class="placeholder-text">Sistema de trivias en desarrollo</div>
-          <p style="font-size:12px;color:var(--text-dim);max-width:300px;text-align:center;line-height:1.6">
-            Lanzá preguntas al chat, el primer viewer en responder correctamente gana Saurucoins. Temporizador configurable.
-          </p>
+
+      <!-- Editor / override manual -->
+      <div class="card">
+        <div class="card-header"><div class="card-title">Editar / nueva pregunta</div></div>
+        <div class="card-body" style="display:flex;flex-direction:column;gap:14px">
+
+          <div class="input-group">
+            <div class="input-label">Pregunta</div>
+            <textarea id="trivia-pregunta" rows="2" placeholder="¿Cuál es el costo de producción de un escuadrón de Fusileros?"></textarea>
+          </div>
+
+          <div class="input-group">
+            <div class="input-label">URL de imagen ilustrativa</div>
+            <input type="text" id="trivia-imagen" placeholder="https://... o ruta local del ícono"/>
+          </div>
+          <img id="trivia-img-preview" class="trivia-img-preview empty" src="" alt="preview"/>
+
+          <div class="divider"></div>
+
+          <div style="display:flex;flex-direction:column;gap:8px">
+            <div class="input-label">Opciones (marcá la correcta)</div>
+            <div class="trivia-opt-row" id="trivia-opt-row-A">
+              <div class="trivia-opt-letter">A</div>
+              <input type="text" class="trivia-opt-input" data-letra="A" placeholder="Opción A"/>
+              <button class="btn btn-ghost btn-sm" onclick="setTriviaCorrecta('A')">✓ Correcta</button>
+            </div>
+            <div class="trivia-opt-row" id="trivia-opt-row-B">
+              <div class="trivia-opt-letter">B</div>
+              <input type="text" class="trivia-opt-input" data-letra="B" placeholder="Opción B"/>
+              <button class="btn btn-ghost btn-sm" onclick="setTriviaCorrecta('B')">✓ Correcta</button>
+            </div>
+            <div class="trivia-opt-row" id="trivia-opt-row-C">
+              <div class="trivia-opt-letter">C</div>
+              <input type="text" class="trivia-opt-input" data-letra="C" placeholder="Opción C"/>
+              <button class="btn btn-ghost btn-sm" onclick="setTriviaCorrecta('C')">✓ Correcta</button>
+            </div>
+            <div class="trivia-opt-row" id="trivia-opt-row-D">
+              <div class="trivia-opt-letter">D</div>
+              <input type="text" class="trivia-opt-input" data-letra="D" placeholder="Opción D"/>
+              <button class="btn btn-ghost btn-sm" onclick="setTriviaCorrecta('D')">✓ Correcta</button>
+            </div>
+          </div>
+
+          <div class="control-grid">
+            <button class="btn btn-primary" onclick="guardarTriviaBanco()">💾 Guardar en banco</button>
+            <button class="btn btn-ghost" onclick="limpiarEditorTrivia()">✕ Limpiar</button>
+            <button class="btn btn-danger" id="trivia-btn-eliminar" style="display:none" onclick="eliminarTriviaBanco()">🗑️ Eliminar del banco</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Controles de juego -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">Lanzar trivia</div>
+          <div id="trivia-status-pill" class="pill pill-idle">💤 Inactivo</div>
+        </div>
+        <div class="card-body" style="display:flex;flex-direction:column;gap:14px">
+          <div class="input-group">
+            <div class="input-label">Duración (recomendado: máx. 15s)</div>
+            <select id="trivia-duracion">
+              <option value="30">30 segundos</option>
+              <option value="45" selected>45 segundos</option>
+              <option value="60">60 segundos</option>
+            </select>
+          </div>
+          <div style="font-size:12px;color:var(--text-dim)">
+            Comando para votar en el chat: <span style="color:var(--accent);font-family:var(--mono)">!trivia A/B/C/D</span><br>
+            Recompensas: <span style="color:var(--accent4);font-family:var(--mono)">+10 pts</span> acierto · <span style="color:var(--accent4);font-family:var(--mono)">+2 pts</span> participación
+          </div>
+          <div class="control-grid">
+            <button class="btn btn-success" onclick="triviaAction('startTrivia')">▶ Lanzar pregunta seleccionada</button>
+            <button class="btn btn-warning" onclick="triviaAction('closeTrivia')">⏸ Cerrar votos</button>
+            <button class="btn btn-primary" onclick="triviaAction('revealTrivia')">🏆 Revelar y pagar</button>
+            <button class="btn btn-danger" onclick="triviaAction('cancelTrivia')">✕ Cancelar</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="col-right">
+      <div class="card" style="flex:1">
+        <div class="card-header">
+          <div class="card-title">En vivo</div>
+          <div id="trivia-timer-panel" style="font-family:var(--mono);font-size:12px;color:var(--accent4)">—</div>
+        </div>
+        <div class="card-body">
+          <div id="trivia-live-pregunta" style="font-size:14px;font-weight:700;margin-bottom:10px;color:var(--text-dim)">Sin trivia activa</div>
+          <div id="trivia-votes-list" style="display:flex;flex-direction:column;gap:4px">
+            <div class="placeholder"><div class="placeholder-icon">🧠</div><div class="placeholder-text">Sin trivia activa</div></div>
+          </div>
+          <div id="trivia-total-votos" style="font-family:var(--mono);font-size:12px;color:var(--text-dim);text-align:right;margin-top:8px"></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header"><div class="card-title">Últimas respuestas</div></div>
+        <div class="card-body" id="trivia-recientes" style="min-height:60px">
+          <div style="color:var(--text-dim);font-size:12px">—</div>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- =================== SORTEOS =================== -->
+
+  <!-- SORTEOS -->
   <div class="tab-panel" id="tab-sorteos">
     <div class="card">
-      <div class="card-header">
-        <div class="card-title">Sorteos</div>
-        <div class="pill pill-idle">Próximamente</div>
-      </div>
+      <div class="card-header"><div class="card-title">Sorteos</div><div class="pill pill-idle">Próximamente</div></div>
       <div class="card-body">
         <div class="placeholder">
           <div class="placeholder-icon">🎲</div>
           <div class="placeholder-text">Sistema de sorteos en desarrollo</div>
-          <p style="font-size:12px;color:var(--text-dim);max-width:300px;text-align:center;line-height:1.6">
-            Los viewers gastan Saurucoins para participar. El sistema elige un ganador al azar de forma proporcional o igualitaria.
-          </p>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- =================== PUNTOS =================== -->
+  <!-- PUNTOS -->
   <div class="tab-panel" id="tab-puntos">
 
     <!-- TOP -->
@@ -900,13 +440,7 @@
       </div>
       <div class="card-body" style="padding:0">
         <table class="top-table">
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>Usuario</th>
-              <th style="text-align:right">Saurucoins</th>
-            </tr>
-          </thead>
+          <thead><tr><th>#</th><th>Usuario</th><th style="text-align:right">Saurucoins</th></tr></thead>
           <tbody id="top-tbody">
             <tr><td colspan="3"><div class="placeholder"><div class="placeholder-text">Cargando...</div></div></td></tr>
           </tbody>
@@ -914,12 +448,12 @@
       </div>
     </div>
 
-    <!-- Ajuste manual -->
+    <!-- Columna derecha: consulta + ajuste + gestión -->
     <div style="display:flex;flex-direction:column;gap:20px">
+
+      <!-- Consultar usuario -->
       <div class="card">
-        <div class="card-header">
-          <div class="card-title">Consultar usuario</div>
-        </div>
+        <div class="card-header"><div class="card-title">Consultar usuario</div></div>
         <div class="card-body">
           <div class="inline-row">
             <div class="input-group">
@@ -936,17 +470,15 @@
               </div>
               <div style="font-family:var(--mono);font-size:28px;color:var(--accent4)" id="lookup-pts">—</div>
             </div>
-            <!-- Historial -->
             <div style="font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--text-dim);margin-bottom:6px">Últimos movimientos</div>
             <div id="lookup-historial" style="max-height:200px;overflow-y:auto;display:flex;flex-direction:column;gap:3px"></div>
           </div>
         </div>
       </div>
 
+      <!-- Ajuste manual -->
       <div class="card">
-        <div class="card-header">
-          <div class="card-title">Ajuste manual</div>
-        </div>
+        <div class="card-header"><div class="card-title">Ajuste manual</div></div>
         <div class="card-body">
           <div style="display:flex;flex-direction:column;gap:12px">
             <div class="inline-row">
@@ -970,12 +502,49 @@
           </div>
         </div>
       </div>
-    </div>
 
+      <!-- Gestión de usuarios -->
+      <div class="card">
+        <div class="card-header"><div class="card-title">Gestión de usuarios</div></div>
+        <div class="card-body">
+          <div style="display:flex;flex-direction:column;gap:12px">
+            <div class="inline-row">
+              <div class="input-group">
+                <div class="input-label">Usuario</div>
+                <input type="text" id="mgmt-user" placeholder="nombre del viewer"/>
+              </div>
+              <button class="btn btn-ghost" onclick="mgmtLookup()">Buscar</button>
+            </div>
+            <div id="mgmt-result" style="display:none;background:var(--bg3);border-radius:8px;padding:12px;border:1px solid var(--border)">
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+                <div>
+                  <div style="font-family:var(--mono);font-size:14px;color:white" id="mgmt-nombre">—</div>
+                  <div style="font-size:11px;color:var(--text-dim);margin-top:2px">Facción actual: <span id="mgmt-faccion" style="color:var(--accent)">—</span></div>
+                </div>
+                <div style="font-family:var(--mono);font-size:24px;color:var(--accent4)" id="mgmt-pts">—</div>
+              </div>
+              <div style="margin-bottom:12px">
+                <div class="input-label" style="margin-bottom:6px">Cambiar facción</div>
+                <div style="display:flex;gap:6px;flex-wrap:wrap">
+                  <button class="btn btn-ghost btn-sm" onclick="cambiarFaccion('us')">🇺🇸 US</button>
+                  <button class="btn btn-ghost btn-sm" onclick="cambiarFaccion('cw')">🇬🇧 CW</button>
+                  <button class="btn btn-ghost btn-sm" onclick="cambiarFaccion('pe')">⚙️ PE</button>
+                  <button class="btn btn-ghost btn-sm" onclick="cambiarFaccion('wm')">🎖️ WM</button>
+                </div>
+              </div>
+              <div style="border-top:1px solid var(--border);padding-top:12px">
+                <button class="btn btn-danger btn-sm" onclick="borrarUsuario()">🗑️ Borrar usuario del sistema</button>
+                <div style="font-size:10px;color:var(--text-dim);margin-top:6px">Elimina al usuario y todo su historial. Irreversible.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
   </div>
 </div>
 
-<!-- TOAST -->
 <div id="toast"></div>
 
 <script>
@@ -983,16 +552,12 @@
   let pollInterval = null;
   let lastBetsJson = '';
 
-  // === RELOJ ===
   function updateClock() {
-    const now = new Date();
-    document.getElementById('clock').textContent =
-      now.toTimeString().slice(0,8);
+    document.getElementById('clock').textContent = new Date().toTimeString().slice(0,8);
   }
   setInterval(updateClock, 1000);
   updateClock();
 
-  // === TABS ===
   document.querySelectorAll('.nav-tab').forEach(tab => {
     tab.addEventListener('click', () => {
       document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
@@ -1003,7 +568,6 @@
     });
   });
 
-  // === TOAST ===
   let toastTimer = null;
   function toast(msg, type = 'ok') {
     const el = document.getElementById('toast');
@@ -1013,7 +577,6 @@
     toastTimer = setTimeout(() => el.classList.remove('show'), 3000);
   }
 
-  // === PING / STATUS ===
   async function checkServer() {
     try {
       await fetch(`${SERVER}/ping`, { cache: 'no-store' });
@@ -1027,193 +590,151 @@
     }
   }
 
-  // === POLL APUESTAS ===
   async function pollBets() {
     try {
       const res = await fetch(`${SERVER}/overlay-state`, { cache: 'no-store' });
       const s = await res.json();
-
-      // Status pill
       const pill = document.getElementById('bet-status-pill');
-      if (s.winner) {
-        pill.className = 'pill pill-waiting';
-        pill.textContent = `🏆 Ganador: opción ${s.winner}`;
-      } else if (s.closed) {
-        pill.className = 'pill pill-closed';
-        pill.textContent = '🔒 Cerradas';
-      } else if (s.active) {
-        pill.className = 'pill pill-open';
-        pill.textContent = '✅ Abiertas';
-      } else {
-        pill.className = 'pill pill-idle';
-        pill.textContent = '💤 Inactivo';
-      }
-
-      // Stats
-      const o1 = s.option1 || 0;
-      const o2 = s.option2 || 0;
-      const total = o1 + o2;
-      const p1 = total ? Math.round(o1/total*100) : 0;
-      const p2 = total ? Math.round(o2/total*100) : 0;
-
+      if (s.winner) { pill.className = 'pill pill-waiting'; pill.textContent = `🏆 Ganador: opción ${s.winner}`; }
+      else if (s.closed) { pill.className = 'pill pill-closed'; pill.textContent = '🔒 Cerradas'; }
+      else if (s.active) { pill.className = 'pill pill-open'; pill.textContent = '✅ Abiertas'; }
+      else { pill.className = 'pill pill-idle'; pill.textContent = '💤 Inactivo'; }
+      const o1 = s.option1 || 0; const o2 = s.option2 || 0; const total = o1 + o2;
+      const p1 = total ? Math.round(o1/total*100) : 0; const p2 = total ? Math.round(o2/total*100) : 0;
       document.getElementById('stat-pozo').textContent = total;
       document.getElementById('stat-apostadores').textContent = (s.recentBets||[]).length;
-      document.getElementById('stat-timer').textContent =
-        s.active && !s.closed && s.remaining > 0
-          ? `${Math.floor(s.remaining/60)}:${String(s.remaining%60).padStart(2,'0')}`
-          : '—';
-
-      document.getElementById('bar-pts1').textContent = o1;
-      document.getElementById('bar-pct1').textContent = p1;
-      document.getElementById('bar-fill1').style.width = p1 + '%';
-      document.getElementById('bar-pts2').textContent = o2;
-      document.getElementById('bar-pct2').textContent = p2;
-      document.getElementById('bar-fill2').style.width = p2 + '%';
-
-      // Lista apuestas (solo si cambió)
+      document.getElementById('stat-timer').textContent = s.active && !s.closed && s.remaining > 0 ? `${Math.floor(s.remaining/60)}:${String(s.remaining%60).padStart(2,'0')}` : '—';
+      document.getElementById('bar-pts1').textContent = o1; document.getElementById('bar-pct1').textContent = p1; document.getElementById('bar-fill1').style.width = p1 + '%';
+      document.getElementById('bar-pts2').textContent = o2; document.getElementById('bar-pct2').textContent = p2; document.getElementById('bar-fill2').style.width = p2 + '%';
       const betsJson = JSON.stringify(s.recentBets||[]);
       if (betsJson !== lastBetsJson) {
         lastBetsJson = betsJson;
         const container = document.getElementById('recent-bets-list');
         const bets = s.recentBets || [];
         document.getElementById('bet-count').textContent = bets.length;
-        if (bets.length === 0) {
-          container.innerHTML = `<div class="placeholder"><div class="placeholder-icon">📭</div><div class="placeholder-text">Sin apuestas aún</div></div>`;
-        } else {
-          container.innerHTML = [...bets].reverse().map(b => `
-            <div class="bet-item ${b.option === 'ALIADOS' ? 'aliados' : 'eje'}">
-              <span class="bet-user">${b.user}</span>
-              <span class="bet-option">${b.option}</span>
-              <span class="bet-pts">${b.points} pts</span>
-            </div>
-          `).join('');
-        }
+        container.innerHTML = bets.length === 0
+          ? `<div class="placeholder"><div class="placeholder-icon">📭</div><div class="placeholder-text">Sin apuestas aún</div></div>`
+          : [...bets].reverse().map(b => `<div class="bet-item ${b.option === 'ALIADOS' ? 'aliados' : 'eje'}"><span class="bet-user">${b.user}</span><span class="bet-option">${b.option}</span><span class="bet-pts">${b.points} pts</span></div>`).join('');
       }
-    } catch { /* servidor caído */ }
+    } catch {}
   }
 
-  // === ACCIONES APUESTAS ===
   async function betAction(type, option) {
     try {
       const body = { type };
       if (option !== undefined) body.option = option;
-      const res = await fetch(`${SERVER}/chat-event`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(body)
-      });
+      const res = await fetch(`${SERVER}/chat-event`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) });
       if (res.ok) {
-        const labels = {
-          startBet: '▶ Apuestas abiertas',
-          closeBet: '⏸ Apuestas cerradas',
-          cancelBet: '✕ Apuestas canceladas',
-          declareWinner: `🏆 Ganador declarado: opción ${option}`
-        };
+        const labels = { startBet: '▶ Apuestas abiertas', closeBet: '⏸ Apuestas cerradas', cancelBet: '✕ Apuestas canceladas', declareWinner: `🏆 Ganador declarado: opción ${option}` };
         toast(labels[type] || type, type === 'cancelBet' ? 'warn' : 'ok');
       }
-    } catch {
-      toast('Error conectando al servidor', 'err');
-    }
+    } catch { toast('Error conectando al servidor', 'err'); }
   }
 
-  // === TOP ===
   async function loadTop() {
     try {
       const res = await fetch(`${SERVER}/top?n=20`, { cache: 'no-store' });
       const data = await res.json();
       const tbody = document.getElementById('top-tbody');
-      if (!data.length) {
-        tbody.innerHTML = `<tr><td colspan="3"><div class="placeholder"><div class="placeholder-text">Sin datos todavía</div></div></td></tr>`;
-        return;
-      }
-      tbody.innerHTML = data.map(u => `
-        <tr class="rank-${u.rank}">
-          <td class="rank-num">${u.rank}</td>
-          <td style="font-family:var(--mono)">${u.user}</td>
-          <td class="pts-value">${u.points.toLocaleString()}</td>
-        </tr>
-      `).join('');
-    } catch {
-      toast('Error cargando top', 'err');
-    }
+      tbody.innerHTML = !data.length
+        ? `<tr><td colspan="3"><div class="placeholder"><div class="placeholder-text">Sin datos todavía</div></div></td></tr>`
+        : data.map(u => `<tr class="rank-${u.rank}"><td class="rank-num">${u.rank}</td><td style="font-family:var(--mono)">${u.user}</td><td class="pts-value">${u.points.toLocaleString()}</td></tr>`).join('');
+    } catch { toast('Error cargando top', 'err'); }
   }
 
-  // === LOOKUP ===
   async function lookupUser() {
     const nombre = document.getElementById('lookup-user').value.trim().toLowerCase();
     if (!nombre) return;
     try {
-      const [statsRes, histRes] = await Promise.all([
-        fetch(`${SERVER}/stats/${nombre}`),
-        fetch(`${SERVER}/historial/${nombre}?limite=20`)
-      ]);
+      const [statsRes, histRes] = await Promise.all([fetch(`${SERVER}/stats/${nombre}`), fetch(`${SERVER}/historial/${nombre}?limite=20`)]);
       if (!statsRes.ok) { toast('Usuario no encontrado', 'warn'); return; }
       const d = await statsRes.json();
       const historial = histRes.ok ? await histRes.json() : [];
-
       document.getElementById('lookup-name').textContent = d.nombre;
       document.getElementById('lookup-pts').textContent = (d.puntos||0).toLocaleString();
       document.getElementById('lookup-apuestas').textContent = d.total_apuestas || 0;
       document.getElementById('lookup-ganadas').textContent = d.total_ganadas || 0;
       document.getElementById('lookup-result').style.display = 'block';
-
-      // Renderizar historial
-      const motivoLabel = {
-        'mensaje':          '💬 Mensaje',
-        'pasivo':           '⏱ Presencia',
-        'bonus_participar': '🎲 Apostó',
-        'bonus_votar':      '🗳️ Votó',
-        'apuesta_ganada':   '🏆 Ganó apuesta',
-        'apuesta_colocada': '📤 Apuesta colocada',
-        'apuesta_devuelta': '↩️ Apuesta devuelta',
-        'ajuste_manual':    '🔧 Ajuste manual',
-      };
+      const motivoLabel = { 'mensaje':'💬 Mensaje','pasivo':'⏱ Presencia','bonus_participar':'🎲 Apostó','bonus_votar':'🗳️ Votó','apuesta_ganada':'🏆 Ganó apuesta','apuesta_colocada':'📤 Apuesta colocada','apuesta_devuelta':'↩️ Devuelta','ajuste_manual':'🔧 Ajuste manual' };
       const histEl = document.getElementById('lookup-historial');
-      if (!historial.length) {
-        histEl.innerHTML = `<div style="color:var(--text-dim);font-size:12px;padding:4px">Sin movimientos registrados</div>`;
-      } else {
-        histEl.innerHTML = historial.map(h => {
-          const signo = h.delta > 0 ? '+' : '';
-          const color = h.delta > 0 ? 'var(--accent4)' : 'var(--accent2)';
-          const label = motivoLabel[h.motivo] || h.motivo;
-          const fecha = new Date(h.ts).toLocaleString('es-AR', { dateStyle:'short', timeStyle:'short' });
-          return `<div style="display:flex;align-items:center;justify-content:space-between;padding:5px 8px;background:rgba(255,255,255,0.03);border-radius:5px;font-size:12px">
-            <span style="color:var(--text-dim)">${label}</span>
-            <span style="font-family:var(--mono);color:${color};min-width:50px;text-align:right">${signo}${h.delta}</span>
-            <span style="font-family:var(--mono);color:var(--accent4);min-width:50px;text-align:right">${h.puntos}</span>
-            <span style="color:var(--text-dim);font-size:10px;margin-left:8px">${fecha}</span>
-          </div>`;
-        }).join('');
-      }
-    } catch {
-      toast('Error consultando usuario', 'err');
-    }
+      histEl.innerHTML = !historial.length
+        ? `<div style="color:var(--text-dim);font-size:12px;padding:4px">Sin movimientos registrados</div>`
+        : historial.map(h => {
+            const signo = h.delta > 0 ? '+' : ''; const color = h.delta > 0 ? 'var(--accent4)' : 'var(--accent2)';
+            const label = motivoLabel[h.motivo] || h.motivo; const fecha = new Date(h.ts).toLocaleString('es-AR', { dateStyle:'short', timeStyle:'short' });
+            return `<div style="display:flex;align-items:center;justify-content:space-between;padding:5px 8px;background:rgba(255,255,255,0.03);border-radius:5px;font-size:12px"><span style="color:var(--text-dim)">${label}</span><span style="font-family:var(--mono);color:${color};min-width:50px;text-align:right">${signo}${h.delta}</span><span style="font-family:var(--mono);color:var(--accent4);min-width:50px;text-align:right">${h.puntos}</span><span style="color:var(--text-dim);font-size:10px;margin-left:8px">${fecha}</span></div>`;
+          }).join('');
+    } catch { toast('Error consultando usuario', 'err'); }
   }
 
-  // === AJUSTE MANUAL ===
   async function ajustar(signo) {
     const nombre = document.getElementById('adj-user').value.trim();
     const delta  = parseInt(document.getElementById('adj-delta').value) * signo;
     const motivo = document.getElementById('adj-motivo').value.trim() || 'ajuste_manual';
     if (!nombre || isNaN(delta)) { toast('Completá nombre y cantidad', 'warn'); return; }
     try {
-      const res = await fetch(`${SERVER}/ajustar`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ nombre, delta, motivo })
-      });
+      const res = await fetch(`${SERVER}/ajustar`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ nombre, delta, motivo }) });
       const d = await res.json();
       toast(`${nombre}: ${delta > 0 ? '+' : ''}${delta} pts → ${d.puntos} total`, 'ok');
       loadTop();
-    } catch {
-      toast('Error ajustando puntos', 'err');
-    }
+    } catch { toast('Error ajustando puntos', 'err'); }
   }
 
-  // Enter en lookup
-  document.getElementById('lookup-user').addEventListener('keydown', e => {
-    if (e.key === 'Enter') lookupUser();
-  });
+  document.getElementById('lookup-user').addEventListener('keydown', e => { if (e.key === 'Enter') lookupUser(); });
+
+  // === GESTIÓN DE USUARIOS ===
+  let mgmtUsuario = '';
+
+  async function mgmtLookup() {
+    const nombre = document.getElementById('mgmt-user').value.trim().toLowerCase();
+    if (!nombre) return;
+    try {
+      const res = await fetch(`${SERVER}/stats/${nombre}`);
+      if (!res.ok) { toast('Usuario no encontrado', 'warn'); document.getElementById('mgmt-result').style.display = 'none'; return; }
+      const d = await res.json();
+      mgmtUsuario = d.nombre;
+      document.getElementById('mgmt-nombre').textContent = d.nombre;
+      document.getElementById('mgmt-pts').textContent = (d.puntos||0).toLocaleString();
+      document.getElementById('mgmt-faccion').textContent = d.faccion || '(sin facción)';
+      document.getElementById('mgmt-result').style.display = 'block';
+    } catch { toast('Error consultando usuario', 'err'); }
+  }
+
+  async function cambiarFaccion(faccion) {
+    if (!mgmtUsuario) { toast('Buscá un usuario primero', 'warn'); return; }
+    const nombres = { us: '🇺🇸 US', cw: '🇬🇧 CW', pe: '⚙️ PE', wm: '🎖️ WM' };
+    if (!confirm(`¿Cambiar facción de "${mgmtUsuario}" a ${nombres[faccion]}?`)) return;
+    try {
+      const res = await fetch(`${SERVER}/admin/faccion`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ nombre: mgmtUsuario, faccion }) });
+      if (res.ok) {
+        document.getElementById('mgmt-faccion').textContent = faccion;
+        toast(`Facción de ${mgmtUsuario} cambiada a ${faccion}`, 'ok');
+      } else {
+        const err = await res.json();
+        toast(err.error || 'Error', 'err');
+      }
+    } catch { toast('Error cambiando facción', 'err'); }
+  }
+
+  async function borrarUsuario() {
+    if (!mgmtUsuario) { toast('Buscá un usuario primero', 'warn'); return; }
+    if (!confirm(`⚠️ ¿Borrar a "${mgmtUsuario}" y todo su historial? Esta acción es IRREVERSIBLE.`)) return;
+    try {
+      const res = await fetch(`${SERVER}/admin/usuario/${encodeURIComponent(mgmtUsuario)}`, { method: 'DELETE' });
+      if (res.ok) {
+        toast(`Usuario ${mgmtUsuario} eliminado`, 'ok');
+        mgmtUsuario = '';
+        document.getElementById('mgmt-result').style.display = 'none';
+        document.getElementById('mgmt-user').value = '';
+        loadTop();
+      } else {
+        const err = await res.json();
+        toast(err.error || 'Error', 'err');
+      }
+    } catch { toast('Error borrando usuario', 'err'); }
+  }
+
+  document.getElementById('mgmt-user').addEventListener('keydown', e => { if (e.key === 'Enter') mgmtLookup(); });
 
   // === ENCUESTAS ===
   let currentTemplate = 6;
@@ -1228,24 +749,17 @@
   }
 
   function renderPollPreview() {
-    const preview = document.getElementById('poll-preview');
     let html = '';
     for (let i = 1; i <= currentTemplate; i++) {
-      html += `<div class="poll-llave-row">
-        <div class="llave-badge">#${i}</div>
-        <div class="poll-llave-label" style="color:var(--text-dim);font-size:12px">Llave ${i}</div>
-      </div>`;
+      html += `<div class="poll-llave-row"><div class="llave-badge">#${i}</div><div class="poll-llave-label" style="color:var(--text-dim);font-size:12px">Llave ${i}</div></div>`;
     }
-    preview.innerHTML = html;
+    document.getElementById('poll-preview').innerHTML = html;
   }
 
   function renderDeclareGrid() {
-    const grid = document.getElementById('declare-grid');
     let html = '';
-    for (let i = 1; i <= currentTemplate; i++) {
-      html += `<button class="btn-declare" onclick="pollDeclareWinner('${i}')">🏆 #${i}</button>`;
-    }
-    grid.innerHTML = html;
+    for (let i = 1; i <= currentTemplate; i++) html += `<button class="btn-declare" onclick="pollDeclareWinner('${i}')">🏆 #${i}</button>`;
+    document.getElementById('declare-grid').innerHTML = html;
   }
 
   async function pollAction(type) {
@@ -1256,35 +770,19 @@
         body.optionCount = currentTemplate;
         body.duration = parseInt(document.getElementById('poll-duracion').value) || 120;
       }
-      const res = await fetch(`${SERVER}/chat-event`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(body)
-      });
+      const res = await fetch(`${SERVER}/chat-event`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) });
       if (res.ok) {
-        const labels = {
-          startPoll:  '▶ Encuesta abierta',
-          closePoll:  '⏸ Encuesta cerrada',
-          cancelPoll: '✕ Encuesta cancelada',
-        };
+        const labels = { startPoll: '▶ Encuesta abierta', closePoll: '⏸ Encuesta cerrada', cancelPoll: '✕ Encuesta cancelada' };
         toast(labels[type] || type, type === 'cancelPoll' ? 'warn' : 'ok');
       }
-    } catch {
-      toast('Error conectando al servidor', 'err');
-    }
+    } catch { toast('Error conectando al servidor', 'err'); }
   }
 
   async function pollDeclareWinner(llave) {
     try {
-      const res = await fetch(`${SERVER}/chat-event`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ type: 'pollResult', winner: llave })
-      });
+      const res = await fetch(`${SERVER}/chat-event`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ type: 'pollResult', winner: llave }) });
       if (res.ok) toast(`🏆 Ganadora: llave #${llave}`, 'ok');
-    } catch {
-      toast('Error declarando ganador', 'err');
-    }
+    } catch { toast('Error declarando ganador', 'err'); }
   }
 
   async function pollPoll() {
@@ -1294,95 +792,244 @@
       const json = JSON.stringify({ votes: s.votes, active: s.active, closed: s.closed, winner: s.winner, tied: s.tied, recentVotes: s.recentVotes });
       if (json === lastPollJson) return;
       lastPollJson = json;
-
       const timerEl = document.getElementById('poll-timer-panel');
       if (s.active && !s.closed && s.remaining > 0) {
-        const m = Math.floor(s.remaining / 60);
-        const sec = s.remaining % 60;
+        const m = Math.floor(s.remaining / 60); const sec = s.remaining % 60;
         timerEl.textContent = `⏱ ${m}:${String(sec).padStart(2,'0')}`;
         timerEl.style.color = s.remaining <= 10 ? 'var(--accent2)' : s.remaining <= 30 ? 'var(--accent3)' : 'var(--accent4)';
-      } else {
-        timerEl.textContent = '—';
-      }
-
-      // Status pill encuesta
+      } else { timerEl.textContent = '—'; }
       const pill = document.getElementById('poll-status-pill');
-      if (s.winner) {
-        pill.className = 'pill pill-waiting';
-        pill.textContent = `🏆 Llave #${s.winner} ganó`;
-      } else if (s.tied?.length) {
-        pill.className = 'pill pill-waiting';
-        pill.textContent = `🤝 Empate: #${s.tied.join(', #')}`;
-      } else if (s.closed) {
-        pill.className = 'pill pill-closed';
-        pill.textContent = '🔒 Cerrada';
-      } else if (s.active) {
-        pill.className = 'pill pill-open';
-        pill.textContent = '✅ Abierta';
-      } else {
-        pill.className = 'pill pill-idle';
-        pill.textContent = '💤 Inactivo';
-      }
-
-      // Votos en tiempo real
-      const votes = s.votes || {};
-      const total = Object.values(votes).reduce((a, b) => a + b, 0);
+      if (s.winner) { pill.className = 'pill pill-waiting'; pill.textContent = `🏆 Llave #${s.winner} ganó`; }
+      else if (s.tied?.length) { pill.className = 'pill pill-waiting'; pill.textContent = `🤝 Empate: #${s.tied.join(', #')}`; }
+      else if (s.closed) { pill.className = 'pill pill-closed'; pill.textContent = '🔒 Cerrada'; }
+      else if (s.active) { pill.className = 'pill pill-open'; pill.textContent = '✅ Abierta'; }
+      else { pill.className = 'pill pill-idle'; pill.textContent = '💤 Inactivo'; }
+      const votes = s.votes || {}; const total = Object.values(votes).reduce((a, b) => a + b, 0);
       document.getElementById('poll-total-votos').textContent = `${total} voto${total !== 1 ? 's' : ''}`;
       const maxV = Math.max(...Object.values(votes), 1);
       const listEl = document.getElementById('poll-votes-list');
       const count = s.optionCount || currentTemplate;
-
       if (!s.active && !s.closed) {
         listEl.innerHTML = `<div class="placeholder"><div class="placeholder-icon">🗳️</div><div class="placeholder-text">Sin encuesta activa</div></div>`;
       } else {
         let html = '';
         for (let i = 1; i <= count; i++) {
-          const num = String(i);
-          const v = votes[num] || 0;
-          const pct = total > 0 ? Math.round(v / total * 100) : 0;
-          const barW = total > 0 ? Math.round(v / maxV * 100) : 0;
-          const isWinner = s.winner === num;
-          const isTied = (s.tied || []).includes(num);
-          const llave = s.llaves?.[num] || {};
-          const label = llave.local && llave.visitante ? `${llave.local} vs ${llave.visitante}` : `Llave ${i}`;
-          html += `
-            <div style="padding:6px 0;border-bottom:1px solid rgba(255,255,255,0.04)">
-              <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px">
-                <div class="llave-badge" style="${isWinner ? 'border-color:var(--accent3);color:var(--accent3)' : isTied ? 'border-color:#ff9900;color:#ff9900' : ''}">#${i}</div>
-                <div style="flex:1;font-size:13px">${label}</div>
-                <div class="poll-llave-votes">${v > 0 ? `${v} (${pct}%)` : '—'}</div>
-              </div>
-              <div class="poll-vote-bar">
-                <div class="poll-vote-fill ${isWinner ? 'winner' : ''}" style="width:${barW}%"></div>
-              </div>
-            </div>`;
+          const num = String(i); const v = votes[num] || 0; const pct = total > 0 ? Math.round(v / total * 100) : 0; const barW = total > 0 ? Math.round(v / maxV * 100) : 0;
+          const isWinner = s.winner === num; const isTied = (s.tied || []).includes(num);
+          const llave = s.llaves?.[num] || {}; const label = llave.local && llave.visitante ? `${llave.local} vs ${llave.visitante}` : `Llave ${i}`;
+          html += `<div style="padding:6px 0;border-bottom:1px solid rgba(255,255,255,0.04)"><div style="display:flex;align-items:center;gap:8px;margin-bottom:4px"><div class="llave-badge" style="${isWinner ? 'border-color:var(--accent3);color:var(--accent3)' : isTied ? 'border-color:#ff9900;color:#ff9900' : ''}">#${i}</div><div style="flex:1;font-size:13px">${label}</div><div class="poll-llave-votes">${v > 0 ? `${v} (${pct}%)` : '—'}</div></div><div class="poll-vote-bar"><div class="poll-vote-fill ${isWinner ? 'winner' : ''}" style="width:${barW}%"></div></div></div>`;
         }
         listEl.innerHTML = html;
       }
-
-      // Votos recientes
       const recEl = document.getElementById('poll-recientes');
       const recent = (s.recentVotes || []).slice(-12).reverse();
-      if (!recent.length) {
-        recEl.innerHTML = `<div style="color:var(--text-dim);font-size:12px">—</div>`;
-      } else {
-        recEl.innerHTML = recent.map(v =>
-          `<span class="chip-voto">${v.user} → #${v.option}</span>`
-        ).join('');
-      }
-    } catch { /* servidor caído */ }
+      recEl.innerHTML = !recent.length ? `<div style="color:var(--text-dim);font-size:12px">—</div>` : recent.map(v => `<span class="chip-voto">${v.user} → #${v.option}</span>`).join('');
+    } catch {}
   }
 
-  // Inicializar preview y grid al cargar
-  renderPollPreview();
-  renderDeclareGrid();
-  setInterval(pollPoll, 1500);
+  // === TRIVIAS ===
+  let triviaBanco = JSON.parse(localStorage.getItem('triviaBanco') || '[]');
+  let triviaCorrecta = null;
+  let triviaEditId = null;
+  let triviaSeleccionada = null;
+  let lastTriviaJson = '';
 
-  // === ARRANQUE ===
+  function guardarBancoStorage() {
+    localStorage.setItem('triviaBanco', JSON.stringify(triviaBanco));
+  }
+
+  function setTriviaCorrecta(letra) {
+    triviaCorrecta = letra;
+    ['A','B','C','D'].forEach(l => {
+      document.getElementById(`trivia-opt-row-${l}`).classList.toggle('is-correct', l === letra);
+    });
+  }
+
+  document.getElementById('trivia-imagen').addEventListener('input', e => {
+    const img = document.getElementById('trivia-img-preview');
+    const url = e.target.value.trim();
+    if (url) {
+      img.src = url;
+      img.className = 'trivia-img-preview';
+    } else {
+      img.removeAttribute('src');
+      img.className = 'trivia-img-preview empty';
+    }
+  });
+
+  function limpiarEditorTrivia() {
+    triviaEditId = null;
+    document.getElementById('trivia-pregunta').value = '';
+    document.getElementById('trivia-imagen').value = '';
+    document.getElementById('trivia-img-preview').className = 'trivia-img-preview empty';
+    document.getElementById('trivia-img-preview').removeAttribute('src');
+    document.querySelectorAll('.trivia-opt-input').forEach(i => i.value = '');
+    triviaCorrecta = null;
+    ['A','B','C','D'].forEach(l => document.getElementById(`trivia-opt-row-${l}`).classList.remove('is-correct'));
+    document.getElementById('trivia-btn-eliminar').style.display = 'none';
+  }
+
+  function guardarTriviaBanco() {
+    const pregunta = document.getElementById('trivia-pregunta').value.trim();
+    const imagen = document.getElementById('trivia-imagen').value.trim();
+    const opciones = {};
+    let valid = true;
+    document.querySelectorAll('.trivia-opt-input').forEach(i => {
+      opciones[i.dataset.letra] = i.value.trim();
+      if (!i.value.trim()) valid = false;
+    });
+    if (!pregunta || !valid || !triviaCorrecta) {
+      toast('Completá pregunta, las 4 opciones y marcá la correcta', 'err');
+      return;
+    }
+    const item = { id: triviaEditId || Date.now(), pregunta, imagen, opciones, correcta: triviaCorrecta };
+    if (triviaEditId) {
+      const idx = triviaBanco.findIndex(t => t.id === triviaEditId);
+      if (idx >= 0) triviaBanco[idx] = item;
+    } else {
+      triviaBanco.push(item);
+    }
+    guardarBancoStorage();
+    renderTriviaBanco();
+    limpiarEditorTrivia();
+    toast('💾 Pregunta guardada en el banco', 'ok');
+  }
+
+  function cargarTriviaEnEditor(id) {
+    const item = triviaBanco.find(t => t.id === id);
+    if (!item) return;
+    triviaEditId = item.id;
+    document.getElementById('trivia-pregunta').value = item.pregunta;
+    document.getElementById('trivia-imagen').value = item.imagen || '';
+    const img = document.getElementById('trivia-img-preview');
+    if (item.imagen) { img.src = item.imagen; img.className = 'trivia-img-preview'; }
+    else { img.className = 'trivia-img-preview empty'; img.removeAttribute('src'); }
+    document.querySelectorAll('.trivia-opt-input').forEach(i => i.value = item.opciones[i.dataset.letra] || '');
+    setTriviaCorrecta(item.correcta);
+    document.getElementById('trivia-btn-eliminar').style.display = 'inline-flex';
+  }
+
+  function eliminarTriviaBanco() {
+    if (!triviaEditId) return;
+    triviaBanco = triviaBanco.filter(t => t.id !== triviaEditId);
+    guardarBancoStorage();
+    renderTriviaBanco();
+    limpiarEditorTrivia();
+    toast('🗑️ Pregunta eliminada', 'warn');
+  }
+
+  function seleccionarTrivia(id) {
+    triviaSeleccionada = id;
+    renderTriviaBanco();
+  }
+
+  function renderTriviaBanco() {
+    const cont = document.getElementById('trivia-bank-list');
+    document.getElementById('trivia-bank-count').textContent = triviaBanco.length;
+    if (!triviaBanco.length) {
+      cont.innerHTML = `<div class="placeholder"><div class="placeholder-icon">📭</div><div class="placeholder-text">Banco vacío — agregá una pregunta abajo</div></div>`;
+      return;
+    }
+    cont.innerHTML = triviaBanco.map(t => `
+      <div class="trivia-bank-item ${t.id === triviaSeleccionada ? 'selected' : ''}" onclick="seleccionarTrivia(${t.id})">
+        ${t.imagen ? `<img class="trivia-bank-thumb" src="${t.imagen}" alt=""/>` : `<div class="trivia-bank-thumb" style="display:flex;align-items:center;justify-content:center;font-size:18px">🧠</div>`}
+        <div class="trivia-bank-text">${t.pregunta}</div>
+        <div class="trivia-bank-correct">✓ ${t.correcta}</div>
+        <button class="btn btn-ghost btn-sm" onclick="event.stopPropagation();cargarTriviaEnEditor(${t.id})">✎</button>
+      </div>
+    `).join('');
+  }
+
+  async function triviaAction(type) {
+    try {
+      const body = { type };
+      if (type === 'startTrivia') {
+        if (!triviaSeleccionada) { toast('Seleccioná una pregunta del banco primero', 'err'); return; }
+        const item = triviaBanco.find(t => t.id === triviaSeleccionada);
+        if (!item) { toast('Pregunta no encontrada', 'err'); return; }
+        body.pregunta = item.pregunta;
+        body.imagen = item.imagen;
+        body.opciones = item.opciones;
+        body.correcta = item.correcta;
+        body.duration = parseInt(document.getElementById('trivia-duracion').value) || 15;
+      }
+      const res = await fetch(`${SERVER}/chat-event`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) });
+      if (res.ok) {
+        const labels = { startTrivia: '▶ Trivia lanzada', closeTrivia: '⏸ Votos cerrados', revealTrivia: '🏆 Respuesta revelada', cancelTrivia: '✕ Trivia cancelada' };
+        toast(labels[type] || type, type === 'cancelTrivia' ? 'warn' : 'ok');
+      }
+    } catch { toast('Error conectando al servidor', 'err'); }
+  }
+
+  async function pollTrivia() {
+    try {
+      const res = await fetch(`${SERVER}/trivia-state`, { cache: 'no-store' });
+      const s = await res.json();
+      const json = JSON.stringify({ votes: s.votes, active: s.active, closed: s.closed, revealed: s.revealed, recentVotes: s.recentVotes, pregunta: s.pregunta });
+      if (json === lastTriviaJson) return;
+      lastTriviaJson = json;
+
+      const timerEl = document.getElementById('trivia-timer-panel');
+      if (s.active && !s.closed && s.remaining != null) {
+        timerEl.textContent = `⏱ ${s.remaining}s`;
+        timerEl.style.color = s.remaining <= 5 ? 'var(--accent2)' : s.remaining <= 10 ? 'var(--accent3)' : 'var(--accent4)';
+      } else { timerEl.textContent = '—'; }
+
+      const pill = document.getElementById('trivia-status-pill');
+      if (s.revealed) { pill.className = 'pill pill-waiting'; pill.textContent = `🏆 Correcta: ${s.correcta}`; }
+      else if (s.closed) { pill.className = 'pill pill-closed'; pill.textContent = '🔒 Cerrada'; }
+      else if (s.active) { pill.className = 'pill pill-open'; pill.textContent = '✅ Activa'; }
+      else { pill.className = 'pill pill-idle'; pill.textContent = '💤 Inactivo'; }
+
+      const liveP = document.getElementById('trivia-live-pregunta');
+      liveP.textContent = (s.active || s.closed) ? s.pregunta : 'Sin trivia activa';
+      liveP.style.color = (s.active || s.closed) ? 'var(--text)' : 'var(--text-dim)';
+
+      const votes = s.votes || {};
+      const total = Object.values(votes).reduce((a,b) => a+b, 0);
+      document.getElementById('trivia-total-votos').textContent = total ? `${total} respuesta${total !== 1 ? 's' : ''}` : '';
+      const maxV = Math.max(...Object.values(votes), 1);
+      const listEl = document.getElementById('trivia-votes-list');
+
+      if (!s.active && !s.closed) {
+        listEl.innerHTML = `<div class="placeholder"><div class="placeholder-icon">🧠</div><div class="placeholder-text">Sin trivia activa</div></div>`;
+      } else {
+        const opciones = s.opciones || {};
+        listEl.innerHTML = ['A','B','C','D'].map(letra => {
+          const texto = opciones[letra] || `Opción ${letra}`;
+          const v = votes[letra] || 0;
+          const pct = total > 0 ? Math.round(v/total*100) : 0;
+          const barW = total > 0 ? Math.round(v/maxV*100) : 0;
+          let fillClass = '';
+          if (s.revealed) fillClass = (letra === s.correcta) ? 'correct' : 'incorrect';
+          return `<div class="trivia-vote-row" style="flex-direction:column;align-items:stretch">
+            <div style="display:flex;justify-content:space-between;font-size:13px">
+              <span>${letra}) ${texto}</span>
+              <span style="font-family:var(--mono);color:var(--accent4)">${v > 0 ? `${v} (${pct}%)` : '—'}</span>
+            </div>
+            <div class="trivia-vote-bar"><div class="trivia-vote-fill ${fillClass}" style="width:${barW}%"></div></div>
+          </div>`;
+        }).join('');
+      }
+
+      const recEl = document.getElementById('trivia-recientes');
+      const recent = (s.recentVotes || []).slice(-12).reverse();
+      recEl.innerHTML = !recent.length ? `<div style="color:var(--text-dim);font-size:12px">—</div>` : recent.map(v => {
+        let cls = '';
+        if (s.revealed) cls = (v.option === s.correcta) ? 'style="background:rgba(255,214,0,0.1);border-color:rgba(255,214,0,0.3);color:var(--accent3)"' : 'style="background:rgba(255,61,61,0.08);border-color:rgba(255,61,61,0.2);color:var(--accent2)"';
+        return `<span class="chip-voto" ${cls}>${v.user} → ${v.option}</span>`;
+      }).join('');
+    } catch {}
+  }
+
+  renderTriviaBanco();
+  setInterval(pollTrivia, 1000);
+
   checkServer();
   setInterval(checkServer, 10000);
   pollBets();
   setInterval(pollBets, 1500);
+
 </script>
 </body>
 </html>

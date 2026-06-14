@@ -23,7 +23,7 @@
     body.visible { opacity: 1; }
 
     #container {
-      width: 320px;
+      width: 340px;
       background: rgba(6, 8, 12, 0.88);
       border: 1px solid rgba(255,255,255,0.07);
       border-radius: 4px;
@@ -70,7 +70,7 @@
       display: flex;
       align-items: center;
       padding: 8px 18px;
-      gap: 12px;
+      gap: 10px;
       opacity: 0;
       transform: translateX(-12px);
       transition: background 0.2s;
@@ -89,7 +89,7 @@
     .row-rank {
       font-family: 'Bebas Neue', sans-serif;
       font-size: 20px;
-      width: 28px;
+      width: 24px;
       text-align: center;
       line-height: 1;
       flex-shrink: 0;
@@ -100,12 +100,29 @@
     .row:nth-child(3) .row-rank { color: #FF8C42; }
     .row:nth-child(n+4) .row-rank { color: rgba(255,255,255,0.25); }
 
-    .row-bar-wrap {
+    /* Insignia de rango */
+    .row-insignia {
+      width: 30px;
+      height: 30px;
+      object-fit: contain;
+      image-rendering: crisp-edges;
+      flex-shrink: 0;
+      opacity: 0.92;
+    }
+
+    /* Bloque central: nombre + rango + barra */
+    .row-info {
       flex: 1;
       display: flex;
       flex-direction: column;
-      gap: 4px;
+      gap: 3px;
       min-width: 0;
+    }
+
+    .row-name-line {
+      display: flex;
+      align-items: center;
+      gap: 5px;
     }
 
     .row-name {
@@ -120,8 +137,43 @@
 
     .row:nth-child(1) .row-name { color: #fff; }
 
+    .row-faction-flag {
+      height: 16px;
+      width: auto;
+      border: 1px solid rgba(255,255,255,0.2);
+      box-shadow: 0 0 4px rgba(0,0,0,0.5);
+      flex-shrink: 0;
+      vertical-align: middle;
+    }
+
+    .row-rank-label {
+      font-size: 9px;
+      letter-spacing: 0.8px;
+      color: rgba(255,255,255,0.22);
+      text-transform: uppercase;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .row-rank-num {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 12px;
+      letter-spacing: 1px;
+      opacity: 0.75;
+    }
+
+    .row-rank-sep { opacity: 0.3; }
+
+    .row:nth-child(1) .row-rank-label { color: rgba(200,255,0,0.45); }
+    .row:nth-child(2) .row-rank-label { color: rgba(255,255,255,0.3); }
+    .row:nth-child(3) .row-rank-label { color: rgba(255,140,66,0.45); }
+
     .bar-track {
-      height: 3px;
+      height: 2px;
       background: rgba(255,255,255,0.07);
       border-radius: 2px;
       overflow: hidden;
@@ -197,6 +249,46 @@
   </div>
 
   <script>
+    // ── RANGOS (igual que saurucoins.html) ──────────────────────────
+    const RANGOS = [
+      { num: 1,  nombre: "Recluta",             desde: 0    },
+      { num: 2,  nombre: "Soldado raso",        desde: 20   },
+      { num: 3,  nombre: "Soldado",             desde: 50   },
+      { num: 4,  nombre: "Cabo",                desde: 90   },
+      { num: 5,  nombre: "Cabo primero",        desde: 140  },
+      { num: 6,  nombre: "Sargento",            desde: 210  },
+      { num: 7,  nombre: "Sargento primero",    desde: 300  },
+      { num: 8,  nombre: "Sargento mayor",      desde: 410  },
+      { num: 9,  nombre: "Subteniente",         desde: 540  },
+      { num: 10, nombre: "Teniente",            desde: 700  },
+      { num: 11, nombre: "Teniente primero",    desde: 890  },
+      { num: 12, nombre: "Capitán",             desde: 1110 },
+      { num: 13, nombre: "Mayor",               desde: 1370 },
+      { num: 14, nombre: "Teniente coronel",    desde: 1670 },
+      { num: 15, nombre: "Coronel",             desde: 2010 },
+      { num: 16, nombre: "Brigadier",           desde: 2390 },
+      { num: 17, nombre: "General de brigada",  desde: 2650 },
+      { num: 18, nombre: "General de división", desde: 2850 },
+      { num: 19, nombre: "General de ejército", desde: 3040 },
+      { num: 20, nombre: "Mariscal",            desde: 3200 },
+    ];
+
+    const FACCION_PREFIJO = { us: "us", cw: "brit", pe: "panzer", wm: "heer" };
+
+    function getRango(puntos) {
+      let rango = RANGOS[0];
+      for (const r of RANGOS) {
+        if (puntos >= r.desde) rango = r;
+        else break;
+      }
+      return rango;
+    }
+
+    function rankPrefix(faccion) {
+      return FACCION_PREFIJO[faccion] || "us";
+    }
+
+    // ── OVERLAY LOGIC ───────────────────────────────────────────────
     let lastVisible = false;
     let lastListJson = "";
     let serverReady = false;
@@ -217,14 +309,29 @@
     function buildRows(list) {
       rowsEl.innerHTML = "";
       const maxPts = list.length > 0 ? list[0].points : 1;
+
       list.forEach((p, i) => {
+        const rango   = getRango(p.points);
+        const prefix  = rankPrefix(p.faccion);
+        const imgNum  = String(rango.num).padStart(2, "0");
+        const insigniaSrc = `ranks/${prefix}_${imgNum}.png`;
+        const pct = Math.round((p.points / maxPts) * 100);
+
+        const factionFlag = p.faccion
+          ? `<img class="row-faction-flag" src="armies/${p.faccion}.png" alt="${p.faccion}" onerror="this.style.display='none'">`
+          : "";
+
         const row = document.createElement("div");
         row.className = "row";
-        const pct = Math.round((p.points / maxPts) * 100);
         row.innerHTML = `
           <div class="row-rank">${p.rank}</div>
-          <div class="row-bar-wrap">
-            <div class="row-name">${p.user}</div>
+          <img class="row-insignia" src="${insigniaSrc}" alt="${rango.nombre}" onerror="this.style.display='none'">
+          <div class="row-info">
+            <div class="row-name-line">
+              <span class="row-name">${p.user}</span>
+              ${factionFlag}
+            </div>
+            <div class="row-rank-label"><span class="row-rank-num">NV ${rango.num}</span><span class="row-rank-sep">·</span>${rango.nombre}</div>
             <div class="bar-track"><div class="bar-fill" data-pct="${pct}"></div></div>
           </div>
           <div class="row-pts">${p.points.toLocaleString()}</div>
@@ -233,7 +340,7 @@
         rowsEl.appendChild(row);
         requestAnimationFrame(() => row.classList.add("in"));
       });
-      // Animar barras después de que los rows aparezcan
+
       setTimeout(() => {
         document.querySelectorAll(".bar-fill").forEach(bar => {
           bar.style.width = bar.dataset.pct + "%";
