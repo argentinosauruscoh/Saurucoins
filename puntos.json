@@ -1,5 +1,5 @@
 {
-  "actualizado": "2026-06-14T16:36:39.991Z",
+  "actualizado": "2026-06-14T16:41:39.979Z",
   "usuarios": [
     {
       "rank": 1,
@@ -7981,12 +7981,24 @@
     {
       "rank": 58,
       "user": "jorge",
-      "points": 5,
+      "points": 8,
       "faccion": null,
       "profile_img": null,
       "total_apuestas": 0,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 2,
+          "motivo": "bonus_participar",
+          "puntos": 8,
+          "ts": 1781455053000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 6,
+          "ts": 1781455015000
+        },
         {
           "delta": 2,
           "motivo": "bonus_votar",
