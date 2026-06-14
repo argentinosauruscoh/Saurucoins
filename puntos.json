@@ -1,5 +1,5 @@
 {
-  "actualizado": "2026-06-14T15:52:36.638Z",
+  "actualizado": "2026-06-14T15:57:36.623Z",
   "usuarios": [
     {
       "rank": 1,
@@ -7148,12 +7148,18 @@
     {
       "rank": 33,
       "user": "lean",
-      "points": 17,
+      "points": 18,
       "faccion": "wm",
       "profile_img": null,
       "total_apuestas": 1,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 18,
+          "ts": 1781452429000
+        },
         {
           "delta": 10,
           "motivo": "pasivo",
