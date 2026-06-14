@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SauruCoins — Portal de Rango</title>
+<title>SauruCoins — Portal</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -21,6 +21,7 @@
     --text:    #c8d4e0;
     --muted:   #5a6a7a;
     --accent:  #c9a84c;
+    --profile-w: 480px;
   }
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -49,9 +50,10 @@
     position: relative;
     background: linear-gradient(135deg, #0d1219 0%, #151e2a 60%, #0d1219 100%);
     border-bottom: 2px solid var(--gold);
-    padding: 28px 40px 24px;
-    display: flex; align-items: center; gap: 20px;
+    padding: 20px 32px 18px;
+    display: flex; align-items: center; gap: 16px;
     box-shadow: 0 4px 40px rgba(201,168,76,.15);
+    z-index: 10;
   }
   header::after {
     content: '';
@@ -61,260 +63,317 @@
     opacity: .5;
   }
   .logo-icon {
-    font-size: 48px; line-height: 1;
+    font-size: 40px; line-height: 1;
     filter: drop-shadow(0 0 12px rgba(201,168,76,.6));
   }
   .logo-text h1 {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 42px; letter-spacing: 4px;
+    font-size: 36px; letter-spacing: 4px;
     color: var(--gold2);
     text-shadow: 0 0 20px rgba(201,168,76,.4);
     line-height: 1;
   }
   .logo-text p {
     font-family: 'DM Mono', monospace;
-    font-size: 11px; color: var(--muted);
+    font-size: 10px; color: var(--muted);
     letter-spacing: 3px; text-transform: uppercase;
     margin-top: 2px;
   }
-  .header-nav {
-    margin-left: auto;
-    display: flex; gap: 8px;
-  }
-  .nav-btn {
-    font-family: 'DM Mono', monospace;
-    font-size: 11px; letter-spacing: 2px;
-    padding: 8px 16px;
-    background: transparent;
-    border: 1px solid var(--border);
-    color: var(--muted);
-    cursor: pointer;
-    text-transform: uppercase;
-    transition: all .2s;
-  }
-  .nav-btn:hover, .nav-btn.active {
-    border-color: var(--gold);
-    color: var(--gold);
-    background: rgba(201,168,76,.08);
-    box-shadow: 0 0 12px rgba(201,168,76,.15);
-  }
 
-  /* ── MAIN LAYOUT ── */
-  main {
+
+  /* ── PORTAL LAYOUT: ranking left + profile right ── */
+  .portal {
     position: relative; z-index: 1;
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 32px 24px 60px;
+    display: flex;
+    height: calc(100vh - 75px); /* full height minus header */
+    overflow: hidden;
   }
 
-  /* ── SEARCH ── */
-  .search-section {
-    margin-bottom: 36px;
-    text-align: center;
-  }
-  .search-label {
-    font-family: 'DM Mono', monospace;
-    font-size: 11px; letter-spacing: 3px;
-    color: var(--muted); text-transform: uppercase;
-    display: block; margin-bottom: 12px;
-  }
-  .search-wrap {
-    display: flex; gap: 0;
-    max-width: 500px; margin: 0 auto;
-    border: 1px solid var(--gold);
-    box-shadow: 0 0 20px rgba(201,168,76,.1);
-  }
-  #search-input {
-    flex: 1;
+  /* ── LEFT: LEADERBOARD ── */
+  .lb-pane {
+    flex: 0 0 380px;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid var(--border);
     background: var(--dark2);
-    border: none;
-    color: var(--text);
-    font-family: 'DM Mono', monospace;
-    font-size: 15px;
-    padding: 14px 18px;
-    outline: none;
+    overflow: hidden;
+    transition: flex-basis .35s cubic-bezier(.4,0,.2,1);
   }
-  #search-input::placeholder { color: var(--muted); }
-  #search-btn {
-    background: var(--gold);
-    color: #0a0c0f;
-    border: none;
+  .lb-pane-header {
+    background: var(--panel);
+    border-bottom: 1px solid var(--border);
+    padding: 14px 20px;
+    display: flex; align-items: center; gap: 10px;
+    flex-shrink: 0;
+  }
+  .lb-pane-header h2 {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 18px; letter-spacing: 2px;
-    padding: 14px 24px;
-    cursor: pointer;
-    transition: background .2s;
+    font-size: 18px; letter-spacing: 2px; color: var(--text);
   }
-  #search-btn:hover { background: var(--gold2); }
+  .dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--gold);
+    box-shadow: 0 0 6px rgba(201,168,76,.5);
+    flex-shrink: 0;
+  }
+  .lb-scroll {
+    flex: 1;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--border) transparent;
+  }
+  .lb-scroll::-webkit-scrollbar { width: 4px; }
+  .lb-scroll::-webkit-scrollbar-track { background: transparent; }
+  .lb-scroll::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
 
-  /* ── TABS ── */
-  .page { display: none; }
-  .page.active { display: block; }
+  .lb-row {
+    display: grid;
+    grid-template-columns: 40px 32px 1fr 88px;
+    padding: 10px 16px;
+    border-bottom: 1px solid rgba(42,53,69,.5);
+    align-items: center;
+    transition: background .15s;
+    cursor: pointer;
+    gap: 8px;
+  }
+  .lb-row:hover { background: rgba(201,168,76,.06); }
+  .lb-row.selected { background: rgba(201,168,76,.1); border-left: 3px solid var(--gold); }
+  .lb-row:last-child { border-bottom: none; }
+  .lb-rank {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 20px; color: var(--muted);
+  }
+  .lb-row.top1 .lb-rank { color: #ffd700; text-shadow: 0 0 8px rgba(255,215,0,.4); }
+  .lb-row.top2 .lb-rank { color: #c0c0c0; }
+  .lb-row.top3 .lb-rank { color: #cd7f32; }
+  .lb-insignia {
+    width: 28px; height: 28px;
+    object-fit: contain;
+    image-rendering: crisp-edges;
+    opacity: .9;
+  }
+  .lb-name {
+    font-weight: 500; font-size: 14px;
+    display: flex; flex-direction: column; gap: 1px;
+    min-width: 0;
+  }
+  .lb-name > span:first-child {
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+  .lb-rank-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px; color: var(--muted); letter-spacing: 1px;
+  }
+  .lb-pts {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 20px; color: var(--gold);
+    text-align: right;
+  }
+  .lb-you .lb-name > span:first-child { color: var(--gold2); }
+
+  .lb-faction-flag {
+    height: 13px; width: auto;
+    vertical-align: middle;
+    margin-left: 5px;
+    border: 1px solid rgba(255,255,255,.12);
+    image-rendering: crisp-edges;
+    position: relative; top: -1px;
+  }
+
+  /* ── RIGHT: PROFILE PANEL ── */
+  .profile-pane {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+  }
+
+  /* Empty state shown when no user selected */
+  .profile-empty-state {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    color: var(--muted);
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 40px;
+  }
+  .profile-empty-state .big { font-size: 56px; line-height: 1; }
+  .profile-empty-state p { line-height: 1.8; }
+
+  /* Profile content */
+  .profile-content {
+    display: none;
+    flex-direction: column;
+    height: 100%;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--border) transparent;
+    animation: slideIn .3s ease;
+  }
+  .profile-content::-webkit-scrollbar { width: 4px; }
+  .profile-content::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+  .profile-content.visible { display: flex; }
+
+  @keyframes slideIn { from { opacity:0; transform: translateX(20px); } to { opacity:1; transform: none; } }
 
   /* ── PROFILE CARD ── */
-  #profile-section { animation: fadeIn .4s ease; }
-  @keyframes fadeIn { from { opacity:0; transform: translateY(12px); } to { opacity:1; transform: none; } }
-
   .profile-card {
     background: var(--dark3);
-    border: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
     border-top: 3px solid var(--gold);
-    padding: 28px 32px;
+    padding: 24px 28px;
     display: grid;
     grid-template-columns: 1fr auto;
-    gap: 24px;
-    margin-bottom: 24px;
+    gap: 20px;
     position: relative;
     overflow: hidden;
+    flex-shrink: 0;
   }
   .profile-card::before {
     content: '';
     position: absolute; top: 0; right: 0;
     width: 200px; height: 200px;
     background: radial-gradient(circle, rgba(201,168,76,.06) 0%, transparent 70%);
+    pointer-events: none;
   }
+  .profile-close {
+    position: absolute; top: 12px; right: 14px;
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 16px;
+    width: 28px; height: 28px;
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: all .2s;
+    font-family: monospace;
+    line-height: 1;
+  }
+  .profile-close:hover { border-color: var(--gold); color: var(--gold); }
+
   .profile-name {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 36px; letter-spacing: 3px;
-    color: #fff;
-    line-height: 1;
+    font-size: 32px; letter-spacing: 3px;
+    color: #fff; line-height: 1;
     margin-bottom: 8px;
-    display: flex;
-    align-items: center;
-    gap: 0;
+    display: flex; align-items: center;
   }
-  .profile-rank-badge {
-    display: inline-flex; align-items: center; gap: 12px;
-    background: rgba(201,168,76,.08);
-    border: 1px solid rgba(201,168,76,.25);
-    padding: 8px 16px 8px 10px;
-    margin-bottom: 16px;
-  }
-  .rank-insignia {
-    width: 48px; height: 48px;
-    object-fit: contain;
-    image-rendering: crisp-edges;
-    filter: drop-shadow(0 0 6px rgba(201,168,76,.2));
-  }
-  .rank-info { display: flex; flex-direction: column; gap: 2px; }
-  .rank-number {
-    font-family: 'DM Mono', monospace;
-    font-size: 10px; color: var(--muted); letter-spacing: 1px;
-    text-transform: uppercase;
-  }
-  .rank-name {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 22px; color: var(--gold2); letter-spacing: 2px;
-    line-height: 1;
-  }
-  .profile-stats {
-    display: flex; gap: 24px; flex-wrap: wrap;
-  }
-  .stat-item { text-align: left; }
-  .stat-val {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 28px; color: #fff;
-    line-height: 1;
-  }
-  .stat-lbl {
-    font-family: 'DM Mono', monospace;
-    font-size: 10px; color: var(--muted);
-    letter-spacing: 2px; text-transform: uppercase;
-  }
-  .points-display {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    justify-content: space-between;
-    gap: 12px;
-    min-width: 120px;
-  }
-  .profile-avatar {
-    width: 72px; height: 72px;
-    border-radius: 50%;
-    border: 2px solid var(--gold);
-    box-shadow: 0 0 16px rgba(201,168,76,.25);
-    object-fit: cover;
-    display: block;
-    margin-left: auto;
-  }
-  .profile-avatar-placeholder {
-    width: 72px; height: 72px;
-    border-radius: 50%;
-    border: 2px solid var(--border);
-    background: var(--dark2);
-    display: flex; align-items: center; justify-content: center;
-    font-size: 28px;
-    margin-left: auto;
-  }
-  .points-bottom {
-    text-align: right;
-  }
-  .points-big {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 72px; color: var(--gold);
-    line-height: 1;
-    text-shadow: 0 0 30px rgba(201,168,76,.3);
-  }
-  .points-lbl {
-    font-family: 'DM Mono', monospace;
-    font-size: 11px; color: var(--muted);
-    letter-spacing: 3px; text-transform: uppercase;
-  }
-
-  /* ── FACTION FLAG ── */
   .faction-flag {
-    height: 22px;
-    width: auto;
+    height: 20px; width: auto;
     vertical-align: middle;
     margin-left: 12px;
     border: 1px solid rgba(255,255,255,.15);
     box-shadow: 0 0 8px rgba(0,0,0,.4);
     image-rendering: crisp-edges;
-    position: relative;
-    top: -3px;
+    position: relative; top: -2px;
   }
-  .lb-faction-flag {
-    height: 14px;
-    width: auto;
-    vertical-align: middle;
-    margin-left: 6px;
-    border: 1px solid rgba(255,255,255,.12);
-    box-shadow: 0 0 4px rgba(0,0,0,.4);
+  .profile-rank-badge {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: rgba(201,168,76,.08);
+    border: 1px solid rgba(201,168,76,.25);
+    padding: 6px 14px 6px 8px;
+    margin-bottom: 14px;
+  }
+  .rank-insignia {
+    width: 40px; height: 40px;
+    object-fit: contain;
     image-rendering: crisp-edges;
-    position: relative;
-    top: -1px;
+    filter: drop-shadow(0 0 6px rgba(201,168,76,.2));
+  }
+  .rank-info { display: flex; flex-direction: column; gap: 1px; }
+  .rank-number {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px; color: var(--muted); letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  .rank-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 20px; color: var(--gold2); letter-spacing: 2px;
+    line-height: 1;
+  }
+  .profile-stats {
+    display: flex; gap: 20px; flex-wrap: wrap;
+  }
+  .stat-item { text-align: left; }
+  .stat-val {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 24px; color: #fff; line-height: 1;
+  }
+  .stat-lbl {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px; color: var(--muted);
+    letter-spacing: 2px; text-transform: uppercase;
+  }
+  .points-display {
+    display: flex; flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 10px; min-width: 100px;
+  }
+  .profile-avatar {
+    width: 60px; height: 60px;
+    border-radius: 50%;
+    border: 2px solid var(--gold);
+    box-shadow: 0 0 16px rgba(201,168,76,.25);
+    object-fit: cover;
+    display: block; margin-left: auto;
+  }
+  .profile-avatar-placeholder {
+    width: 60px; height: 60px;
+    border-radius: 50%;
+    border: 2px solid var(--border);
+    background: var(--dark2);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 24px; margin-left: auto;
+  }
+  .points-bottom { text-align: right; }
+  .points-big {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 56px; color: var(--gold); line-height: 1;
+    text-shadow: 0 0 30px rgba(201,168,76,.3);
+  }
+  .points-lbl {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px; color: var(--muted);
+    letter-spacing: 3px; text-transform: uppercase;
   }
 
-  /* ── RANK PROGRESS ── */
+  /* ── PROGRESS BAR ── */
   .rank-progress-card {
     background: var(--dark3);
-    border: 1px solid var(--border);
-    padding: 20px 28px;
-    margin-bottom: 24px;
+    border-bottom: 1px solid var(--border);
+    padding: 16px 24px;
+    flex-shrink: 0;
   }
   .prog-header {
     display: flex; justify-content: space-between;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
   }
   .prog-title {
     font-family: 'DM Mono', monospace;
-    font-size: 11px; letter-spacing: 2px;
+    font-size: 10px; letter-spacing: 2px;
     color: var(--muted); text-transform: uppercase;
   }
   .prog-pct {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 20px; color: var(--gold);
+    font-size: 18px; color: var(--gold);
   }
   .prog-labels {
     display: flex; justify-content: space-between;
-    font-size: 13px; color: var(--muted);
-    margin-bottom: 8px;
+    font-size: 12px; color: var(--muted);
+    margin-bottom: 7px;
   }
   .prog-bar-bg {
-    height: 8px; background: var(--dark2);
+    height: 7px; background: var(--dark2);
     border: 1px solid var(--border);
-    position: relative;
   }
   .prog-bar-fill {
     height: 100%;
@@ -323,73 +382,76 @@
     transition: width .8s cubic-bezier(.4,0,.2,1);
   }
   .prog-next {
-    text-align: right;
-    font-size: 13px; color: var(--muted);
-    margin-top: 8px;
+    text-align: right; font-size: 12px; color: var(--muted); margin-top: 6px;
   }
   .prog-next span { color: var(--gold); font-weight: 700; }
 
-  /* ── GRID 2 col ── */
-  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 24px; }
-  @media(max-width:680px){ .two-col { grid-template-columns: 1fr; } }
+  /* ── TWO COL inside profile ── */
+  .profile-body {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    border-top: 1px solid var(--border);
+    overflow: hidden;
+    min-height: 0;
+  }
+  @media(max-width: 900px) { .profile-body { grid-template-columns: 1fr; } }
 
-  /* ── HISTORY TABLE ── */
+  .profile-body-col {
+    display: flex; flex-direction: column;
+    overflow-y: auto;
+    border-right: 1px solid var(--border);
+    scrollbar-width: thin;
+    scrollbar-color: var(--border) transparent;
+  }
+  .profile-body-col:last-child { border-right: none; }
+  .profile-body-col::-webkit-scrollbar { width: 4px; }
+  .profile-body-col::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+
+  /* ── PANEL CARD (inside profile body) ── */
   .panel-card {
     background: var(--dark3);
-    border: 1px solid var(--border);
+    border: none;
     padding: 0;
     overflow: hidden;
+    display: flex; flex-direction: column; flex: 1;
   }
   .panel-card-header {
     background: var(--panel);
     border-bottom: 1px solid var(--border);
-    padding: 14px 20px;
-    display: flex; align-items: center; gap: 10px;
+    padding: 12px 18px;
+    display: flex; align-items: center; gap: 8px;
+    flex-shrink: 0;
   }
   .panel-card-header h3 {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 18px; letter-spacing: 2px; color: var(--text);
+    font-size: 16px; letter-spacing: 2px; color: var(--text);
   }
-  .panel-card-header .dot {
-    width: 8px; height: 8px; border-radius: 50%;
-    background: var(--gold);
-    box-shadow: 0 0 6px rgba(201,168,76,.5);
-  }
-  .panel-body { padding: 0; }
+  .panel-body { padding: 0; flex: 1; }
+
+  /* ── HIST TABLE ── */
   .hist-row {
     display: grid;
-    grid-template-columns: 1fr 70px 62px 68px;
-    padding: 9px 20px;
+    grid-template-columns: 1fr 64px 56px 60px;
+    padding: 8px 16px;
     border-bottom: 1px solid rgba(42,53,69,.5);
-    font-size: 14px;
+    font-size: 13px;
     transition: background .15s;
-    gap: 8px;
+    gap: 6px;
   }
   .hist-row:hover { background: rgba(201,168,76,.04); }
   .hist-row:last-child { border-bottom: none; }
-  .hist-motivo { color: var(--text); font-weight: 400; }
-  .hist-delta {
-    font-family: 'DM Mono', monospace;
-    font-size: 13px; text-align: right;
-  }
+  .hist-motivo { color: var(--text); }
+  .hist-delta { font-family: 'DM Mono', monospace; font-size: 12px; text-align: right; }
   .hist-delta.pos { color: var(--green); }
   .hist-delta.neg { color: var(--red); }
-  .hist-dia {
-    font-family: 'DM Mono', monospace;
-    font-size: 11px; color: var(--muted);
-    text-align: right;
-  }
-  .hist-hora {
-    font-family: 'DM Mono', monospace;
-    font-size: 11px; color: var(--muted);
-    text-align: right;
-    opacity: .7;
-  }
+  .hist-dia { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--muted); text-align: right; }
+  .hist-hora { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--muted); text-align: right; opacity: .7; }
   .hist-header {
     display: grid;
-    grid-template-columns: 1fr 70px 62px 68px;
-    padding: 7px 20px 6px;
-    gap: 8px;
+    grid-template-columns: 1fr 64px 56px 60px;
+    padding: 6px 16px 5px; gap: 6px;
     background: rgba(10,12,15,.4);
     border-bottom: 1px solid var(--border);
   }
@@ -401,49 +463,87 @@
   }
   .hist-header span:first-child { text-align: left; }
 
-  /* ── LEADERBOARD ── */
-  .lb-row {
-    display: grid;
-    grid-template-columns: 44px 36px 1fr 100px;
-    padding: 10px 20px;
+  /* ── RESUMEN BLOCKS ── */
+  .resumen-block {
+    padding: 12px 18px;
     border-bottom: 1px solid rgba(42,53,69,.5);
-    align-items: center;
-    transition: background .15s;
-    cursor: pointer;
-    gap: 8px;
   }
-  .lb-row:hover { background: rgba(201,168,76,.05); }
-  .lb-row:last-child { border-bottom: none; }
-  .lb-rank {
+  .resumen-block:last-child { border-bottom: none; }
+  .resumen-title {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 22px; color: var(--muted);
+    font-size: 14px; letter-spacing: 1px;
+    color: var(--text); margin-bottom: 7px;
   }
-  .lb-row.top1 .lb-rank { color: #ffd700; text-shadow: 0 0 8px rgba(255,215,0,.4); }
-  .lb-row.top2 .lb-rank { color: #c0c0c0; }
-  .lb-row.top3 .lb-rank { color: #cd7f32; }
-  .lb-insignia {
-    width: 32px; height: 32px;
-    object-fit: contain;
-    image-rendering: crisp-edges;
-    opacity: .9;
-  }
-  .lb-name {
-    font-weight: 500; font-size: 15px;
-    display: flex; flex-direction: column; gap: 2px;
-  }
-  .lb-rank-label {
-    font-family: 'DM Mono', monospace;
-    font-size: 10px; color: var(--muted); letter-spacing: 1px;
-  }
-  .lb-pts {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 22px; color: var(--gold);
-    text-align: right;
-  }
-  .lb-you .lb-name { color: var(--gold2); }
+  .resumen-stats { display: flex; flex-wrap: wrap; gap: 10px; }
+  .rs-item { display: flex; flex-direction: column; gap: 2px; min-width: 56px; }
+  .rs-val { font-family: 'Bebas Neue', sans-serif; font-size: 18px; line-height: 1; color: #fff; }
+  .rs-val.pos { color: var(--green); }
+  .rs-val.neg { color: var(--red); }
+  .rs-lbl { font-family: 'DM Mono', monospace; font-size: 8px; color: var(--muted); letter-spacing: 1px; text-transform: uppercase; }
 
-  /* ── RANKS TABLE (full) ── */
-  #page-rangos .panel-card { margin-bottom: 0; }
+  /* ── HIST TOGGLE ── */
+  .hist-toggle-btn {
+    margin-left: auto;
+    font-family: 'DM Mono', monospace;
+    font-size: 9px; letter-spacing: 1px;
+    padding: 3px 8px;
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--muted);
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all .2s;
+  }
+  .hist-toggle-btn:hover { border-color: var(--gold); color: var(--gold); background: rgba(201,168,76,.08); }
+
+  /* ── MOTIVO TAGS ── */
+  .tag {
+    display: inline-block;
+    font-family: 'DM Mono', monospace;
+    font-size: 9px; letter-spacing: 0.5px;
+    padding: 2px 6px;
+    border-radius: 2px;
+    background: rgba(255,255,255,.05);
+    color: #6a7a8a;
+    border: 1px solid rgba(255,255,255,.07);
+  }
+
+  /* ── EMPTY / ERROR ── */
+  .empty-state {
+    text-align: center; padding: 40px 20px;
+    font-family: 'DM Mono', monospace;
+    color: var(--muted); font-size: 12px;
+    letter-spacing: 2px;
+  }
+  .empty-state .big { font-size: 40px; display: block; margin-bottom: 10px; }
+
+  /* ── LOADING ── */
+  #loading-overlay {
+    position: fixed; inset: 0;
+    background: var(--dark);
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    z-index: 100;
+    transition: opacity .5s;
+  }
+  #loading-overlay.hide { opacity: 0; pointer-events: none; }
+  .spinner {
+    width: 44px; height: 44px;
+    border: 3px solid var(--border);
+    border-top-color: var(--gold);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 18px;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .load-txt {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px; letter-spacing: 3px;
+    color: var(--muted); text-transform: uppercase;
+  }
+
+  /* ── RANGOS TABLE (guardada, oculta) ── */
+  #rangos-data { display: none; }
   .rng-row {
     display: grid;
     grid-template-columns: 44px 1fr 90px;
@@ -461,113 +561,9 @@
   .rng-badge {
     font-family: 'DM Mono', monospace;
     font-size: 10px; padding: 2px 6px;
-    background: rgba(201,168,76,.15); color: var(--gold);
-    letter-spacing: 1px;
+    background: rgba(201,168,76,.15); color: var(--gold); letter-spacing: 1px;
   }
-  .rng-from {
-    font-family: 'DM Mono', monospace;
-    font-size: 13px; color: var(--muted); text-align: right;
-  }
-
-  /* ── EMPTY / ERROR ── */
-  .empty-state {
-    text-align: center; padding: 60px 20px;
-    font-family: 'DM Mono', monospace;
-    color: var(--muted); font-size: 13px;
-    letter-spacing: 2px;
-  }
-  .empty-state .big { font-size: 48px; display: block; margin-bottom: 12px; }
-
-  /* ── LOADING ── */
-  #loading-overlay {
-    position: fixed; inset: 0;
-    background: var(--dark);
-    display: flex; flex-direction: column;
-    align-items: center; justify-content: center;
-    z-index: 100;
-    transition: opacity .5s;
-  }
-  #loading-overlay.hide { opacity: 0; pointer-events: none; }
-  .spinner {
-    width: 48px; height: 48px;
-    border: 3px solid var(--border);
-    border-top-color: var(--gold);
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
-    margin-bottom: 20px;
-  }
-  @keyframes spin { to { transform: rotate(360deg); } }
-  .load-txt {
-    font-family: 'DM Mono', monospace;
-    font-size: 12px; letter-spacing: 3px;
-    color: var(--muted); text-transform: uppercase;
-  }
-
-  /* ── MOTIVO LABELS ── */
-  .tag {
-    display: inline-block;
-    font-family: 'DM Mono', monospace;
-    font-size: 10px; letter-spacing: 0.5px;
-    padding: 2px 7px;
-    border-radius: 2px;
-    background: rgba(255,255,255,.05);
-    color: #6a7a8a;
-    border: 1px solid rgba(255,255,255,.07);
-  }
-  .tag-msg, .tag-pas, .tag-bet, .tag-bon, .tag-man {
-    background: rgba(255,255,255,.05);
-    color: #6a7a8a;
-    border: 1px solid rgba(255,255,255,.07);
-  }
-
-  /* ── RESUMEN BLOCKS ── */
-  .resumen-block {
-    padding: 14px 20px;
-    border-bottom: 1px solid rgba(42,53,69,.5);
-  }
-  .resumen-block:last-child { border-bottom: none; }
-  .resumen-title {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 15px; letter-spacing: 1px;
-    color: var(--text); margin-bottom: 8px;
-  }
-  .resumen-stats {
-    display: flex; flex-wrap: wrap; gap: 12px;
-  }
-  .rs-item {
-    display: flex; flex-direction: column; gap: 2px;
-    min-width: 60px;
-  }
-  .rs-val {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 20px; line-height: 1; color: #fff;
-  }
-  .rs-val.pos { color: var(--green); }
-  .rs-val.neg { color: var(--red); }
-  .rs-lbl {
-    font-family: 'DM Mono', monospace;
-    font-size: 9px; color: var(--muted);
-    letter-spacing: 1px; text-transform: uppercase;
-  }
-
-  /* ── HIST TOGGLE ── */
-  .hist-toggle-btn {
-    margin-left: auto;
-    font-family: 'DM Mono', monospace;
-    font-size: 10px; letter-spacing: 1px;
-    padding: 4px 10px;
-    background: transparent;
-    border: 1px solid var(--border);
-    color: var(--muted);
-    cursor: pointer;
-    text-transform: uppercase;
-    transition: all .2s;
-  }
-  .hist-toggle-btn:hover {
-    border-color: var(--gold);
-    color: var(--gold);
-    background: rgba(201,168,76,.08);
-  }
+  .rng-from { font-family: 'DM Mono', monospace; font-size: 13px; color: var(--muted); text-align: right; }
 </style>
 </head>
 <body>
@@ -583,63 +579,85 @@
     <h1>SauruCoins</h1>
     <p>Portal de rango y puntos</p>
   </div>
-  <nav class="header-nav">
-    <button class="nav-btn" onclick="showPage('perfil')">Perfil</button>
-    <button class="nav-btn active" onclick="showPage('ranking')">Ranking</button>
-    <button class="nav-btn" onclick="showPage('rangos')">Rangos</button>
-  </nav>
+
 </header>
 
-<main>
+<div class="portal">
 
-  <!-- ── PAGE: PERFIL ── -->
-  <div id="page-perfil" class="page">
-    <div class="search-section">
-      <span class="search-label">Ingresá tu nombre de usuario de YouTube</span>
-      <div class="search-wrap">
-        <input id="search-input" type="text" placeholder="ej: batazuma" autocomplete="off">
-        <button id="search-btn" onclick="buscarUsuario()">BUSCAR</button>
-      </div>
+  <!-- ── IZQUIERDA: RANKING ── -->
+  <div class="lb-pane">
+    <div class="lb-pane-header">
+      <div class="dot"></div>
+      <h2>Clasificación</h2>
     </div>
+    <div class="lb-scroll" id="lb-body">
+      <div class="empty-state"><span class="big">⏳</span>CARGANDO...</div>
+    </div>
+  </div>
 
-    <div id="profile-section" style="display:none"></div>
-    <div id="profile-empty" class="empty-state" style="display:none">
-      <span class="big">🔍</span>
-      USUARIO NO ENCONTRADO<br><br>
-      Asegurate de escribir tu nombre de YouTube exactamente como aparece en el chat.
-    </div>
-    <div id="profile-hint" class="empty-state">
+  <!-- ── DERECHA: PERFIL ── -->
+  <div class="profile-pane">
+
+    <!-- Estado vacío -->
+    <div class="profile-empty-state" id="profile-hint">
       <span class="big">🎖️</span>
-      BUSCÁ TU NOMBRE PARA VER TU RANGO<br><br>
-      Participá en el chat, apuestas y encuestas para ganar SauruCoins.
+      <p>Hacé click en un usuario<br>para ver su perfil</p>
     </div>
-  </div>
 
-  <!-- ── PAGE: RANKING ── -->
-  <div id="page-ranking" class="page active">
-    <div class="panel-card">
-      <div class="panel-card-header">
-        <div class="dot"></div>
-        <h3>Tabla de Clasificación</h3>
-      </div>
-      <div class="panel-body" id="lb-body">
-        <div class="empty-state"><span class="big">⏳</span>CARGANDO...</div>
-      </div>
+    <!-- Usuario no encontrado -->
+    <div class="profile-empty-state" id="profile-empty" style="display:none">
+      <span class="big">🔍</span>
+      <p>USUARIO NO ENCONTRADO<br><br>
+      <span style="font-size:10px">Escribí el nombre exactamente como aparece<br>en el chat de YouTube.</span></p>
     </div>
-  </div>
 
-  <!-- ── PAGE: RANGOS ── -->
-  <div id="page-rangos" class="page">
-    <div class="panel-card">
-      <div class="panel-card-header">
-        <div class="dot"></div>
-        <h3>Tabla de Rangos Militares</h3>
+    <!-- Contenido de perfil -->
+    <div class="profile-content" id="profile-section">
+
+      <!-- Cabecera del perfil -->
+      <div class="profile-card" id="profile-card-inner">
+        <!-- se rellena por JS -->
       </div>
-      <div class="panel-body" id="rangos-body"></div>
-    </div>
-  </div>
 
-</main>
+      <!-- Barra de progreso -->
+      <div class="rank-progress-card" id="profile-progress">
+        <!-- se rellena por JS -->
+      </div>
+
+      <!-- Cuerpo: historial + resumen -->
+      <div class="profile-body">
+        <div class="profile-body-col">
+          <div class="panel-card">
+            <div class="panel-card-header">
+              <div class="dot"></div>
+              <h3>Últimas actividades</h3>
+              <button class="hist-toggle-btn" id="hist-toggle-btn" style="display:none"></button>
+            </div>
+            <div class="panel-body" id="hist-panel"></div>
+          </div>
+        </div>
+        <div class="profile-body-col">
+          <div class="panel-card">
+            <div class="panel-card-header"><div class="dot"></div><h3>Resumen</h3></div>
+            <div class="panel-body" id="resumen-panel"></div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /profile-content -->
+
+  </div><!-- /profile-pane -->
+
+</div><!-- /portal -->
+
+<!-- Tabla de rangos: guardada en el DOM, oculta hasta que decidamos dónde ubicarla -->
+<div id="rangos-data">
+  <div class="panel-card-header">
+    <div class="dot"></div>
+    <h3>Tabla de Rangos Militares</h3>
+  </div>
+  <div id="rangos-body"></div>
+</div>
 
 <!-- sql.js desde CDN -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.10.3/sql-wasm.js"></script>
@@ -670,29 +688,17 @@ const RANGOS = [
 
 function getRango(puntos) {
   let rango = RANGOS[0];
-  for (const r of RANGOS) {
-    if (puntos >= r.desde) rango = r;
-    else break;
-  }
+  for (const r of RANGOS) { if (puntos >= r.desde) rango = r; else break; }
   return rango;
 }
 function getNextRango(puntos) {
-  for (const r of RANGOS) {
-    if (r.desde > puntos) return r;
-  }
+  for (const r of RANGOS) { if (r.desde > puntos) return r; }
   return null;
 }
 
-// ── FACCIÓN → prefijo de rango ───────────────────────────────────
-const FACCION_PREFIJO = {
-  us:   "us",
-  cw:   "brit",
-  pe:   "panzer",
-  wm:   "heer",
-};
-function rankPrefix(faccion) {
-  return FACCION_PREFIJO[faccion] || "us";
-}
+const FACCION_PREFIJO = { us: "us", cw: "brit", pe: "panzer", wm: "heer" };
+function rankPrefix(faccion) { return FACCION_PREFIJO[faccion] || "us"; }
+
 let db = null;
 
 function exec(sql, params = []) {
@@ -700,9 +706,7 @@ function exec(sql, params = []) {
   const res = db.exec(sql, params);
   if (!res.length) return [];
   const cols = res[0].columns;
-  return res[0].values.map(row =>
-    Object.fromEntries(cols.map((c, i) => [c, row[i]]))
-  );
+  return res[0].values.map(row => Object.fromEntries(cols.map((c, i) => [c, row[i]])));
 }
 
 async function initDB() {
@@ -711,32 +715,21 @@ async function initDB() {
   });
 
   try {
-    const resp = await fetch('puntos.json?t=' + Date.now()); // ?t= evita caché del browser
+    const resp = await fetch('puntos.json?t=' + Date.now());
     if (!resp.ok) throw new Error('no se pudo cargar puntos.json');
     const data = await resp.json();
 
-    // Reconstruir una DB en memoria desde el JSON
     db = new SQL.Database();
-    db.run(`
-      CREATE TABLE usuarios (
-        nombre         TEXT PRIMARY KEY,
-        puntos         INTEGER DEFAULT 0,
-        profile_img    TEXT DEFAULT NULL,
-        faccion        TEXT DEFAULT NULL,
-        total_apuestas INTEGER DEFAULT 0,
-        total_ganadas  INTEGER DEFAULT 0
-      )
-    `);
-    db.run(`
-      CREATE TABLE historial (
-        id         INTEGER PRIMARY KEY AUTOINCREMENT,
-        nombre     TEXT NOT NULL,
-        delta      INTEGER NOT NULL,
-        motivo     TEXT NOT NULL,
-        puntos_new INTEGER NOT NULL,
-        ts         INTEGER DEFAULT 0
-      )
-    `);
+    db.run(`CREATE TABLE usuarios (
+      nombre TEXT PRIMARY KEY, puntos INTEGER DEFAULT 0,
+      profile_img TEXT DEFAULT NULL, faccion TEXT DEFAULT NULL,
+      total_apuestas INTEGER DEFAULT 0, total_ganadas INTEGER DEFAULT 0
+    )`);
+    db.run(`CREATE TABLE historial (
+      id INTEGER PRIMARY KEY AUTOINCREMENT, nombre TEXT NOT NULL,
+      delta INTEGER NOT NULL, motivo TEXT NOT NULL,
+      puntos_new INTEGER NOT NULL, ts INTEGER DEFAULT 0
+    )`);
     for (const u of (data.usuarios || [])) {
       db.run(
         "INSERT INTO usuarios (nombre, puntos, profile_img, faccion, total_apuestas, total_ganadas) VALUES (?,?,?,?,?,?)",
@@ -762,11 +755,11 @@ async function initDB() {
   }
 
   document.getElementById('loading-overlay').classList.add('hide');
-  renderRangos();
   renderLeaderboard();
+  renderRangos();
 }
 
-// ── MOTIVOS → labels ────────────────────────────────────────────
+// ── MOTIVOS ──────────────────────────────────────────────────────
 const MOTIVO_MAP = {
   mensaje:          { label: 'Mensaje en chat',    cls: 'tag-msg' },
   pasivo:           { label: 'Presencia activa',   cls: 'tag-pas' },
@@ -777,308 +770,172 @@ const MOTIVO_MAP = {
   bonus_participar: { label: 'Bonus participación',cls: 'tag-bon' },
   bonus_votar:      { label: 'Voto en encuesta',   cls: 'tag-bon' },
   ajuste_manual:    { label: 'Ajuste manual',      cls: 'tag-man' },
+  trivia_acierto:   { label: 'Trivia acertada',    cls: 'tag-bon' },
+  trivia_participar:{ label: 'Trivia (participó)',  cls: 'tag-pas' },
 };
 function motivoTag(m) {
   const info = MOTIVO_MAP[m] || { label: m, cls: 'tag-man' };
   return `<span class="tag ${info.cls}">${info.label}</span>`;
 }
-function fmtDia(ts) {
-  if (!ts) return '';
-  return new Date(ts).toLocaleDateString('es-AR', { day:'2-digit', month:'2-digit' });
-}
-function fmtHora(ts) {
-  if (!ts) return '';
-  return new Date(ts).toLocaleTimeString('es-AR', { hour:'2-digit', minute:'2-digit' });
-}
+function fmtDia(ts)  { return ts ? new Date(ts).toLocaleDateString('es-AR',  { day:'2-digit', month:'2-digit' }) : ''; }
+function fmtHora(ts) { return ts ? new Date(ts).toLocaleTimeString('es-AR', { hour:'2-digit', minute:'2-digit' }) : ''; }
 
-// ── FACCION FLAG HTML ────────────────────────────────────────────
 function factionFlagHtml(faccion, cssClass) {
   if (!faccion) return '';
   return `<img class="${cssClass}" src="armies/${faccion}.png" alt="${faccion}" title="Facción: ${faccion.toUpperCase()}" onerror="this.style.display='none'">`;
 }
 
-// ── BUSCAR USUARIO ──────────────────────────────────────────────
-window.buscarUsuario = function() {
-  const nombre = document.getElementById('search-input').value.trim();
-  if (!nombre) return;
+// ── LEADERBOARD ──────────────────────────────────────────────────
+let selectedUser = '';
 
-  const rows = exec('SELECT * FROM usuarios WHERE LOWER(nombre) = LOWER(?)', [nombre]);
-  const hint = document.getElementById('profile-hint');
-  const empty = document.getElementById('profile-empty');
-  const sec = document.getElementById('profile-section');
-
-  hint.style.display = 'none';
-  empty.style.display = 'none';
-  sec.style.display = 'none';
-
-  if (!rows.length) {
-    empty.style.display = 'block';
-    return;
-  }
-
-  const u = rows[0];
-  const puntos = u.puntos;
-  const rango = getRango(puntos);
-  const next  = getNextRango(puntos);
-  const pct   = next
-    ? Math.round(((puntos - rango.desde) / (next.desde - rango.desde)) * 100)
-    : 100;
-
-  // Historial - solo últimas 10
-  const hist = exec(
-    'SELECT delta, motivo, puntos_new, ts FROM historial WHERE nombre = ? ORDER BY ts DESC LIMIT 10',
-    [u.nombre]
-  );
-  const histTotal = exec('SELECT COUNT(*) as c FROM historial WHERE nombre = ?', [u.nombre])[0]?.c ?? 0;
-
-  // Ranking global
-  const pos = exec('SELECT COUNT(*) as c FROM usuarios WHERE puntos > ?', [puntos]);
-  const rank = (pos[0]?.c ?? 0) + 1;
-  const total = exec('SELECT COUNT(*) as c FROM usuarios')[0]?.c ?? 0;
-
-  // Votos y mensajes para stats del banner
-  const totalVotos    = exec('SELECT COUNT(*) as c FROM historial WHERE nombre=? AND motivo=?', [u.nombre, 'bonus_votar'])[0]?.c ?? 0;
-  const totalMensajes = exec('SELECT COUNT(*) as c FROM historial WHERE nombre=? AND motivo=?', [u.nombre, 'mensaje'])[0]?.c ?? 0;
-
-  // Winrate (usado solo en buildResumen)
-  const apColocadasTotal = exec('SELECT COUNT(*) as c FROM historial WHERE nombre=? AND motivo=?', [u.nombre, 'apuesta_colocada'])[0]?.c ?? 0;
-  const apGanadasTotal   = exec('SELECT COUNT(*) as c FROM historial WHERE nombre=? AND motivo=?', [u.nombre, 'apuesta_ganada'])[0]?.c ?? 0;
-  const apDevueltasTotal = exec('SELECT COUNT(*) as c FROM historial WHERE nombre=? AND motivo=?', [u.nombre, 'apuesta_devuelta'])[0]?.c ?? 0;
-  const apValidas = apColocadasTotal - apDevueltasTotal;
-  const winratePct = apValidas > 0 ? Math.round(apGanadasTotal / apValidas * 100) : 0;
-
-  sec.innerHTML = `
-    <div class="profile-card">
-      <div>
-        <div class="profile-name">
-          ${u.nombre}
-          ${factionFlagHtml(u.faccion, 'faction-flag')}
-        </div>
-        <div class="profile-rank-badge">
-          <img class="rank-insignia" src="ranks/${rankPrefix(u.faccion)}_${String(rango.num).padStart(2,'0')}.png" alt="${rango.nombre}">
-          <div class="rank-info">
-            <span class="rank-number">Rango ${rango.num}</span>
-            <span class="rank-name">${rango.nombre}</span>
-          </div>
-        </div>
-        <div class="profile-stats">
-          <div class="stat-item">
-            <div class="stat-val">#${rank}</div>
-            <div class="stat-lbl">de ${total} usuarios</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-val">${u.total_apuestas}</div>
-            <div class="stat-lbl">apuestas</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-val">${totalVotos}</div>
-            <div class="stat-lbl">votos</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-val">${totalMensajes}</div>
-            <div class="stat-lbl">mensajes</div>
-          </div>
-        </div>
-      </div>
-      <div class="points-display">
-        ${u.profile_img
-          ? `<img class="profile-avatar" src="${u.profile_img}" alt="${u.nombre}" onerror="this.style.display='none'">`
-          : `<div class="profile-avatar-placeholder">🦕</div>`
-        }
-        <div class="points-bottom">
-          <div class="points-big">${puntos.toLocaleString('es-AR')}</div>
-          <div class="points-lbl">SauruCoins</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="rank-progress-card">
-      <div class="prog-header">
-        <span class="prog-title">Progreso de rango</span>
-        <span class="prog-pct">${pct}%</span>
-      </div>
-      <div class="prog-labels">
-        <span>${rango.nombre} (${rango.desde.toLocaleString()})</span>
-        <span>${next ? next.nombre + ' (' + next.desde.toLocaleString() + ')' : '🏆 MÁXIMO RANGO'}</span>
-      </div>
-      <div class="prog-bar-bg">
-        <div class="prog-bar-fill" style="width:${pct}%"></div>
-      </div>
-      ${next ? `<div class="prog-next">Faltan <span>${(next.desde - puntos).toLocaleString()}</span> pts para ${next.nombre}</div>` : '<div class="prog-next" style="color:var(--gold)">⭐ RANGO MÁXIMO ALCANZADO</div>'}
-    </div>
-
-    <div class="two-col">
-      <div class="panel-card">
-        <div class="panel-card-header">
-          <div class="dot"></div>
-          <h3>Últimas actividades</h3>
-          ${histTotal > 10 ? `<button class="hist-toggle-btn" onclick="toggleHistorial('${u.nombre}', this)">Ver todo (${histTotal})</button>` : ''}
-        </div>
-        <div class="panel-body" id="hist-panel">
-          ${hist.length ? `
-            <div class="hist-header">
-              <span>Actividad</span><span>Pts</span><span>Día</span><span>Hora</span>
-            </div>
-            ${hist.map(h => `
-            <div class="hist-row">
-              <div class="hist-motivo">${motivoTag(h.motivo)}</div>
-              <div class="hist-delta ${h.delta >= 0 ? 'pos' : 'neg'}">${h.delta >= 0 ? '+' : ''}${h.delta}</div>
-              <div class="hist-dia">${fmtDia(h.ts)}</div>
-              <div class="hist-hora">${fmtHora(h.ts)}</div>
-            </div>`).join('')}
-          ` : '<div class="empty-state" style="padding:30px">Sin actividad</div>'}
-        </div>
-      </div>
-
-      <div class="panel-card">
-        <div class="panel-card-header"><div class="dot"></div><h3>Resumen de participación</h3></div>
-        <div class="panel-body">
-          ${buildResumen(u.nombre)}
-        </div>
-      </div>
-    </div>
-  `;
-
-  sec.style.display = 'block';
-}
-
-function buildResumen(nombre) {
-  let html = '';
-
-  // ── MENSAJES ──
-  const msgRows = exec('SELECT COUNT(*) as cnt, SUM(delta) as total FROM historial WHERE nombre=? AND motivo=?', [nombre, 'mensaje']);
-  const msgCnt = msgRows[0]?.cnt || 0;
-  const msgTotal = msgRows[0]?.total || 0;
-  if (msgCnt > 0) {
-    html += `<div class="resumen-block">
-      <div class="resumen-title">💬 Mensajes en chat</div>
-      <div class="resumen-stats">
-        <span class="rs-item"><span class="rs-val">${msgCnt}</span><span class="rs-lbl">mensajes</span></span>
-        <span class="rs-item"><span class="rs-val pos">+${msgTotal}</span><span class="rs-lbl">pts ganados</span></span>
-      </div>
-    </div>`;
-  }
-
-  // ── PRESENCIA ACTIVA ──
-  const pasRows = exec('SELECT COUNT(*) as cnt, SUM(delta) as total FROM historial WHERE nombre=? AND motivo=?', [nombre, 'pasivo']);
-  const pasCnt = pasRows[0]?.cnt || 0;
-  const pasTotal = pasRows[0]?.total || 0;
-  if (pasCnt > 0) {
-    const minutos = pasCnt * 30;
-    const horas = Math.floor(minutos / 60);
-    const mins = minutos % 60;
-    const tiempoStr = horas > 0 ? `${horas}h ${mins > 0 ? mins + 'min' : ''}`.trim() : `${mins}min`;
-    html += `<div class="resumen-block">
-      <div class="resumen-title">⏱️ Presencia activa</div>
-      <div class="resumen-stats">
-        <span class="rs-item"><span class="rs-val">${tiempoStr}</span><span class="rs-lbl">de stream</span></span>
-        <span class="rs-item"><span class="rs-val">${pasCnt}</span><span class="rs-lbl">intervalos 30min</span></span>
-        <span class="rs-item"><span class="rs-val pos">+${pasTotal}</span><span class="rs-lbl">pts ganados</span></span>
-      </div>
-    </div>`;
-  }
-
-  // ── APUESTAS ──
-  const apColocadas = exec('SELECT COUNT(*) as cnt, SUM(delta) as total FROM historial WHERE nombre=? AND motivo=?', [nombre, 'apuesta_colocada']);
-  const apGanadas   = exec('SELECT COUNT(*) as cnt, SUM(delta) as total FROM historial WHERE nombre=? AND motivo=?', [nombre, 'apuesta_ganada']);
-  const apDevueltas = exec('SELECT COUNT(*) as cnt, SUM(delta) as total FROM historial WHERE nombre=? AND motivo=?', [nombre, 'apuesta_devuelta']);
-  const apBonus     = exec('SELECT COUNT(*) as cnt, SUM(delta) as total FROM historial WHERE nombre=? AND motivo=?', [nombre, 'bonus_participar']);
-
-  const totalAp    = apColocadas[0]?.cnt || 0;
-  const montoAp    = apColocadas[0]?.total || 0;
-  const totalGan   = apGanadas[0]?.cnt || 0;
-  const montoGan   = apGanadas[0]?.total || 0;
-  const totalDev   = apDevueltas[0]?.cnt || 0;
-  const montoDev   = apDevueltas[0]?.total || 0;
-  const bonusCnt   = apBonus[0]?.cnt || 0;
-  const bonusTotal = apBonus[0]?.total || 0;
-
-  const calcPerd = totalAp - totalGan - totalDev;
-  const netoApuesta = montoAp + montoGan + montoDev;
-
-  if (totalAp > 0) {
-    const apValidas = totalAp - totalDev;
-    const winrate = apValidas > 0 ? Math.round(totalGan / apValidas * 100) : 0;
-    const netoClass = netoApuesta >= 0 ? 'pos' : 'neg';
-    const netoStr = (netoApuesta >= 0 ? '+' : '') + netoApuesta;
-    const montoApostado = Math.abs(montoAp);
-
-    html += `<div class="resumen-block">
-      <div class="resumen-title">🎲 Apuestas <span style="font-family:'DM Mono',monospace;font-size:10px;color:var(--muted);letter-spacing:0;font-weight:400">(pozo proporcional)</span></div>
-      <div class="resumen-stats">
-        <span class="rs-item"><span class="rs-val">${totalAp}</span><span class="rs-lbl">jugadas</span></span>
-        <span class="rs-item"><span class="rs-val neg">−${montoApostado}</span><span class="rs-lbl">pts apostados</span></span>
-        <span class="rs-item"><span class="rs-val" style="color:#fff">${totalGan}</span><span class="rs-lbl">ganadas (+${montoGan} pts del pozo)</span></span>
-        ${calcPerd > 0 ? `<span class="rs-item"><span class="rs-val neg">${calcPerd}</span><span class="rs-lbl">perdidas</span></span>` : ''}
-        ${totalDev > 0 ? `<span class="rs-item"><span class="rs-val">${totalDev}</span><span class="rs-lbl">devueltas (+${montoDev} pts)</span></span>` : ''}
-        <span class="rs-item"><span class="rs-val" style="color:#4ab8d4">${apValidas > 0 ? winrate : '—'}%</span><span class="rs-lbl">winrate</span></span>
-        <span class="rs-item"><span class="rs-val ${netoClass}">${netoStr}</span><span class="rs-lbl">balance apuestas</span></span>
-        ${bonusCnt > 0 ? `<span class="rs-item"><span class="rs-val" style="color:var(--gold)">+${bonusTotal}</span><span class="rs-lbl">bono por jugar</span></span>` : ''}
-      </div>
-    </div>`;
-  }
-
-  // ── VOTOS ──
-  const votRows = exec('SELECT COUNT(*) as cnt, SUM(delta) as total FROM historial WHERE nombre=? AND motivo=?', [nombre, 'bonus_votar']);
-  const votCnt = votRows[0]?.cnt || 0;
-  const votTotal = votRows[0]?.total || 0;
-  if (votCnt > 0) {
-    html += `<div class="resumen-block">
-      <div class="resumen-title">🗳️ Votos en encuestas</div>
-      <div class="resumen-stats">
-        <span class="rs-item"><span class="rs-val">${votCnt}</span><span class="rs-lbl">votos</span></span>
-        <span class="rs-item"><span class="rs-val pos">+${votTotal}</span><span class="rs-lbl">pts ganados</span></span>
-      </div>
-    </div>`;
-  }
-
-  // ── AJUSTES ──
-  const adjRows = exec('SELECT COUNT(*) as cnt, SUM(CASE WHEN delta>0 THEN delta ELSE 0 END) as ganado, SUM(CASE WHEN delta<0 THEN delta ELSE 0 END) as perdido FROM historial WHERE nombre=? AND motivo=?', [nombre, 'ajuste_manual']);
-  const adjCnt = adjRows[0]?.cnt || 0;
-  if (adjCnt > 0) {
-    const adjGan = adjRows[0]?.ganado || 0;
-    const adjPerd = adjRows[0]?.perdido || 0;
-    html += `<div class="resumen-block">
-      <div class="resumen-title">⚙️ Ajustes manuales</div>
-      <div class="resumen-stats">
-        <span class="rs-item"><span class="rs-val">${adjCnt}</span><span class="rs-lbl">ajustes</span></span>
-        ${adjGan > 0 ? `<span class="rs-item"><span class="rs-val pos">+${adjGan}</span><span class="rs-lbl">añadidos</span></span>` : ''}
-        ${adjPerd < 0 ? `<span class="rs-item"><span class="rs-val neg">${adjPerd}</span><span class="rs-lbl">descontados</span></span>` : ''}
-      </div>
-    </div>`;
-  }
-
-  return html || '<div class="empty-state" style="padding:30px">Sin datos</div>';
-}
-
-// ── LEADERBOARD ─────────────────────────────────────────────────
 function renderLeaderboard() {
   const top = exec('SELECT nombre, puntos, faccion FROM usuarios ORDER BY puntos DESC');
-  const lastUser = document.getElementById('search-input').value.trim().toLowerCase();
-
   const html = top.map((u, i) => {
     const rank = i + 1;
     const rango = getRango(u.puntos);
     const cls = rank === 1 ? 'top1' : rank === 2 ? 'top2' : rank === 3 ? 'top3' : '';
-    const isYou = u.nombre.toLowerCase() === lastUser;
+    const isYou = u.nombre.toLowerCase() === selectedUser.toLowerCase() && selectedUser !== '';
     return `
-      <div class="lb-row ${cls} ${isYou ? 'lb-you' : ''}" onclick="loadUserFromLB('${u.nombre}')">
+      <div class="lb-row ${cls} ${isYou ? 'lb-you' : ''} ${u.nombre === selectedUser ? 'selected' : ''}"
+           id="lb-${u.nombre.replace(/[^a-z0-9]/gi,'_')}"
+           onclick="abrirPerfil('${u.nombre.replace(/'/g,"\\'")}')">
         <div class="lb-rank">${rank}</div>
         <img class="lb-insignia" src="ranks/${rankPrefix(u.faccion)}_${String(rango.num).padStart(2,'0')}.png" alt="${rango.nombre}">
         <div class="lb-name">
-          <span>
-            ${u.nombre}${isYou ? ' <span style="color:var(--gold);font-size:11px">◀ TÚ</span>' : ''}
-            ${factionFlagHtml(u.faccion, 'lb-faction-flag')}
-          </span>
+          <span>${u.nombre}${factionFlagHtml(u.faccion, 'lb-faction-flag')}</span>
           <span class="lb-rank-label">${rango.nombre}</span>
         </div>
         <div class="lb-pts">${u.puntos.toLocaleString('es-AR')}</div>
       </div>`;
   }).join('');
-
   document.getElementById('lb-body').innerHTML = html;
 }
 
+// ── ABRIR PERFIL (desde lb o búsqueda) ──────────────────────────
+window.abrirPerfil = function(nombre) {
+  selectedUser = nombre;
+
+  // Actualizar "selected" en la lb sin re-renderizar
+  document.querySelectorAll('.lb-row').forEach(r => r.classList.remove('selected'));
+  const id = 'lb-' + nombre.replace(/[^a-z0-9]/gi,'_');
+  const el = document.getElementById(id);
+  if (el) el.classList.add('selected');
+
+  const rows = exec('SELECT * FROM usuarios WHERE LOWER(nombre) = LOWER(?)', [nombre]);
+  const hint  = document.getElementById('profile-hint');
+  const empty = document.getElementById('profile-empty');
+  const sec   = document.getElementById('profile-section');
+
+  hint.style.display  = 'none';
+  empty.style.display = 'none';
+  sec.classList.remove('visible');
+
+  if (!rows.length) { empty.style.display = 'flex'; return; }
+
+  const u = rows[0];
+  const puntos = u.puntos;
+  const rango  = getRango(puntos);
+  const next   = getNextRango(puntos);
+  const pct    = next
+    ? Math.round(((puntos - rango.desde) / (next.desde - rango.desde)) * 100)
+    : 100;
+
+  const pos   = exec('SELECT COUNT(*) as c FROM usuarios WHERE puntos > ?', [puntos]);
+  const rank  = (pos[0]?.c ?? 0) + 1;
+  const total = exec('SELECT COUNT(*) as c FROM usuarios')[0]?.c ?? 0;
+
+  const totalVotos    = exec('SELECT COUNT(*) as c FROM historial WHERE nombre=? AND motivo=?', [u.nombre, 'bonus_votar'])[0]?.c ?? 0;
+  const totalMensajes = exec('SELECT COUNT(*) as c FROM historial WHERE nombre=? AND motivo=?', [u.nombre, 'mensaje'])[0]?.c ?? 0;
+
+  // Profile card
+  document.getElementById('profile-card-inner').innerHTML = `
+    <button class="profile-close" onclick="cerrarPerfil()" title="Cerrar">✕</button>
+    <div>
+      <div class="profile-name">
+        ${u.nombre}${factionFlagHtml(u.faccion, 'faction-flag')}
+      </div>
+      <div class="profile-rank-badge">
+        <img class="rank-insignia" src="ranks/${rankPrefix(u.faccion)}_${String(rango.num).padStart(2,'0')}.png" alt="${rango.nombre}">
+        <div class="rank-info">
+          <span class="rank-number">Rango ${rango.num}</span>
+          <span class="rank-name">${rango.nombre}</span>
+        </div>
+      </div>
+      <div class="profile-stats">
+        <div class="stat-item"><div class="stat-val">#${rank}</div><div class="stat-lbl">de ${total}</div></div>
+        <div class="stat-item"><div class="stat-val">${u.total_apuestas}</div><div class="stat-lbl">apuestas</div></div>
+        <div class="stat-item"><div class="stat-val">${totalVotos}</div><div class="stat-lbl">votos</div></div>
+        <div class="stat-item"><div class="stat-val">${totalMensajes}</div><div class="stat-lbl">mensajes</div></div>
+      </div>
+    </div>
+    <div class="points-display">
+      ${u.profile_img
+        ? `<img class="profile-avatar" src="${u.profile_img}" alt="${u.nombre}" onerror="this.style.display='none'">`
+        : `<div class="profile-avatar-placeholder">🦕</div>`}
+      <div class="points-bottom">
+        <div class="points-big">${puntos.toLocaleString('es-AR')}</div>
+        <div class="points-lbl">SauruCoins</div>
+      </div>
+    </div>
+  `;
+
+  // Progress
+  document.getElementById('profile-progress').innerHTML = `
+    <div class="prog-header">
+      <span class="prog-title">Progreso de rango</span>
+      <span class="prog-pct">${pct}%</span>
+    </div>
+    <div class="prog-labels">
+      <span>${rango.nombre} (${rango.desde.toLocaleString()})</span>
+      <span>${next ? next.nombre + ' (' + next.desde.toLocaleString() + ')' : '🏆 MÁXIMO'}</span>
+    </div>
+    <div class="prog-bar-bg"><div class="prog-bar-fill" style="width:${pct}%"></div></div>
+    ${next
+      ? `<div class="prog-next">Faltan <span>${(next.desde - puntos).toLocaleString()}</span> pts para ${next.nombre}</div>`
+      : '<div class="prog-next" style="color:var(--gold)">⭐ RANGO MÁXIMO ALCANZADO</div>'}
+  `;
+
+  // Historial
+  const hist = exec('SELECT delta, motivo, puntos_new, ts FROM historial WHERE nombre = ? ORDER BY ts DESC LIMIT 10', [u.nombre]);
+  const histTotal = exec('SELECT COUNT(*) as c FROM historial WHERE nombre = ?', [u.nombre])[0]?.c ?? 0;
+  const histHeader = `<div class="hist-header"><span>Actividad</span><span>Pts</span><span>Día</span><span>Hora</span></div>`;
+  const histRows = hist.map(h => `
+    <div class="hist-row">
+      <div class="hist-motivo">${motivoTag(h.motivo)}</div>
+      <div class="hist-delta ${h.delta >= 0 ? 'pos' : 'neg'}">${h.delta >= 0 ? '+' : ''}${h.delta}</div>
+      <div class="hist-dia">${fmtDia(h.ts)}</div>
+      <div class="hist-hora">${fmtHora(h.ts)}</div>
+    </div>`).join('');
+  document.getElementById('hist-panel').innerHTML = hist.length
+    ? histHeader + histRows
+    : '<div class="empty-state" style="padding:30px">Sin actividad</div>';
+
+  const toggleBtn = document.getElementById('hist-toggle-btn');
+  if (histTotal > 10) {
+    toggleBtn.style.display = '';
+    toggleBtn.textContent = `Ver todo (${histTotal})`;
+    toggleBtn.dataset.expanded = '0';
+    toggleBtn.dataset.user = u.nombre;
+    toggleBtn.onclick = function() { toggleHistorial(u.nombre, this); };
+  } else {
+    toggleBtn.style.display = 'none';
+  }
+
+  // Resumen
+  document.getElementById('resumen-panel').innerHTML = buildResumen(u.nombre);
+
+  sec.classList.add('visible');
+};
+
+window.cerrarPerfil = function() {
+  selectedUser = '';
+  document.querySelectorAll('.lb-row').forEach(r => r.classList.remove('selected'));
+  document.getElementById('profile-section').classList.remove('visible');
+  document.getElementById('profile-hint').style.display  = 'flex';
+  document.getElementById('profile-empty').style.display = 'none';
+};
+
+// ── TOGGLE HISTORIAL ─────────────────────────────────────────────
 window.toggleHistorial = function(nombre, btn) {
   const panel = document.getElementById('hist-panel');
   const isExpanded = btn.dataset.expanded === '1';
@@ -1102,71 +959,149 @@ window.toggleHistorial = function(nombre, btn) {
     btn.textContent = 'Ver menos';
     btn.dataset.expanded = '1';
   }
+};
+
+// ── RESUMEN ──────────────────────────────────────────────────────
+function buildResumen(nombre) {
+  let html = '';
+
+  const msgRows  = exec('SELECT COUNT(*) as cnt, SUM(delta) as total FROM historial WHERE nombre=? AND motivo=?', [nombre, 'mensaje']);
+  const msgCnt   = msgRows[0]?.cnt || 0;
+  const msgTotal = msgRows[0]?.total || 0;
+  if (msgCnt > 0) {
+    html += `<div class="resumen-block">
+      <div class="resumen-title">💬 Mensajes en chat</div>
+      <div class="resumen-stats">
+        <span class="rs-item"><span class="rs-val">${msgCnt}</span><span class="rs-lbl">mensajes</span></span>
+        <span class="rs-item"><span class="rs-val pos">+${msgTotal}</span><span class="rs-lbl">pts ganados</span></span>
+      </div></div>`;
+  }
+
+  const pasRows  = exec('SELECT COUNT(*) as cnt, SUM(delta) as total FROM historial WHERE nombre=? AND motivo=?', [nombre, 'pasivo']);
+  const pasCnt   = pasRows[0]?.cnt || 0;
+  const pasTotal = pasRows[0]?.total || 0;
+  if (pasCnt > 0) {
+    const minutos = pasCnt * 30;
+    const horas   = Math.floor(minutos / 60);
+    const mins    = minutos % 60;
+    const tiempoStr = horas > 0 ? `${horas}h ${mins > 0 ? mins + 'min' : ''}`.trim() : `${mins}min`;
+    html += `<div class="resumen-block">
+      <div class="resumen-title">⏱️ Presencia activa</div>
+      <div class="resumen-stats">
+        <span class="rs-item"><span class="rs-val">${tiempoStr}</span><span class="rs-lbl">de stream</span></span>
+        <span class="rs-item"><span class="rs-val">${pasCnt}</span><span class="rs-lbl">intervalos 30min</span></span>
+        <span class="rs-item"><span class="rs-val pos">+${pasTotal}</span><span class="rs-lbl">pts ganados</span></span>
+      </div></div>`;
+  }
+
+  const apColocadas = exec('SELECT COUNT(*) as cnt, SUM(delta) as total FROM historial WHERE nombre=? AND motivo=?', [nombre, 'apuesta_colocada']);
+  const apGanadas   = exec('SELECT COUNT(*) as cnt, SUM(delta) as total FROM historial WHERE nombre=? AND motivo=?', [nombre, 'apuesta_ganada']);
+  const apDevueltas = exec('SELECT COUNT(*) as cnt, SUM(delta) as total FROM historial WHERE nombre=? AND motivo=?', [nombre, 'apuesta_devuelta']);
+  const apBonus     = exec('SELECT COUNT(*) as cnt, SUM(delta) as total FROM historial WHERE nombre=? AND motivo=?', [nombre, 'bonus_participar']);
+  const totalAp  = apColocadas[0]?.cnt || 0;
+  const montoAp  = apColocadas[0]?.total || 0;
+  const totalGan = apGanadas[0]?.cnt || 0;
+  const montoGan = apGanadas[0]?.total || 0;
+  const totalDev = apDevueltas[0]?.cnt || 0;
+  const montoDev = apDevueltas[0]?.total || 0;
+  const bonusCnt   = apBonus[0]?.cnt || 0;
+  const bonusTotal = apBonus[0]?.total || 0;
+  const calcPerd = totalAp - totalGan - totalDev;
+  const netoApuesta = montoAp + montoGan + montoDev;
+  if (totalAp > 0) {
+    const apValidas = totalAp - totalDev;
+    const winrate   = apValidas > 0 ? Math.round(totalGan / apValidas * 100) : 0;
+    const netoClass = netoApuesta >= 0 ? 'pos' : 'neg';
+    const netoStr   = (netoApuesta >= 0 ? '+' : '') + netoApuesta;
+    const montoApostado = Math.abs(montoAp);
+    html += `<div class="resumen-block">
+      <div class="resumen-title">🎲 Apuestas <span style="font-family:'DM Mono',monospace;font-size:9px;color:var(--muted);letter-spacing:0;font-weight:400">(pozo proporcional)</span></div>
+      <div class="resumen-stats">
+        <span class="rs-item"><span class="rs-val">${totalAp}</span><span class="rs-lbl">jugadas</span></span>
+        <span class="rs-item"><span class="rs-val neg">−${montoApostado}</span><span class="rs-lbl">apostados</span></span>
+        <span class="rs-item"><span class="rs-val">${totalGan}</span><span class="rs-lbl">ganadas (+${montoGan})</span></span>
+        ${calcPerd > 0 ? `<span class="rs-item"><span class="rs-val neg">${calcPerd}</span><span class="rs-lbl">perdidas</span></span>` : ''}
+        ${totalDev > 0 ? `<span class="rs-item"><span class="rs-val">${totalDev}</span><span class="rs-lbl">devueltas (+${montoDev})</span></span>` : ''}
+        <span class="rs-item"><span class="rs-val" style="color:#4ab8d4">${apValidas > 0 ? winrate : '—'}%</span><span class="rs-lbl">winrate</span></span>
+        <span class="rs-item"><span class="rs-val ${netoClass}">${netoStr}</span><span class="rs-lbl">balance</span></span>
+        ${bonusCnt > 0 ? `<span class="rs-item"><span class="rs-val" style="color:var(--gold)">+${bonusTotal}</span><span class="rs-lbl">bono jugar</span></span>` : ''}
+      </div></div>`;
+  }
+
+  const votRows  = exec('SELECT COUNT(*) as cnt, SUM(delta) as total FROM historial WHERE nombre=? AND motivo=?', [nombre, 'bonus_votar']);
+  const votCnt   = votRows[0]?.cnt || 0;
+  const votTotal = votRows[0]?.total || 0;
+  if (votCnt > 0) {
+    html += `<div class="resumen-block">
+      <div class="resumen-title">🗳️ Votos en encuestas</div>
+      <div class="resumen-stats">
+        <span class="rs-item"><span class="rs-val">${votCnt}</span><span class="rs-lbl">votos</span></span>
+        <span class="rs-item"><span class="rs-val pos">+${votTotal}</span><span class="rs-lbl">pts ganados</span></span>
+      </div></div>`;
+  }
+
+  // ── TRIVIA ──
+  const trivAcierto = exec('SELECT COUNT(*) as cnt, SUM(delta) as total FROM historial WHERE nombre=? AND motivo=?', [nombre, 'trivia_acierto']);
+  const trivPartic  = exec('SELECT COUNT(*) as cnt, SUM(delta) as total FROM historial WHERE nombre=? AND motivo=?', [nombre, 'trivia_participar']);
+  const trivAciCnt  = trivAcierto[0]?.cnt   || 0;
+  const trivAciPts  = trivAcierto[0]?.total  || 0;
+  const trivParCnt  = trivPartic[0]?.cnt    || 0;
+  const trivParPts  = trivPartic[0]?.total   || 0;
+  const trivTotal   = trivAciCnt + trivParCnt;
+  if (trivTotal > 0) {
+    const winrateTrv = trivTotal > 0 ? Math.round(trivAciCnt / trivTotal * 100) : 0;
+    html += `<div class="resumen-block">
+      <div class="resumen-title">🧠 Trivias</div>
+      <div class="resumen-stats">
+        <span class="rs-item"><span class="rs-val">${trivTotal}</span><span class="rs-lbl">jugadas</span></span>
+        <span class="rs-item"><span class="rs-val pos">${trivAciCnt}</span><span class="rs-lbl">acertadas (+${trivAciPts} pts)</span></span>
+        ${trivParCnt > 0 ? `<span class="rs-item"><span class="rs-val neg">${trivParCnt}</span><span class="rs-lbl">falladas (+${trivParPts} pts)</span></span>` : ''}
+        <span class="rs-item"><span class="rs-val" style="color:#4ab8d4">${winrateTrv}%</span><span class="rs-lbl">aciertos</span></span>
+        <span class="rs-item"><span class="rs-val pos">+${trivAciPts + trivParPts}</span><span class="rs-lbl">pts totales</span></span>
+      </div></div>`;
+  }
+
+  const adjRows = exec('SELECT COUNT(*) as cnt, SUM(CASE WHEN delta>0 THEN delta ELSE 0 END) as ganado, SUM(CASE WHEN delta<0 THEN delta ELSE 0 END) as perdido FROM historial WHERE nombre=? AND motivo=?', [nombre, 'ajuste_manual']);
+  const adjCnt  = adjRows[0]?.cnt || 0;
+  if (adjCnt > 0) {
+    const adjGan  = adjRows[0]?.ganado || 0;
+    const adjPerd = adjRows[0]?.perdido || 0;
+    html += `<div class="resumen-block">
+      <div class="resumen-title">⚙️ Ajustes manuales</div>
+      <div class="resumen-stats">
+        <span class="rs-item"><span class="rs-val">${adjCnt}</span><span class="rs-lbl">ajustes</span></span>
+        ${adjGan  > 0 ? `<span class="rs-item"><span class="rs-val pos">+${adjGan}</span><span class="rs-lbl">añadidos</span></span>` : ''}
+        ${adjPerd < 0 ? `<span class="rs-item"><span class="rs-val neg">${adjPerd}</span><span class="rs-lbl">descontados</span></span>` : ''}
+      </div></div>`;
+  }
+
+  return html || '<div class="empty-state" style="padding:24px">Sin datos</div>';
 }
 
-window.loadUserFromLB = function(nombre) {
-  document.getElementById('search-input').value = nombre;
-  showPage('perfil');
-  buscarUsuario();
-}
-
-// ── RANGOS TABLE ────────────────────────────────────────────────
+// ── RANGOS TABLE (guardada, oculta) ─────────────────────────────
 function renderRangos() {
-  const avgRow = exec('SELECT AVG(puntos) as a FROM usuarios')[0];
-  const avg = avgRow?.a ?? 0;
-  const topRow = exec('SELECT MAX(puntos) as m FROM usuarios')[0];
-  const top = topRow?.m ?? 0;
-  const topRango = getRango(top);
+  const avgRow   = exec('SELECT AVG(puntos) as a FROM usuarios')[0];
+  const avg      = avgRow?.a ?? 0;
+  const topRow   = exec('SELECT MAX(puntos) as m FROM usuarios')[0];
+  const topPts   = topRow?.m ?? 0;
+  const topRango = getRango(topPts);
 
   const html = RANGOS.map(r => {
     const isTop = r.num === topRango.num;
-    const avgRng = getRango(avg);
-    const isAvg = r.num === avgRng.num;
-    return `
-      <div class="rng-row" id="rng-${r.num}">
-        <div class="rng-num">${r.num}</div>
-        <div class="rng-name">
-          ${r.nombre}
-          ${isTop ? '<span class="rng-badge">TOP 1</span>' : ''}
-          ${isAvg ? '<span class="rng-badge">PROMEDIO</span>' : ''}
-        </div>
-        <div class="rng-from">${r.desde.toLocaleString('es-AR')}</div>
-      </div>`;
+    const isAvg = r.num === getRango(avg).num;
+    return `<div class="rng-row" id="rng-${r.num}">
+      <div class="rng-num">${r.num}</div>
+      <div class="rng-name">${r.nombre}
+        ${isTop ? '<span class="rng-badge">TOP 1</span>' : ''}
+        ${isAvg ? '<span class="rng-badge">PROMEDIO</span>' : ''}
+      </div>
+      <div class="rng-from">${r.desde.toLocaleString('es-AR')}</div>
+    </div>`;
   }).join('');
-
   document.getElementById('rangos-body').innerHTML = html;
 }
 
-function highlightMyRank() {
-  document.querySelectorAll('.rng-row').forEach(r => r.classList.remove('current-rank'));
-  const n = document.getElementById('search-input').value.trim();
-  if (!n) return;
-  const row = exec('SELECT puntos FROM usuarios WHERE LOWER(nombre) = LOWER(?)', [n]);
-  if (!row.length) return;
-  const rango = getRango(row[0].puntos);
-  const el = document.getElementById(`rng-${rango.num}`);
-  if (el) { el.classList.add('current-rank'); el.scrollIntoView({ behavior: 'smooth', block: 'center' }); }
-}
-
-// ── NAVEGACIÓN ──────────────────────────────────────────────────
-window.showPage = function(name) {
-  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
-  document.getElementById(`page-${name}`).classList.add('active');
-  document.querySelectorAll('.nav-btn').forEach(b => {
-    if (b.textContent.toLowerCase().includes(name === 'perfil' ? 'perfi' : name === 'ranking' ? 'rank' : 'rang'))
-      b.classList.add('active');
-  });
-  if (name === 'ranking') renderLeaderboard();
-  if (name === 'rangos') { renderRangos(); highlightMyRank(); }
-}
-
-// Enter en buscador
-document.getElementById('search-input').addEventListener('keydown', e => {
-  if (e.key === 'Enter') buscarUsuario();
-});
-
-// ── ARRANCAR ────────────────────────────────────────────────────
+// ── ARRANCAR ─────────────────────────────────────────────────────
 initDB();
 </script>
 </body>
