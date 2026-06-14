@@ -1,15 +1,21 @@
 {
-  "actualizado": "2026-06-14T21:30:07.672Z",
+  "actualizado": "2026-06-14T21:35:07.687Z",
   "usuarios": [
     {
       "rank": 1,
       "user": "nelsonrojasmujica",
-      "points": 413,
+      "points": 414,
       "faccion": "wm",
       "profile_img": "https://yt4.ggpht.com/ytc/AIdro_lJ2GIZxlJ3mXvF9QdG3OphY5Y9SNlKGvPsNI3-3XXF300=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 14,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 414,
+          "ts": 1781472696000
+        },
         {
           "delta": 10,
           "motivo": "pasivo",
@@ -4881,12 +4887,24 @@
     {
       "rank": 8,
       "user": "patriciodillon6190",
-      "points": 153,
+      "points": 155,
       "faccion": null,
       "profile_img": "https://yt4.ggpht.com/ytc/AIdro_nj2GaTgZbO80mFWSRhT7UIYTC5OM0YXUzNR_3FPuo=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 8,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 155,
+          "ts": 1781472903000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 154,
+          "ts": 1781472669000
+        },
         {
           "delta": 10,
           "motivo": "pasivo",
