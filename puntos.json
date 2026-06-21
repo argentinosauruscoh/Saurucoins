@@ -1,5 +1,5 @@
 {
-  "actualizado": "2026-06-21T23:20:19.598Z",
+  "actualizado": "2026-06-21T23:25:19.568Z",
   "usuarios": [
     {
       "rank": 1,
@@ -3014,12 +3014,18 @@
     {
       "rank": 3,
       "user": "batazuma",
-      "points": 363,
+      "points": 364,
       "faccion": null,
       "profile_img": "https://yt4.ggpht.com/wWxwXA6XsKqd1V6l5yA6UEyudFNePzssE2nRRQpTwY50GAugzTmiKebSnIQ2sH_sdgg9Ch84tw=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 7,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 364,
+          "ts": 1782084051000
+        },
         {
           "delta": 10,
           "motivo": "pasivo",
@@ -9203,12 +9209,24 @@
     {
       "rank": 12,
       "user": "rambitocoh2377",
-      "points": 174,
+      "points": 176,
       "faccion": null,
       "profile_img": "https://yt4.ggpht.com/ytc/AIdro_nlWttxh1lSySsaJykW_Oxkmh_6KJdYtrQtrG-hQiu0uYl5NsEH4E4-8uSEXx2KrJuzRA=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 4,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 176,
+          "ts": 1782084192000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 175,
+          "ts": 1782084114000
+        },
         {
           "delta": 10,
           "motivo": "pasivo",
@@ -13182,12 +13200,18 @@
     {
       "rank": 23,
       "user": "lucascostabel2696",
-      "points": 91,
+      "points": 92,
       "faccion": null,
       "profile_img": "https://yt4.ggpht.com/ytc/AIdro_la4CAh5z7Shfmi4sXps_y5pxUDYwZubbmttPbdIQru1iQ=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 0,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 92,
+          "ts": 1782084126000
+        },
         {
           "delta": 10,
           "motivo": "pasivo",
@@ -16364,6 +16388,41 @@
     },
     {
       "rank": 56,
+      "user": "hernansoria2533",
+      "points": 14,
+      "faccion": null,
+      "profile_img": "https://yt4.ggpht.com/ytc/AIdro_nWYWEApFtIJntK9shwlEwV9_wRtAHtPupeYUpmVYicAgNsz9R5Ritb9w2bJZCVPccFrA=s64-c-k-c0x00ffffff-no-rj",
+      "total_apuestas": 0,
+      "total_ganadas": 0,
+      "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 14,
+          "ts": 1782084126000
+        },
+        {
+          "delta": 10,
+          "motivo": "pasivo",
+          "puntos": 13,
+          "ts": 1782082219000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 1,
+          "ts": 1782081577000
+        },
+        {
+          "delta": 2,
+          "motivo": "bonus_votar",
+          "puntos": 3,
+          "ts": 1782081577000
+        }
+      ]
+    },
+    {
+      "rank": 57,
       "user": "onebandonesongguitarcovers4896",
       "points": 13,
       "faccion": null,
@@ -16392,7 +16451,7 @@
       ]
     },
     {
-      "rank": 57,
+      "rank": 58,
       "user": "ulisesmirandaromero7629",
       "points": 13,
       "faccion": null,
@@ -16417,35 +16476,6 @@
           "motivo": "bonus_votar",
           "puntos": 3,
           "ts": 1780860043000
-        }
-      ]
-    },
-    {
-      "rank": 58,
-      "user": "hernansoria2533",
-      "points": 13,
-      "faccion": null,
-      "profile_img": "https://yt4.ggpht.com/ytc/AIdro_nWYWEApFtIJntK9shwlEwV9_wRtAHtPupeYUpmVYicAgNsz9R5Ritb9w2bJZCVPccFrA=s64-c-k-c0x00ffffff-no-rj",
-      "total_apuestas": 0,
-      "total_ganadas": 0,
-      "historial": [
-        {
-          "delta": 10,
-          "motivo": "pasivo",
-          "puntos": 13,
-          "ts": 1782082219000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 1,
-          "ts": 1782081577000
-        },
-        {
-          "delta": 2,
-          "motivo": "bonus_votar",
-          "puntos": 3,
-          "ts": 1782081577000
         }
       ]
     },
