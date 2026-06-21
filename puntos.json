@@ -1,5 +1,5 @@
 {
-  "actualizado": "2026-06-21T19:55:19.192Z",
+  "actualizado": "2026-06-21T20:00:19.203Z",
   "usuarios": [
     {
       "rank": 1,
@@ -4361,12 +4361,18 @@
     {
       "rank": 6,
       "user": "popham_arg",
-      "points": 212,
+      "points": 213,
       "faccion": "cw",
       "profile_img": "https://yt4.ggpht.com/ytc/AIdro_l073YlqqwNThSKT2Ge1HLxlhT_Z5HhMnfoDfdJDkpZ2voqrpFZOIHNJfU_R2CijCfuPg=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 11,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 213,
+          "ts": 1782071927000
+        },
         {
           "delta": 10,
           "motivo": "pasivo",
@@ -5906,12 +5912,24 @@
     {
       "rank": 9,
       "user": "virgolandia2",
-      "points": 191,
+      "points": 193,
       "faccion": "wm",
       "profile_img": "https://yt4.ggpht.com/ytc/AIdro_nEXPQ5IzVjI_8E9ysRUgKgKXGvW81DmTWiCZaNrkJvUNU=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 5,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 193,
+          "ts": 1782071924000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 192,
+          "ts": 1782071753000
+        },
         {
           "delta": 1,
           "motivo": "mensaje",
@@ -9263,12 +9281,24 @@
     {
       "rank": 18,
       "user": "ivanolivares6328",
-      "points": 92,
+      "points": 94,
       "faccion": null,
       "profile_img": "https://yt4.ggpht.com/ytc/AIdro_mKcAJG25CxVTLPLz8ALUQ7IA9nO6hbr5bUDnUGN3Sf8Hg=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 4,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 94,
+          "ts": 1782071891000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 93,
+          "ts": 1782071786000
+        },
         {
           "delta": 10,
           "motivo": "pasivo",
@@ -13289,6 +13319,23 @@
           "motivo": "mensaje",
           "puntos": 1,
           "ts": 1782071662000
+        }
+      ]
+    },
+    {
+      "rank": 72,
+      "user": "elmasgrandedeperu6485",
+      "points": 1,
+      "faccion": null,
+      "profile_img": "https://yt4.ggpht.com/xJ8uhBKZPhsW6S4jRfXTY4G5aSZYWb4Vg2FTCF2y9GIoycLC-pwq4kubpRHL39ezSoM_cmXFTj8=s64-c-k-c0x00ffffff-no-rj",
+      "total_apuestas": 0,
+      "total_ganadas": 0,
+      "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 1,
+          "ts": 1782071927000
         }
       ]
     }
