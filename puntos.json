@@ -1,5 +1,5 @@
 {
-  "actualizado": "2026-06-22T22:10:44.957Z",
+  "actualizado": "2026-06-22T22:15:44.949Z",
   "usuarios": [
     {
       "rank": 1,
@@ -2168,13 +2168,1386 @@
     },
     {
       "rank": 2,
+      "user": "popham_arg",
+      "points": 477,
+      "faccion": "cw",
+      "profile_img": "https://yt4.ggpht.com/ytc/AIdro_l073YlqqwNThSKT2Ge1HLxlhT_Z5HhMnfoDfdJDkpZ2voqrpFZOIHNJfU_R2CijCfuPg=s64-c-k-c0x00ffffff-no-rj",
+      "total_apuestas": 22,
+      "total_ganadas": 0,
+      "historial": [
+        {
+          "delta": 76,
+          "motivo": "apuesta_ganada",
+          "puntos": 477,
+          "ts": 1782166367000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 401,
+          "ts": 1782166350000
+        },
+        {
+          "delta": 10,
+          "motivo": "pasivo",
+          "puntos": 400,
+          "ts": 1782165644000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 390,
+          "ts": 1782165246000
+        },
+        {
+          "delta": 10,
+          "motivo": "pasivo",
+          "puntos": 389,
+          "ts": 1782163844000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 417,
+          "ts": 1782162927000
+        },
+        {
+          "delta": -40,
+          "motivo": "apuesta_colocada",
+          "puntos": 377,
+          "ts": 1782162927000
+        },
+        {
+          "delta": 2,
+          "motivo": "bonus_participar",
+          "puntos": 379,
+          "ts": 1782162927000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 414,
+          "ts": 1782162639000
+        },
+        {
+          "delta": 2,
+          "motivo": "bonus_votar",
+          "puntos": 416,
+          "ts": 1782162639000
+        },
+        {
+          "delta": 10,
+          "motivo": "pasivo",
+          "puntos": 413,
+          "ts": 1782162044000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 401,
+          "ts": 1782161691000
+        },
+        {
+          "delta": 2,
+          "motivo": "bonus_participar",
+          "puntos": 403,
+          "ts": 1782161691000
+        },
+        {
+          "delta": 56,
+          "motivo": "apuesta_ganada",
+          "puntos": 400,
+          "ts": 1782161408000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 392,
+          "ts": 1782160437000
+        },
+        {
+          "delta": -50,
+          "motivo": "apuesta_colocada",
+          "puntos": 342,
+          "ts": 1782160437000
+        },
+        {
+          "delta": 2,
+          "motivo": "bonus_participar",
+          "puntos": 344,
+          "ts": 1782160437000
+        },
+        {
+          "delta": 10,
+          "motivo": "pasivo",
+          "puntos": 391,
+          "ts": 1782160244000
+        },
+        {
+          "delta": 2,
+          "motivo": "trivia_participar",
+          "puntos": 381,
+          "ts": 1782159852000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 379,
+          "ts": 1782159811000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 406,
+          "ts": 1782159032000
+        },
+        {
+          "delta": -30,
+          "motivo": "apuesta_colocada",
+          "puntos": 376,
+          "ts": 1782159032000
+        },
+        {
+          "delta": 2,
+          "motivo": "bonus_participar",
+          "puntos": 378,
+          "ts": 1782159032000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 423,
+          "ts": 1782158500000
+        },
+        {
+          "delta": -20,
+          "motivo": "apuesta_colocada",
+          "puntos": 403,
+          "ts": 1782158500000
+        },
+        {
+          "delta": 2,
+          "motivo": "bonus_participar",
+          "puntos": 405,
+          "ts": 1782158500000
+        },
+        {
+          "delta": 10,
+          "motivo": "pasivo",
+          "puntos": 422,
+          "ts": 1782158444000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 410,
+          "ts": 1782158269000
+        },
+        {
+          "delta": 2,
+          "motivo": "bonus_votar",
+          "puntos": 412,
+          "ts": 1782158269000
+        },
+        {
+          "delta": 79,
+          "motivo": "apuesta_ganada",
+          "puntos": 409,
+          "ts": 1782158157000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 378,
+          "ts": 1782157418000
+        },
+        {
+          "delta": -50,
+          "motivo": "apuesta_colocada",
+          "puntos": 328,
+          "ts": 1782157418000
+        },
+        {
+          "delta": 2,
+          "motivo": "bonus_participar",
+          "puntos": 330,
+          "ts": 1782157418000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 375,
+          "ts": 1782157174000
+        },
+        {
+          "delta": 2,
+          "motivo": "bonus_votar",
+          "puntos": 377,
+          "ts": 1782157174000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 374,
+          "ts": 1782157018000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 373,
+          "ts": 1782156894000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 372,
+          "ts": 1782156747000
+        },
+        {
+          "delta": 10,
+          "motivo": "pasivo",
+          "puntos": 371,
+          "ts": 1782084019000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 361,
+          "ts": 1782083380000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 360,
+          "ts": 1782083289000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 359,
+          "ts": 1782083100000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 358,
+          "ts": 1782082709000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 357,
+          "ts": 1782082323000
+        },
+        {
+          "delta": 10,
+          "motivo": "pasivo",
+          "puntos": 356,
+          "ts": 1782082219000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 346,
+          "ts": 1782082019000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 393,
+          "ts": 1782081809000
+        },
+        {
+          "delta": -50,
+          "motivo": "apuesta_colocada",
+          "puntos": 343,
+          "ts": 1782081809000
+        },
+        {
+          "delta": 2,
+          "motivo": "bonus_participar",
+          "puntos": 345,
+          "ts": 1782081809000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 390,
+          "ts": 1782081535000
+        },
+        {
+          "delta": 2,
+          "motivo": "bonus_votar",
+          "puntos": 392,
+          "ts": 1782081535000
+        },
+        {
+          "delta": 70,
+          "motivo": "apuesta_ganada",
+          "puntos": 389,
+          "ts": 1782081448000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 319,
+          "ts": 1782081210000
+        },
+        {
+          "delta": -40,
+          "motivo": "apuesta_colocada",
+          "puntos": 316,
+          "ts": 1782080792000
+        },
+        {
+          "delta": 2,
+          "motivo": "bonus_participar",
+          "puntos": 318,
+          "ts": 1782080792000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 356,
+          "ts": 1782080743000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 353,
+          "ts": 1782080458000
+        },
+        {
+          "delta": 2,
+          "motivo": "bonus_votar",
+          "puntos": 355,
+          "ts": 1782080458000
+        },
+        {
+          "delta": 10,
+          "motivo": "pasivo",
+          "puntos": 352,
+          "ts": 1782080419000
+        },
+        {
+          "delta": 44,
+          "motivo": "apuesta_ganada",
+          "puntos": 342,
+          "ts": 1782080388000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 298,
+          "ts": 1782079769000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 297,
+          "ts": 1782079661000
+        },
+        {
+          "delta": 2,
+          "motivo": "bonus_participar",
+          "puntos": 296,
+          "ts": 1782079589000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 324,
+          "ts": 1782079588000
+        },
+        {
+          "delta": -30,
+          "motivo": "apuesta_colocada",
+          "puntos": 294,
+          "ts": 1782079588000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 321,
+          "ts": 1782079267000
+        },
+        {
+          "delta": 2,
+          "motivo": "bonus_votar",
+          "puntos": 323,
+          "ts": 1782079267000
+        },
+        {
+          "delta": 26,
+          "motivo": "apuesta_ganada",
+          "puntos": 320,
+          "ts": 1782079118000
+        },
+        {
+          "delta": 10,
+          "motivo": "pasivo",
+          "puntos": 294,
+          "ts": 1782078619000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 302,
+          "ts": 1782078220000
+        },
+        {
+          "delta": -20,
+          "motivo": "apuesta_colocada",
+          "puntos": 282,
+          "ts": 1782078220000
+        },
+        {
+          "delta": 2,
+          "motivo": "bonus_participar",
+          "puntos": 284,
+          "ts": 1782078220000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 301,
+          "ts": 1782078136000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 300,
+          "ts": 1782077955000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 299,
+          "ts": 1782076833000
+        },
+        {
+          "delta": 10,
+          "motivo": "pasivo",
+          "puntos": 298,
+          "ts": 1782076819000
+        },
+        {
+          "delta": 51,
+          "motivo": "apuesta_ganada",
+          "puntos": 288,
+          "ts": 1782076729000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 237,
+          "ts": 1782076647000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 236,
+          "ts": 1782076217000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 235,
+          "ts": 1782076156000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 234,
+          "ts": 1782075741000
+        },
+        {
+          "delta": -20,
+          "motivo": "apuesta_colocada",
+          "puntos": 231,
+          "ts": 1782075185000
+        },
+        {
+          "delta": 2,
+          "motivo": "bonus_participar",
+          "puntos": 233,
+          "ts": 1782075185000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 251,
+          "ts": 1782075134000
+        },
+        {
+          "delta": 10,
+          "motivo": "pasivo",
+          "puntos": 250,
+          "ts": 1782075019000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 238,
+          "ts": 1782074902000
+        },
+        {
+          "delta": 2,
+          "motivo": "bonus_votar",
+          "puntos": 240,
+          "ts": 1782074902000
+        },
+        {
+          "delta": 12,
+          "motivo": "apuesta_ganada",
+          "puntos": 237,
+          "ts": 1782074805000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 225,
+          "ts": 1782074638000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 224,
+          "ts": 1782074565000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 223,
+          "ts": 1782073976000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 230,
+          "ts": 1782073612000
+        },
+        {
+          "delta": -10,
+          "motivo": "apuesta_colocada",
+          "puntos": 220,
+          "ts": 1782073612000
+        },
+        {
+          "delta": 2,
+          "motivo": "bonus_participar",
+          "puntos": 222,
+          "ts": 1782073612000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 227,
+          "ts": 1782073230000
+        },
+        {
+          "delta": 2,
+          "motivo": "bonus_votar",
+          "puntos": 229,
+          "ts": 1782073230000
+        },
+        {
+          "delta": 10,
+          "motivo": "pasivo",
+          "puntos": 226,
+          "ts": 1782073219000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 216,
+          "ts": 1782073121000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 215,
+          "ts": 1782072872000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 214,
+          "ts": 1782072673000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 213,
+          "ts": 1782071927000
+        },
+        {
+          "delta": 10,
+          "motivo": "pasivo",
+          "puntos": 212,
+          "ts": 1782071419000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 210,
+          "ts": 1782071265000
+        },
+        {
+          "delta": -10,
+          "motivo": "apuesta_colocada",
+          "puntos": 200,
+          "ts": 1782071265000
+        },
+        {
+          "delta": 2,
+          "motivo": "bonus_participar",
+          "puntos": 202,
+          "ts": 1782071265000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 209,
+          "ts": 1782071205000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 208,
+          "ts": 1782071082000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 205,
+          "ts": 1782071004000
+        },
+        {
+          "delta": 2,
+          "motivo": "bonus_votar",
+          "puntos": 207,
+          "ts": 1782071004000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 204,
+          "ts": 1782070917000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 203,
+          "ts": 1782070769000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 202,
+          "ts": 1782070655000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 201,
+          "ts": 1782070408000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 200,
+          "ts": 1782069987000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 199,
+          "ts": 1782069684000
+        },
+        {
+          "delta": 10,
+          "motivo": "pasivo",
+          "puntos": 198,
+          "ts": 1781388880000
+        },
+        {
+          "delta": 20,
+          "motivo": "apuesta_ganada",
+          "puntos": 188,
+          "ts": 1781387933000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 168,
+          "ts": 1781387611000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 185,
+          "ts": 1781387418000
+        },
+        {
+          "delta": -20,
+          "motivo": "apuesta_colocada",
+          "puntos": 165,
+          "ts": 1781387418000
+        },
+        {
+          "delta": 2,
+          "motivo": "bonus_participar",
+          "puntos": 167,
+          "ts": 1781387418000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 184,
+          "ts": 1781387204000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 181,
+          "ts": 1781387122000
+        },
+        {
+          "delta": 2,
+          "motivo": "bonus_votar",
+          "puntos": 183,
+          "ts": 1781387122000
+        },
+        {
+          "delta": 10,
+          "motivo": "pasivo",
+          "puntos": 180,
+          "ts": 1781387080000
+        },
+        {
+          "delta": 44,
+          "motivo": "apuesta_ganada",
+          "puntos": 170,
+          "ts": 1781387035000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 126,
+          "ts": 1781386908000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 143,
+          "ts": 1781386470000
+        },
+        {
+          "delta": -20,
+          "motivo": "apuesta_colocada",
+          "puntos": 123,
+          "ts": 1781386470000
+        },
+        {
+          "delta": 2,
+          "motivo": "bonus_participar",
+          "puntos": 125,
+          "ts": 1781386470000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 140,
+          "ts": 1781386235000
+        },
+        {
+          "delta": 2,
+          "motivo": "bonus_votar",
+          "puntos": 142,
+          "ts": 1781386235000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 139,
+          "ts": 1781386117000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 138,
+          "ts": 1781385989000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 137,
+          "ts": 1781385927000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 136,
+          "ts": 1781385820000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 135,
+          "ts": 1781385318000
+        },
+        {
+          "delta": 10,
+          "motivo": "pasivo",
+          "puntos": 134,
+          "ts": 1781385280000
+        },
+        {
+          "delta": 20,
+          "motivo": "apuesta_ganada",
+          "puntos": 124,
+          "ts": 1781385182000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 104,
+          "ts": 1781385146000
+        },
+        {
+          "delta": -20,
+          "motivo": "apuesta_colocada",
+          "puntos": 101,
+          "ts": 1781384574000
+        },
+        {
+          "delta": 2,
+          "motivo": "bonus_participar",
+          "puntos": 103,
+          "ts": 1781384574000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 121,
+          "ts": 1781384535000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 138,
+          "ts": 1781383505000
+        },
+        {
+          "delta": -20,
+          "motivo": "apuesta_colocada",
+          "puntos": 118,
+          "ts": 1781383505000
+        },
+        {
+          "delta": 2,
+          "motivo": "bonus_participar",
+          "puntos": 120,
+          "ts": 1781383505000
+        },
+        {
+          "delta": 10,
+          "motivo": "pasivo",
+          "puntos": 137,
+          "ts": 1781383480000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 127,
+          "ts": 1781383313000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 124,
+          "ts": 1781383223000
+        },
+        {
+          "delta": 2,
+          "motivo": "bonus_votar",
+          "puntos": 126,
+          "ts": 1781383223000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 123,
+          "ts": 1781382887000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 140,
+          "ts": 1781382466000
+        },
+        {
+          "delta": -20,
+          "motivo": "apuesta_colocada",
+          "puntos": 120,
+          "ts": 1781382466000
+        },
+        {
+          "delta": 2,
+          "motivo": "bonus_participar",
+          "puntos": 122,
+          "ts": 1781382466000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 139,
+          "ts": 1781382345000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 138,
+          "ts": 1781382227000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 137,
+          "ts": 1781382028000
+        },
+        {
+          "delta": 2,
+          "motivo": "bonus_votar",
+          "puntos": 136,
+          "ts": 1781381900000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 134,
+          "ts": 1781381848000
+        },
+        {
+          "delta": 30,
+          "motivo": "apuesta_ganada",
+          "puntos": 133,
+          "ts": 1781381823000
+        },
+        {
+          "delta": 10,
+          "motivo": "pasivo",
+          "puntos": 103,
+          "ts": 1781381680000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 93,
+          "ts": 1781381490000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 100,
+          "ts": 1781380744000
+        },
+        {
+          "delta": -10,
+          "motivo": "apuesta_colocada",
+          "puntos": 90,
+          "ts": 1781380744000
+        },
+        {
+          "delta": 2,
+          "motivo": "bonus_participar",
+          "puntos": 92,
+          "ts": 1781380744000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 99,
+          "ts": 1781380510000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 96,
+          "ts": 1781379971000
+        },
+        {
+          "delta": 2,
+          "motivo": "bonus_votar",
+          "puntos": 98,
+          "ts": 1781379971000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 95,
+          "ts": 1781379888000
+        },
+        {
+          "delta": 10,
+          "motivo": "pasivo",
+          "puntos": 94,
+          "ts": 1780871496000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 84,
+          "ts": 1780870410000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 83,
+          "ts": 1780870341000
+        },
+        {
+          "delta": 10,
+          "motivo": "pasivo",
+          "puntos": 82,
+          "ts": 1780869696000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 72,
+          "ts": 1780869278000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 71,
+          "ts": 1780868872000
+        },
+        {
+          "delta": 10,
+          "motivo": "pasivo",
+          "puntos": 70,
+          "ts": 1780867896000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 60,
+          "ts": 1780867834000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 59,
+          "ts": 1780867764000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 66,
+          "ts": 1780867396000
+        },
+        {
+          "delta": -10,
+          "motivo": "apuesta_colocada",
+          "puntos": 56,
+          "ts": 1780867396000
+        },
+        {
+          "delta": 2,
+          "motivo": "bonus_participar",
+          "puntos": 58,
+          "ts": 1780867396000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 65,
+          "ts": 1780867281000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 64,
+          "ts": 1780867143000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 61,
+          "ts": 1780867053000
+        },
+        {
+          "delta": 2,
+          "motivo": "bonus_votar",
+          "puntos": 63,
+          "ts": 1780867053000
+        },
+        {
+          "delta": 10,
+          "motivo": "pasivo",
+          "puntos": 60,
+          "ts": 1780866096000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 50,
+          "ts": 1780865515000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 49,
+          "ts": 1780865419000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 48,
+          "ts": 1780865260000
+        },
+        {
+          "delta": 10,
+          "motivo": "pasivo",
+          "puntos": 47,
+          "ts": 1780864296000
+        },
+        {
+          "delta": -10,
+          "motivo": "apuesta_colocada",
+          "puntos": 35,
+          "ts": 1780863987000
+        },
+        {
+          "delta": 2,
+          "motivo": "bonus_participar",
+          "puntos": 37,
+          "ts": 1780863987000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 45,
+          "ts": 1780863946000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 42,
+          "ts": 1780863444000
+        },
+        {
+          "delta": 2,
+          "motivo": "bonus_votar",
+          "puntos": 44,
+          "ts": 1780863444000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 41,
+          "ts": 1780862692000
+        },
+        {
+          "delta": 10,
+          "motivo": "pasivo",
+          "puntos": 40,
+          "ts": 1780862496000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 30,
+          "ts": 1780862342000
+        },
+        {
+          "delta": -10,
+          "motivo": "apuesta_colocada",
+          "puntos": 27,
+          "ts": 1780862162000
+        },
+        {
+          "delta": 2,
+          "motivo": "bonus_participar",
+          "puntos": 29,
+          "ts": 1780862162000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 37,
+          "ts": 1780862107000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 34,
+          "ts": 1780861884000
+        },
+        {
+          "delta": 2,
+          "motivo": "bonus_votar",
+          "puntos": 36,
+          "ts": 1780861884000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 33,
+          "ts": 1780861774000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 32,
+          "ts": 1780861382000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 31,
+          "ts": 1780861218000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 30,
+          "ts": 1780860964000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 29,
+          "ts": 1780860755000
+        },
+        {
+          "delta": 10,
+          "motivo": "pasivo",
+          "puntos": 28,
+          "ts": 1780860696000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 26,
+          "ts": 1780860383000
+        },
+        {
+          "delta": -10,
+          "motivo": "apuesta_colocada",
+          "puntos": 16,
+          "ts": 1780860383000
+        },
+        {
+          "delta": 2,
+          "motivo": "bonus_participar",
+          "puntos": 18,
+          "ts": 1780860383000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 25,
+          "ts": 1780860224000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 22,
+          "ts": 1780860002000
+        },
+        {
+          "delta": 2,
+          "motivo": "bonus_votar",
+          "puntos": 24,
+          "ts": 1780860002000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 21,
+          "ts": 1780859835000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 20,
+          "ts": 1780859645000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 19,
+          "ts": 1780859078000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 18,
+          "ts": 1780859006000
+        },
+        {
+          "delta": 10,
+          "motivo": "pasivo",
+          "puntos": 17,
+          "ts": 1780858896000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 7,
+          "ts": 1780858755000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 6,
+          "ts": 1780858641000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 3,
+          "ts": 1780858450000
+        },
+        {
+          "delta": 2,
+          "motivo": "bonus_votar",
+          "puntos": 5,
+          "ts": 1780858450000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 2,
+          "ts": 1780857884000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 1,
+          "ts": 1780857591000
+        }
+      ]
+    },
+    {
+      "rank": 3,
       "user": "batazuma",
-      "points": 449,
+      "points": 450,
       "faccion": null,
       "profile_img": "https://yt4.ggpht.com/wWxwXA6XsKqd1V6l5yA6UEyudFNePzssE2nRRQpTwY50GAugzTmiKebSnIQ2sH_sdgg9Ch84tw=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 10,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 450,
+          "ts": 1782166293000
+        },
         {
           "delta": 1,
           "motivo": "mensaje",
@@ -3612,1369 +4985,38 @@
       ]
     },
     {
-      "rank": 3,
-      "user": "popham_arg",
-      "points": 400,
-      "faccion": "cw",
-      "profile_img": "https://yt4.ggpht.com/ytc/AIdro_l073YlqqwNThSKT2Ge1HLxlhT_Z5HhMnfoDfdJDkpZ2voqrpFZOIHNJfU_R2CijCfuPg=s64-c-k-c0x00ffffff-no-rj",
-      "total_apuestas": 22,
-      "total_ganadas": 0,
-      "historial": [
-        {
-          "delta": 10,
-          "motivo": "pasivo",
-          "puntos": 400,
-          "ts": 1782165644000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 390,
-          "ts": 1782165246000
-        },
-        {
-          "delta": 10,
-          "motivo": "pasivo",
-          "puntos": 389,
-          "ts": 1782163844000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 417,
-          "ts": 1782162927000
-        },
-        {
-          "delta": -40,
-          "motivo": "apuesta_colocada",
-          "puntos": 377,
-          "ts": 1782162927000
-        },
-        {
-          "delta": 2,
-          "motivo": "bonus_participar",
-          "puntos": 379,
-          "ts": 1782162927000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 414,
-          "ts": 1782162639000
-        },
-        {
-          "delta": 2,
-          "motivo": "bonus_votar",
-          "puntos": 416,
-          "ts": 1782162639000
-        },
-        {
-          "delta": 10,
-          "motivo": "pasivo",
-          "puntos": 413,
-          "ts": 1782162044000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 401,
-          "ts": 1782161691000
-        },
-        {
-          "delta": 2,
-          "motivo": "bonus_participar",
-          "puntos": 403,
-          "ts": 1782161691000
-        },
-        {
-          "delta": 56,
-          "motivo": "apuesta_ganada",
-          "puntos": 400,
-          "ts": 1782161408000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 392,
-          "ts": 1782160437000
-        },
-        {
-          "delta": -50,
-          "motivo": "apuesta_colocada",
-          "puntos": 342,
-          "ts": 1782160437000
-        },
-        {
-          "delta": 2,
-          "motivo": "bonus_participar",
-          "puntos": 344,
-          "ts": 1782160437000
-        },
-        {
-          "delta": 10,
-          "motivo": "pasivo",
-          "puntos": 391,
-          "ts": 1782160244000
-        },
-        {
-          "delta": 2,
-          "motivo": "trivia_participar",
-          "puntos": 381,
-          "ts": 1782159852000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 379,
-          "ts": 1782159811000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 406,
-          "ts": 1782159032000
-        },
-        {
-          "delta": -30,
-          "motivo": "apuesta_colocada",
-          "puntos": 376,
-          "ts": 1782159032000
-        },
-        {
-          "delta": 2,
-          "motivo": "bonus_participar",
-          "puntos": 378,
-          "ts": 1782159032000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 423,
-          "ts": 1782158500000
-        },
-        {
-          "delta": -20,
-          "motivo": "apuesta_colocada",
-          "puntos": 403,
-          "ts": 1782158500000
-        },
-        {
-          "delta": 2,
-          "motivo": "bonus_participar",
-          "puntos": 405,
-          "ts": 1782158500000
-        },
-        {
-          "delta": 10,
-          "motivo": "pasivo",
-          "puntos": 422,
-          "ts": 1782158444000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 410,
-          "ts": 1782158269000
-        },
-        {
-          "delta": 2,
-          "motivo": "bonus_votar",
-          "puntos": 412,
-          "ts": 1782158269000
-        },
-        {
-          "delta": 79,
-          "motivo": "apuesta_ganada",
-          "puntos": 409,
-          "ts": 1782158157000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 378,
-          "ts": 1782157418000
-        },
-        {
-          "delta": -50,
-          "motivo": "apuesta_colocada",
-          "puntos": 328,
-          "ts": 1782157418000
-        },
-        {
-          "delta": 2,
-          "motivo": "bonus_participar",
-          "puntos": 330,
-          "ts": 1782157418000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 375,
-          "ts": 1782157174000
-        },
-        {
-          "delta": 2,
-          "motivo": "bonus_votar",
-          "puntos": 377,
-          "ts": 1782157174000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 374,
-          "ts": 1782157018000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 373,
-          "ts": 1782156894000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 372,
-          "ts": 1782156747000
-        },
-        {
-          "delta": 10,
-          "motivo": "pasivo",
-          "puntos": 371,
-          "ts": 1782084019000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 361,
-          "ts": 1782083380000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 360,
-          "ts": 1782083289000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 359,
-          "ts": 1782083100000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 358,
-          "ts": 1782082709000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 357,
-          "ts": 1782082323000
-        },
-        {
-          "delta": 10,
-          "motivo": "pasivo",
-          "puntos": 356,
-          "ts": 1782082219000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 346,
-          "ts": 1782082019000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 393,
-          "ts": 1782081809000
-        },
-        {
-          "delta": -50,
-          "motivo": "apuesta_colocada",
-          "puntos": 343,
-          "ts": 1782081809000
-        },
-        {
-          "delta": 2,
-          "motivo": "bonus_participar",
-          "puntos": 345,
-          "ts": 1782081809000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 390,
-          "ts": 1782081535000
-        },
-        {
-          "delta": 2,
-          "motivo": "bonus_votar",
-          "puntos": 392,
-          "ts": 1782081535000
-        },
-        {
-          "delta": 70,
-          "motivo": "apuesta_ganada",
-          "puntos": 389,
-          "ts": 1782081448000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 319,
-          "ts": 1782081210000
-        },
-        {
-          "delta": -40,
-          "motivo": "apuesta_colocada",
-          "puntos": 316,
-          "ts": 1782080792000
-        },
-        {
-          "delta": 2,
-          "motivo": "bonus_participar",
-          "puntos": 318,
-          "ts": 1782080792000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 356,
-          "ts": 1782080743000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 353,
-          "ts": 1782080458000
-        },
-        {
-          "delta": 2,
-          "motivo": "bonus_votar",
-          "puntos": 355,
-          "ts": 1782080458000
-        },
-        {
-          "delta": 10,
-          "motivo": "pasivo",
-          "puntos": 352,
-          "ts": 1782080419000
-        },
-        {
-          "delta": 44,
-          "motivo": "apuesta_ganada",
-          "puntos": 342,
-          "ts": 1782080388000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 298,
-          "ts": 1782079769000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 297,
-          "ts": 1782079661000
-        },
-        {
-          "delta": 2,
-          "motivo": "bonus_participar",
-          "puntos": 296,
-          "ts": 1782079589000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 324,
-          "ts": 1782079588000
-        },
-        {
-          "delta": -30,
-          "motivo": "apuesta_colocada",
-          "puntos": 294,
-          "ts": 1782079588000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 321,
-          "ts": 1782079267000
-        },
-        {
-          "delta": 2,
-          "motivo": "bonus_votar",
-          "puntos": 323,
-          "ts": 1782079267000
-        },
-        {
-          "delta": 26,
-          "motivo": "apuesta_ganada",
-          "puntos": 320,
-          "ts": 1782079118000
-        },
-        {
-          "delta": 10,
-          "motivo": "pasivo",
-          "puntos": 294,
-          "ts": 1782078619000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 302,
-          "ts": 1782078220000
-        },
-        {
-          "delta": -20,
-          "motivo": "apuesta_colocada",
-          "puntos": 282,
-          "ts": 1782078220000
-        },
-        {
-          "delta": 2,
-          "motivo": "bonus_participar",
-          "puntos": 284,
-          "ts": 1782078220000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 301,
-          "ts": 1782078136000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 300,
-          "ts": 1782077955000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 299,
-          "ts": 1782076833000
-        },
-        {
-          "delta": 10,
-          "motivo": "pasivo",
-          "puntos": 298,
-          "ts": 1782076819000
-        },
-        {
-          "delta": 51,
-          "motivo": "apuesta_ganada",
-          "puntos": 288,
-          "ts": 1782076729000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 237,
-          "ts": 1782076647000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 236,
-          "ts": 1782076217000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 235,
-          "ts": 1782076156000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 234,
-          "ts": 1782075741000
-        },
-        {
-          "delta": -20,
-          "motivo": "apuesta_colocada",
-          "puntos": 231,
-          "ts": 1782075185000
-        },
-        {
-          "delta": 2,
-          "motivo": "bonus_participar",
-          "puntos": 233,
-          "ts": 1782075185000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 251,
-          "ts": 1782075134000
-        },
-        {
-          "delta": 10,
-          "motivo": "pasivo",
-          "puntos": 250,
-          "ts": 1782075019000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 238,
-          "ts": 1782074902000
-        },
-        {
-          "delta": 2,
-          "motivo": "bonus_votar",
-          "puntos": 240,
-          "ts": 1782074902000
-        },
-        {
-          "delta": 12,
-          "motivo": "apuesta_ganada",
-          "puntos": 237,
-          "ts": 1782074805000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 225,
-          "ts": 1782074638000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 224,
-          "ts": 1782074565000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 223,
-          "ts": 1782073976000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 230,
-          "ts": 1782073612000
-        },
-        {
-          "delta": -10,
-          "motivo": "apuesta_colocada",
-          "puntos": 220,
-          "ts": 1782073612000
-        },
-        {
-          "delta": 2,
-          "motivo": "bonus_participar",
-          "puntos": 222,
-          "ts": 1782073612000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 227,
-          "ts": 1782073230000
-        },
-        {
-          "delta": 2,
-          "motivo": "bonus_votar",
-          "puntos": 229,
-          "ts": 1782073230000
-        },
-        {
-          "delta": 10,
-          "motivo": "pasivo",
-          "puntos": 226,
-          "ts": 1782073219000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 216,
-          "ts": 1782073121000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 215,
-          "ts": 1782072872000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 214,
-          "ts": 1782072673000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 213,
-          "ts": 1782071927000
-        },
-        {
-          "delta": 10,
-          "motivo": "pasivo",
-          "puntos": 212,
-          "ts": 1782071419000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 210,
-          "ts": 1782071265000
-        },
-        {
-          "delta": -10,
-          "motivo": "apuesta_colocada",
-          "puntos": 200,
-          "ts": 1782071265000
-        },
-        {
-          "delta": 2,
-          "motivo": "bonus_participar",
-          "puntos": 202,
-          "ts": 1782071265000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 209,
-          "ts": 1782071205000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 208,
-          "ts": 1782071082000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 205,
-          "ts": 1782071004000
-        },
-        {
-          "delta": 2,
-          "motivo": "bonus_votar",
-          "puntos": 207,
-          "ts": 1782071004000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 204,
-          "ts": 1782070917000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 203,
-          "ts": 1782070769000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 202,
-          "ts": 1782070655000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 201,
-          "ts": 1782070408000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 200,
-          "ts": 1782069987000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 199,
-          "ts": 1782069684000
-        },
-        {
-          "delta": 10,
-          "motivo": "pasivo",
-          "puntos": 198,
-          "ts": 1781388880000
-        },
-        {
-          "delta": 20,
-          "motivo": "apuesta_ganada",
-          "puntos": 188,
-          "ts": 1781387933000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 168,
-          "ts": 1781387611000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 185,
-          "ts": 1781387418000
-        },
-        {
-          "delta": -20,
-          "motivo": "apuesta_colocada",
-          "puntos": 165,
-          "ts": 1781387418000
-        },
-        {
-          "delta": 2,
-          "motivo": "bonus_participar",
-          "puntos": 167,
-          "ts": 1781387418000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 184,
-          "ts": 1781387204000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 181,
-          "ts": 1781387122000
-        },
-        {
-          "delta": 2,
-          "motivo": "bonus_votar",
-          "puntos": 183,
-          "ts": 1781387122000
-        },
-        {
-          "delta": 10,
-          "motivo": "pasivo",
-          "puntos": 180,
-          "ts": 1781387080000
-        },
-        {
-          "delta": 44,
-          "motivo": "apuesta_ganada",
-          "puntos": 170,
-          "ts": 1781387035000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 126,
-          "ts": 1781386908000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 143,
-          "ts": 1781386470000
-        },
-        {
-          "delta": -20,
-          "motivo": "apuesta_colocada",
-          "puntos": 123,
-          "ts": 1781386470000
-        },
-        {
-          "delta": 2,
-          "motivo": "bonus_participar",
-          "puntos": 125,
-          "ts": 1781386470000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 140,
-          "ts": 1781386235000
-        },
-        {
-          "delta": 2,
-          "motivo": "bonus_votar",
-          "puntos": 142,
-          "ts": 1781386235000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 139,
-          "ts": 1781386117000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 138,
-          "ts": 1781385989000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 137,
-          "ts": 1781385927000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 136,
-          "ts": 1781385820000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 135,
-          "ts": 1781385318000
-        },
-        {
-          "delta": 10,
-          "motivo": "pasivo",
-          "puntos": 134,
-          "ts": 1781385280000
-        },
-        {
-          "delta": 20,
-          "motivo": "apuesta_ganada",
-          "puntos": 124,
-          "ts": 1781385182000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 104,
-          "ts": 1781385146000
-        },
-        {
-          "delta": -20,
-          "motivo": "apuesta_colocada",
-          "puntos": 101,
-          "ts": 1781384574000
-        },
-        {
-          "delta": 2,
-          "motivo": "bonus_participar",
-          "puntos": 103,
-          "ts": 1781384574000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 121,
-          "ts": 1781384535000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 138,
-          "ts": 1781383505000
-        },
-        {
-          "delta": -20,
-          "motivo": "apuesta_colocada",
-          "puntos": 118,
-          "ts": 1781383505000
-        },
-        {
-          "delta": 2,
-          "motivo": "bonus_participar",
-          "puntos": 120,
-          "ts": 1781383505000
-        },
-        {
-          "delta": 10,
-          "motivo": "pasivo",
-          "puntos": 137,
-          "ts": 1781383480000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 127,
-          "ts": 1781383313000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 124,
-          "ts": 1781383223000
-        },
-        {
-          "delta": 2,
-          "motivo": "bonus_votar",
-          "puntos": 126,
-          "ts": 1781383223000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 123,
-          "ts": 1781382887000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 140,
-          "ts": 1781382466000
-        },
-        {
-          "delta": -20,
-          "motivo": "apuesta_colocada",
-          "puntos": 120,
-          "ts": 1781382466000
-        },
-        {
-          "delta": 2,
-          "motivo": "bonus_participar",
-          "puntos": 122,
-          "ts": 1781382466000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 139,
-          "ts": 1781382345000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 138,
-          "ts": 1781382227000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 137,
-          "ts": 1781382028000
-        },
-        {
-          "delta": 2,
-          "motivo": "bonus_votar",
-          "puntos": 136,
-          "ts": 1781381900000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 134,
-          "ts": 1781381848000
-        },
-        {
-          "delta": 30,
-          "motivo": "apuesta_ganada",
-          "puntos": 133,
-          "ts": 1781381823000
-        },
-        {
-          "delta": 10,
-          "motivo": "pasivo",
-          "puntos": 103,
-          "ts": 1781381680000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 93,
-          "ts": 1781381490000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 100,
-          "ts": 1781380744000
-        },
-        {
-          "delta": -10,
-          "motivo": "apuesta_colocada",
-          "puntos": 90,
-          "ts": 1781380744000
-        },
-        {
-          "delta": 2,
-          "motivo": "bonus_participar",
-          "puntos": 92,
-          "ts": 1781380744000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 99,
-          "ts": 1781380510000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 96,
-          "ts": 1781379971000
-        },
-        {
-          "delta": 2,
-          "motivo": "bonus_votar",
-          "puntos": 98,
-          "ts": 1781379971000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 95,
-          "ts": 1781379888000
-        },
-        {
-          "delta": 10,
-          "motivo": "pasivo",
-          "puntos": 94,
-          "ts": 1780871496000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 84,
-          "ts": 1780870410000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 83,
-          "ts": 1780870341000
-        },
-        {
-          "delta": 10,
-          "motivo": "pasivo",
-          "puntos": 82,
-          "ts": 1780869696000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 72,
-          "ts": 1780869278000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 71,
-          "ts": 1780868872000
-        },
-        {
-          "delta": 10,
-          "motivo": "pasivo",
-          "puntos": 70,
-          "ts": 1780867896000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 60,
-          "ts": 1780867834000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 59,
-          "ts": 1780867764000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 66,
-          "ts": 1780867396000
-        },
-        {
-          "delta": -10,
-          "motivo": "apuesta_colocada",
-          "puntos": 56,
-          "ts": 1780867396000
-        },
-        {
-          "delta": 2,
-          "motivo": "bonus_participar",
-          "puntos": 58,
-          "ts": 1780867396000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 65,
-          "ts": 1780867281000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 64,
-          "ts": 1780867143000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 61,
-          "ts": 1780867053000
-        },
-        {
-          "delta": 2,
-          "motivo": "bonus_votar",
-          "puntos": 63,
-          "ts": 1780867053000
-        },
-        {
-          "delta": 10,
-          "motivo": "pasivo",
-          "puntos": 60,
-          "ts": 1780866096000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 50,
-          "ts": 1780865515000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 49,
-          "ts": 1780865419000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 48,
-          "ts": 1780865260000
-        },
-        {
-          "delta": 10,
-          "motivo": "pasivo",
-          "puntos": 47,
-          "ts": 1780864296000
-        },
-        {
-          "delta": -10,
-          "motivo": "apuesta_colocada",
-          "puntos": 35,
-          "ts": 1780863987000
-        },
-        {
-          "delta": 2,
-          "motivo": "bonus_participar",
-          "puntos": 37,
-          "ts": 1780863987000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 45,
-          "ts": 1780863946000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 42,
-          "ts": 1780863444000
-        },
-        {
-          "delta": 2,
-          "motivo": "bonus_votar",
-          "puntos": 44,
-          "ts": 1780863444000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 41,
-          "ts": 1780862692000
-        },
-        {
-          "delta": 10,
-          "motivo": "pasivo",
-          "puntos": 40,
-          "ts": 1780862496000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 30,
-          "ts": 1780862342000
-        },
-        {
-          "delta": -10,
-          "motivo": "apuesta_colocada",
-          "puntos": 27,
-          "ts": 1780862162000
-        },
-        {
-          "delta": 2,
-          "motivo": "bonus_participar",
-          "puntos": 29,
-          "ts": 1780862162000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 37,
-          "ts": 1780862107000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 34,
-          "ts": 1780861884000
-        },
-        {
-          "delta": 2,
-          "motivo": "bonus_votar",
-          "puntos": 36,
-          "ts": 1780861884000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 33,
-          "ts": 1780861774000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 32,
-          "ts": 1780861382000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 31,
-          "ts": 1780861218000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 30,
-          "ts": 1780860964000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 29,
-          "ts": 1780860755000
-        },
-        {
-          "delta": 10,
-          "motivo": "pasivo",
-          "puntos": 28,
-          "ts": 1780860696000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 26,
-          "ts": 1780860383000
-        },
-        {
-          "delta": -10,
-          "motivo": "apuesta_colocada",
-          "puntos": 16,
-          "ts": 1780860383000
-        },
-        {
-          "delta": 2,
-          "motivo": "bonus_participar",
-          "puntos": 18,
-          "ts": 1780860383000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 25,
-          "ts": 1780860224000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 22,
-          "ts": 1780860002000
-        },
-        {
-          "delta": 2,
-          "motivo": "bonus_votar",
-          "puntos": 24,
-          "ts": 1780860002000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 21,
-          "ts": 1780859835000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 20,
-          "ts": 1780859645000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 19,
-          "ts": 1780859078000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 18,
-          "ts": 1780859006000
-        },
-        {
-          "delta": 10,
-          "motivo": "pasivo",
-          "puntos": 17,
-          "ts": 1780858896000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 7,
-          "ts": 1780858755000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 6,
-          "ts": 1780858641000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 3,
-          "ts": 1780858450000
-        },
-        {
-          "delta": 2,
-          "motivo": "bonus_votar",
-          "puntos": 5,
-          "ts": 1780858450000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 2,
-          "ts": 1780857884000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 1,
-          "ts": 1780857591000
-        }
-      ]
-    },
-    {
       "rank": 4,
       "user": "virgolandia2",
-      "points": 389,
+      "points": 394,
       "faccion": "wm",
       "profile_img": "https://yt4.ggpht.com/ytc/AIdro_nEXPQ5IzVjI_8E9ysRUgKgKXGvW81DmTWiCZaNrkJvUNU=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 10,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 392,
+          "ts": 1782166537000
+        },
+        {
+          "delta": 2,
+          "motivo": "bonus_votar",
+          "puntos": 394,
+          "ts": 1782166537000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 391,
+          "ts": 1782166453000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 390,
+          "ts": 1782166314000
+        },
         {
           "delta": 1,
           "motivo": "mensaje",
@@ -7151,12 +7193,18 @@
     {
       "rank": 6,
       "user": "cesarguedes9296",
-      "points": 308,
+      "points": 309,
       "faccion": "pe",
       "profile_img": "https://yt4.ggpht.com/ytc/AIdro_l7OsuC4ciCVrrHM_lnVNi3J4wAGYvGJLi1AyPz0IQ=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 5,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 309,
+          "ts": 1782166450000
+        },
         {
           "delta": 10,
           "motivo": "pasivo",
@@ -11272,12 +11320,18 @@
     {
       "rank": 13,
       "user": "facundopainefil3509",
-      "points": 191,
+      "points": 192,
       "faccion": "wm",
       "profile_img": "https://yt4.ggpht.com/ytc/AIdro_n1YRi8i8TpTnKtMIARSi9xPLn2rKU-ONxy_O_TrQ3cSvg7zMr2VhNJEvOs1oIoKW7QLA=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 2,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 192,
+          "ts": 1782166516000
+        },
         {
           "delta": 10,
           "motivo": "pasivo",
@@ -12085,6 +12139,371 @@
     },
     {
       "rank": 15,
+      "user": "rikiguerreroab",
+      "points": 183,
+      "faccion": null,
+      "profile_img": "https://yt4.ggpht.com/ytc/AIdro_mwSgxGq1zktABSGr4nt2we0adRdf9_5C6TMBbTYZEQag=s64-c-k-c0x00ffffff-no-rj",
+      "total_apuestas": 5,
+      "total_ganadas": 0,
+      "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 183,
+          "ts": 1782166410000
+        },
+        {
+          "delta": 28,
+          "motivo": "apuesta_ganada",
+          "puntos": 182,
+          "ts": 1782166367000
+        },
+        {
+          "delta": 10,
+          "motivo": "pasivo",
+          "puntos": 154,
+          "ts": 1782163844000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 157,
+          "ts": 1782162897000
+        },
+        {
+          "delta": -15,
+          "motivo": "apuesta_colocada",
+          "puntos": 142,
+          "ts": 1782162897000
+        },
+        {
+          "delta": 2,
+          "motivo": "bonus_participar",
+          "puntos": 144,
+          "ts": 1782162897000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 154,
+          "ts": 1782162651000
+        },
+        {
+          "delta": 2,
+          "motivo": "bonus_votar",
+          "puntos": 156,
+          "ts": 1782162651000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 153,
+          "ts": 1782162176000
+        },
+        {
+          "delta": 10,
+          "motivo": "pasivo",
+          "puntos": 152,
+          "ts": 1782084019000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 142,
+          "ts": 1782083750000
+        },
+        {
+          "delta": 10,
+          "motivo": "pasivo",
+          "puntos": 141,
+          "ts": 1782082219000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 144,
+          "ts": 1782081818000
+        },
+        {
+          "delta": -15,
+          "motivo": "apuesta_colocada",
+          "puntos": 129,
+          "ts": 1782081818000
+        },
+        {
+          "delta": 2,
+          "motivo": "bonus_participar",
+          "puntos": 131,
+          "ts": 1782081818000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 141,
+          "ts": 1782081625000
+        },
+        {
+          "delta": 2,
+          "motivo": "bonus_votar",
+          "puntos": 143,
+          "ts": 1782081625000
+        },
+        {
+          "delta": 26,
+          "motivo": "apuesta_ganada",
+          "puntos": 140,
+          "ts": 1782081448000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 114,
+          "ts": 1782081008000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 113,
+          "ts": 1782080939000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 125,
+          "ts": 1782080734000
+        },
+        {
+          "delta": -15,
+          "motivo": "apuesta_colocada",
+          "puntos": 110,
+          "ts": 1782080734000
+        },
+        {
+          "delta": 2,
+          "motivo": "bonus_participar",
+          "puntos": 112,
+          "ts": 1782080734000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 122,
+          "ts": 1782080449000
+        },
+        {
+          "delta": 2,
+          "motivo": "bonus_votar",
+          "puntos": 124,
+          "ts": 1782080449000
+        },
+        {
+          "delta": 10,
+          "motivo": "pasivo",
+          "puntos": 121,
+          "ts": 1782080419000
+        },
+        {
+          "delta": 22,
+          "motivo": "apuesta_ganada",
+          "puntos": 111,
+          "ts": 1782080388000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 89,
+          "ts": 1782079712000
+        },
+        {
+          "delta": 2,
+          "motivo": "bonus_participar",
+          "puntos": 88,
+          "ts": 1782079589000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 101,
+          "ts": 1782079588000
+        },
+        {
+          "delta": -15,
+          "motivo": "apuesta_colocada",
+          "puntos": 86,
+          "ts": 1782079588000
+        },
+        {
+          "delta": 10,
+          "motivo": "pasivo",
+          "puntos": 100,
+          "ts": 1782078619000
+        },
+        {
+          "delta": 2,
+          "motivo": "trivia_participar",
+          "puntos": 90,
+          "ts": 1782077952000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 88,
+          "ts": 1782077916000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 87,
+          "ts": 1782077784000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 86,
+          "ts": 1782077693000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 85,
+          "ts": 1782076836000
+        },
+        {
+          "delta": 10,
+          "motivo": "pasivo",
+          "puntos": 84,
+          "ts": 1782076819000
+        },
+        {
+          "delta": 38,
+          "motivo": "apuesta_ganada",
+          "puntos": 74,
+          "ts": 1782076729000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 36,
+          "ts": 1782075729000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 48,
+          "ts": 1782075176000
+        },
+        {
+          "delta": -15,
+          "motivo": "apuesta_colocada",
+          "puntos": 33,
+          "ts": 1782075176000
+        },
+        {
+          "delta": 2,
+          "motivo": "bonus_participar",
+          "puntos": 35,
+          "ts": 1782075176000
+        },
+        {
+          "delta": 10,
+          "motivo": "pasivo",
+          "puntos": 47,
+          "ts": 1782075019000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 35,
+          "ts": 1782074860000
+        },
+        {
+          "delta": 2,
+          "motivo": "bonus_votar",
+          "puntos": 37,
+          "ts": 1782074860000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 34,
+          "ts": 1782074244000
+        },
+        {
+          "delta": 10,
+          "motivo": "pasivo",
+          "puntos": 33,
+          "ts": 1782071419000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 21,
+          "ts": 1782071281000
+        },
+        {
+          "delta": 2,
+          "motivo": "bonus_participar",
+          "puntos": 23,
+          "ts": 1782071281000
+        },
+        {
+          "delta": 2,
+          "motivo": "bonus_votar",
+          "puntos": 20,
+          "ts": 1782071043000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 18,
+          "ts": 1782071010000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 17,
+          "ts": 1782070405000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 16,
+          "ts": 1781479969000
+        },
+        {
+          "delta": 10,
+          "motivo": "pasivo",
+          "puntos": 15,
+          "ts": 1781474407000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 5,
+          "ts": 1781473520000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 2,
+          "ts": 1781473454000
+        },
+        {
+          "delta": 2,
+          "motivo": "bonus_participar",
+          "puntos": 4,
+          "ts": 1781473454000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 1,
+          "ts": 1781473361000
+        }
+      ]
+    },
+    {
+      "rank": 16,
       "user": "jefftnfe",
       "points": 166,
       "faccion": "us",
@@ -12535,359 +12954,6 @@
           "motivo": "mensaje",
           "puntos": 1,
           "ts": 1780857783000
-        }
-      ]
-    },
-    {
-      "rank": 16,
-      "user": "rikiguerreroab",
-      "points": 154,
-      "faccion": null,
-      "profile_img": "https://yt4.ggpht.com/ytc/AIdro_mwSgxGq1zktABSGr4nt2we0adRdf9_5C6TMBbTYZEQag=s64-c-k-c0x00ffffff-no-rj",
-      "total_apuestas": 5,
-      "total_ganadas": 0,
-      "historial": [
-        {
-          "delta": 10,
-          "motivo": "pasivo",
-          "puntos": 154,
-          "ts": 1782163844000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 157,
-          "ts": 1782162897000
-        },
-        {
-          "delta": -15,
-          "motivo": "apuesta_colocada",
-          "puntos": 142,
-          "ts": 1782162897000
-        },
-        {
-          "delta": 2,
-          "motivo": "bonus_participar",
-          "puntos": 144,
-          "ts": 1782162897000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 154,
-          "ts": 1782162651000
-        },
-        {
-          "delta": 2,
-          "motivo": "bonus_votar",
-          "puntos": 156,
-          "ts": 1782162651000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 153,
-          "ts": 1782162176000
-        },
-        {
-          "delta": 10,
-          "motivo": "pasivo",
-          "puntos": 152,
-          "ts": 1782084019000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 142,
-          "ts": 1782083750000
-        },
-        {
-          "delta": 10,
-          "motivo": "pasivo",
-          "puntos": 141,
-          "ts": 1782082219000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 144,
-          "ts": 1782081818000
-        },
-        {
-          "delta": -15,
-          "motivo": "apuesta_colocada",
-          "puntos": 129,
-          "ts": 1782081818000
-        },
-        {
-          "delta": 2,
-          "motivo": "bonus_participar",
-          "puntos": 131,
-          "ts": 1782081818000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 141,
-          "ts": 1782081625000
-        },
-        {
-          "delta": 2,
-          "motivo": "bonus_votar",
-          "puntos": 143,
-          "ts": 1782081625000
-        },
-        {
-          "delta": 26,
-          "motivo": "apuesta_ganada",
-          "puntos": 140,
-          "ts": 1782081448000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 114,
-          "ts": 1782081008000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 113,
-          "ts": 1782080939000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 125,
-          "ts": 1782080734000
-        },
-        {
-          "delta": -15,
-          "motivo": "apuesta_colocada",
-          "puntos": 110,
-          "ts": 1782080734000
-        },
-        {
-          "delta": 2,
-          "motivo": "bonus_participar",
-          "puntos": 112,
-          "ts": 1782080734000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 122,
-          "ts": 1782080449000
-        },
-        {
-          "delta": 2,
-          "motivo": "bonus_votar",
-          "puntos": 124,
-          "ts": 1782080449000
-        },
-        {
-          "delta": 10,
-          "motivo": "pasivo",
-          "puntos": 121,
-          "ts": 1782080419000
-        },
-        {
-          "delta": 22,
-          "motivo": "apuesta_ganada",
-          "puntos": 111,
-          "ts": 1782080388000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 89,
-          "ts": 1782079712000
-        },
-        {
-          "delta": 2,
-          "motivo": "bonus_participar",
-          "puntos": 88,
-          "ts": 1782079589000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 101,
-          "ts": 1782079588000
-        },
-        {
-          "delta": -15,
-          "motivo": "apuesta_colocada",
-          "puntos": 86,
-          "ts": 1782079588000
-        },
-        {
-          "delta": 10,
-          "motivo": "pasivo",
-          "puntos": 100,
-          "ts": 1782078619000
-        },
-        {
-          "delta": 2,
-          "motivo": "trivia_participar",
-          "puntos": 90,
-          "ts": 1782077952000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 88,
-          "ts": 1782077916000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 87,
-          "ts": 1782077784000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 86,
-          "ts": 1782077693000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 85,
-          "ts": 1782076836000
-        },
-        {
-          "delta": 10,
-          "motivo": "pasivo",
-          "puntos": 84,
-          "ts": 1782076819000
-        },
-        {
-          "delta": 38,
-          "motivo": "apuesta_ganada",
-          "puntos": 74,
-          "ts": 1782076729000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 36,
-          "ts": 1782075729000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 48,
-          "ts": 1782075176000
-        },
-        {
-          "delta": -15,
-          "motivo": "apuesta_colocada",
-          "puntos": 33,
-          "ts": 1782075176000
-        },
-        {
-          "delta": 2,
-          "motivo": "bonus_participar",
-          "puntos": 35,
-          "ts": 1782075176000
-        },
-        {
-          "delta": 10,
-          "motivo": "pasivo",
-          "puntos": 47,
-          "ts": 1782075019000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 35,
-          "ts": 1782074860000
-        },
-        {
-          "delta": 2,
-          "motivo": "bonus_votar",
-          "puntos": 37,
-          "ts": 1782074860000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 34,
-          "ts": 1782074244000
-        },
-        {
-          "delta": 10,
-          "motivo": "pasivo",
-          "puntos": 33,
-          "ts": 1782071419000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 21,
-          "ts": 1782071281000
-        },
-        {
-          "delta": 2,
-          "motivo": "bonus_participar",
-          "puntos": 23,
-          "ts": 1782071281000
-        },
-        {
-          "delta": 2,
-          "motivo": "bonus_votar",
-          "puntos": 20,
-          "ts": 1782071043000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 18,
-          "ts": 1782071010000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 17,
-          "ts": 1782070405000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 16,
-          "ts": 1781479969000
-        },
-        {
-          "delta": 10,
-          "motivo": "pasivo",
-          "puntos": 15,
-          "ts": 1781474407000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 5,
-          "ts": 1781473520000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 2,
-          "ts": 1781473454000
-        },
-        {
-          "delta": 2,
-          "motivo": "bonus_participar",
-          "puntos": 4,
-          "ts": 1781473454000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 1,
-          "ts": 1781473361000
         }
       ]
     },
@@ -14139,12 +14205,18 @@
     {
       "rank": 20,
       "user": "user-pervic",
-      "points": 120,
+      "points": 121,
       "faccion": null,
       "profile_img": "https://yt4.ggpht.com/ytc/AIdro_mhJOn85LK1qAzxTwFmtHaeS_b32zESsJTucfeP8HGS7WVj=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 2,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 121,
+          "ts": 1782166368000
+        },
         {
           "delta": 10,
           "motivo": "pasivo",
