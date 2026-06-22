@@ -1,15 +1,33 @@
 {
-  "actualizado": "2026-06-22T23:00:44.985Z",
+  "actualizado": "2026-06-22T23:05:44.971Z",
   "usuarios": [
     {
       "rank": 1,
       "user": "nelsonrojasmujica",
-      "points": 740,
+      "points": 743,
       "faccion": "wm",
       "profile_img": "https://yt4.ggpht.com/ytc/AIdro_lJ2GIZxlJ3mXvF9QdG3OphY5Y9SNlKGvPsNI3-3XXF300=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 32,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 743,
+          "ts": 1782169505000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 742,
+          "ts": 1782169424000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 741,
+          "ts": 1782169328000
+        },
         {
           "delta": 10,
           "motivo": "pasivo",
@@ -3644,12 +3662,24 @@
     {
       "rank": 3,
       "user": "batazuma",
-      "points": 485,
+      "points": 487,
       "faccion": null,
       "profile_img": "https://yt4.ggpht.com/wWxwXA6XsKqd1V6l5yA6UEyudFNePzssE2nRRQpTwY50GAugzTmiKebSnIQ2sH_sdgg9Ch84tw=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 12,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 487,
+          "ts": 1782169517000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 486,
+          "ts": 1782169406000
+        },
         {
           "delta": 10,
           "motivo": "pasivo",
@@ -6456,12 +6486,18 @@
     {
       "rank": 5,
       "user": "orker1997",
-      "points": 337,
+      "points": 417,
       "faccion": "us",
       "profile_img": "https://yt4.ggpht.com/rUqF9MWH5fLuIhuCEgNJ7AVW8CEf9HDvQny-OmpdiqeTc-aTh4IEhzG6M-uG1NJqJlX4zShb=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 16,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 80,
+          "motivo": "apuesta_ganada",
+          "puntos": 417,
+          "ts": 1782169290000
+        },
         {
           "delta": 10,
           "motivo": "pasivo",
@@ -10530,12 +10566,18 @@
     {
       "rank": 11,
       "user": "rambitocoh2377",
-      "points": 216,
+      "points": 217,
       "faccion": null,
       "profile_img": "https://yt4.ggpht.com/ytc/AIdro_nlWttxh1lSySsaJykW_Oxkmh_6KJdYtrQtrG-hQiu0uYl5NsEH4E4-8uSEXx2KrJuzRA=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 4,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 217,
+          "ts": 1782169505000
+        },
         {
           "delta": 10,
           "motivo": "pasivo",
@@ -19764,6 +19806,23 @@
           "motivo": "mensaje",
           "puntos": 1,
           "ts": 1782158028000
+        }
+      ]
+    },
+    {
+      "rank": 83,
+      "user": "user-pe-hf",
+      "points": 1,
+      "faccion": null,
+      "profile_img": "https://yt4.ggpht.com/ytc/AIdro_mhJOn85LK1qAzxTwFmtHaeS_b32zESsJTucfeP8HGS7WVj=s64-c-k-c0x00ffffff-no-rj",
+      "total_apuestas": 0,
+      "total_ganadas": 0,
+      "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 1,
+          "ts": 1782169515000
         }
       ]
     }
