@@ -1,15 +1,21 @@
 {
-  "actualizado": "2026-06-22T19:45:44.718Z",
+  "actualizado": "2026-06-22T19:50:44.717Z",
   "usuarios": [
     {
       "rank": 1,
       "user": "nelsonrojasmujica",
-      "points": 640,
+      "points": 641,
       "faccion": "wm",
       "profile_img": "https://yt4.ggpht.com/ytc/AIdro_lJ2GIZxlJ3mXvF9QdG3OphY5Y9SNlKGvPsNI3-3XXF300=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 27,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 641,
+          "ts": 1782157769000
+        },
         {
           "delta": 1,
           "motivo": "mensaje",
@@ -1947,12 +1953,24 @@
     {
       "rank": 2,
       "user": "batazuma",
-      "points": 362,
+      "points": 364,
       "faccion": null,
       "profile_img": "https://yt4.ggpht.com/wWxwXA6XsKqd1V6l5yA6UEyudFNePzssE2nRRQpTwY50GAugzTmiKebSnIQ2sH_sdgg9Ch84tw=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 8,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 364,
+          "ts": 1782157745000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 363,
+          "ts": 1782157676000
+        },
         {
           "delta": -10,
           "motivo": "apuesta_colocada",
@@ -11700,12 +11718,18 @@
     {
       "rank": 17,
       "user": "facundopainefil3509",
-      "points": 138,
+      "points": 139,
       "faccion": "wm",
       "profile_img": "https://yt4.ggpht.com/ytc/AIdro_n1YRi8i8TpTnKtMIARSi9xPLn2rKU-ONxy_O_TrQ3cSvg7zMr2VhNJEvOs1oIoKW7QLA=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 2,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 139,
+          "ts": 1782157833000
+        },
         {
           "delta": 10,
           "motivo": "pasivo",
@@ -17232,12 +17256,18 @@
     {
       "rank": 77,
       "user": "enero4160",
-      "points": 2,
+      "points": 3,
       "faccion": null,
       "profile_img": "https://yt4.ggpht.com/NZ2luhmn4p2li-B7_8eHo-HuygZl8nP9ylcO1YzoedCAF4et3f4moc7JnKqGD9qfowyuJVeC4Xc=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 1,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 3,
+          "ts": 1782157787000
+        },
         {
           "delta": -29,
           "motivo": "apuesta_colocada",
