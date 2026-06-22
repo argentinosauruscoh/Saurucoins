@@ -1,5 +1,5 @@
 {
-  "actualizado": "2026-06-22T21:20:44.867Z",
+  "actualizado": "2026-06-22T21:25:44.880Z",
   "usuarios": [
     {
       "rank": 1,
@@ -14335,12 +14335,18 @@
     {
       "rank": 22,
       "user": "watchcastle",
-      "points": 102,
+      "points": 103,
       "faccion": null,
       "profile_img": "https://yt4.ggpht.com/YaPoRFtFMkM2YpmE__OGCvxl2SyCOQMRyiX1GvyzmIVJCnMaTdAKyMud7fbMR_CGy3olXJ7plg=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 0,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 103,
+          "ts": 1782163285000
+        },
         {
           "delta": 1,
           "motivo": "mensaje",
