@@ -1,15 +1,21 @@
 {
-  "actualizado": "2026-06-22T22:00:44.933Z",
+  "actualizado": "2026-06-22T22:05:44.927Z",
   "usuarios": [
     {
       "rank": 1,
       "user": "nelsonrojasmujica",
-      "points": 705,
+      "points": 706,
       "faccion": "wm",
       "profile_img": "https://yt4.ggpht.com/ytc/AIdro_lJ2GIZxlJ3mXvF9QdG3OphY5Y9SNlKGvPsNI3-3XXF300=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 30,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 706,
+          "ts": 1782165776000
+        },
         {
           "delta": 10,
           "motivo": "pasivo",
@@ -2163,12 +2169,24 @@
     {
       "rank": 2,
       "user": "batazuma",
-      "points": 446,
+      "points": 448,
       "faccion": null,
       "profile_img": "https://yt4.ggpht.com/wWxwXA6XsKqd1V6l5yA6UEyudFNePzssE2nRRQpTwY50GAugzTmiKebSnIQ2sH_sdgg9Ch84tw=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 10,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 448,
+          "ts": 1782165773000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 447,
+          "ts": 1782165689000
+        },
         {
           "delta": 10,
           "motivo": "pasivo",
@@ -4945,12 +4963,24 @@
     {
       "rank": 4,
       "user": "virgolandia2",
-      "points": 385,
+      "points": 387,
       "faccion": "wm",
       "profile_img": "https://yt4.ggpht.com/ytc/AIdro_nEXPQ5IzVjI_8E9ysRUgKgKXGvW81DmTWiCZaNrkJvUNU=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 10,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 387,
+          "ts": 1782165767000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 386,
+          "ts": 1782165680000
+        },
         {
           "delta": 10,
           "motivo": "pasivo",
@@ -15435,12 +15465,18 @@
     {
       "rank": 26,
       "user": "daabot",
-      "points": 84,
+      "points": 85,
       "faccion": null,
       "profile_img": "https://yt4.ggpht.com/ytc/AIdro_nIpZTPQyKiZL0gN9RNr6UqnWWWCSplDfAn6r0pcsyoPdI=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 0,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 85,
+          "ts": 1782165881000
+        },
         {
           "delta": 10,
           "motivo": "pasivo",
