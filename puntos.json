@@ -1,5 +1,5 @@
 {
-  "actualizado": "2026-07-05T22:04:49.726Z",
+  "actualizado": "2026-07-05T22:09:49.759Z",
   "usuarios": [
     {
       "rank": 1,
@@ -2697,12 +2697,24 @@
     {
       "rank": 2,
       "user": "popham_arg",
-      "points": 614,
+      "points": 617,
       "faccion": "cw",
       "profile_img": "https://yt4.ggpht.com/ytc/AIdro_l073YlqqwNThSKT2Ge1HLxlhT_Z5HhMnfoDfdJDkpZ2voqrpFZOIHNJfU_R2CijCfuPg=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 28,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 615,
+          "ts": 1783289126000
+        },
+        {
+          "delta": 2,
+          "motivo": "bonus_votar",
+          "puntos": 617,
+          "ts": 1783289126000
+        },
         {
           "delta": 60,
           "motivo": "apuesta_ganada",
@@ -4382,12 +4394,18 @@
     {
       "rank": 3,
       "user": "batazuma",
-      "points": 579,
+      "points": 580,
       "faccion": null,
       "profile_img": "https://yt4.ggpht.com/wWxwXA6XsKqd1V6l5yA6UEyudFNePzssE2nRRQpTwY50GAugzTmiKebSnIQ2sH_sdgg9Ch84tw=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 13,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 580,
+          "ts": 1783289324000
+        },
         {
           "delta": 2,
           "motivo": "bonus_votar",
@@ -14575,12 +14593,18 @@
     {
       "rank": 16,
       "user": "jefftnfe",
-      "points": 184,
+      "points": 185,
       "faccion": "us",
       "profile_img": "https://yt4.ggpht.com/ytc/AIdro_noTn5R62t8CWUZjhQ-xGduzMUZogFthqniMOcRODwOpkuKXBfW9JT96sWLZe3gs2nANQ=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 8,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 185,
+          "ts": 1783289291000
+        },
         {
           "delta": 10,
           "motivo": "pasivo",
@@ -17619,12 +17643,18 @@
     {
       "rank": 26,
       "user": "lucascostabel2696",
-      "points": 93,
+      "points": 94,
       "faccion": null,
       "profile_img": "https://yt4.ggpht.com/ytc/AIdro_la4CAh5z7Shfmi4sXps_y5pxUDYwZubbmttPbdIQru1iQ=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 0,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 94,
+          "ts": 1783289228000
+        },
         {
           "delta": 1,
           "motivo": "mensaje",
@@ -20695,6 +20725,47 @@
     },
     {
       "rank": 57,
+      "user": "onebandonesongguitarcovers4896",
+      "points": 16,
+      "faccion": null,
+      "profile_img": "https://yt4.ggpht.com/ytc/AIdro_kgZhM1LaD7mTVAB1tV0ekTyf7uKR6NzxhIg3N9YpgusQ=s64-c-k-c0x00ffffff-no-rj",
+      "total_apuestas": 0,
+      "total_ganadas": 0,
+      "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 14,
+          "ts": 1783289101000
+        },
+        {
+          "delta": 2,
+          "motivo": "bonus_votar",
+          "puntos": 16,
+          "ts": 1783289101000
+        },
+        {
+          "delta": 10,
+          "motivo": "pasivo",
+          "puntos": 13,
+          "ts": 1780858896000
+        },
+        {
+          "delta": 2,
+          "motivo": "bonus_votar",
+          "puntos": 3,
+          "ts": 1780858494000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 1,
+          "ts": 1780858493000
+        }
+      ]
+    },
+    {
+      "rank": 58,
       "user": "nahuelcavelli6910",
       "points": 16,
       "faccion": null,
@@ -20735,7 +20806,7 @@
       ]
     },
     {
-      "rank": 58,
+      "rank": 59,
       "user": "miguecallelopez",
       "points": 16,
       "faccion": null,
@@ -20782,7 +20853,7 @@
       ]
     },
     {
-      "rank": 59,
+      "rank": 60,
       "user": "vrichardsn",
       "points": 16,
       "faccion": null,
@@ -20835,7 +20906,7 @@
       ]
     },
     {
-      "rank": 60,
+      "rank": 61,
       "user": "fedecappato",
       "points": 15,
       "faccion": null,
@@ -20876,7 +20947,7 @@
       ]
     },
     {
-      "rank": 61,
+      "rank": 62,
       "user": "enero4160",
       "points": 15,
       "faccion": null,
@@ -20983,7 +21054,48 @@
       ]
     },
     {
-      "rank": 62,
+      "rank": 63,
+      "user": "hernansoria2533",
+      "points": 15,
+      "faccion": null,
+      "profile_img": "https://yt4.ggpht.com/ytc/AIdro_nWYWEApFtIJntK9shwlEwV9_wRtAHtPupeYUpmVYicAgNsz9R5Ritb9w2bJZCVPccFrA=s64-c-k-c0x00ffffff-no-rj",
+      "total_apuestas": 0,
+      "total_ganadas": 0,
+      "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 15,
+          "ts": 1783289147000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 14,
+          "ts": 1782084126000
+        },
+        {
+          "delta": 10,
+          "motivo": "pasivo",
+          "puntos": 13,
+          "ts": 1782082219000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 1,
+          "ts": 1782081577000
+        },
+        {
+          "delta": 2,
+          "motivo": "bonus_votar",
+          "puntos": 3,
+          "ts": 1782081577000
+        }
+      ]
+    },
+    {
+      "rank": 64,
       "user": "tzmarko1001",
       "points": 14,
       "faccion": null,
@@ -21014,70 +21126,6 @@
           "motivo": "mensaje",
           "puntos": 1,
           "ts": 1782069684000
-        }
-      ]
-    },
-    {
-      "rank": 63,
-      "user": "hernansoria2533",
-      "points": 14,
-      "faccion": null,
-      "profile_img": "https://yt4.ggpht.com/ytc/AIdro_nWYWEApFtIJntK9shwlEwV9_wRtAHtPupeYUpmVYicAgNsz9R5Ritb9w2bJZCVPccFrA=s64-c-k-c0x00ffffff-no-rj",
-      "total_apuestas": 0,
-      "total_ganadas": 0,
-      "historial": [
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 14,
-          "ts": 1782084126000
-        },
-        {
-          "delta": 10,
-          "motivo": "pasivo",
-          "puntos": 13,
-          "ts": 1782082219000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 1,
-          "ts": 1782081577000
-        },
-        {
-          "delta": 2,
-          "motivo": "bonus_votar",
-          "puntos": 3,
-          "ts": 1782081577000
-        }
-      ]
-    },
-    {
-      "rank": 64,
-      "user": "onebandonesongguitarcovers4896",
-      "points": 13,
-      "faccion": null,
-      "profile_img": null,
-      "total_apuestas": 0,
-      "total_ganadas": 0,
-      "historial": [
-        {
-          "delta": 10,
-          "motivo": "pasivo",
-          "puntos": 13,
-          "ts": 1780858896000
-        },
-        {
-          "delta": 2,
-          "motivo": "bonus_votar",
-          "puntos": 3,
-          "ts": 1780858494000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 1,
-          "ts": 1780858493000
         }
       ]
     },
