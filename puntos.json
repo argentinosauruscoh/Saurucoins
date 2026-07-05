@@ -1,5 +1,5 @@
 {
-  "actualizado": "2026-07-05T20:04:49.588Z",
+  "actualizado": "2026-07-05T20:09:49.590Z",
   "usuarios": [
     {
       "rank": 1,
@@ -10956,12 +10956,18 @@
     {
       "rank": 11,
       "user": "alejandrofernandez-wd6yk",
-      "points": 236,
+      "points": 237,
       "faccion": null,
       "profile_img": "https://yt4.ggpht.com/ytc/AIdro_nmtsXDHjV3vsi3WJxNLeR6_m62bNa4V324lnRtnFy0u-rpS5RDcRIx863T-hajBZ4JOA=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 6,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 237,
+          "ts": 1783282147000
+        },
         {
           "delta": 10,
           "motivo": "pasivo",
