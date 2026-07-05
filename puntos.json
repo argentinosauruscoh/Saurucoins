@@ -1,5 +1,5 @@
 {
-  "actualizado": "2026-07-05T21:39:49.709Z",
+  "actualizado": "2026-07-05T21:44:49.722Z",
   "usuarios": [
     {
       "rank": 1,
@@ -2661,12 +2661,18 @@
     {
       "rank": 2,
       "user": "popham_arg",
-      "points": 580,
+      "points": 581,
       "faccion": "cw",
       "profile_img": "https://yt4.ggpht.com/ytc/AIdro_l073YlqqwNThSKT2Ge1HLxlhT_Z5HhMnfoDfdJDkpZ2voqrpFZOIHNJfU_R2CijCfuPg=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 27,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 581,
+          "ts": 1783287868000
+        },
         {
           "delta": 10,
           "motivo": "pasivo",
@@ -4310,12 +4316,24 @@
     {
       "rank": 3,
       "user": "batazuma",
-      "points": 560,
+      "points": 562,
       "faccion": null,
       "profile_img": "https://yt4.ggpht.com/wWxwXA6XsKqd1V6l5yA6UEyudFNePzssE2nRRQpTwY50GAugzTmiKebSnIQ2sH_sdgg9Ch84tw=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 13,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 562,
+          "ts": 1783287844000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 561,
+          "ts": 1783287615000
+        },
         {
           "delta": 1,
           "motivo": "mensaje",
@@ -12221,12 +12239,18 @@
     {
       "rank": 12,
       "user": "rikiguerreroab",
-      "points": 230,
+      "points": 231,
       "faccion": null,
       "profile_img": "https://yt4.ggpht.com/ytc/AIdro_mwSgxGq1zktABSGr4nt2we0adRdf9_5C6TMBbTYZEQag=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 8,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 231,
+          "ts": 1783287709000
+        },
         {
           "delta": 1,
           "motivo": "mensaje",
