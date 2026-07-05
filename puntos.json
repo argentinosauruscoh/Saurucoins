@@ -1,15 +1,21 @@
 {
-  "actualizado": "2026-07-05T20:34:49.612Z",
+  "actualizado": "2026-07-05T20:39:49.641Z",
   "usuarios": [
     {
       "rank": 1,
       "user": "nelsonrojasmujica",
-      "points": 779,
+      "points": 780,
       "faccion": "wm",
       "profile_img": "https://yt4.ggpht.com/ytc/AIdro_lJ2GIZxlJ3mXvF9QdG3OphY5Y9SNlKGvPsNI3-3XXF300=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 35,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 780,
+          "ts": 1783283988000
+        },
         {
           "delta": 10,
           "motivo": "pasivo",
@@ -2505,12 +2511,18 @@
     {
       "rank": 2,
       "user": "batazuma",
-      "points": 513,
+      "points": 514,
       "faccion": null,
       "profile_img": "https://yt4.ggpht.com/wWxwXA6XsKqd1V6l5yA6UEyudFNePzssE2nRRQpTwY50GAugzTmiKebSnIQ2sH_sdgg9Ch84tw=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 12,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 514,
+          "ts": 1783283741000
+        },
         {
           "delta": 10,
           "motivo": "pasivo",
@@ -16445,12 +16457,24 @@
     {
       "rank": 24,
       "user": "grangerefix",
-      "points": 93,
+      "points": 95,
       "faccion": null,
       "profile_img": "https://yt4.ggpht.com/ytc/AIdro_mW0HX8nY-Aegy1UXDgfTB3j4snP03S3Xy5MBGZkW1hUbbYoGKtw-0B2eroA56mHZ8mFQ=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 2,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 95,
+          "ts": 1783283908000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 94,
+          "ts": 1783283744000
+        },
         {
           "delta": 10,
           "motivo": "pasivo",
