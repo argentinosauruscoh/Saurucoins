@@ -1,5 +1,5 @@
 {
-  "actualizado": "2026-07-06T21:29:58.885Z",
+  "actualizado": "2026-07-06T21:34:58.902Z",
   "usuarios": [
     {
       "rank": 1,
@@ -3027,12 +3027,18 @@
     {
       "rank": 2,
       "user": "batazuma",
-      "points": 699,
+      "points": 700,
       "faccion": null,
       "profile_img": "https://yt4.ggpht.com/wWxwXA6XsKqd1V6l5yA6UEyudFNePzssE2nRRQpTwY50GAugzTmiKebSnIQ2sH_sdgg9Ch84tw=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 15,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 700,
+          "ts": 1783373698000
+        },
         {
           "delta": 10,
           "motivo": "pasivo",
@@ -5048,12 +5054,24 @@
     {
       "rank": 3,
       "user": "popham_arg",
-      "points": 588,
+      "points": 590,
       "faccion": "cw",
       "profile_img": "https://yt4.ggpht.com/ytc/AIdro_l073YlqqwNThSKT2Ge1HLxlhT_Z5HhMnfoDfdJDkpZ2voqrpFZOIHNJfU_R2CijCfuPg=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 33,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 590,
+          "ts": 1783373664000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 589,
+          "ts": 1783373403000
+        },
         {
           "delta": 2,
           "motivo": "bonus_participar",
@@ -13978,12 +13996,30 @@
     {
       "rank": 13,
       "user": "jefftnfe",
-      "points": 222,
+      "points": 225,
       "faccion": "us",
       "profile_img": "https://yt4.ggpht.com/ytc/AIdro_noTn5R62t8CWUZjhQ-xGduzMUZogFthqniMOcRODwOpkuKXBfW9JT96sWLZe3gs2nANQ=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 8,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 225,
+          "ts": 1783373674000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 224,
+          "ts": 1783373487000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 223,
+          "ts": 1783373415000
+        },
         {
           "delta": 1,
           "motivo": "mensaje",
@@ -17049,12 +17085,18 @@
     {
       "rank": 20,
       "user": "ivanolivares6328",
-      "points": 143,
+      "points": 144,
       "faccion": "cw",
       "profile_img": "https://yt4.ggpht.com/ytc/AIdro_mKcAJG25CxVTLPLz8ALUQ7IA9nO6hbr5bUDnUGN3Sf8Hg=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 7,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 144,
+          "ts": 1783373472000
+        },
         {
           "delta": 10,
           "motivo": "pasivo",
@@ -21563,6 +21605,77 @@
     },
     {
       "rank": 47,
+      "user": "nahuelcavelli6910",
+      "points": 30,
+      "faccion": null,
+      "profile_img": "https://yt4.ggpht.com/ytc/AIdro_kWWmXGuJypCPf1H_YUC4Z_lbAQfU9TcMPJaDmtSXA=s64-c-k-c0x00ffffff-no-rj",
+      "total_apuestas": 0,
+      "total_ganadas": 0,
+      "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 30,
+          "ts": 1783373616000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 29,
+          "ts": 1783373093000
+        },
+        {
+          "delta": 10,
+          "motivo": "pasivo",
+          "puntos": 28,
+          "ts": 1783372498000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 18,
+          "ts": 1783372314000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 17,
+          "ts": 1783372119000
+        },
+        {
+          "delta": 10,
+          "motivo": "pasivo",
+          "puntos": 16,
+          "ts": 1780860696000
+        },
+        {
+          "delta": 2,
+          "motivo": "bonus_participar",
+          "puntos": 6,
+          "ts": 1780860398000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 4,
+          "ts": 1780860340000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 1,
+          "ts": 1780860089000
+        },
+        {
+          "delta": 2,
+          "motivo": "bonus_votar",
+          "puntos": 3,
+          "ts": 1780860089000
+        }
+      ]
+    },
+    {
+      "rank": 48,
       "user": "jesusjhojangomezcalle",
       "points": 30,
       "faccion": null,
@@ -21627,7 +21740,7 @@
       ]
     },
     {
-      "rank": 48,
+      "rank": 49,
       "user": "statementlive",
       "points": 29,
       "faccion": null,
@@ -21700,71 +21813,6 @@
           "motivo": "mensaje",
           "puntos": 1,
           "ts": 1780857952000
-        }
-      ]
-    },
-    {
-      "rank": 49,
-      "user": "nahuelcavelli6910",
-      "points": 29,
-      "faccion": null,
-      "profile_img": "https://yt4.ggpht.com/ytc/AIdro_kWWmXGuJypCPf1H_YUC4Z_lbAQfU9TcMPJaDmtSXA=s64-c-k-c0x00ffffff-no-rj",
-      "total_apuestas": 0,
-      "total_ganadas": 0,
-      "historial": [
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 29,
-          "ts": 1783373093000
-        },
-        {
-          "delta": 10,
-          "motivo": "pasivo",
-          "puntos": 28,
-          "ts": 1783372498000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 18,
-          "ts": 1783372314000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 17,
-          "ts": 1783372119000
-        },
-        {
-          "delta": 10,
-          "motivo": "pasivo",
-          "puntos": 16,
-          "ts": 1780860696000
-        },
-        {
-          "delta": 2,
-          "motivo": "bonus_participar",
-          "puntos": 6,
-          "ts": 1780860398000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 4,
-          "ts": 1780860340000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 1,
-          "ts": 1780860089000
-        },
-        {
-          "delta": 2,
-          "motivo": "bonus_votar",
-          "puntos": 3,
-          "ts": 1780860089000
         }
       ]
     },
@@ -23224,12 +23272,24 @@
     {
       "rank": 91,
       "user": "agustincho276",
-      "points": 4,
+      "points": 6,
       "faccion": null,
       "profile_img": "https://yt4.ggpht.com/kC8MMPgD7OhE77wCAVPIWm1PJwChbDcsIJEUJwjAwwNPHLRbjSBBnSBn3MhOrlvMtOUHGxKUDRE=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 0,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 6,
+          "ts": 1783373550000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 5,
+          "ts": 1783373478000
+        },
         {
           "delta": 1,
           "motivo": "mensaje",
@@ -23270,6 +23330,23 @@
           "motivo": "mensaje",
           "puntos": 1,
           "ts": 1782169515000
+        }
+      ]
+    },
+    {
+      "rank": 93,
+      "user": "hpsrleon6327",
+      "points": 1,
+      "faccion": null,
+      "profile_img": "https://yt4.ggpht.com/ytc/AIdro_k6-jzbJgKzeVttP4-IlKNUzo2_2IcY0f6xzabhXnC1Ad4=s64-c-k-c0x00ffffff-no-rj",
+      "total_apuestas": 0,
+      "total_ganadas": 0,
+      "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 1,
+          "ts": 1783373625000
         }
       ]
     }
