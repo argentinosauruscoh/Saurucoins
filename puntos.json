@@ -1,5 +1,5 @@
 {
-  "actualizado": "2026-07-06T21:34:58.902Z",
+  "actualizado": "2026-07-06T21:39:58.901Z",
   "usuarios": [
     {
       "rank": 1,
@@ -7021,12 +7021,24 @@
     {
       "rank": 4,
       "user": "virgolandia2",
-      "points": 441,
+      "points": 443,
       "faccion": "wm",
       "profile_img": "https://yt4.ggpht.com/ytc/AIdro_nEXPQ5IzVjI_8E9ysRUgKgKXGvW81DmTWiCZaNrkJvUNU=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 12,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 443,
+          "ts": 1783373953000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 442,
+          "ts": 1783373761000
+        },
         {
           "delta": 1,
           "motivo": "mensaje",
@@ -13996,12 +14008,24 @@
     {
       "rank": 13,
       "user": "jefftnfe",
-      "points": 225,
+      "points": 227,
       "faccion": "us",
       "profile_img": "https://yt4.ggpht.com/ytc/AIdro_noTn5R62t8CWUZjhQ-xGduzMUZogFthqniMOcRODwOpkuKXBfW9JT96sWLZe3gs2nANQ=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 8,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 227,
+          "ts": 1783373899000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 226,
+          "ts": 1783373836000
+        },
         {
           "delta": 1,
           "motivo": "mensaje",
@@ -21819,12 +21843,18 @@
     {
       "rank": 50,
       "user": "fedecappato",
-      "points": 27,
+      "points": 28,
       "faccion": null,
       "profile_img": "https://yt4.ggpht.com/ytc/AIdro_mtcETKjU1zHLrCr6H3hDY-4inbn6_DA6JaDLHt5szRXA=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 0,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 28,
+          "ts": 1783373935000
+        },
         {
           "delta": 10,
           "motivo": "pasivo",
@@ -23272,12 +23302,24 @@
     {
       "rank": 91,
       "user": "agustincho276",
-      "points": 6,
+      "points": 8,
       "faccion": null,
       "profile_img": "https://yt4.ggpht.com/kC8MMPgD7OhE77wCAVPIWm1PJwChbDcsIJEUJwjAwwNPHLRbjSBBnSBn3MhOrlvMtOUHGxKUDRE=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 0,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 8,
+          "ts": 1783373836000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 7,
+          "ts": 1783373701000
+        },
         {
           "delta": 1,
           "motivo": "mensaje",
@@ -23318,6 +23360,29 @@
     },
     {
       "rank": 92,
+      "user": "hpsrleon6327",
+      "points": 2,
+      "faccion": null,
+      "profile_img": "https://yt4.ggpht.com/ytc/AIdro_k6-jzbJgKzeVttP4-IlKNUzo2_2IcY0f6xzabhXnC1Ad4=s64-c-k-c0x00ffffff-no-rj",
+      "total_apuestas": 0,
+      "total_ganadas": 0,
+      "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 2,
+          "ts": 1783373752000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 1,
+          "ts": 1783373625000
+        }
+      ]
+    },
+    {
+      "rank": 93,
       "user": "user-pe-hf",
       "points": 1,
       "faccion": null,
@@ -23330,23 +23395,6 @@
           "motivo": "mensaje",
           "puntos": 1,
           "ts": 1782169515000
-        }
-      ]
-    },
-    {
-      "rank": 93,
-      "user": "hpsrleon6327",
-      "points": 1,
-      "faccion": null,
-      "profile_img": "https://yt4.ggpht.com/ytc/AIdro_k6-jzbJgKzeVttP4-IlKNUzo2_2IcY0f6xzabhXnC1Ad4=s64-c-k-c0x00ffffff-no-rj",
-      "total_apuestas": 0,
-      "total_ganadas": 0,
-      "historial": [
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 1,
-          "ts": 1783373625000
         }
       ]
     }
