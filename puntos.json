@@ -1,5 +1,5 @@
 {
-  "actualizado": "2026-07-06T22:59:59.024Z",
+  "actualizado": "2026-07-06T23:04:59.024Z",
   "usuarios": [
     {
       "rank": 1,
@@ -11499,12 +11499,18 @@
     {
       "rank": 8,
       "user": "palipola",
-      "points": 328,
+      "points": 329,
       "faccion": null,
       "profile_img": "https://yt4.ggpht.com/ytc/AIdro_kdtK0IOb1fJg57BoyrupXc44dZAaUivAmiOXHR9juwlrE=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 5,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 329,
+          "ts": 1783379042000
+        },
         {
           "delta": 1,
           "motivo": "mensaje",
