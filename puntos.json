@@ -1,5 +1,5 @@
 {
-  "actualizado": "2026-07-09T19:42:03.307Z",
+  "actualizado": "2026-07-09T19:47:03.309Z",
   "usuarios": [
     {
       "rank": 1,
@@ -8952,12 +8952,24 @@
     {
       "rank": 5,
       "user": "alejandrofernandez-wd6yk",
-      "points": 461,
+      "points": 463,
       "faccion": null,
       "profile_img": "https://yt4.ggpht.com/ytc/AIdro_nmtsXDHjV3vsi3WJxNLeR6_m62bNa4V324lnRtnFy0u-rpS5RDcRIx863T-hajBZ4JOA=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 10,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 463,
+          "ts": 1783626269000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 462,
+          "ts": 1783626169000
+        },
         {
           "delta": 1,
           "motivo": "mensaje",
@@ -9899,12 +9911,18 @@
     {
       "rank": 6,
       "user": "palipola",
-      "points": 430,
+      "points": 431,
       "faccion": null,
       "profile_img": "https://yt4.ggpht.com/ytc/AIdro_kdtK0IOb1fJg57BoyrupXc44dZAaUivAmiOXHR9juwlrE=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 5,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 431,
+          "ts": 1783626284000
+        },
         {
           "delta": 1,
           "motivo": "mensaje",
@@ -12308,12 +12326,30 @@
     {
       "rank": 9,
       "user": "cesarguedes9296",
-      "points": 325,
+      "points": 318,
       "faccion": "pe",
       "profile_img": "https://yt4.ggpht.com/ytc/AIdro_l7OsuC4ciCVrrHM_lnVNi3J4wAGYvGJLi1AyPz0IQ=s64-c-k-c0x00ffffff-no-rj",
-      "total_apuestas": 6,
+      "total_apuestas": 7,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 326,
+          "ts": 1783626142000
+        },
+        {
+          "delta": -10,
+          "motivo": "apuesta_colocada",
+          "puntos": 316,
+          "ts": 1783626142000
+        },
+        {
+          "delta": 2,
+          "motivo": "bonus_participar",
+          "puntos": 318,
+          "ts": 1783626142000
+        },
         {
           "delta": 1,
           "motivo": "mensaje",
