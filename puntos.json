@@ -1,5 +1,5 @@
 {
-  "actualizado": "2026-07-09T21:12:03.397Z",
+  "actualizado": "2026-07-09T21:17:03.417Z",
   "usuarios": [
     {
       "rank": 1,
@@ -23567,6 +23567,59 @@
     },
     {
       "rank": 53,
+      "user": "onebandonesongguitarcovers4896",
+      "points": 27,
+      "faccion": null,
+      "profile_img": "https://yt4.ggpht.com/ytc/AIdro_kgZhM1LaD7mTVAB1tV0ekTyf7uKR6NzxhIg3N9YpgusQ=s64-c-k-c0x00ffffff-no-rj",
+      "total_apuestas": 0,
+      "total_ganadas": 0,
+      "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 27,
+          "ts": 1783631733000
+        },
+        {
+          "delta": 10,
+          "motivo": "pasivo",
+          "puntos": 26,
+          "ts": 1783290589000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 14,
+          "ts": 1783289101000
+        },
+        {
+          "delta": 2,
+          "motivo": "bonus_votar",
+          "puntos": 16,
+          "ts": 1783289101000
+        },
+        {
+          "delta": 10,
+          "motivo": "pasivo",
+          "puntos": 13,
+          "ts": 1780858896000
+        },
+        {
+          "delta": 2,
+          "motivo": "bonus_votar",
+          "puntos": 3,
+          "ts": 1780858494000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 1,
+          "ts": 1780858493000
+        }
+      ]
+    },
+    {
+      "rank": 54,
       "user": "user-prvc",
       "points": 27,
       "faccion": null,
@@ -23625,7 +23678,7 @@
       ]
     },
     {
-      "rank": 54,
+      "rank": 55,
       "user": "cpluspluscpluspluscplusplus127",
       "points": 27,
       "faccion": null,
@@ -23686,53 +23739,6 @@
           "motivo": "mensaje",
           "puntos": 1,
           "ts": 1783285152000
-        }
-      ]
-    },
-    {
-      "rank": 55,
-      "user": "onebandonesongguitarcovers4896",
-      "points": 26,
-      "faccion": null,
-      "profile_img": "https://yt4.ggpht.com/ytc/AIdro_kgZhM1LaD7mTVAB1tV0ekTyf7uKR6NzxhIg3N9YpgusQ=s64-c-k-c0x00ffffff-no-rj",
-      "total_apuestas": 0,
-      "total_ganadas": 0,
-      "historial": [
-        {
-          "delta": 10,
-          "motivo": "pasivo",
-          "puntos": 26,
-          "ts": 1783290589000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 14,
-          "ts": 1783289101000
-        },
-        {
-          "delta": 2,
-          "motivo": "bonus_votar",
-          "puntos": 16,
-          "ts": 1783289101000
-        },
-        {
-          "delta": 10,
-          "motivo": "pasivo",
-          "puntos": 13,
-          "ts": 1780858896000
-        },
-        {
-          "delta": 2,
-          "motivo": "bonus_votar",
-          "puntos": 3,
-          "ts": 1780858494000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 1,
-          "ts": 1780858493000
         }
       ]
     },
