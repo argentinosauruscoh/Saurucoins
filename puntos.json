@@ -1,15 +1,21 @@
 {
-  "actualizado": "2026-07-09T19:02:03.340Z",
+  "actualizado": "2026-07-09T19:07:03.265Z",
   "usuarios": [
     {
       "rank": 1,
       "user": "nelsonrojasmujica",
-      "points": 954,
+      "points": 955,
       "faccion": "wm",
       "profile_img": "https://yt4.ggpht.com/ytc/AIdro_lJ2GIZxlJ3mXvF9QdG3OphY5Y9SNlKGvPsNI3-3XXF300=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 48,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 955,
+          "ts": 1783623938000
+        },
         {
           "delta": -20,
           "motivo": "apuesta_colocada",
@@ -10534,12 +10540,24 @@
     {
       "rank": 7,
       "user": "alejandrofernandez-wd6yk",
-      "points": 398,
+      "points": 400,
       "faccion": null,
       "profile_img": "https://yt4.ggpht.com/ytc/AIdro_nmtsXDHjV3vsi3WJxNLeR6_m62bNa4V324lnRtnFy0u-rpS5RDcRIx863T-hajBZ4JOA=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 10,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 400,
+          "ts": 1783623811000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 399,
+          "ts": 1783623724000
+        },
         {
           "delta": 1,
           "motivo": "mensaje",
@@ -12176,12 +12194,18 @@
     {
       "rank": 9,
       "user": "cesarguedes9296",
-      "points": 307,
+      "points": 308,
       "faccion": "pe",
       "profile_img": "https://yt4.ggpht.com/ytc/AIdro_l7OsuC4ciCVrrHM_lnVNi3J4wAGYvGJLi1AyPz0IQ=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 6,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 308,
+          "ts": 1783623739000
+        },
         {
           "delta": 1,
           "motivo": "mensaje",
@@ -24343,6 +24367,23 @@
           "motivo": "mensaje",
           "puntos": 1,
           "ts": 1782169515000
+        }
+      ]
+    },
+    {
+      "rank": 94,
+      "user": "danieljelken4146",
+      "points": 1,
+      "faccion": null,
+      "profile_img": "https://yt4.ggpht.com/ytc/AIdro_ma0A22Df7Ros3LNr4pBWri2562jfBsteI0-9NtWOs=s64-c-k-c0x00ffffff-no-rj",
+      "total_apuestas": 0,
+      "total_ganadas": 0,
+      "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 1,
+          "ts": 1783623887000
         }
       ]
     }
