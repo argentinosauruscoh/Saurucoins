@@ -1,5 +1,5 @@
 {
-  "actualizado": "2026-07-09T20:12:03.350Z",
+  "actualizado": "2026-07-09T20:17:03.339Z",
   "usuarios": [
     {
       "rank": 1,
@@ -5384,12 +5384,36 @@
     {
       "rank": 3,
       "user": "popham_arg",
-      "points": 624,
+      "points": 629,
       "faccion": "cw",
       "profile_img": "https://yt4.ggpht.com/ytc/AIdro_l073YlqqwNThSKT2Ge1HLxlhT_Z5HhMnfoDfdJDkpZ2voqrpFZOIHNJfU_R2CijCfuPg=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 39,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 629,
+          "ts": 1783628200000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 628,
+          "ts": 1783628076000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 625,
+          "ts": 1783627929000
+        },
+        {
+          "delta": 2,
+          "motivo": "bonus_votar",
+          "puntos": 627,
+          "ts": 1783627929000
+        },
         {
           "delta": 60,
           "motivo": "apuesta_ganada",
@@ -12368,12 +12392,18 @@
     {
       "rank": 9,
       "user": "cesarguedes9296",
-      "points": 330,
+      "points": 331,
       "faccion": "pe",
       "profile_img": "https://yt4.ggpht.com/ytc/AIdro_l7OsuC4ciCVrrHM_lnVNi3J4wAGYvGJLi1AyPz0IQ=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 7,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 331,
+          "ts": 1783628052000
+        },
         {
           "delta": 1,
           "motivo": "mensaje",
