@@ -1,15 +1,33 @@
 {
-  "actualizado": "2026-07-12T21:33:46.754Z",
+  "actualizado": "2026-07-12T21:38:46.797Z",
   "usuarios": [
     {
       "rank": 1,
       "user": "nelsonrojasmujica",
-      "points": 1067,
+      "points": 1050,
       "faccion": "wm",
       "profile_img": "https://yt4.ggpht.com/ytc/AIdro_lJ2GIZxlJ3mXvF9QdG3OphY5Y9SNlKGvPsNI3-3XXF300=s64-c-k-c0x00ffffff-no-rj",
-      "total_apuestas": 53,
+      "total_apuestas": 54,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 1068,
+          "ts": 1783892295000
+        },
+        {
+          "delta": -20,
+          "motivo": "apuesta_colocada",
+          "puntos": 1048,
+          "ts": 1783892295000
+        },
+        {
+          "delta": 2,
+          "motivo": "bonus_participar",
+          "puntos": 1050,
+          "ts": 1783892295000
+        },
         {
           "delta": 10,
           "motivo": "pasivo",
@@ -3615,12 +3633,42 @@
     {
       "rank": 2,
       "user": "popham_arg",
-      "points": 833,
+      "points": 809,
       "faccion": "cw",
       "profile_img": "https://yt4.ggpht.com/ytc/AIdro_l073YlqqwNThSKT2Ge1HLxlhT_Z5HhMnfoDfdJDkpZ2voqrpFZOIHNJfU_R2CijCfuPg=s64-c-k-c0x00ffffff-no-rj",
-      "total_apuestas": 46,
+      "total_apuestas": 47,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 837,
+          "ts": 1783892295000
+        },
+        {
+          "delta": -30,
+          "motivo": "apuesta_colocada",
+          "puntos": 807,
+          "ts": 1783892295000
+        },
+        {
+          "delta": 2,
+          "motivo": "bonus_participar",
+          "puntos": 809,
+          "ts": 1783892295000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 834,
+          "ts": 1783892117000
+        },
+        {
+          "delta": 2,
+          "motivo": "bonus_votar",
+          "puntos": 836,
+          "ts": 1783892117000
+        },
         {
           "delta": 10,
           "motivo": "pasivo",
@@ -10967,12 +11015,42 @@
     {
       "rank": 6,
       "user": "palipola",
-      "points": 472,
+      "points": 458,
       "faccion": null,
       "profile_img": "https://yt4.ggpht.com/ytc/AIdro_kdtK0IOb1fJg57BoyrupXc44dZAaUivAmiOXHR9juwlrE=s64-c-k-c0x00ffffff-no-rj",
-      "total_apuestas": 6,
+      "total_apuestas": 7,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 476,
+          "ts": 1783892253000
+        },
+        {
+          "delta": -20,
+          "motivo": "apuesta_colocada",
+          "puntos": 456,
+          "ts": 1783892253000
+        },
+        {
+          "delta": 2,
+          "motivo": "bonus_participar",
+          "puntos": 458,
+          "ts": 1783892253000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 473,
+          "ts": 1783892096000
+        },
+        {
+          "delta": 2,
+          "motivo": "bonus_votar",
+          "puntos": 475,
+          "ts": 1783892096000
+        },
         {
           "delta": 10,
           "motivo": "pasivo",
@@ -12789,12 +12867,42 @@
     {
       "rank": 8,
       "user": "iganaciolbs",
-      "points": 401,
+      "points": 392,
       "faccion": null,
       "profile_img": "https://yt4.ggpht.com/ytc/AIdro_nFAWQ3GL9cqgnWq0BENi4fv-bWq82zf6EzVfRN-zM9f6U=s64-c-k-c0x00ffffff-no-rj",
-      "total_apuestas": 9,
+      "total_apuestas": 10,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 405,
+          "ts": 1783892289000
+        },
+        {
+          "delta": -15,
+          "motivo": "apuesta_colocada",
+          "puntos": 390,
+          "ts": 1783892289000
+        },
+        {
+          "delta": 2,
+          "motivo": "bonus_participar",
+          "puntos": 392,
+          "ts": 1783892289000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 402,
+          "ts": 1783892120000
+        },
+        {
+          "delta": 2,
+          "motivo": "bonus_votar",
+          "puntos": 404,
+          "ts": 1783892120000
+        },
         {
           "delta": 10,
           "motivo": "pasivo",
@@ -13652,12 +13760,18 @@
     {
       "rank": 9,
       "user": "cesarguedes9296",
-      "points": 370,
+      "points": 371,
       "faccion": "pe",
       "profile_img": "https://yt4.ggpht.com/ytc/AIdro_l7OsuC4ciCVrrHM_lnVNi3J4wAGYvGJLi1AyPz0IQ=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 11,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 371,
+          "ts": 1783892325000
+        },
         {
           "delta": 10,
           "motivo": "pasivo",
@@ -15390,12 +15504,18 @@
     {
       "rank": 11,
       "user": "marianocalvo94",
-      "points": 276,
+      "points": 277,
       "faccion": "us",
       "profile_img": "https://yt4.ggpht.com/IsO_XBjqaoFfYQjYKxExaQO7NWVLzsa5-uG15_qW8OyhyhEPas0dx1MEjG-hIxihEtRlwObbUA=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 5,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 277,
+          "ts": 1783892211000
+        },
         {
           "delta": 10,
           "motivo": "pasivo",
@@ -26728,6 +26848,23 @@
           "motivo": "mensaje",
           "puntos": 1,
           "ts": 1782169515000
+        }
+      ]
+    },
+    {
+      "rank": 97,
+      "user": "porotit0",
+      "points": 1,
+      "faccion": null,
+      "profile_img": "https://yt4.ggpht.com/ytc/AIdro_ntYeyQdwA6yAHoOBtQMrG7T0zjFG7I4ycnJZD0j9GNBfE=s64-c-k-c0x00ffffff-no-rj",
+      "total_apuestas": 0,
+      "total_ganadas": 0,
+      "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 1,
+          "ts": 1783892241000
         }
       ]
     }
