@@ -1,5 +1,5 @@
 {
-  "actualizado": "2026-07-15T21:53:34.577Z",
+  "actualizado": "2026-07-15T21:58:34.589Z",
   "usuarios": [
     {
       "rank": 1,
@@ -3693,12 +3693,18 @@
     {
       "rank": 2,
       "user": "popham_arg",
-      "points": 856,
+      "points": 857,
       "faccion": "cw",
       "profile_img": "https://yt4.ggpht.com/ytc/AIdro_l073YlqqwNThSKT2Ge1HLxlhT_Z5HhMnfoDfdJDkpZ2voqrpFZOIHNJfU_R2CijCfuPg=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 52,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 857,
+          "ts": 1784152634000
+        },
         {
           "delta": 1,
           "motivo": "mensaje",
@@ -6638,12 +6644,30 @@
     {
       "rank": 3,
       "user": "batazuma",
-      "points": 751,
+      "points": 754,
       "faccion": null,
       "profile_img": "https://yt4.ggpht.com/wWxwXA6XsKqd1V6l5yA6UEyudFNePzssE2nRRQpTwY50GAugzTmiKebSnIQ2sH_sdgg9Ch84tw=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 15,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 754,
+          "ts": 1784152673000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 753,
+          "ts": 1784152594000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 752,
+          "ts": 1784152519000
+        },
         {
           "delta": 1,
           "motivo": "mensaje",
@@ -15397,12 +15421,18 @@
     {
       "rank": 10,
       "user": "patriciodillon6190",
-      "points": 302,
+      "points": 303,
       "faccion": null,
       "profile_img": "https://yt4.ggpht.com/ytc/AIdro_nj2GaTgZbO80mFWSRhT7UIYTC5OM0YXUzNR_3FPuo=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 13,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 303,
+          "ts": 1784152640000
+        },
         {
           "delta": 69,
           "motivo": "apuesta_ganada",
