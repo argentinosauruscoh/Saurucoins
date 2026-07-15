@@ -1,15 +1,21 @@
 {
-  "actualizado": "2026-07-15T23:08:34.647Z",
+  "actualizado": "2026-07-15T23:13:34.675Z",
   "usuarios": [
     {
       "rank": 1,
       "user": "nelsonrojasmujica",
-      "points": 1073,
+      "points": 1074,
       "faccion": "wm",
       "profile_img": "https://yt4.ggpht.com/ytc/AIdro_lJ2GIZxlJ3mXvF9QdG3OphY5Y9SNlKGvPsNI3-3XXF300=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 55,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 1074,
+          "ts": 1784157041000
+        },
         {
           "delta": 1,
           "motivo": "mensaje",
@@ -3705,12 +3711,24 @@
     {
       "rank": 2,
       "user": "popham_arg",
-      "points": 1008,
+      "points": 1011,
       "faccion": "cw",
       "profile_img": "https://yt4.ggpht.com/ytc/AIdro_l073YlqqwNThSKT2Ge1HLxlhT_Z5HhMnfoDfdJDkpZ2voqrpFZOIHNJfU_R2CijCfuPg=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 55,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 1009,
+          "ts": 1784157095000
+        },
+        {
+          "delta": 2,
+          "motivo": "bonus_participar",
+          "puntos": 1011,
+          "ts": 1784157095000
+        },
         {
           "delta": 1,
           "motivo": "mensaje",
@@ -6830,12 +6848,18 @@
     {
       "rank": 3,
       "user": "batazuma",
-      "points": 810,
+      "points": 811,
       "faccion": "us",
       "profile_img": "https://yt4.ggpht.com/wWxwXA6XsKqd1V6l5yA6UEyudFNePzssE2nRRQpTwY50GAugzTmiKebSnIQ2sH_sdgg9Ch84tw=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 15,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 811,
+          "ts": 1784156975000
+        },
         {
           "delta": 1,
           "motivo": "mensaje",
@@ -9121,12 +9145,18 @@
     {
       "rank": 4,
       "user": "virgolandia2",
-      "points": 666,
+      "points": 667,
       "faccion": "wm",
       "profile_img": "https://yt4.ggpht.com/ytc/AIdro_nEXPQ5IzVjI_8E9ysRUgKgKXGvW81DmTWiCZaNrkJvUNU=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 14,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 667,
+          "ts": 1784156938000
+        },
         {
           "delta": 1,
           "motivo": "mensaje",
@@ -15871,12 +15901,30 @@
     {
       "rank": 10,
       "user": "patriciodillon6190",
-      "points": 362,
+      "points": 366,
       "faccion": null,
       "profile_img": "https://yt4.ggpht.com/ytc/AIdro_nj2GaTgZbO80mFWSRhT7UIYTC5OM0YXUzNR_3FPuo=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 15,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 366,
+          "ts": 1784157194000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 363,
+          "ts": 1784157095000
+        },
+        {
+          "delta": 2,
+          "motivo": "bonus_participar",
+          "puntos": 365,
+          "ts": 1784157095000
+        },
         {
           "delta": 10,
           "motivo": "pasivo",
@@ -18238,12 +18286,18 @@
     {
       "rank": 13,
       "user": "rikiguerreroab",
-      "points": 254,
+      "points": 255,
       "faccion": null,
       "profile_img": "https://yt4.ggpht.com/ytc/AIdro_mwSgxGq1zktABSGr4nt2we0adRdf9_5C6TMBbTYZEQag=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 8,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 255,
+          "ts": 1784157125000
+        },
         {
           "delta": 10,
           "motivo": "pasivo",
