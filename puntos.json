@@ -1,5 +1,5 @@
 {
-  "actualizado": "2026-07-20T23:22:44.060Z",
+  "actualizado": "2026-07-20T23:27:44.064Z",
   "usuarios": [
     {
       "rank": 1,
@@ -28777,72 +28777,19 @@
     },
     {
       "rank": 51,
-      "user": "emilio5886",
-      "points": 36,
-      "faccion": null,
-      "profile_img": "https://yt4.ggpht.com/ytc/AIdro_kHYnDIjSx852dNhcWz3ubVEKRQ9mS5GLloffm42f8=s64-c-k-c0x00ffffff-no-rj",
-      "total_apuestas": 0,
-      "total_ganadas": 0,
-      "historial": [
-        {
-          "delta": 10,
-          "motivo": "pasivo",
-          "puntos": 36,
-          "ts": 1782165644000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 26,
-          "ts": 1782165544000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 25,
-          "ts": 1782165090000
-        },
-        {
-          "delta": 10,
-          "motivo": "pasivo",
-          "puntos": 24,
-          "ts": 1782071419000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 14,
-          "ts": 1782070911000
-        },
-        {
-          "delta": 10,
-          "motivo": "pasivo",
-          "puntos": 13,
-          "ts": 1781381680000
-        },
-        {
-          "delta": 2,
-          "motivo": "bonus_votar",
-          "puntos": 3,
-          "ts": 1781379968000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 1,
-          "ts": 1781379962000
-        }
-      ]
-    },
-    {
-      "rank": 52,
       "user": "user-prvc",
-      "points": 36,
+      "points": 37,
       "faccion": null,
       "profile_img": "https://yt4.ggpht.com/ytc/AIdro_mhJOn85LK1qAzxTwFmtHaeS_b32zESsJTucfeP8HGS7WVj=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 1,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 37,
+          "ts": 1784590030000
+        },
         {
           "delta": 10,
           "motivo": "pasivo",
@@ -28950,6 +28897,65 @@
           "motivo": "mensaje",
           "puntos": 1,
           "ts": 1783278088000
+        }
+      ]
+    },
+    {
+      "rank": 52,
+      "user": "emilio5886",
+      "points": 36,
+      "faccion": null,
+      "profile_img": "https://yt4.ggpht.com/ytc/AIdro_kHYnDIjSx852dNhcWz3ubVEKRQ9mS5GLloffm42f8=s64-c-k-c0x00ffffff-no-rj",
+      "total_apuestas": 0,
+      "total_ganadas": 0,
+      "historial": [
+        {
+          "delta": 10,
+          "motivo": "pasivo",
+          "puntos": 36,
+          "ts": 1782165644000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 26,
+          "ts": 1782165544000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 25,
+          "ts": 1782165090000
+        },
+        {
+          "delta": 10,
+          "motivo": "pasivo",
+          "puntos": 24,
+          "ts": 1782071419000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 14,
+          "ts": 1782070911000
+        },
+        {
+          "delta": 10,
+          "motivo": "pasivo",
+          "puntos": 13,
+          "ts": 1781381680000
+        },
+        {
+          "delta": 2,
+          "motivo": "bonus_votar",
+          "puntos": 3,
+          "ts": 1781379968000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 1,
+          "ts": 1781379962000
         }
       ]
     },
