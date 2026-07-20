@@ -1,15 +1,33 @@
 {
-  "actualizado": "2026-07-20T20:52:43.837Z",
+  "actualizado": "2026-07-20T20:57:43.863Z",
   "usuarios": [
     {
       "rank": 1,
       "user": "popham_arg",
-      "points": 1099,
+      "points": 1072,
       "faccion": "cw",
       "profile_img": "https://yt4.ggpht.com/ytc/AIdro_l073YlqqwNThSKT2Ge1HLxlhT_Z5HhMnfoDfdJDkpZ2voqrpFZOIHNJfU_R2CijCfuPg=s64-c-k-c0x00ffffff-no-rj",
-      "total_apuestas": 56,
+      "total_apuestas": 57,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 1100,
+          "ts": 1784580790000
+        },
+        {
+          "delta": -30,
+          "motivo": "apuesta_colocada",
+          "puntos": 1070,
+          "ts": 1784580790000
+        },
+        {
+          "delta": 2,
+          "motivo": "bonus_participar",
+          "puntos": 1072,
+          "ts": 1784580790000
+        },
         {
           "delta": 1,
           "motivo": "mensaje",
@@ -7028,12 +7046,30 @@
     {
       "rank": 3,
       "user": "batazuma",
-      "points": 848,
+      "points": 841,
       "faccion": "us",
       "profile_img": "https://yt4.ggpht.com/wWxwXA6XsKqd1V6l5yA6UEyudFNePzssE2nRRQpTwY50GAugzTmiKebSnIQ2sH_sdgg9Ch84tw=s64-c-k-c0x00ffffff-no-rj",
-      "total_apuestas": 15,
+      "total_apuestas": 16,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 849,
+          "ts": 1784580853000
+        },
+        {
+          "delta": -10,
+          "motivo": "apuesta_colocada",
+          "puntos": 839,
+          "ts": 1784580853000
+        },
+        {
+          "delta": 2,
+          "motivo": "bonus_participar",
+          "puntos": 841,
+          "ts": 1784580853000
+        },
         {
           "delta": 1,
           "motivo": "mensaje",
@@ -17322,12 +17358,30 @@
     {
       "rank": 11,
       "user": "marianocalvo94",
-      "points": 295,
+      "points": 288,
       "faccion": "us",
       "profile_img": "https://yt4.ggpht.com/IsO_XBjqaoFfYQjYKxExaQO7NWVLzsa5-uG15_qW8OyhyhEPas0dx1MEjG-hIxihEtRlwObbUA=s64-c-k-c0x00ffffff-no-rj",
-      "total_apuestas": 5,
+      "total_apuestas": 6,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": -10,
+          "motivo": "apuesta_colocada",
+          "puntos": 286,
+          "ts": 1784580787000
+        },
+        {
+          "delta": 2,
+          "motivo": "bonus_participar",
+          "puntos": 288,
+          "ts": 1784580787000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 296,
+          "ts": 1784580778000
+        },
         {
           "delta": 1,
           "motivo": "mensaje",
