@@ -1,5 +1,5 @@
 {
-  "actualizado": "2026-07-26T23:44:26.963Z",
+  "actualizado": "2026-07-26T23:49:26.986Z",
   "usuarios": [
     {
       "rank": 1,
@@ -26023,12 +26023,18 @@
     {
       "rank": 22,
       "user": "lmoak-sp3dp",
-      "points": 162,
+      "points": 163,
       "faccion": null,
       "profile_img": "https://yt4.ggpht.com/sAEV6uol3_WUBht6EXZZYZBwwIsKgcgFqU-qxEnp39eJPaNFD_O22zNabJ_mNWr0lq653m_G=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 1,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 163,
+          "ts": 1785109471000
+        },
         {
           "delta": 1,
           "motivo": "mensaje",
