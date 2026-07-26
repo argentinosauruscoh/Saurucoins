@@ -1,5 +1,5 @@
 {
-  "actualizado": "2026-07-26T20:49:26.719Z",
+  "actualizado": "2026-07-26T20:54:26.720Z",
   "usuarios": [
     {
       "rank": 1,
@@ -25318,12 +25318,18 @@
     {
       "rank": 25,
       "user": "lmoak-sp3dp",
-      "points": 131,
+      "points": 132,
       "faccion": null,
       "profile_img": "https://yt4.ggpht.com/sAEV6uol3_WUBht6EXZZYZBwwIsKgcgFqU-qxEnp39eJPaNFD_O22zNabJ_mNWr0lq653m_G=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 0,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 132,
+          "ts": 1785099199000
+        },
         {
           "delta": 10,
           "motivo": "pasivo",
@@ -31612,12 +31618,24 @@
     {
       "rank": 103,
       "user": "alvaro-10fw",
-      "points": 2,
+      "points": 4,
       "faccion": null,
       "profile_img": "https://yt4.ggpht.com/ytc/AIdro_nHhqpmQKCAs4k4BOo7KVdlQ3kyWiPj4_KL502rIi0T9F99=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 0,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 4,
+          "ts": 1785099262000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 3,
+          "ts": 1785099055000
+        },
         {
           "delta": 1,
           "motivo": "mensaje",
