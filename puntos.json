@@ -1,5 +1,5 @@
 {
-  "actualizado": "2026-07-26T23:04:26.931Z",
+  "actualizado": "2026-07-26T23:09:26.954Z",
   "usuarios": [
     {
       "rank": 1,
@@ -27008,12 +27008,24 @@
     {
       "rank": 27,
       "user": "lmoak-sp3dp",
-      "points": 145,
+      "points": 147,
       "faccion": null,
       "profile_img": "https://yt4.ggpht.com/sAEV6uol3_WUBht6EXZZYZBwwIsKgcgFqU-qxEnp39eJPaNFD_O22zNabJ_mNWr0lq653m_G=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 1,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 147,
+          "ts": 1785107291000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 146,
+          "ts": 1785107087000
+        },
         {
           "delta": 1,
           "motivo": "mensaje",
@@ -31637,6 +31649,89 @@
     },
     {
       "rank": 59,
+      "user": "mateoschiavina",
+      "points": 33,
+      "faccion": null,
+      "profile_img": "https://yt4.ggpht.com/ytc/AIdro_l7JclSgFmUBZHKaY4a8jXJserApBeP7zRlqYNvmOtkODI=s64-c-k-c0x00ffffff-no-rj",
+      "total_apuestas": 0,
+      "total_ganadas": 0,
+      "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 33,
+          "ts": 1785107081000
+        },
+        {
+          "delta": 10,
+          "motivo": "pasivo",
+          "puntos": 32,
+          "ts": 1785104966000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 20,
+          "ts": 1785104123000
+        },
+        {
+          "delta": 2,
+          "motivo": "bonus_participar",
+          "puntos": 22,
+          "ts": 1785104123000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 19,
+          "ts": 1785103958000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 16,
+          "ts": 1785103765000
+        },
+        {
+          "delta": 2,
+          "motivo": "bonus_votar",
+          "puntos": 18,
+          "ts": 1785103765000
+        },
+        {
+          "delta": 10,
+          "motivo": "pasivo",
+          "puntos": 15,
+          "ts": 1785103166000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 5,
+          "ts": 1785102309000
+        },
+        {
+          "delta": 2,
+          "motivo": "bonus_participar",
+          "puntos": 4,
+          "ts": 1785101879000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 2,
+          "ts": 1785101870000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 1,
+          "ts": 1785101695000
+        }
+      ]
+    },
+    {
+      "rank": 60,
       "user": "palindo433",
       "points": 32,
       "faccion": null,
@@ -31715,83 +31810,6 @@
           "motivo": "bonus_votar",
           "puntos": 3,
           "ts": 1781466682000
-        }
-      ]
-    },
-    {
-      "rank": 60,
-      "user": "mateoschiavina",
-      "points": 32,
-      "faccion": null,
-      "profile_img": "https://yt4.ggpht.com/ytc/AIdro_l7JclSgFmUBZHKaY4a8jXJserApBeP7zRlqYNvmOtkODI=s64-c-k-c0x00ffffff-no-rj",
-      "total_apuestas": 0,
-      "total_ganadas": 0,
-      "historial": [
-        {
-          "delta": 10,
-          "motivo": "pasivo",
-          "puntos": 32,
-          "ts": 1785104966000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 20,
-          "ts": 1785104123000
-        },
-        {
-          "delta": 2,
-          "motivo": "bonus_participar",
-          "puntos": 22,
-          "ts": 1785104123000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 19,
-          "ts": 1785103958000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 16,
-          "ts": 1785103765000
-        },
-        {
-          "delta": 2,
-          "motivo": "bonus_votar",
-          "puntos": 18,
-          "ts": 1785103765000
-        },
-        {
-          "delta": 10,
-          "motivo": "pasivo",
-          "puntos": 15,
-          "ts": 1785103166000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 5,
-          "ts": 1785102309000
-        },
-        {
-          "delta": 2,
-          "motivo": "bonus_participar",
-          "puntos": 4,
-          "ts": 1785101879000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 2,
-          "ts": 1785101870000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 1,
-          "ts": 1785101695000
         }
       ]
     },
