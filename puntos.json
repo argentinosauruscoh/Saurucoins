@@ -1,5 +1,5 @@
 {
-  "actualizado": "2026-07-26T21:04:26.696Z",
+  "actualizado": "2026-07-26T21:09:26.771Z",
   "usuarios": [
     {
       "rank": 1,
@@ -7742,12 +7742,18 @@
     {
       "rank": 3,
       "user": "batazuma",
-      "points": 951,
+      "points": 952,
       "faccion": "us",
       "profile_img": "https://yt4.ggpht.com/wWxwXA6XsKqd1V6l5yA6UEyudFNePzssE2nRRQpTwY50GAugzTmiKebSnIQ2sH_sdgg9Ch84tw=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 17,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 952,
+          "ts": 1785100110000
+        },
         {
           "delta": 10,
           "motivo": "pasivo",
@@ -12246,12 +12252,30 @@
     {
       "rank": 5,
       "user": "palipola",
-      "points": 537,
+      "points": 510,
       "faccion": null,
       "profile_img": "https://yt4.ggpht.com/ytc/AIdro_kdtK0IOb1fJg57BoyrupXc44dZAaUivAmiOXHR9juwlrE=s64-c-k-c0x00ffffff-no-rj",
-      "total_apuestas": 7,
+      "total_apuestas": 8,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 538,
+          "ts": 1785100131000
+        },
+        {
+          "delta": -30,
+          "motivo": "apuesta_colocada",
+          "puntos": 508,
+          "ts": 1785100131000
+        },
+        {
+          "delta": 2,
+          "motivo": "bonus_participar",
+          "puntos": 510,
+          "ts": 1785100131000
+        },
         {
           "delta": 10,
           "motivo": "pasivo",
@@ -14152,12 +14176,30 @@
     {
       "rank": 7,
       "user": "iganaciolbs",
-      "points": 479,
+      "points": 472,
       "faccion": null,
       "profile_img": "https://yt4.ggpht.com/ytc/AIdro_nFAWQ3GL9cqgnWq0BENi4fv-bWq82zf6EzVfRN-zM9f6U=s64-c-k-c0x00ffffff-no-rj",
-      "total_apuestas": 17,
+      "total_apuestas": 18,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 480,
+          "ts": 1785100153000
+        },
+        {
+          "delta": -10,
+          "motivo": "apuesta_colocada",
+          "puntos": 470,
+          "ts": 1785100153000
+        },
+        {
+          "delta": 2,
+          "motivo": "bonus_participar",
+          "puntos": 472,
+          "ts": 1785100153000
+        },
         {
           "delta": 10,
           "motivo": "pasivo",
@@ -25139,12 +25181,18 @@
     {
       "rank": 24,
       "user": "lmoak-sp3dp",
-      "points": 143,
+      "points": 144,
       "faccion": null,
       "profile_img": "https://yt4.ggpht.com/sAEV6uol3_WUBht6EXZZYZBwwIsKgcgFqU-qxEnp39eJPaNFD_O22zNabJ_mNWr0lq653m_G=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 0,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 144,
+          "ts": 1785100146000
+        },
         {
           "delta": 1,
           "motivo": "mensaje",
