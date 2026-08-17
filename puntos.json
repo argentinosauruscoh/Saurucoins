@@ -1,5 +1,5 @@
 {
-  "actualizado": "2026-08-17T23:34:06.849Z",
+  "actualizado": "2026-08-17T23:39:06.807Z",
   "usuarios": [
     {
       "rank": 1,
@@ -3993,12 +3993,18 @@
     {
       "rank": 2,
       "user": "nelsonrojasmujica",
-      "points": 1113,
+      "points": 1114,
       "faccion": "wm",
       "profile_img": "https://yt4.ggpht.com/ytc/AIdro_lJ2GIZxlJ3mXvF9QdG3OphY5Y9SNlKGvPsNI3-3XXF300=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 59,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 1114,
+          "ts": 1787009756000
+        },
         {
           "delta": 1,
           "motivo": "mensaje",
