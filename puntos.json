@@ -1,5 +1,5 @@
 {
-  "actualizado": "2026-08-18T00:14:06.866Z",
+  "actualizado": "2026-08-18T00:19:06.896Z",
   "usuarios": [
     {
       "rank": 1,
@@ -8090,12 +8090,24 @@
     {
       "rank": 3,
       "user": "batazuma",
-      "points": 1020,
+      "points": 1022,
       "faccion": "us",
       "profile_img": "https://yt4.ggpht.com/wWxwXA6XsKqd1V6l5yA6UEyudFNePzssE2nRRQpTwY50GAugzTmiKebSnIQ2sH_sdgg9Ch84tw=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 18,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 1022,
+          "ts": 1787012253000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 1021,
+          "ts": 1787012082000
+        },
         {
           "delta": 1,
           "motivo": "mensaje",
@@ -34406,6 +34418,35 @@
     },
     {
       "rank": 110,
+      "user": "brandonlacha",
+      "points": 3,
+      "faccion": null,
+      "profile_img": "https://yt4.ggpht.com/4kdaRlhpPja35uw-DC9zWDpYgA9Iat5vRBtTD9MrHrn_Jm7rK9KU7pmXi60aLEdQDKS8GwB_5Q=s64-c-k-c0x00ffffff-no-rj",
+      "total_apuestas": 0,
+      "total_ganadas": 0,
+      "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 3,
+          "ts": 1787012289000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 2,
+          "ts": 1787012112000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 1,
+          "ts": 1787012027000
+        }
+      ]
+    },
+    {
+      "rank": 111,
       "user": "user-pe-hf",
       "points": 1,
       "faccion": null,
@@ -34418,23 +34459,6 @@
           "motivo": "mensaje",
           "puntos": 1,
           "ts": 1782169515000
-        }
-      ]
-    },
-    {
-      "rank": 111,
-      "user": "brandonlacha",
-      "points": 1,
-      "faccion": null,
-      "profile_img": "https://yt4.ggpht.com/4kdaRlhpPja35uw-DC9zWDpYgA9Iat5vRBtTD9MrHrn_Jm7rK9KU7pmXi60aLEdQDKS8GwB_5Q=s64-c-k-c0x00ffffff-no-rj",
-      "total_apuestas": 0,
-      "total_ganadas": 0,
-      "historial": [
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 1,
-          "ts": 1787012027000
         }
       ]
     }
