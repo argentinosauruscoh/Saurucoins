@@ -1,5 +1,5 @@
 {
-  "actualizado": "2026-08-18T00:44:06.904Z",
+  "actualizado": "2026-08-18T00:49:06.878Z",
   "usuarios": [
     {
       "rank": 1,
@@ -3993,12 +3993,18 @@
     {
       "rank": 2,
       "user": "nelsonrojasmujica",
-      "points": 1099,
+      "points": 1100,
       "faccion": "wm",
       "profile_img": "https://yt4.ggpht.com/ytc/AIdro_lJ2GIZxlJ3mXvF9QdG3OphY5Y9SNlKGvPsNI3-3XXF300=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 62,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 1100,
+          "ts": 1787014043000
+        },
         {
           "delta": 1,
           "motivo": "mensaje",
@@ -8150,12 +8156,24 @@
     {
       "rank": 3,
       "user": "batazuma",
-      "points": 1033,
+      "points": 1094,
       "faccion": "us",
       "profile_img": "https://yt4.ggpht.com/wWxwXA6XsKqd1V6l5yA6UEyudFNePzssE2nRRQpTwY50GAugzTmiKebSnIQ2sH_sdgg9Ch84tw=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 19,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 60,
+          "motivo": "apuesta_ganada",
+          "puntos": 1094,
+          "ts": 1787013905000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 1034,
+          "ts": 1787013902000
+        },
         {
           "delta": 1,
           "motivo": "mensaje",
@@ -11107,12 +11125,18 @@
     {
       "rank": 4,
       "user": "virgolandia2",
-      "points": 802,
+      "points": 803,
       "faccion": "wm",
       "profile_img": "https://yt4.ggpht.com/ytc/AIdro_nEXPQ5IzVjI_8E9ysRUgKgKXGvW81DmTWiCZaNrkJvUNU=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 16,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 803,
+          "ts": 1787014013000
+        },
         {
           "delta": 1,
           "motivo": "mensaje",
@@ -22293,12 +22317,18 @@
     {
       "rank": 14,
       "user": "facundopainefil3509",
-      "points": 271,
+      "points": 272,
       "faccion": "wm",
       "profile_img": "https://yt4.ggpht.com/ytc/AIdro_n1YRi8i8TpTnKtMIARSi9xPLn2rKU-ONxy_O_TrQ3cSvg7zMr2VhNJEvOs1oIoKW7QLA=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 2,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 272,
+          "ts": 1787014097000
+        },
         {
           "delta": 10,
           "motivo": "pasivo",
