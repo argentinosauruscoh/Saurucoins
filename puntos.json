@@ -1,5 +1,5 @@
 {
-  "actualizado": "2026-08-18T00:19:06.896Z",
+  "actualizado": "2026-08-18T00:24:06.872Z",
   "usuarios": [
     {
       "rank": 1,
@@ -8090,12 +8090,24 @@
     {
       "rank": 3,
       "user": "batazuma",
-      "points": 1022,
+      "points": 1024,
       "faccion": "us",
       "profile_img": "https://yt4.ggpht.com/wWxwXA6XsKqd1V6l5yA6UEyudFNePzssE2nRRQpTwY50GAugzTmiKebSnIQ2sH_sdgg9Ch84tw=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 18,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 1024,
+          "ts": 1787012566000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 1023,
+          "ts": 1787012434000
+        },
         {
           "delta": 1,
           "motivo": "mensaje",
