@@ -1,5 +1,5 @@
 {
-  "actualizado": "2026-08-18T00:09:06.925Z",
+  "actualizado": "2026-08-18T00:14:06.866Z",
   "usuarios": [
     {
       "rank": 1,
@@ -3993,12 +3993,18 @@
     {
       "rank": 2,
       "user": "nelsonrojasmujica",
-      "points": 1079,
+      "points": 1080,
       "faccion": "wm",
       "profile_img": "https://yt4.ggpht.com/ytc/AIdro_lJ2GIZxlJ3mXvF9QdG3OphY5Y9SNlKGvPsNI3-3XXF300=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 61,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 1080,
+          "ts": 1787011814000
+        },
         {
           "delta": 1,
           "motivo": "mensaje",
@@ -8084,12 +8090,30 @@
     {
       "rank": 3,
       "user": "batazuma",
-      "points": 1017,
+      "points": 1020,
       "faccion": "us",
       "profile_img": "https://yt4.ggpht.com/wWxwXA6XsKqd1V6l5yA6UEyudFNePzssE2nRRQpTwY50GAugzTmiKebSnIQ2sH_sdgg9Ch84tw=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 18,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 1020,
+          "ts": 1787011949000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 1019,
+          "ts": 1787011880000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 1018,
+          "ts": 1787011799000
+        },
         {
           "delta": 1,
           "motivo": "mensaje",
@@ -34394,6 +34418,23 @@
           "motivo": "mensaje",
           "puntos": 1,
           "ts": 1782169515000
+        }
+      ]
+    },
+    {
+      "rank": 111,
+      "user": "brandonlacha",
+      "points": 1,
+      "faccion": null,
+      "profile_img": "https://yt4.ggpht.com/4kdaRlhpPja35uw-DC9zWDpYgA9Iat5vRBtTD9MrHrn_Jm7rK9KU7pmXi60aLEdQDKS8GwB_5Q=s64-c-k-c0x00ffffff-no-rj",
+      "total_apuestas": 0,
+      "total_ganadas": 0,
+      "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 1,
+          "ts": 1787012027000
         }
       ]
     }
