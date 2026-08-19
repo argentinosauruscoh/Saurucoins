@@ -1,5 +1,5 @@
 {
-  "actualizado": "2026-08-19T19:06:01.283Z",
+  "actualizado": "2026-08-19T19:11:01.317Z",
   "usuarios": [
     {
       "rank": 1,
@@ -4161,12 +4161,18 @@
     {
       "rank": 2,
       "user": "batazuma",
-      "points": 1157,
+      "points": 1158,
       "faccion": "us",
       "profile_img": "https://yt4.ggpht.com/wWxwXA6XsKqd1V6l5yA6UEyudFNePzssE2nRRQpTwY50GAugzTmiKebSnIQ2sH_sdgg9Ch84tw=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 20,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 1158,
+          "ts": 1787166365000
+        },
         {
           "delta": 10,
           "motivo": "pasivo",
@@ -29273,12 +29279,18 @@
     {
       "rank": 30,
       "user": "daabot",
-      "points": 110,
+      "points": 111,
       "faccion": null,
       "profile_img": "https://yt4.ggpht.com/ytc/AIdro_nIpZTPQyKiZL0gN9RNr6UqnWWWCSplDfAn6r0pcsyoPdI=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 0,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 111,
+          "ts": 1787166608000
+        },
         {
           "delta": 1,
           "motivo": "mensaje",
