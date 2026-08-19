@@ -1,15 +1,27 @@
 {
-  "actualizado": "2026-08-19T18:46:01.287Z",
+  "actualizado": "2026-08-19T18:51:01.251Z",
   "usuarios": [
     {
       "rank": 1,
       "user": "popham_arg",
-      "points": 1211,
+      "points": 1213,
       "faccion": "cw",
       "profile_img": "https://yt4.ggpht.com/ytc/AIdro_l073YlqqwNThSKT2Ge1HLxlhT_Z5HhMnfoDfdJDkpZ2voqrpFZOIHNJfU_R2CijCfuPg=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 72,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 1213,
+          "ts": 1787165331000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 1212,
+          "ts": 1787165180000
+        },
         {
           "delta": 1,
           "motivo": "mensaje",
@@ -4101,12 +4113,18 @@
     {
       "rank": 2,
       "user": "batazuma",
-      "points": 1140,
+      "points": 1141,
       "faccion": "us",
       "profile_img": "https://yt4.ggpht.com/wWxwXA6XsKqd1V6l5yA6UEyudFNePzssE2nRRQpTwY50GAugzTmiKebSnIQ2sH_sdgg9Ch84tw=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 20,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 1141,
+          "ts": 1787165289000
+        },
         {
           "delta": 1,
           "motivo": "mensaje",
