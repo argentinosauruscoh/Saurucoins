@@ -1,15 +1,27 @@
 {
-  "actualizado": "2026-08-19T19:11:01.317Z",
+  "actualizado": "2026-08-19T19:16:01.309Z",
   "usuarios": [
     {
       "rank": 1,
       "user": "popham_arg",
-      "points": 1280,
+      "points": 1282,
       "faccion": "cw",
       "profile_img": "https://yt4.ggpht.com/ytc/AIdro_l073YlqqwNThSKT2Ge1HLxlhT_Z5HhMnfoDfdJDkpZ2voqrpFZOIHNJfU_R2CijCfuPg=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 73,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 1282,
+          "ts": 1787166882000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 1281,
+          "ts": 1787166819000
+        },
         {
           "delta": 10,
           "motivo": "pasivo",
@@ -4161,12 +4173,18 @@
     {
       "rank": 2,
       "user": "batazuma",
-      "points": 1158,
+      "points": 1159,
       "faccion": "us",
       "profile_img": "https://yt4.ggpht.com/wWxwXA6XsKqd1V6l5yA6UEyudFNePzssE2nRRQpTwY50GAugzTmiKebSnIQ2sH_sdgg9Ch84tw=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 20,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 1159,
+          "ts": 1787166849000
+        },
         {
           "delta": 1,
           "motivo": "mensaje",
@@ -7244,12 +7262,18 @@
     {
       "rank": 3,
       "user": "nelsonrojasmujica",
-      "points": 1082,
+      "points": 1083,
       "faccion": "wm",
       "profile_img": "https://yt4.ggpht.com/ytc/AIdro_lJ2GIZxlJ3mXvF9QdG3OphY5Y9SNlKGvPsNI3-3XXF300=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 64,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 1083,
+          "ts": 1787166831000
+        },
         {
           "delta": 10,
           "motivo": "pasivo",
@@ -35603,6 +35627,23 @@
           "motivo": "mensaje",
           "puntos": 1,
           "ts": 1782169515000
+        }
+      ]
+    },
+    {
+      "rank": 114,
+      "user": "caboide602",
+      "points": 1,
+      "faccion": null,
+      "profile_img": "https://yt4.ggpht.com/sAEV6uol3_WUBht6EXZZYZBwwIsKgcgFqU-qxEnp39eJPaNFD_O22zNabJ_mNWr0lq653m_G=s64-c-k-c0x00ffffff-no-rj",
+      "total_apuestas": 0,
+      "total_ganadas": 0,
+      "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 1,
+          "ts": 1787166861000
         }
       ]
     }
