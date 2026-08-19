@@ -1,15 +1,33 @@
 {
-  "actualizado": "2026-08-19T19:36:01.329Z",
+  "actualizado": "2026-08-19T19:41:01.371Z",
   "usuarios": [
     {
       "rank": 1,
       "user": "popham_arg",
-      "points": 1296,
+      "points": 1269,
       "faccion": "cw",
       "profile_img": "https://yt4.ggpht.com/ytc/AIdro_l073YlqqwNThSKT2Ge1HLxlhT_Z5HhMnfoDfdJDkpZ2voqrpFZOIHNJfU_R2CijCfuPg=s64-c-k-c0x00ffffff-no-rj",
-      "total_apuestas": 73,
+      "total_apuestas": 74,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 1297,
+          "ts": 1787168174000
+        },
+        {
+          "delta": -30,
+          "motivo": "apuesta_colocada",
+          "puntos": 1267,
+          "ts": 1787168174000
+        },
+        {
+          "delta": 2,
+          "motivo": "bonus_participar",
+          "puntos": 1269,
+          "ts": 1787168174000
+        },
         {
           "delta": 10,
           "motivo": "pasivo",
@@ -4197,12 +4215,42 @@
     {
       "rank": 2,
       "user": "batazuma",
-      "points": 1177,
+      "points": 1172,
       "faccion": "us",
       "profile_img": "https://yt4.ggpht.com/wWxwXA6XsKqd1V6l5yA6UEyudFNePzssE2nRRQpTwY50GAugzTmiKebSnIQ2sH_sdgg9Ch84tw=s64-c-k-c0x00ffffff-no-rj",
-      "total_apuestas": 20,
+      "total_apuestas": 21,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 1172,
+          "ts": 1787168445000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 1171,
+          "ts": 1787168289000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 1178,
+          "ts": 1787168174000
+        },
+        {
+          "delta": -10,
+          "motivo": "apuesta_colocada",
+          "puntos": 1168,
+          "ts": 1787168174000
+        },
+        {
+          "delta": 2,
+          "motivo": "bonus_participar",
+          "puntos": 1170,
+          "ts": 1787168174000
+        },
         {
           "delta": 10,
           "motivo": "pasivo",
