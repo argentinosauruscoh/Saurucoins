@@ -1,5 +1,5 @@
 {
-  "actualizado": "2026-08-22T20:36:52.987Z",
+  "actualizado": "2026-08-22T20:41:53.015Z",
   "usuarios": [
     {
       "rank": 1,
@@ -36303,6 +36303,47 @@
     },
     {
       "rank": 85,
+      "user": "matiasbazzetti7547",
+      "points": 14,
+      "faccion": null,
+      "profile_img": "https://yt4.ggpht.com/ytc/AIdro_nPB6I82h5P3JZmZbIQMp9188f4NBmPAKvcbgOnSebrEkA=s64-c-k-c0x00ffffff-no-rj",
+      "total_apuestas": 0,
+      "total_ganadas": 0,
+      "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 14,
+          "ts": 1787431024000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 13,
+          "ts": 1787430477000
+        },
+        {
+          "delta": 10,
+          "motivo": "pasivo",
+          "puntos": 12,
+          "ts": 1787430112000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 2,
+          "ts": 1787429902000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 1,
+          "ts": 1787429722000
+        }
+      ]
+    },
+    {
+      "rank": 86,
       "user": "ulisesmirandaromero7629",
       "points": 13,
       "faccion": null,
@@ -36331,7 +36372,7 @@
       ]
     },
     {
-      "rank": 86,
+      "rank": 87,
       "user": "lautaroaugustoantonioramir9446",
       "points": 13,
       "faccion": null,
@@ -36366,7 +36407,7 @@
       ]
     },
     {
-      "rank": 87,
+      "rank": 88,
       "user": "vesuvius-b7t",
       "points": 13,
       "faccion": null,
@@ -36391,41 +36432,6 @@
           "motivo": "mensaje",
           "puntos": 1,
           "ts": 1787163367000
-        }
-      ]
-    },
-    {
-      "rank": 88,
-      "user": "matiasbazzetti7547",
-      "points": 13,
-      "faccion": null,
-      "profile_img": "https://yt4.ggpht.com/ytc/AIdro_nPB6I82h5P3JZmZbIQMp9188f4NBmPAKvcbgOnSebrEkA=s64-c-k-c0x00ffffff-no-rj",
-      "total_apuestas": 0,
-      "total_ganadas": 0,
-      "historial": [
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 13,
-          "ts": 1787430477000
-        },
-        {
-          "delta": 10,
-          "motivo": "pasivo",
-          "puntos": 12,
-          "ts": 1787430112000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 2,
-          "ts": 1787429902000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 1,
-          "ts": 1787429722000
         }
       ]
     },
