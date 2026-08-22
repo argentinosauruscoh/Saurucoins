@@ -1,15 +1,21 @@
 {
-  "actualizado": "2026-08-22T18:36:52.832Z",
+  "actualizado": "2026-08-22T18:41:52.804Z",
   "usuarios": [
     {
       "rank": 1,
       "user": "popham_arg",
-      "points": 1337,
+      "points": 1417,
       "faccion": "cw",
       "profile_img": "https://yt4.ggpht.com/ytc/AIdro_l073YlqqwNThSKT2Ge1HLxlhT_Z5HhMnfoDfdJDkpZ2voqrpFZOIHNJfU_R2CijCfuPg=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 76,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 80,
+          "motivo": "apuesta_ganada",
+          "puntos": 1417,
+          "ts": 1787424073000
+        },
         {
           "delta": 1,
           "motivo": "mensaje",
@@ -11839,12 +11845,30 @@
     {
       "rank": 4,
       "user": "virgolandia2",
-      "points": 763,
+      "points": 766,
       "faccion": "wm",
       "profile_img": "https://yt4.ggpht.com/ytc/AIdro_nEXPQ5IzVjI_8E9ysRUgKgKXGvW81DmTWiCZaNrkJvUNU=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 17,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 766,
+          "ts": 1787424060000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 765,
+          "ts": 1787423979000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 764,
+          "ts": 1787423856000
+        },
         {
           "delta": 1,
           "motivo": "mensaje",
@@ -13830,12 +13854,18 @@
     {
       "rank": 5,
       "user": "iganaciolbs",
-      "points": 685,
+      "points": 686,
       "faccion": null,
       "profile_img": "https://yt4.ggpht.com/ytc/AIdro_nFAWQ3GL9cqgnWq0BENi4fv-bWq82zf6EzVfRN-zM9f6U=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 22,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 686,
+          "ts": 1787423961000
+        },
         {
           "delta": 1,
           "motivo": "mensaje",
