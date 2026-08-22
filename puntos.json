@@ -1,15 +1,39 @@
 {
-  "actualizado": "2026-08-22T20:31:53.088Z",
+  "actualizado": "2026-08-22T20:36:52.987Z",
   "usuarios": [
     {
       "rank": 1,
       "user": "popham_arg",
-      "points": 1461,
+      "points": 1495,
       "faccion": "cw",
       "profile_img": "https://yt4.ggpht.com/ytc/AIdro_l073YlqqwNThSKT2Ge1HLxlhT_Z5HhMnfoDfdJDkpZ2voqrpFZOIHNJfU_R2CijCfuPg=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 79,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 1493,
+          "ts": 1787430949000
+        },
+        {
+          "delta": 2,
+          "motivo": "bonus_votar",
+          "puntos": 1495,
+          "ts": 1787430949000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 1492,
+          "ts": 1787430877000
+        },
+        {
+          "delta": 30,
+          "motivo": "apuesta_ganada",
+          "puntos": 1491,
+          "ts": 1787430819000
+        },
         {
           "delta": 1,
           "motivo": "mensaje",
@@ -4491,12 +4515,36 @@
     {
       "rank": 2,
       "user": "batazuma",
-      "points": 1290,
+      "points": 1296,
       "faccion": "us",
       "profile_img": "https://yt4.ggpht.com/wWxwXA6XsKqd1V6l5yA6UEyudFNePzssE2nRRQpTwY50GAugzTmiKebSnIQ2sH_sdgg9Ch84tw=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 22,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 2,
+          "motivo": "bonus_votar",
+          "puntos": 1296,
+          "ts": 1787430955000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 1292,
+          "ts": 1787430922000
+        },
+        {
+          "delta": 2,
+          "motivo": "bonus_votar",
+          "puntos": 1294,
+          "ts": 1787430922000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 1291,
+          "ts": 1787430832000
+        },
         {
           "delta": 1,
           "motivo": "mensaje",
@@ -15809,12 +15857,24 @@
     {
       "rank": 6,
       "user": "palipola",
-      "points": 638,
+      "points": 641,
       "faccion": null,
       "profile_img": "https://yt4.ggpht.com/ytc/AIdro_kdtK0IOb1fJg57BoyrupXc44dZAaUivAmiOXHR9juwlrE=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 8,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 639,
+          "ts": 1787430979000
+        },
+        {
+          "delta": 2,
+          "motivo": "bonus_votar",
+          "puntos": 641,
+          "ts": 1787430979000
+        },
         {
           "delta": 10,
           "motivo": "pasivo",
