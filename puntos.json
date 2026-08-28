@@ -1,5 +1,5 @@
 {
-  "actualizado": "2026-08-28T00:12:49.407Z",
+  "actualizado": "2026-08-28T00:17:49.415Z",
   "usuarios": [
     {
       "rank": 1,
@@ -27895,12 +27895,24 @@
     {
       "rank": 16,
       "user": "facundopainefil3509",
-      "points": 308,
+      "points": 310,
       "faccion": "wm",
       "profile_img": "https://yt4.ggpht.com/ytc/AIdro_n1YRi8i8TpTnKtMIARSi9xPLn2rKU-ONxy_O_TrQ3cSvg7zMr2VhNJEvOs1oIoKW7QLA=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 2,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 310,
+          "ts": 1787876156000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 309,
+          "ts": 1787875977000
+        },
         {
           "delta": 10,
           "motivo": "pasivo",
