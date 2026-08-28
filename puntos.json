@@ -1,15 +1,21 @@
 {
-  "actualizado": "2026-08-28T00:17:49.415Z",
+  "actualizado": "2026-08-28T00:22:49.386Z",
   "usuarios": [
     {
       "rank": 1,
       "user": "popham_arg",
-      "points": 1631,
+      "points": 1731,
       "faccion": "cw",
       "profile_img": "https://yt4.ggpht.com/ytc/AIdro_l073YlqqwNThSKT2Ge1HLxlhT_Z5HhMnfoDfdJDkpZ2voqrpFZOIHNJfU_R2CijCfuPg=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 94,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 100,
+          "motivo": "apuesta_ganada",
+          "puntos": 1731,
+          "ts": 1787876401000
+        },
         {
           "delta": 1,
           "motivo": "mensaje",
@@ -5193,12 +5199,18 @@
     {
       "rank": 2,
       "user": "batazuma",
-      "points": 1557,
+      "points": 1558,
       "faccion": "us",
       "profile_img": "https://yt4.ggpht.com/wWxwXA6XsKqd1V6l5yA6UEyudFNePzssE2nRRQpTwY50GAugzTmiKebSnIQ2sH_sdgg9Ch84tw=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 28,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 1558,
+          "ts": 1787876404000
+        },
         {
           "delta": 1,
           "motivo": "mensaje",
@@ -26319,12 +26331,18 @@
     {
       "rank": 14,
       "user": "lucascostabel2696",
-      "points": 332,
+      "points": 333,
       "faccion": null,
       "profile_img": "https://yt4.ggpht.com/ytc/AIdro_la4CAh5z7Shfmi4sXps_y5pxUDYwZubbmttPbdIQru1iQ=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 2,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 333,
+          "ts": 1787876412000
+        },
         {
           "delta": 28,
           "motivo": "apuesta_ganada",
@@ -27895,12 +27913,18 @@
     {
       "rank": 16,
       "user": "facundopainefil3509",
-      "points": 310,
+      "points": 311,
       "faccion": "wm",
       "profile_img": "https://yt4.ggpht.com/ytc/AIdro_n1YRi8i8TpTnKtMIARSi9xPLn2rKU-ONxy_O_TrQ3cSvg7zMr2VhNJEvOs1oIoKW7QLA=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 2,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 311,
+          "ts": 1787876532000
+        },
         {
           "delta": 1,
           "motivo": "mensaje",
