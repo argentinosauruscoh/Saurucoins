@@ -1,5 +1,5 @@
 {
-  "actualizado": "2026-08-30T22:05:03.262Z",
+  "actualizado": "2026-08-30T22:10:03.269Z",
   "usuarios": [
     {
       "rank": 1,
@@ -40901,12 +40901,24 @@
     {
       "rank": 54,
       "user": "brandonlacha",
-      "points": 53,
+      "points": 55,
       "faccion": null,
       "profile_img": "https://yt4.ggpht.com/4kdaRlhpPja35uw-DC9zWDpYgA9Iat5vRBtTD9MrHrn_Jm7rK9KU7pmXi60aLEdQDKS8GwB_5Q=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 0,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 55,
+          "ts": 1788127613000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 54,
+          "ts": 1788127544000
+        },
         {
           "delta": 1,
           "motivo": "mensaje",
