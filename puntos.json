@@ -1,5 +1,5 @@
 {
-  "actualizado": "2026-08-30T22:55:03.319Z",
+  "actualizado": "2026-08-30T23:00:03.349Z",
   "usuarios": [
     {
       "rank": 1,
@@ -20524,12 +20524,18 @@
     {
       "rank": 7,
       "user": "patriciodillon6190",
-      "points": 535,
+      "points": 536,
       "faccion": null,
       "profile_img": "https://yt4.ggpht.com/ytc/AIdro_nj2GaTgZbO80mFWSRhT7UIYTC5OM0YXUzNR_3FPuo=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 23,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 536,
+          "ts": 1788130581000
+        },
         {
           "delta": 1,
           "motivo": "mensaje",
@@ -45409,6 +45415,23 @@
           "motivo": "mensaje",
           "puntos": 1,
           "ts": 1788130500000
+        }
+      ]
+    },
+    {
+      "rank": 124,
+      "user": "jorgetello6958",
+      "points": 1,
+      "faccion": null,
+      "profile_img": "https://yt4.ggpht.com/ytc/AIdro_nfcoMBTgeKIB9L2xsTiuDZKeD-cCcyI3TBFnZXk9ZEyoxT=s64-c-k-c0x00ffffff-no-rj",
+      "total_apuestas": 0,
+      "total_ganadas": 0,
+      "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 1,
+          "ts": 1788130699000
         }
       ]
     }
