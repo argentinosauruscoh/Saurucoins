@@ -1,5 +1,5 @@
 {
-  "actualizado": "2026-09-08T18:09:13.127Z",
+  "actualizado": "2026-09-08T18:14:12.818Z",
   "usuarios": [
     {
       "rank": 1,
@@ -19673,12 +19673,24 @@
     {
       "rank": 6,
       "user": "palipola",
-      "points": 723,
+      "points": 725,
       "faccion": null,
       "profile_img": "https://yt4.ggpht.com/ytc/AIdro_kdtK0IOb1fJg57BoyrupXc44dZAaUivAmiOXHR9juwlrE=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 10,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 725,
+          "ts": 1788891118000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 724,
+          "ts": 1788890971000
+        },
         {
           "delta": 33,
           "motivo": "apuesta_ganada",
@@ -39787,12 +39799,18 @@
     {
       "rank": 40,
       "user": "luismunoz4268",
-      "points": 103,
+      "points": 104,
       "faccion": null,
       "profile_img": "https://yt4.ggpht.com/ytc/AIdro_nu50UyO_OMupY5Xeoj_5u8B3Vfv6xbZnB1epS7ubc=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 0,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 104,
+          "ts": 1788891106000
+        },
         {
           "delta": 10,
           "motivo": "pasivo",
