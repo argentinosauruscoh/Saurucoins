@@ -1,15 +1,21 @@
 {
-  "actualizado": "2026-08-30T23:55:03.474Z",
+  "actualizado": "2026-09-08T18:09:13.127Z",
   "usuarios": [
     {
       "rank": 1,
       "user": "popham_arg",
-      "points": 1879,
+      "points": 1915,
       "faccion": "cw",
       "profile_img": "https://yt4.ggpht.com/ytc/AIdro_l073YlqqwNThSKT2Ge1HLxlhT_Z5HhMnfoDfdJDkpZ2voqrpFZOIHNJfU_R2CijCfuPg=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 107,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 36,
+          "motivo": "apuesta_ganada",
+          "puntos": 1915,
+          "ts": 1788134266000
+        },
         {
           "delta": 1,
           "motivo": "mensaje",
@@ -5811,12 +5817,18 @@
     {
       "rank": 2,
       "user": "batazuma",
-      "points": 1728,
+      "points": 1729,
       "faccion": "us",
       "profile_img": "https://yt4.ggpht.com/wWxwXA6XsKqd1V6l5yA6UEyudFNePzssE2nRRQpTwY50GAugzTmiKebSnIQ2sH_sdgg9Ch84tw=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 34,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 1729,
+          "ts": 1788134306000
+        },
         {
           "delta": 10,
           "motivo": "pasivo",
@@ -20740,12 +20752,18 @@
     {
       "rank": 7,
       "user": "patriciodillon6190",
-      "points": 565,
+      "points": 589,
       "faccion": null,
       "profile_img": "https://yt4.ggpht.com/ytc/AIdro_nj2GaTgZbO80mFWSRhT7UIYTC5OM0YXUzNR_3FPuo=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 26,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 24,
+          "motivo": "apuesta_ganada",
+          "puntos": 589,
+          "ts": 1788134266000
+        },
         {
           "delta": 1,
           "motivo": "mensaje",
