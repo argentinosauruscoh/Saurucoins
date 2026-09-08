@@ -1,15 +1,21 @@
 {
-  "actualizado": "2026-09-08T19:54:13.004Z",
+  "actualizado": "2026-09-08T19:59:13.041Z",
   "usuarios": [
     {
       "rank": 1,
       "user": "popham_arg",
-      "points": 1846,
+      "points": 1847,
       "faccion": "cw",
       "profile_img": "https://yt4.ggpht.com/ytc/AIdro_l073YlqqwNThSKT2Ge1HLxlhT_Z5HhMnfoDfdJDkpZ2voqrpFZOIHNJfU_R2CijCfuPg=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 111,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 1847,
+          "ts": 1788897497000
+        },
         {
           "delta": 1,
           "motivo": "mensaje",
@@ -17832,12 +17838,24 @@
     {
       "rank": 5,
       "user": "virgolandia2",
-      "points": 923,
+      "points": 925,
       "faccion": "wm",
       "profile_img": "https://yt4.ggpht.com/ytc/AIdro_nEXPQ5IzVjI_8E9ysRUgKgKXGvW81DmTWiCZaNrkJvUNU=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 21,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 925,
+          "ts": 1788897343000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 924,
+          "ts": 1788897271000
+        },
         {
           "delta": 10,
           "motivo": "pasivo",
