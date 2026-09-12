@@ -1,15 +1,39 @@
 {
-  "actualizado": "2026-09-12T20:15:55.226Z",
+  "actualizado": "2026-09-12T20:20:55.242Z",
   "usuarios": [
     {
       "rank": 1,
       "user": "popham_arg",
-      "points": 1927,
+      "points": 1900,
       "faccion": "cw",
       "profile_img": "https://yt4.ggpht.com/ytc/AIdro_l073YlqqwNThSKT2Ge1HLxlhT_Z5HhMnfoDfdJDkpZ2voqrpFZOIHNJfU_R2CijCfuPg=s64-c-k-c0x00ffffff-no-rj",
-      "total_apuestas": 119,
+      "total_apuestas": 120,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 1948,
+          "ts": 1789244425000
+        },
+        {
+          "delta": -50,
+          "motivo": "apuesta_colocada",
+          "puntos": 1898,
+          "ts": 1789244425000
+        },
+        {
+          "delta": 2,
+          "motivo": "bonus_participar",
+          "puntos": 1900,
+          "ts": 1789244425000
+        },
+        {
+          "delta": 20,
+          "motivo": "apuesta_ganada",
+          "puntos": 1947,
+          "ts": 1789244240000
+        },
         {
           "delta": 1,
           "motivo": "mensaje",
@@ -21886,12 +21910,30 @@
     {
       "rank": 7,
       "user": "patriciodillon6190",
-      "points": 710,
+      "points": 703,
       "faccion": null,
       "profile_img": "https://yt4.ggpht.com/ytc/AIdro_nj2GaTgZbO80mFWSRhT7UIYTC5OM0YXUzNR_3FPuo=s64-c-k-c0x00ffffff-no-rj",
-      "total_apuestas": 30,
+      "total_apuestas": 31,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 711,
+          "ts": 1789244373000
+        },
+        {
+          "delta": -10,
+          "motivo": "apuesta_colocada",
+          "puntos": 701,
+          "ts": 1789244373000
+        },
+        {
+          "delta": 2,
+          "motivo": "bonus_participar",
+          "puntos": 703,
+          "ts": 1789244373000
+        },
         {
           "delta": 1,
           "motivo": "mensaje",
