@@ -1,15 +1,33 @@
 {
-  "actualizado": "2026-09-12T19:35:55.168Z",
+  "actualizado": "2026-09-12T19:40:55.320Z",
   "usuarios": [
     {
       "rank": 1,
       "user": "popham_arg",
-      "points": 1926,
+      "points": 1909,
       "faccion": "cw",
       "profile_img": "https://yt4.ggpht.com/ytc/AIdro_l073YlqqwNThSKT2Ge1HLxlhT_Z5HhMnfoDfdJDkpZ2voqrpFZOIHNJfU_R2CijCfuPg=s64-c-k-c0x00ffffff-no-rj",
-      "total_apuestas": 117,
+      "total_apuestas": 118,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 1927,
+          "ts": 1789241994000
+        },
+        {
+          "delta": -20,
+          "motivo": "apuesta_colocada",
+          "puntos": 1907,
+          "ts": 1789241994000
+        },
+        {
+          "delta": 2,
+          "motivo": "bonus_participar",
+          "puntos": 1909,
+          "ts": 1789241994000
+        },
         {
           "delta": 10,
           "motivo": "pasivo",
@@ -21808,12 +21826,36 @@
     {
       "rank": 7,
       "user": "patriciodillon6190",
-      "points": 691,
+      "points": 685,
       "faccion": null,
       "profile_img": "https://yt4.ggpht.com/ytc/AIdro_nj2GaTgZbO80mFWSRhT7UIYTC5OM0YXUzNR_3FPuo=s64-c-k-c0x00ffffff-no-rj",
-      "total_apuestas": 29,
+      "total_apuestas": 30,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 693,
+          "ts": 1789241970000
+        },
+        {
+          "delta": -10,
+          "motivo": "apuesta_colocada",
+          "puntos": 683,
+          "ts": 1789241970000
+        },
+        {
+          "delta": 2,
+          "motivo": "bonus_participar",
+          "puntos": 685,
+          "ts": 1789241970000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 692,
+          "ts": 1789241793000
+        },
         {
           "delta": 1,
           "motivo": "mensaje",
@@ -48585,6 +48627,23 @@
           "motivo": "mensaje",
           "puntos": 1,
           "ts": 1782169515000
+        }
+      ]
+    },
+    {
+      "rank": 128,
+      "user": "gabrielarmella-i7k",
+      "points": 1,
+      "faccion": null,
+      "profile_img": "https://yt4.ggpht.com/ytc/AIdro_kVfxBemKTXVOvYzuHj3r_aqBBGDF_m8iUtvR9qB3klUkFKm43FfQihtLRU7-euWiffJg=s64-c-k-c0x00ffffff-no-rj",
+      "total_apuestas": 0,
+      "total_ganadas": 0,
+      "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 1,
+          "ts": 1789241838000
         }
       ]
     }
