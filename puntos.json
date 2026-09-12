@@ -1,15 +1,27 @@
 {
-  "actualizado": "2026-09-12T19:55:55.292Z",
+  "actualizado": "2026-09-12T20:00:55.254Z",
   "usuarios": [
     {
       "rank": 1,
       "user": "popham_arg",
-      "points": 1911,
+      "points": 1941,
       "faccion": "cw",
       "profile_img": "https://yt4.ggpht.com/ytc/AIdro_l073YlqqwNThSKT2Ge1HLxlhT_Z5HhMnfoDfdJDkpZ2voqrpFZOIHNJfU_R2CijCfuPg=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 118,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 10,
+          "motivo": "pasivo",
+          "puntos": 1941,
+          "ts": 1789243254000
+        },
+        {
+          "delta": 20,
+          "motivo": "apuesta_devuelta",
+          "puntos": 1931,
+          "ts": 1789243064000
+        },
         {
           "delta": 1,
           "motivo": "mensaje",
@@ -21838,12 +21850,30 @@
     {
       "rank": 7,
       "user": "patriciodillon6190",
-      "points": 688,
+      "points": 709,
       "faccion": null,
       "profile_img": "https://yt4.ggpht.com/ytc/AIdro_nj2GaTgZbO80mFWSRhT7UIYTC5OM0YXUzNR_3FPuo=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 30,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 10,
+          "motivo": "pasivo",
+          "puntos": 709,
+          "ts": 1789243254000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 699,
+          "ts": 1789243167000
+        },
+        {
+          "delta": 10,
+          "motivo": "apuesta_devuelta",
+          "puntos": 698,
+          "ts": 1789243064000
+        },
         {
           "delta": 1,
           "motivo": "mensaje",
@@ -48645,6 +48675,29 @@
     },
     {
       "rank": 127,
+      "user": "gabrielarmella-i7k",
+      "points": 11,
+      "faccion": null,
+      "profile_img": "https://yt4.ggpht.com/ytc/AIdro_kVfxBemKTXVOvYzuHj3r_aqBBGDF_m8iUtvR9qB3klUkFKm43FfQihtLRU7-euWiffJg=s64-c-k-c0x00ffffff-no-rj",
+      "total_apuestas": 0,
+      "total_ganadas": 0,
+      "historial": [
+        {
+          "delta": 10,
+          "motivo": "pasivo",
+          "puntos": 11,
+          "ts": 1789243254000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 1,
+          "ts": 1789241838000
+        }
+      ]
+    },
+    {
+      "rank": 128,
       "user": "user-pe-hf",
       "points": 1,
       "faccion": null,
@@ -48657,23 +48710,6 @@
           "motivo": "mensaje",
           "puntos": 1,
           "ts": 1782169515000
-        }
-      ]
-    },
-    {
-      "rank": 128,
-      "user": "gabrielarmella-i7k",
-      "points": 1,
-      "faccion": null,
-      "profile_img": "https://yt4.ggpht.com/ytc/AIdro_kVfxBemKTXVOvYzuHj3r_aqBBGDF_m8iUtvR9qB3klUkFKm43FfQihtLRU7-euWiffJg=s64-c-k-c0x00ffffff-no-rj",
-      "total_apuestas": 0,
-      "total_ganadas": 0,
-      "historial": [
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 1,
-          "ts": 1789241838000
         }
       ]
     }
