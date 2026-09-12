@@ -1,15 +1,21 @@
 {
-  "actualizado": "2026-09-12T20:35:55.242Z",
+  "actualizado": "2026-09-12T20:40:55.149Z",
   "usuarios": [
     {
       "rank": 1,
       "user": "popham_arg",
-      "points": 1910,
+      "points": 1970,
       "faccion": "cw",
       "profile_img": "https://yt4.ggpht.com/ytc/AIdro_l073YlqqwNThSKT2Ge1HLxlhT_Z5HhMnfoDfdJDkpZ2voqrpFZOIHNJfU_R2CijCfuPg=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 120,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 60,
+          "motivo": "apuesta_ganada",
+          "puntos": 1970,
+          "ts": 1789245575000
+        },
         {
           "delta": 10,
           "motivo": "pasivo",
@@ -6339,12 +6345,24 @@
     {
       "rank": 2,
       "user": "batazuma",
-      "points": 1771,
+      "points": 1773,
       "faccion": "us",
       "profile_img": "https://yt4.ggpht.com/wWxwXA6XsKqd1V6l5yA6UEyudFNePzssE2nRRQpTwY50GAugzTmiKebSnIQ2sH_sdgg9Ch84tw=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 36,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 1773,
+          "ts": 1789245540000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 1772,
+          "ts": 1789245444000
+        },
         {
           "delta": 1,
           "motivo": "mensaje",
@@ -21922,12 +21940,24 @@
     {
       "rank": 7,
       "user": "patriciodillon6190",
-      "points": 713,
+      "points": 715,
       "faccion": null,
       "profile_img": "https://yt4.ggpht.com/ytc/AIdro_nj2GaTgZbO80mFWSRhT7UIYTC5OM0YXUzNR_3FPuo=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 31,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 715,
+          "ts": 1789245622000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 714,
+          "ts": 1789245495000
+        },
         {
           "delta": 10,
           "motivo": "pasivo",
