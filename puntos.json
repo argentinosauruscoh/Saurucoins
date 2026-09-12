@@ -1,15 +1,39 @@
 {
-  "actualizado": "2026-09-12T20:00:55.254Z",
+  "actualizado": "2026-09-12T20:05:55.188Z",
   "usuarios": [
     {
       "rank": 1,
       "user": "popham_arg",
-      "points": 1941,
+      "points": 1925,
       "faccion": "cw",
       "profile_img": "https://yt4.ggpht.com/ytc/AIdro_l073YlqqwNThSKT2Ge1HLxlhT_Z5HhMnfoDfdJDkpZ2voqrpFZOIHNJfU_R2CijCfuPg=s64-c-k-c0x00ffffff-no-rj",
-      "total_apuestas": 118,
+      "total_apuestas": 119,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 1925,
+          "ts": 1789243360000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 1942,
+          "ts": 1789243288000
+        },
+        {
+          "delta": -20,
+          "motivo": "apuesta_colocada",
+          "puntos": 1922,
+          "ts": 1789243288000
+        },
+        {
+          "delta": 2,
+          "motivo": "bonus_participar",
+          "puntos": 1924,
+          "ts": 1789243288000
+        },
         {
           "delta": 10,
           "motivo": "pasivo",
@@ -21850,12 +21874,18 @@
     {
       "rank": 7,
       "user": "patriciodillon6190",
-      "points": 709,
+      "points": 710,
       "faccion": null,
       "profile_img": "https://yt4.ggpht.com/ytc/AIdro_nj2GaTgZbO80mFWSRhT7UIYTC5OM0YXUzNR_3FPuo=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 30,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 710,
+          "ts": 1789243300000
+        },
         {
           "delta": 10,
           "motivo": "pasivo",
@@ -33364,12 +33394,18 @@
     {
       "rank": 19,
       "user": "grangerefix",
-      "points": 241,
+      "points": 242,
       "faccion": null,
       "profile_img": "https://yt4.ggpht.com/ytc/AIdro_mW0HX8nY-Aegy1UXDgfTB3j4snP03S3Xy5MBGZkW1hUbbYoGKtw-0B2eroA56mHZ8mFQ=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 8,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 242,
+          "ts": 1789243282000
+        },
         {
           "delta": 10,
           "motivo": "pasivo",
