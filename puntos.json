@@ -1,5 +1,5 @@
 {
-  "actualizado": "2026-09-16T19:35:13.388Z",
+  "actualizado": "2026-09-16T19:40:13.379Z",
   "usuarios": [
     {
       "rank": 1,
@@ -50154,6 +50154,29 @@
     },
     {
       "rank": 130,
+      "user": "juatskill",
+      "points": 2,
+      "faccion": null,
+      "profile_img": "https://yt4.ggpht.com/ytc/AIdro_kOOLIigfvMz9ZlDdOmFc4lqtzH7wxlZdoCYDP7ifUXkQ3hXkw8mu_uMfrumF9h8n3N1w=s64-c-k-c0x00ffffff-no-rj",
+      "total_apuestas": 0,
+      "total_ganadas": 0,
+      "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 2,
+          "ts": 1789587361000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 1,
+          "ts": 1789587223000
+        }
+      ]
+    },
+    {
+      "rank": 131,
       "user": "user-pe-hf",
       "points": 1,
       "faccion": null,
@@ -50170,7 +50193,7 @@
       ]
     },
     {
-      "rank": 131,
+      "rank": 132,
       "user": "emanuelmichel6052",
       "points": 1,
       "faccion": null,
@@ -50183,23 +50206,6 @@
           "motivo": "mensaje",
           "puntos": 1,
           "ts": 1789586341000
-        }
-      ]
-    },
-    {
-      "rank": 132,
-      "user": "juatskill",
-      "points": 1,
-      "faccion": null,
-      "profile_img": "https://yt4.ggpht.com/ytc/AIdro_kOOLIigfvMz9ZlDdOmFc4lqtzH7wxlZdoCYDP7ifUXkQ3hXkw8mu_uMfrumF9h8n3N1w=s64-c-k-c0x00ffffff-no-rj",
-      "total_apuestas": 0,
-      "total_ganadas": 0,
-      "historial": [
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 1,
-          "ts": 1789587223000
         }
       ]
     }
