@@ -1,5 +1,5 @@
 {
-  "actualizado": "2026-09-16T21:35:13.592Z",
+  "actualizado": "2026-09-16T21:40:13.488Z",
   "usuarios": [
     {
       "rank": 1,
@@ -42956,12 +42956,18 @@
     {
       "rank": 39,
       "user": "juanpablorapalino8907",
-      "points": 114,
+      "points": 115,
       "faccion": null,
       "profile_img": "https://yt4.ggpht.com/ytc/AIdro_lNbDKjm4GLkIyt8Nu3WI6MrZldwVurwwe8XS69mBo=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 0,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 115,
+          "ts": 1789594665000
+        },
         {
           "delta": 1,
           "motivo": "mensaje",
