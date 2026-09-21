@@ -1,5 +1,5 @@
 {
-  "actualizado": "2026-09-21T22:51:06.749Z",
+  "actualizado": "2026-09-21T22:56:06.812Z",
   "usuarios": [
     {
       "rank": 1,
@@ -34702,12 +34702,18 @@
     {
       "rank": 19,
       "user": "matiasbazzetti7547",
-      "points": 258,
+      "points": 259,
       "faccion": null,
       "profile_img": "https://yt4.ggpht.com/ytc/AIdro_nPB6I82h5P3JZmZbIQMp9188f4NBmPAKvcbgOnSebrEkA=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 9,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 259,
+          "ts": 1790031110000
+        },
         {
           "delta": 1,
           "motivo": "mensaje",
