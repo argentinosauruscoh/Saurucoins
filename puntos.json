@@ -1,5 +1,5 @@
 {
-  "actualizado": "2026-09-21T23:01:06.796Z",
+  "actualizado": "2026-09-21T23:06:06.760Z",
   "usuarios": [
     {
       "rank": 1,
@@ -6669,12 +6669,30 @@
     {
       "rank": 2,
       "user": "batazuma",
-      "points": 1903,
+      "points": 1907,
       "faccion": "us",
       "profile_img": "https://yt4.ggpht.com/wWxwXA6XsKqd1V6l5yA6UEyudFNePzssE2nRRQpTwY50GAugzTmiKebSnIQ2sH_sdgg9Ch84tw=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 36,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 1907,
+          "ts": 1790031901000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 1904,
+          "ts": 1790031706000
+        },
+        {
+          "delta": 2,
+          "motivo": "bonus_votar",
+          "puntos": 1906,
+          "ts": 1790031706000
+        },
         {
           "delta": 10,
           "motivo": "pasivo",
@@ -28374,12 +28392,24 @@
     {
       "rank": 11,
       "user": "lucascostabel2696",
-      "points": 461,
+      "points": 464,
       "faccion": null,
       "profile_img": "https://yt4.ggpht.com/ytc/AIdro_la4CAh5z7Shfmi4sXps_y5pxUDYwZubbmttPbdIQru1iQ=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 2,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 2,
+          "motivo": "bonus_votar",
+          "puntos": 464,
+          "ts": 1790031727000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 462,
+          "ts": 1790031718000
+        },
         {
           "delta": 10,
           "motivo": "pasivo",
@@ -39656,12 +39686,24 @@
     {
       "rank": 27,
       "user": "daabot",
-      "points": 175,
+      "points": 178,
       "faccion": null,
       "profile_img": "https://yt4.ggpht.com/ytc/AIdro_nIpZTPQyKiZL0gN9RNr6UqnWWWCSplDfAn6r0pcsyoPdI=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 0,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 176,
+          "ts": 1790031712000
+        },
+        {
+          "delta": 2,
+          "motivo": "bonus_votar",
+          "puntos": 178,
+          "ts": 1790031712000
+        },
         {
           "delta": 10,
           "motivo": "pasivo",
