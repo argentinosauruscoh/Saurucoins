@@ -1,5 +1,5 @@
 {
-  "actualizado": "2026-09-26T23:30:39.471Z",
+  "actualizado": "2026-09-26T23:35:39.476Z",
   "usuarios": [
     {
       "rank": 1,
@@ -23116,12 +23116,18 @@
     {
       "rank": 7,
       "user": "patriciodillon6190",
-      "points": 777,
+      "points": 778,
       "faccion": null,
       "profile_img": "https://yt4.ggpht.com/ytc/AIdro_nj2GaTgZbO80mFWSRhT7UIYTC5OM0YXUzNR_3FPuo=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 33,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 778,
+          "ts": 1790465598000
+        },
         {
           "delta": 1,
           "motivo": "mensaje",
@@ -34278,12 +34284,18 @@
     {
       "rank": 17,
       "user": "matiasbazzetti7547",
-      "points": 338,
+      "points": 339,
       "faccion": null,
       "profile_img": "https://yt4.ggpht.com/ytc/AIdro_nPB6I82h5P3JZmZbIQMp9188f4NBmPAKvcbgOnSebrEkA=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 10,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 339,
+          "ts": 1790465580000
+        },
         {
           "delta": 1,
           "motivo": "mensaje",
@@ -51652,6 +51664,29 @@
     },
     {
       "rank": 138,
+      "user": "brishniemoestro-dewnath8590",
+      "points": 2,
+      "faccion": null,
+      "profile_img": "https://yt4.ggpht.com/R_5aDEsUCMr1gE7TY2Iwt9Kg23jRsaIP0lmTumoz0GoamGAZq5AG6NMmDAnzoMm1wugrVqP3iKY=s64-c-k-c0x00ffffff-no-rj",
+      "total_apuestas": 0,
+      "total_ganadas": 0,
+      "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 2,
+          "ts": 1790465516000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 1,
+          "ts": 1790465137000
+        }
+      ]
+    },
+    {
+      "rank": 139,
       "user": "user-pe-hf",
       "points": 1,
       "faccion": null,
@@ -51668,7 +51703,7 @@
       ]
     },
     {
-      "rank": 139,
+      "rank": 140,
       "user": "janosrock",
       "points": 1,
       "faccion": null,
@@ -51681,23 +51716,6 @@
           "motivo": "mensaje",
           "puntos": 1,
           "ts": 1790037276000
-        }
-      ]
-    },
-    {
-      "rank": 140,
-      "user": "brishniemoestro-dewnath8590",
-      "points": 1,
-      "faccion": null,
-      "profile_img": "https://yt4.ggpht.com/R_5aDEsUCMr1gE7TY2Iwt9Kg23jRsaIP0lmTumoz0GoamGAZq5AG6NMmDAnzoMm1wugrVqP3iKY=s64-c-k-c0x00ffffff-no-rj",
-      "total_apuestas": 0,
-      "total_ganadas": 0,
-      "historial": [
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 1,
-          "ts": 1790465137000
         }
       ]
     }
