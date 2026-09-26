@@ -1,5 +1,5 @@
 {
-  "actualizado": "2026-09-26T23:00:39.470Z",
+  "actualizado": "2026-09-26T23:05:39.455Z",
   "usuarios": [
     {
       "rank": 1,
@@ -32378,12 +32378,24 @@
     {
       "rank": 15,
       "user": "rikiguerreroab",
-      "points": 408,
+      "points": 410,
       "faccion": null,
       "profile_img": "https://yt4.ggpht.com/ytc/AIdro_mwSgxGq1zktABSGr4nt2we0adRdf9_5C6TMBbTYZEQag=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 13,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 410,
+          "ts": 1790463868000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 409,
+          "ts": 1790463805000
+        },
         {
           "delta": 1,
           "motivo": "mensaje",
