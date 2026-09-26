@@ -1,5 +1,5 @@
 {
-  "actualizado": "2026-09-26T23:05:39.455Z",
+  "actualizado": "2026-09-26T23:10:39.523Z",
   "usuarios": [
     {
       "rank": 1,
@@ -23110,12 +23110,18 @@
     {
       "rank": 7,
       "user": "patriciodillon6190",
-      "points": 763,
+      "points": 764,
       "faccion": null,
       "profile_img": "https://yt4.ggpht.com/ytc/AIdro_nj2GaTgZbO80mFWSRhT7UIYTC5OM0YXUzNR_3FPuo=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 33,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 764,
+          "ts": 1790464021000
+        },
         {
           "delta": 10,
           "motivo": "pasivo",
@@ -50312,6 +50318,47 @@
     },
     {
       "rank": 92,
+      "user": "cuckkings",
+      "points": 23,
+      "faccion": null,
+      "profile_img": "https://yt4.ggpht.com/ytc/AIdro_nr9xE_2vBhbh6K--Fq-aive21XyEQnu2y02BiS_JoIPeuEzrRmJAz6CHewA8Z5_h4Pew=s64-c-k-c0x00ffffff-no-rj",
+      "total_apuestas": 0,
+      "total_ganadas": 0,
+      "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 23,
+          "ts": 1790464070000
+        },
+        {
+          "delta": 10,
+          "motivo": "pasivo",
+          "puntos": 22,
+          "ts": 1790037066000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 12,
+          "ts": 1790036223000
+        },
+        {
+          "delta": 10,
+          "motivo": "pasivo",
+          "puntos": 11,
+          "ts": 1790035266000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 1,
+          "ts": 1790034338000
+        }
+      ]
+    },
+    {
+      "rank": 93,
       "user": "friendofthedevilx",
       "points": 22,
       "faccion": null,
@@ -50342,41 +50389,6 @@
           "motivo": "mensaje",
           "puntos": 1,
           "ts": 1781380941000
-        }
-      ]
-    },
-    {
-      "rank": 93,
-      "user": "cuckkings",
-      "points": 22,
-      "faccion": null,
-      "profile_img": "https://yt4.ggpht.com/ytc/AIdro_nr9xE_2vBhbh6K--Fq-aive21XyEQnu2y02BiS_JoIPeuEzrRmJAz6CHewA8Z5_h4Pew=s64-c-k-c0x00ffffff-no-rj",
-      "total_apuestas": 0,
-      "total_ganadas": 0,
-      "historial": [
-        {
-          "delta": 10,
-          "motivo": "pasivo",
-          "puntos": 22,
-          "ts": 1790037066000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 12,
-          "ts": 1790036223000
-        },
-        {
-          "delta": 10,
-          "motivo": "pasivo",
-          "puntos": 11,
-          "ts": 1790035266000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 1,
-          "ts": 1790034338000
         }
       ]
     },
