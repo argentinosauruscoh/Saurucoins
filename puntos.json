@@ -1,5 +1,5 @@
 {
-  "actualizado": "2026-09-27T00:00:39.500Z",
+  "actualizado": "2026-09-27T00:05:39.506Z",
   "usuarios": [
     {
       "rank": 1,
@@ -6807,12 +6807,18 @@
     {
       "rank": 2,
       "user": "batazuma",
-      "points": 1964,
+      "points": 1965,
       "faccion": "us",
       "profile_img": "https://yt4.ggpht.com/wWxwXA6XsKqd1V6l5yA6UEyudFNePzssE2nRRQpTwY50GAugzTmiKebSnIQ2sH_sdgg9Ch84tw=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 37,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 1965,
+          "ts": 1790467312000
+        },
         {
           "delta": 1,
           "motivo": "mensaje",
@@ -17113,12 +17119,18 @@
     {
       "rank": 4,
       "user": "iganaciolbs",
-      "points": 1219,
+      "points": 1220,
       "faccion": null,
       "profile_img": "https://yt4.ggpht.com/ytc/AIdro_nFAWQ3GL9cqgnWq0BENi4fv-bWq82zf6EzVfRN-zM9f6U=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 37,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 1220,
+          "ts": 1790467480000
+        },
         {
           "delta": 58,
           "motivo": "apuesta_ganada",
@@ -23176,12 +23188,18 @@
     {
       "rank": 7,
       "user": "patriciodillon6190",
-      "points": 795,
+      "points": 796,
       "faccion": null,
       "profile_img": "https://yt4.ggpht.com/ytc/AIdro_nj2GaTgZbO80mFWSRhT7UIYTC5OM0YXUzNR_3FPuo=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 34,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 796,
+          "ts": 1790467387000
+        },
         {
           "delta": 1,
           "motivo": "mensaje",
@@ -49095,6 +49113,113 @@
     },
     {
       "rank": 73,
+      "user": "cuckkings",
+      "points": 41,
+      "faccion": null,
+      "profile_img": "https://yt4.ggpht.com/ytc/AIdro_nr9xE_2vBhbh6K--Fq-aive21XyEQnu2y02BiS_JoIPeuEzrRmJAz6CHewA8Z5_h4Pew=s64-c-k-c0x00ffffff-no-rj",
+      "total_apuestas": 2,
+      "total_ganadas": 0,
+      "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 41,
+          "ts": 1790467496000
+        },
+        {
+          "delta": 10,
+          "motivo": "apuesta_devuelta",
+          "puntos": 40,
+          "ts": 1790467412000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 38,
+          "ts": 1790466876000
+        },
+        {
+          "delta": -10,
+          "motivo": "apuesta_colocada",
+          "puntos": 28,
+          "ts": 1790466876000
+        },
+        {
+          "delta": 2,
+          "motivo": "bonus_participar",
+          "puntos": 30,
+          "ts": 1790466876000
+        },
+        {
+          "delta": 10,
+          "motivo": "pasivo",
+          "puntos": 37,
+          "ts": 1790466339000
+        },
+        {
+          "delta": -10,
+          "motivo": "apuesta_colocada",
+          "puntos": 25,
+          "ts": 1790465832000
+        },
+        {
+          "delta": 2,
+          "motivo": "bonus_participar",
+          "puntos": 27,
+          "ts": 1790465832000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 35,
+          "ts": 1790465805000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 34,
+          "ts": 1790465014000
+        },
+        {
+          "delta": 10,
+          "motivo": "pasivo",
+          "puntos": 33,
+          "ts": 1790464539000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 23,
+          "ts": 1790464070000
+        },
+        {
+          "delta": 10,
+          "motivo": "pasivo",
+          "puntos": 22,
+          "ts": 1790037066000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 12,
+          "ts": 1790036223000
+        },
+        {
+          "delta": 10,
+          "motivo": "pasivo",
+          "puntos": 11,
+          "ts": 1790035266000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 1,
+          "ts": 1790034338000
+        }
+      ]
+    },
+    {
+      "rank": 74,
       "user": "lean",
       "points": 39,
       "faccion": "wm",
@@ -49249,7 +49374,7 @@
       ]
     },
     {
-      "rank": 74,
+      "rank": 75,
       "user": "emilio5886",
       "points": 36,
       "faccion": null,
@@ -49308,7 +49433,7 @@
       ]
     },
     {
-      "rank": 75,
+      "rank": 76,
       "user": "ignrey",
       "points": 35,
       "faccion": null,
@@ -49367,7 +49492,7 @@
       ]
     },
     {
-      "rank": 76,
+      "rank": 77,
       "user": "argentinosauruscoh",
       "points": 33,
       "faccion": null,
@@ -49414,7 +49539,7 @@
       ]
     },
     {
-      "rank": 77,
+      "rank": 78,
       "user": "palindo433",
       "points": 32,
       "faccion": null,
@@ -49497,7 +49622,7 @@
       ]
     },
     {
-      "rank": 78,
+      "rank": 79,
       "user": "agustincho276",
       "points": 31,
       "faccion": null,
@@ -49582,101 +49707,6 @@
           "motivo": "mensaje",
           "puntos": 1,
           "ts": 1783372955000
-        }
-      ]
-    },
-    {
-      "rank": 79,
-      "user": "cuckkings",
-      "points": 30,
-      "faccion": null,
-      "profile_img": "https://yt4.ggpht.com/ytc/AIdro_nr9xE_2vBhbh6K--Fq-aive21XyEQnu2y02BiS_JoIPeuEzrRmJAz6CHewA8Z5_h4Pew=s64-c-k-c0x00ffffff-no-rj",
-      "total_apuestas": 2,
-      "total_ganadas": 0,
-      "historial": [
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 38,
-          "ts": 1790466876000
-        },
-        {
-          "delta": -10,
-          "motivo": "apuesta_colocada",
-          "puntos": 28,
-          "ts": 1790466876000
-        },
-        {
-          "delta": 2,
-          "motivo": "bonus_participar",
-          "puntos": 30,
-          "ts": 1790466876000
-        },
-        {
-          "delta": 10,
-          "motivo": "pasivo",
-          "puntos": 37,
-          "ts": 1790466339000
-        },
-        {
-          "delta": -10,
-          "motivo": "apuesta_colocada",
-          "puntos": 25,
-          "ts": 1790465832000
-        },
-        {
-          "delta": 2,
-          "motivo": "bonus_participar",
-          "puntos": 27,
-          "ts": 1790465832000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 35,
-          "ts": 1790465805000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 34,
-          "ts": 1790465014000
-        },
-        {
-          "delta": 10,
-          "motivo": "pasivo",
-          "puntos": 33,
-          "ts": 1790464539000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 23,
-          "ts": 1790464070000
-        },
-        {
-          "delta": 10,
-          "motivo": "pasivo",
-          "puntos": 22,
-          "ts": 1790037066000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 12,
-          "ts": 1790036223000
-        },
-        {
-          "delta": 10,
-          "motivo": "pasivo",
-          "puntos": 11,
-          "ts": 1790035266000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 1,
-          "ts": 1790034338000
         }
       ]
     },
