@@ -1,5 +1,5 @@
 {
-  "actualizado": "2026-10-04T21:12:43.623Z",
+  "actualizado": "2026-10-04T21:17:43.566Z",
   "usuarios": [
     {
       "rank": 1,
@@ -42604,12 +42604,24 @@
     {
       "rank": 31,
       "user": "marianovalkiria",
-      "points": 159,
+      "points": 170,
       "faccion": null,
       "profile_img": "https://yt4.ggpht.com/IsO_XBjqaoFfYQjYKxExaQO7NWVLzsa5-uG15_qW8OyhyhEPas0dx1MEjG-hIxihEtRlwObbUA=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 4,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 170,
+          "ts": 1791148600000
+        },
+        {
+          "delta": 10,
+          "motivo": "apuesta_ganada",
+          "puntos": 169,
+          "ts": 1791148588000
+        },
         {
           "delta": 1,
           "motivo": "mensaje",
@@ -53269,12 +53281,24 @@
     {
       "rank": 142,
       "user": "sir_reyno",
-      "points": 2,
+      "points": 4,
       "faccion": null,
       "profile_img": "https://yt4.ggpht.com/l_qgroP2Bg355uM386YVaO_P3C37BYTFeOMDqnmRNwB2XZwiqa9nIbvCNPL1UpDuMPjJLCfc=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 0,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 4,
+          "ts": 1791148573000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 3,
+          "ts": 1791148465000
+        },
         {
           "delta": 1,
           "motivo": "mensaje",
