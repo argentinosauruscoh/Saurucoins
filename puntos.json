@@ -1,5 +1,5 @@
 {
-  "actualizado": "2026-10-12T02:11:45.542Z",
+  "actualizado": "2026-10-12T02:16:45.531Z",
   "usuarios": [
     {
       "rank": 1,
@@ -20022,12 +20022,18 @@
     {
       "rank": 5,
       "user": "virgolandia2",
-      "points": 1011,
+      "points": 1012,
       "faccion": "wm",
       "profile_img": "https://yt4.ggpht.com/ytc/AIdro_nEXPQ5IzVjI_8E9ysRUgKgKXGvW81DmTWiCZaNrkJvUNU=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 21,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 1012,
+          "ts": 1791771340000
+        },
         {
           "delta": 1,
           "motivo": "mensaje",
@@ -52745,6 +52751,59 @@
     },
     {
       "rank": 101,
+      "user": "liam-w1y8f",
+      "points": 16,
+      "faccion": null,
+      "profile_img": "https://yt4.ggpht.com/ytc/AIdro_nbpIyw9RERWWeYVcxAB1eIBIpGS09nJ0NDBVgNNe0nbEppDM0SbBGcKOhumeWeRWLvPA=s64-c-k-c0x00ffffff-no-rj",
+      "total_apuestas": 0,
+      "total_ganadas": 0,
+      "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 16,
+          "ts": 1791771282000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 15,
+          "ts": 1791771222000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 14,
+          "ts": 1791771153000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 13,
+          "ts": 1791770846000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 12,
+          "ts": 1791770621000
+        },
+        {
+          "delta": 10,
+          "motivo": "pasivo",
+          "puntos": 11,
+          "ts": 1791770205000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 1,
+          "ts": 1791770073000
+        }
+      ]
+    },
+    {
+      "rank": 102,
       "user": "tzmarko1001",
       "points": 14,
       "faccion": null,
@@ -52779,7 +52838,7 @@
       ]
     },
     {
-      "rank": 102,
+      "rank": 103,
       "user": "mauriciofigueroa1681",
       "points": 14,
       "faccion": null,
@@ -52820,7 +52879,7 @@
       ]
     },
     {
-      "rank": 103,
+      "rank": 104,
       "user": "ulisesmirandaromero7629",
       "points": 13,
       "faccion": null,
@@ -52849,7 +52908,7 @@
       ]
     },
     {
-      "rank": 104,
+      "rank": 105,
       "user": "lautaroaugustoantonioramir9446",
       "points": 13,
       "faccion": null,
@@ -52884,7 +52943,7 @@
       ]
     },
     {
-      "rank": 105,
+      "rank": 106,
       "user": "earnuraoe",
       "points": 13,
       "faccion": null,
@@ -52915,41 +52974,6 @@
           "motivo": "mensaje",
           "puntos": 1,
           "ts": 1790466079000
-        }
-      ]
-    },
-    {
-      "rank": 106,
-      "user": "liam-w1y8f",
-      "points": 13,
-      "faccion": null,
-      "profile_img": "https://yt4.ggpht.com/ytc/AIdro_nbpIyw9RERWWeYVcxAB1eIBIpGS09nJ0NDBVgNNe0nbEppDM0SbBGcKOhumeWeRWLvPA=s64-c-k-c0x00ffffff-no-rj",
-      "total_apuestas": 0,
-      "total_ganadas": 0,
-      "historial": [
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 13,
-          "ts": 1791770846000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 12,
-          "ts": 1791770621000
-        },
-        {
-          "delta": 10,
-          "motivo": "pasivo",
-          "puntos": 11,
-          "ts": 1791770205000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 1,
-          "ts": 1791770073000
         }
       ]
     },
