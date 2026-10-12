@@ -1,5 +1,5 @@
 {
-  "actualizado": "2026-10-12T01:46:45.511Z",
+  "actualizado": "2026-10-12T01:51:45.466Z",
   "usuarios": [
     {
       "rank": 1,
@@ -19968,12 +19968,18 @@
     {
       "rank": 5,
       "user": "virgolandia2",
-      "points": 993,
+      "points": 994,
       "faccion": "wm",
       "profile_img": "https://yt4.ggpht.com/ytc/AIdro_nEXPQ5IzVjI_8E9ysRUgKgKXGvW81DmTWiCZaNrkJvUNU=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 21,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 994,
+          "ts": 1791769637000
+        },
         {
           "delta": 1,
           "motivo": "mensaje",
