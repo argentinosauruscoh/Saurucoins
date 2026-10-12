@@ -1,5 +1,5 @@
 {
-  "actualizado": "2026-10-12T00:56:45.454Z",
+  "actualizado": "2026-10-12T01:01:45.448Z",
   "usuarios": [
     {
       "rank": 1,
@@ -37658,12 +37658,18 @@
     {
       "rank": 21,
       "user": "caboide602",
-      "points": 240,
+      "points": 241,
       "faccion": null,
       "profile_img": "https://yt4.ggpht.com/sAEV6uol3_WUBht6EXZZYZBwwIsKgcgFqU-qxEnp39eJPaNFD_O22zNabJ_mNWr0lq653m_G=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 2,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 241,
+          "ts": 1791766867000
+        },
         {
           "delta": 10,
           "motivo": "pasivo",
@@ -53411,6 +53417,35 @@
     },
     {
       "rank": 143,
+      "user": "mauriciofigueroa1681",
+      "points": 3,
+      "faccion": null,
+      "profile_img": "https://yt4.ggpht.com/ytc/AIdro_najrNirkES91uW9O1x7uafNumbXLKuwgH-mLyamJqgfhwuBIDWRZGGBzH6fCNh-gOl0g=s64-c-k-c0x00ffffff-no-rj",
+      "total_apuestas": 0,
+      "total_ganadas": 0,
+      "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 3,
+          "ts": 1791766858000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 2,
+          "ts": 1791766764000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 1,
+          "ts": 1791766683000
+        }
+      ]
+    },
+    {
+      "rank": 144,
       "user": "user-pe-hf",
       "points": 1,
       "faccion": null,
@@ -53427,7 +53462,7 @@
       ]
     },
     {
-      "rank": 144,
+      "rank": 145,
       "user": "janosrock",
       "points": 1,
       "faccion": null,
