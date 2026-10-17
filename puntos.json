@@ -1,15 +1,21 @@
 {
-  "actualizado": "2026-10-17T23:41:02.931Z",
+  "actualizado": "2026-10-17T23:46:02.868Z",
   "usuarios": [
     {
       "rank": 1,
       "user": "popham_arg",
-      "points": 2218,
+      "points": 2248,
       "faccion": "cw",
       "profile_img": "https://yt4.ggpht.com/ytc/AIdro_l073YlqqwNThSKT2Ge1HLxlhT_Z5HhMnfoDfdJDkpZ2voqrpFZOIHNJfU_R2CijCfuPg=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 132,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 30,
+          "motivo": "apuesta_ganada",
+          "puntos": 2248,
+          "ts": 1792280720000
+        },
         {
           "delta": 10,
           "motivo": "pasivo",
@@ -12560,12 +12566,18 @@
     {
       "rank": 3,
       "user": "iganaciolbs",
-      "points": 1349,
+      "points": 1409,
       "faccion": null,
       "profile_img": "https://yt4.ggpht.com/ytc/AIdro_nFAWQ3GL9cqgnWq0BENi4fv-bWq82zf6EzVfRN-zM9f6U=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 41,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 60,
+          "motivo": "apuesta_ganada",
+          "puntos": 1409,
+          "ts": 1792280720000
+        },
         {
           "delta": 10,
           "motivo": "pasivo",
@@ -37534,12 +37546,18 @@
     {
       "rank": 19,
       "user": "caboide602",
-      "points": 296,
+      "points": 297,
       "faccion": null,
       "profile_img": "https://yt4.ggpht.com/sAEV6uol3_WUBht6EXZZYZBwwIsKgcgFqU-qxEnp39eJPaNFD_O22zNabJ_mNWr0lq653m_G=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 2,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 297,
+          "ts": 1792280535000
+        },
         {
           "delta": 10,
           "motivo": "pasivo",
