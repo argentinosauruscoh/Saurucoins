@@ -1,5 +1,5 @@
 {
-  "actualizado": "2026-10-17T22:46:02.859Z",
+  "actualizado": "2026-10-17T22:51:02.881Z",
   "usuarios": [
     {
       "rank": 1,
@@ -27902,12 +27902,18 @@
     {
       "rank": 9,
       "user": "lucascostabel2696",
-      "points": 505,
+      "points": 506,
       "faccion": null,
       "profile_img": "https://yt4.ggpht.com/ytc/AIdro_la4CAh5z7Shfmi4sXps_y5pxUDYwZubbmttPbdIQru1iQ=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 2,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 506,
+          "ts": 1792277311000
+        },
         {
           "delta": 10,
           "motivo": "pasivo",
