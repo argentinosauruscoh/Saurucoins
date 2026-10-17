@@ -1,15 +1,33 @@
 {
-  "actualizado": "2026-10-17T22:41:02.869Z",
+  "actualizado": "2026-10-17T22:46:02.859Z",
   "usuarios": [
     {
       "rank": 1,
       "user": "popham_arg",
-      "points": 2195,
+      "points": 2188,
       "faccion": "cw",
       "profile_img": "https://yt4.ggpht.com/ytc/AIdro_l073YlqqwNThSKT2Ge1HLxlhT_Z5HhMnfoDfdJDkpZ2voqrpFZOIHNJfU_R2CijCfuPg=s64-c-k-c0x00ffffff-no-rj",
-      "total_apuestas": 130,
+      "total_apuestas": 131,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 2196,
+          "ts": 1792276956000
+        },
+        {
+          "delta": -10,
+          "motivo": "apuesta_colocada",
+          "puntos": 2186,
+          "ts": 1792276956000
+        },
+        {
+          "delta": 2,
+          "motivo": "bonus_participar",
+          "puntos": 2188,
+          "ts": 1792276956000
+        },
         {
           "delta": 10,
           "motivo": "pasivo",
