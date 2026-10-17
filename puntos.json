@@ -1,15 +1,21 @@
 {
-  "actualizado": "2026-10-17T23:26:02.867Z",
+  "actualizado": "2026-10-17T23:31:02.874Z",
   "usuarios": [
     {
       "rank": 1,
       "user": "popham_arg",
-      "points": 2205,
+      "points": 2206,
       "faccion": "cw",
       "profile_img": "https://yt4.ggpht.com/ytc/AIdro_l073YlqqwNThSKT2Ge1HLxlhT_Z5HhMnfoDfdJDkpZ2voqrpFZOIHNJfU_R2CijCfuPg=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 132,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 2206,
+          "ts": 1792279738000
+        },
         {
           "delta": -10,
           "motivo": "apuesta_colocada",
@@ -20280,12 +20286,24 @@
     {
       "rank": 5,
       "user": "virgolandia2",
-      "points": 1119,
+      "points": 1121,
       "faccion": "wm",
       "profile_img": "https://yt4.ggpht.com/ytc/AIdro_nEXPQ5IzVjI_8E9ysRUgKgKXGvW81DmTWiCZaNrkJvUNU=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 22,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 1121,
+          "ts": 1792279645000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 1120,
+          "ts": 1792279585000
+        },
         {
           "delta": 1,
           "motivo": "mensaje",
@@ -29167,12 +29185,18 @@
     {
       "rank": 10,
       "user": "facundopainefil3509",
-      "points": 486,
+      "points": 487,
       "faccion": "wm",
       "profile_img": "https://yt4.ggpht.com/ytc/AIdro_n1YRi8i8TpTnKtMIARSi9xPLn2rKU-ONxy_O_TrQ3cSvg7zMr2VhNJEvOs1oIoKW7QLA=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 2,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 487,
+          "ts": 1792279564000
+        },
         {
           "delta": 10,
           "motivo": "pasivo",
@@ -37839,12 +37863,18 @@
     {
       "rank": 20,
       "user": "caboide602",
-      "points": 282,
+      "points": 283,
       "faccion": null,
       "profile_img": "https://yt4.ggpht.com/sAEV6uol3_WUBht6EXZZYZBwwIsKgcgFqU-qxEnp39eJPaNFD_O22zNabJ_mNWr0lq653m_G=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 2,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 283,
+          "ts": 1792279645000
+        },
         {
           "delta": 1,
           "motivo": "mensaje",
@@ -38540,12 +38570,18 @@
     {
       "rank": 21,
       "user": "grangerefix",
-      "points": 266,
+      "points": 267,
       "faccion": null,
       "profile_img": "https://yt4.ggpht.com/ytc/AIdro_mW0HX8nY-Aegy1UXDgfTB3j4snP03S3Xy5MBGZkW1hUbbYoGKtw-0B2eroA56mHZ8mFQ=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 9,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 267,
+          "ts": 1792279681000
+        },
         {
           "delta": 1,
           "motivo": "mensaje",
@@ -53709,6 +53745,53 @@
     },
     {
       "rank": 103,
+      "user": "carlosjuarezaliasc.j",
+      "points": 15,
+      "faccion": null,
+      "profile_img": "https://yt4.ggpht.com/ytc/AIdro_kr4bNGofmTMPp5MZXDPMJK5LVxode4q5XfL_KkDT6k-92DsDa2ZJkQL47K5Z7lphmMUw=s64-c-k-c0x00ffffff-no-rj",
+      "total_apuestas": 0,
+      "total_ganadas": 0,
+      "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 15,
+          "ts": 1792279636000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 14,
+          "ts": 1792279570000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 13,
+          "ts": 1792278682000
+        },
+        {
+          "delta": 10,
+          "motivo": "pasivo",
+          "puntos": 12,
+          "ts": 1792278662000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 2,
+          "ts": 1792278598000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 1,
+          "ts": 1792277958000
+        }
+      ]
+    },
+    {
+      "rank": 104,
       "user": "tzmarko1001",
       "points": 14,
       "faccion": null,
@@ -53743,7 +53826,7 @@
       ]
     },
     {
-      "rank": 104,
+      "rank": 105,
       "user": "mauriciofigueroa1681",
       "points": 14,
       "faccion": null,
@@ -53784,7 +53867,7 @@
       ]
     },
     {
-      "rank": 105,
+      "rank": 106,
       "user": "ulisesmirandaromero7629",
       "points": 13,
       "faccion": null,
@@ -53813,7 +53896,7 @@
       ]
     },
     {
-      "rank": 106,
+      "rank": 107,
       "user": "lautaroaugustoantonioramir9446",
       "points": 13,
       "faccion": null,
@@ -53848,7 +53931,7 @@
       ]
     },
     {
-      "rank": 107,
+      "rank": 108,
       "user": "earnuraoe",
       "points": 13,
       "faccion": null,
@@ -53879,41 +53962,6 @@
           "motivo": "mensaje",
           "puntos": 1,
           "ts": 1790466079000
-        }
-      ]
-    },
-    {
-      "rank": 108,
-      "user": "carlosjuarezaliasc.j",
-      "points": 13,
-      "faccion": null,
-      "profile_img": "https://yt4.ggpht.com/ytc/AIdro_kr4bNGofmTMPp5MZXDPMJK5LVxode4q5XfL_KkDT6k-92DsDa2ZJkQL47K5Z7lphmMUw=s64-c-k-c0x00ffffff-no-rj",
-      "total_apuestas": 0,
-      "total_ganadas": 0,
-      "historial": [
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 13,
-          "ts": 1792278682000
-        },
-        {
-          "delta": 10,
-          "motivo": "pasivo",
-          "puntos": 12,
-          "ts": 1792278662000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 2,
-          "ts": 1792278598000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 1,
-          "ts": 1792277958000
         }
       ]
     },
