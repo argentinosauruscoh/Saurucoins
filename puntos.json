@@ -1,5 +1,5 @@
 {
-  "actualizado": "2026-10-18T00:16:02.964Z",
+  "actualizado": "2026-10-18T00:21:02.992Z",
   "usuarios": [
     {
       "rank": 1,
@@ -12632,12 +12632,24 @@
     {
       "rank": 3,
       "user": "iganaciolbs",
-      "points": 1373,
+      "points": 1434,
       "faccion": null,
       "profile_img": "https://yt4.ggpht.com/ytc/AIdro_nFAWQ3GL9cqgnWq0BENi4fv-bWq82zf6EzVfRN-zM9f6U=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 42,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 1434,
+          "ts": 1792282793000
+        },
+        {
+          "delta": 60,
+          "motivo": "apuesta_ganada",
+          "puntos": 1433,
+          "ts": 1792282726000
+        },
         {
           "delta": 10,
           "motivo": "pasivo",
@@ -37193,12 +37205,24 @@
     {
       "rank": 18,
       "user": "caboide602",
-      "points": 312,
+      "points": 314,
       "faccion": null,
       "profile_img": "https://yt4.ggpht.com/sAEV6uol3_WUBht6EXZZYZBwwIsKgcgFqU-qxEnp39eJPaNFD_O22zNabJ_mNWr0lq653m_G=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 2,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 314,
+          "ts": 1792282739000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 313,
+          "ts": 1792282613000
+        },
         {
           "delta": 10,
           "motivo": "pasivo",
