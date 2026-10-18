@@ -1,5 +1,5 @@
 {
-  "actualizado": "2026-10-18T00:21:02.992Z",
+  "actualizado": "2026-10-18T00:26:02.910Z",
   "usuarios": [
     {
       "rank": 1,
@@ -32248,12 +32248,18 @@
     {
       "rank": 13,
       "user": "gerardoromerochavez5972",
-      "points": 459,
+      "points": 460,
       "faccion": "pe",
       "profile_img": "https://yt4.ggpht.com/ytc/AIdro_lCyde0X3vv1g59VXvFwai07ecRN3_ih0YV4YD--yLNmg=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 8,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 460,
+          "ts": 1792283007000
+        },
         {
           "delta": 10,
           "motivo": "pasivo",
@@ -37205,12 +37211,24 @@
     {
       "rank": 18,
       "user": "caboide602",
-      "points": 314,
+      "points": 316,
       "faccion": null,
       "profile_img": "https://yt4.ggpht.com/sAEV6uol3_WUBht6EXZZYZBwwIsKgcgFqU-qxEnp39eJPaNFD_O22zNabJ_mNWr0lq653m_G=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 2,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 316,
+          "ts": 1792283103000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 315,
+          "ts": 1792283037000
+        },
         {
           "delta": 1,
           "motivo": "mensaje",
