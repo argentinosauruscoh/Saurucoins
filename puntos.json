@@ -1,5 +1,5 @@
 {
-  "actualizado": "2026-10-25T19:08:28.523Z",
+  "actualizado": "2026-10-25T19:13:28.648Z",
   "usuarios": [
     {
       "rank": 1,
@@ -28484,12 +28484,24 @@
     {
       "rank": 9,
       "user": "lucascostabel2696",
-      "points": 534,
+      "points": 536,
       "faccion": null,
       "profile_img": "https://yt4.ggpht.com/ytc/AIdro_la4CAh5z7Shfmi4sXps_y5pxUDYwZubbmttPbdIQru1iQ=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 3,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 536,
+          "ts": 1792955576000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 535,
+          "ts": 1792955407000
+        },
         {
           "delta": 1,
           "motivo": "mensaje",
@@ -55685,6 +55697,23 @@
           "motivo": "mensaje",
           "puntos": 1,
           "ts": 1790037276000
+        }
+      ]
+    },
+    {
+      "rank": 150,
+      "user": "miguelvelasquezportales7809",
+      "points": 1,
+      "faccion": null,
+      "profile_img": "https://yt4.ggpht.com/ytc/AIdro_mdFbP3PUb_MS9M6iBl_1DzL1wkrAj2TmJkXDkIdB3nqMI=s64-c-k-c0x00ffffff-no-rj",
+      "total_apuestas": 0,
+      "total_ganadas": 0,
+      "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 1,
+          "ts": 1792955594000
         }
       ]
     }
