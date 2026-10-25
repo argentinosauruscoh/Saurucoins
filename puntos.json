@@ -1,5 +1,5 @@
 {
-  "actualizado": "2026-10-25T19:38:28.605Z",
+  "actualizado": "2026-10-25T19:43:28.698Z",
   "usuarios": [
     {
       "rank": 1,
@@ -20562,12 +20562,24 @@
     {
       "rank": 5,
       "user": "virgolandia2",
-      "points": 1138,
+      "points": 1140,
       "faccion": "wm",
       "profile_img": "https://yt4.ggpht.com/ytc/AIdro_nEXPQ5IzVjI_8E9ysRUgKgKXGvW81DmTWiCZaNrkJvUNU=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 22,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 1140,
+          "ts": 1792957309000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 1139,
+          "ts": 1792957182000
+        },
         {
           "delta": 1,
           "motivo": "mensaje",
@@ -55799,6 +55811,29 @@
     },
     {
       "rank": 149,
+      "user": "stradexengine",
+      "points": 2,
+      "faccion": null,
+      "profile_img": "https://yt4.ggpht.com/l9n7gS72y2jK3yT6AaILijcaHDdDQPZnfhLlog_HODoP736cR3aknBTilYV-VUaY0RJXvk9HqA=s64-c-k-c0x00ffffff-no-rj",
+      "total_apuestas": 0,
+      "total_ganadas": 0,
+      "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 2,
+          "ts": 1792957309000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 1,
+          "ts": 1792957216000
+        }
+      ]
+    },
+    {
+      "rank": 150,
       "user": "user-pe-hf",
       "points": 1,
       "faccion": null,
@@ -55815,7 +55850,7 @@
       ]
     },
     {
-      "rank": 150,
+      "rank": 151,
       "user": "janosrock",
       "points": 1,
       "faccion": null,
