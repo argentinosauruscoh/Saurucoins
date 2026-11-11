@@ -1,5 +1,5 @@
 {
-  "actualizado": "2026-11-11T23:54:47.345Z",
+  "actualizado": "2026-11-11T23:59:47.318Z",
   "usuarios": [
     {
       "rank": 1,
@@ -29821,12 +29821,18 @@
     {
       "rank": 10,
       "user": "facundopainefil3509",
-      "points": 508,
+      "points": 509,
       "faccion": "wm",
       "profile_img": "https://yt4.ggpht.com/ytc/AIdro_n1YRi8i8TpTnKtMIARSi9xPLn2rKU-ONxy_O_TrQ3cSvg7zMr2VhNJEvOs1oIoKW7QLA=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 2,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 509,
+          "ts": 1794441583000
+        },
         {
           "delta": 10,
           "motivo": "pasivo",
@@ -54032,6 +54038,59 @@
     },
     {
       "rank": 92,
+      "user": "hectorluissanzhorta3178",
+      "points": 25,
+      "faccion": null,
+      "profile_img": "https://yt4.ggpht.com/ytc/AIdro_lRIt6t3rwMOLA-kWVGKOUJjvgFPXVstzAHp_s5lH0=s64-c-k-c0x00ffffff-no-rj",
+      "total_apuestas": 0,
+      "total_ganadas": 0,
+      "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 25,
+          "ts": 1794441460000
+        },
+        {
+          "delta": 10,
+          "motivo": "pasivo",
+          "puntos": 24,
+          "ts": 1794440986000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 14,
+          "ts": 1794439709000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 13,
+          "ts": 1794439493000
+        },
+        {
+          "delta": 10,
+          "motivo": "pasivo",
+          "puntos": 12,
+          "ts": 1794439186000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 2,
+          "ts": 1794438608000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 1,
+          "ts": 1794438542000
+        }
+      ]
+    },
+    {
+      "rank": 93,
       "user": "futbolopiniones3714",
       "points": 24,
       "faccion": null,
@@ -54078,7 +54137,7 @@
       ]
     },
     {
-      "rank": 93,
+      "rank": 94,
       "user": "norbertoarmella",
       "points": 24,
       "faccion": null,
@@ -54389,7 +54448,7 @@
       ]
     },
     {
-      "rank": 94,
+      "rank": 95,
       "user": "juatskill",
       "points": 24,
       "faccion": null,
@@ -54432,53 +54491,6 @@
           "motivo": "mensaje",
           "puntos": 1,
           "ts": 1789587223000
-        }
-      ]
-    },
-    {
-      "rank": 95,
-      "user": "hectorluissanzhorta3178",
-      "points": 24,
-      "faccion": null,
-      "profile_img": "https://yt4.ggpht.com/ytc/AIdro_lRIt6t3rwMOLA-kWVGKOUJjvgFPXVstzAHp_s5lH0=s64-c-k-c0x00ffffff-no-rj",
-      "total_apuestas": 0,
-      "total_ganadas": 0,
-      "historial": [
-        {
-          "delta": 10,
-          "motivo": "pasivo",
-          "puntos": 24,
-          "ts": 1794440986000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 14,
-          "ts": 1794439709000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 13,
-          "ts": 1794439493000
-        },
-        {
-          "delta": 10,
-          "motivo": "pasivo",
-          "puntos": 12,
-          "ts": 1794439186000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 2,
-          "ts": 1794438608000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 1,
-          "ts": 1794438542000
         }
       ]
     },
