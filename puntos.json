@@ -1,5 +1,5 @@
 {
-  "actualizado": "2026-11-11T22:54:47.253Z",
+  "actualizado": "2026-11-11T22:59:47.218Z",
   "usuarios": [
     {
       "rank": 1,
@@ -12758,12 +12758,18 @@
     {
       "rank": 3,
       "user": "iganaciolbs",
-      "points": 1434,
+      "points": 1435,
       "faccion": null,
       "profile_img": "https://yt4.ggpht.com/ytc/AIdro_nFAWQ3GL9cqgnWq0BENi4fv-bWq82zf6EzVfRN-zM9f6U=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 42,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 1435,
+          "ts": 1794437830000
+        },
         {
           "delta": 1,
           "motivo": "mensaje",
