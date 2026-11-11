@@ -1,5 +1,5 @@
 {
-  "actualizado": "2026-11-11T23:29:47.306Z",
+  "actualizado": "2026-11-11T23:34:47.263Z",
   "usuarios": [
     {
       "rank": 1,
@@ -36576,12 +36576,18 @@
     {
       "rank": 17,
       "user": "jefftnfe",
-      "points": 378,
+      "points": 379,
       "faccion": "us",
       "profile_img": "https://yt4.ggpht.com/ytc/AIdro_noTn5R62t8CWUZjhQ-xGduzMUZogFthqniMOcRODwOpkuKXBfW9JT96sWLZe3gs2nANQ=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 11,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 379,
+          "ts": 1794439872000
+        },
         {
           "delta": 10,
           "motivo": "pasivo",
