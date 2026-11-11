@@ -1,5 +1,5 @@
 {
-  "actualizado": "2026-11-11T23:49:47.341Z",
+  "actualizado": "2026-11-11T23:54:47.345Z",
   "usuarios": [
     {
       "rank": 1,
@@ -12812,12 +12812,18 @@
     {
       "rank": 3,
       "user": "iganaciolbs",
-      "points": 1445,
+      "points": 1446,
       "faccion": null,
       "profile_img": "https://yt4.ggpht.com/ytc/AIdro_nFAWQ3GL9cqgnWq0BENi4fv-bWq82zf6EzVfRN-zM9f6U=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 42,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 1446,
+          "ts": 1794441072000
+        },
         {
           "delta": 10,
           "motivo": "pasivo",
@@ -54841,6 +54847,71 @@
     },
     {
       "rank": 105,
+      "user": "zerovital-s4c",
+      "points": 18,
+      "faccion": null,
+      "profile_img": "https://yt4.ggpht.com/ytc/AIdro_lgmAPWcGqMX75v4_Yyv6POL8JYqDCj55Ko2mPhNMLnHr7dsrbumy3i7WGR6ppHgma7-g=s64-c-k-c0x00ffffff-no-rj",
+      "total_apuestas": 0,
+      "total_ganadas": 0,
+      "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 18,
+          "ts": 1794441195000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 17,
+          "ts": 1794441051000
+        },
+        {
+          "delta": 10,
+          "motivo": "pasivo",
+          "puntos": 16,
+          "ts": 1794440986000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 6,
+          "ts": 1794440687000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 5,
+          "ts": 1794440440000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 4,
+          "ts": 1794440329000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 3,
+          "ts": 1794440199000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 2,
+          "ts": 1794440094000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 1,
+          "ts": 1794439453000
+        }
+      ]
+    },
+    {
+      "rank": 106,
       "user": "miguecallelopez",
       "points": 16,
       "faccion": null,
@@ -54887,7 +54958,7 @@
       ]
     },
     {
-      "rank": 106,
+      "rank": 107,
       "user": "vrichardsn",
       "points": 16,
       "faccion": null,
@@ -54936,59 +55007,6 @@
           "motivo": "mensaje",
           "puntos": 1,
           "ts": 1782071662000
-        }
-      ]
-    },
-    {
-      "rank": 107,
-      "user": "zerovital-s4c",
-      "points": 16,
-      "faccion": null,
-      "profile_img": "https://yt4.ggpht.com/ytc/AIdro_lgmAPWcGqMX75v4_Yyv6POL8JYqDCj55Ko2mPhNMLnHr7dsrbumy3i7WGR6ppHgma7-g=s64-c-k-c0x00ffffff-no-rj",
-      "total_apuestas": 0,
-      "total_ganadas": 0,
-      "historial": [
-        {
-          "delta": 10,
-          "motivo": "pasivo",
-          "puntos": 16,
-          "ts": 1794440986000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 6,
-          "ts": 1794440687000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 5,
-          "ts": 1794440440000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 4,
-          "ts": 1794440329000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 3,
-          "ts": 1794440199000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 2,
-          "ts": 1794440094000
-        },
-        {
-          "delta": 1,
-          "motivo": "mensaje",
-          "puntos": 1,
-          "ts": 1794439453000
         }
       ]
     },
