@@ -1,5 +1,5 @@
 {
-  "actualizado": "2026-11-12T00:19:47.375Z",
+  "actualizado": "2026-11-12T00:24:47.373Z",
   "usuarios": [
     {
       "rank": 1,
@@ -42957,12 +42957,18 @@
     {
       "rank": 26,
       "user": "luismunoz4268",
-      "points": 201,
+      "points": 202,
       "faccion": null,
       "profile_img": "https://yt4.ggpht.com/ytc/AIdro_nu50UyO_OMupY5Xeoj_5u8B3Vfv6xbZnB1epS7ubc=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 0,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 202,
+          "ts": 1794442822000
+        },
         {
           "delta": 10,
           "motivo": "pasivo",
