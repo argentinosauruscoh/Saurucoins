@@ -1,5 +1,5 @@
 {
-  "actualizado": "2026-11-15T23:30:50.878Z",
+  "actualizado": "2026-11-15T23:35:50.914Z",
   "usuarios": [
     {
       "rank": 1,
@@ -12830,12 +12830,18 @@
     {
       "rank": 3,
       "user": "iganaciolbs",
-      "points": 1463,
+      "points": 1464,
       "faccion": null,
       "profile_img": "https://yt4.ggpht.com/ytc/AIdro_nFAWQ3GL9cqgnWq0BENi4fv-bWq82zf6EzVfRN-zM9f6U=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 42,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 1464,
+          "ts": 1794785658000
+        },
         {
           "delta": 1,
           "motivo": "mensaje",
@@ -20712,12 +20718,18 @@
     {
       "rank": 5,
       "user": "virgolandia2",
-      "points": 1143,
+      "points": 1144,
       "faccion": "wm",
       "profile_img": "https://yt4.ggpht.com/ytc/AIdro_nEXPQ5IzVjI_8E9ysRUgKgKXGvW81DmTWiCZaNrkJvUNU=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 22,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 1144,
+          "ts": 1794785493000
+        },
         {
           "delta": 1,
           "motivo": "mensaje",
@@ -28718,12 +28730,18 @@
     {
       "rank": 9,
       "user": "lucascostabel2696",
-      "points": 552,
+      "points": 553,
       "faccion": null,
       "profile_img": "https://yt4.ggpht.com/ytc/AIdro_la4CAh5z7Shfmi4sXps_y5pxUDYwZubbmttPbdIQru1iQ=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 3,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 553,
+          "ts": 1794785622000
+        },
         {
           "delta": 1,
           "motivo": "mensaje",
@@ -56347,6 +56365,23 @@
           "motivo": "mensaje",
           "puntos": 1,
           "ts": 1790037276000
+        }
+      ]
+    },
+    {
+      "rank": 154,
+      "user": "faceblock3692",
+      "points": 1,
+      "faccion": null,
+      "profile_img": "https://yt4.ggpht.com/ytc/AIdro_l_UgrhY_6Uyyjtu662GlcrDAaP4-ljWIpfsnAdK1YjfJA=s64-c-k-c0x00ffffff-no-rj",
+      "total_apuestas": 0,
+      "total_ganadas": 0,
+      "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 1,
+          "ts": 1794785746000
         }
       ]
     }
