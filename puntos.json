@@ -1,5 +1,5 @@
 {
-  "actualizado": "2026-11-15T23:15:50.880Z",
+  "actualizado": "2026-11-15T23:20:50.884Z",
   "usuarios": [
     {
       "rank": 1,
@@ -43735,12 +43735,18 @@
     {
       "rank": 28,
       "user": "daabot",
-      "points": 193,
+      "points": 194,
       "faccion": null,
       "profile_img": "https://yt4.ggpht.com/ytc/AIdro_nIpZTPQyKiZL0gN9RNr6UqnWWWCSplDfAn6r0pcsyoPdI=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 0,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 194,
+          "ts": 1794784792000
+        },
         {
           "delta": 10,
           "motivo": "pasivo",
