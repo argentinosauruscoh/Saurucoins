@@ -1,5 +1,5 @@
 {
-  "actualizado": "2026-11-15T23:25:50.836Z",
+  "actualizado": "2026-11-15T23:30:50.878Z",
   "usuarios": [
     {
       "rank": 1,
@@ -12830,12 +12830,18 @@
     {
       "rank": 3,
       "user": "iganaciolbs",
-      "points": 1462,
+      "points": 1463,
       "faccion": null,
       "profile_img": "https://yt4.ggpht.com/ytc/AIdro_nFAWQ3GL9cqgnWq0BENi4fv-bWq82zf6EzVfRN-zM9f6U=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 42,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 1463,
+          "ts": 1794785186000
+        },
         {
           "delta": 1,
           "motivo": "mensaje",
@@ -43310,12 +43316,24 @@
     {
       "rank": 27,
       "user": "daabot",
-      "points": 195,
+      "points": 197,
       "faccion": null,
       "profile_img": "https://yt4.ggpht.com/ytc/AIdro_nIpZTPQyKiZL0gN9RNr6UqnWWWCSplDfAn6r0pcsyoPdI=s64-c-k-c0x00ffffff-no-rj",
       "total_apuestas": 0,
       "total_ganadas": 0,
       "historial": [
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 197,
+          "ts": 1794785406000
+        },
+        {
+          "delta": 1,
+          "motivo": "mensaje",
+          "puntos": 196,
+          "ts": 1794785204000
+        },
         {
           "delta": 1,
           "motivo": "mensaje",
